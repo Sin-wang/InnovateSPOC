@@ -28,7 +28,9 @@ public interface EmploymentManageDao {
 	 返回值：   无返回值
 	 函数功能：增加实习基地
 	 */
-	public String increaseEmpInfo(String str2);
+
+	public int increaseEmpInfo(String stuName, String companyName,
+			String wage, String work, String graduateYear, String excellence);
 	
 	/*
 	  参数说明：str,为就业信息的编号   
@@ -38,6 +40,7 @@ public interface EmploymentManageDao {
 	public String delInfo(String str);
 
 	public String updateEmpInfo(String sid, String company, String salary,
-			String workin, String graduationYear, int excellence);
+			String workin, String graduationYear, String excellence);
+
 
 }

@@ -2,8 +2,8 @@
 var obj = [];
 var tag1=true;
 var XN=0;
-$(document).ready(function() { 	
-var page = $('#employmentManage').DataTable(
+$(document).ready(function() {
+					var page = $('#employmentManage').DataTable(
 									{
 										
 										"processing" : true,
@@ -107,17 +107,14 @@ var page = $('#employmentManage').DataTable(
 											}
 										}
 									});
-
 							//增加框的js控制
-							$(document).on("click", "#submit0", function() {
-								alert("aaaaaaa");	
-								/*var tag=1;
+							$("#confirm").click(function(){
+								var tag=1;
 								var sid = $("#sid").val;
 								var company = $("#company").val;
 								var salary = $("#salary").val;
 								var workin = $("#workin").val;
 								var graduation_year = $("#graduation_year").val;
-								var excellence = $("#excellence").find("option:selected").text();
 								if(!tag){		
 									 bootbox.alert({
 											message : "该学生编号已存在，请重新输入",
@@ -153,17 +150,153 @@ var page = $('#employmentManage').DataTable(
 										});
 									 return;
 								}
-								if(excellence==""){
-									 bootbox.alert({
-											message : "请填写是否优秀",
-											size : 'small'
-										});
-									 return;
-								}*/
 								
 								$("#myForm").submit();
 							});
+							
+							// 点击删除按钮,判断是否已选择
+							$("#delete").click(function() {
 
+								var chk_value = [];
+								$('input[name="recordcheck"]:checked').each(function() {
+									chk_value.push($(this).val());
+								});
+								if (chk_value.length == 0) {
+									bootbox.alert({
+										message : "您还没有选择任何内容",
+										size : 'small'
+									});
+									return;
+								}
+								$("#deleteOneModal").modal('show');
 
+							});
+							// 确认删除
+							$("#delSubmit").click(function() {										
+												var recordstr = '(';
+												var i = 0;									
+												$(
+														"input[type='checkbox'][name='recordcheck']:checked")
+														.each(
+																function() {
 
+																	if (i != 0) {
+																		recordstr = recordstr
+																				+ ",'"
+																				+ $(
+																						this)
+																						.val()+"'";
+																	} else {
+																		recordstr = recordstr
+																				+ "'"+$(
+																						this)
+																						.val()+"'";
+																	}
+
+																	i++;
+																});
+
+												recordstr = recordstr + ')';										
+												$.ajax({
+													data : {
+														"recordstr" : recordstr
+													},
+													url : 'delEmpinfo.do',
+													async : true,
+													type : "POST",
+													dataType : "json",
+													cache : false,
+													success : function(data) {											
+															bootbox.alert({
+																message : data.flag,
+																size : 'small'
+															});
+															$("#deleteOneModal").modal('hide');											
+															page.draw(false);																								
+													},
+													error : function(data) {
+														alert("请求异常");
+													}
+												});
+											});
+							
+							// //全选反选
+							$("#ck1").on("click", function() {
+								if ($(this).prop("checked") == true) {
+									$("#employmentManage input[name='recordcheck']").prop("checked", true);
+								} else {
+									$("#employmentManage input[name='recordcheck']").prop("checked", false);
+								}
+							});
+							var index ;
+							//修改操作
+							$(document).on("click", "#updateDetail", function() {	
+								
+								index = $(this).attr("value");
+								$("#Sid").val(obj[index].sid); 
+								$("#Company").val(obj[index].company);
+								$("#Salary").val(obj[index].salary);
+								$("#Workin").val(obj[index].workin);
+								$("#Graduation_year").val(obj[index].graduation_year);
+								$("#Excellence").val(obj[index].excellence);
+								
+								$("#edit").modal('show');
+							});
+							$("#saverun").click(function(){
+													if ($("#Company").val() == "") {
+														bootbox.alert({
+															message : "所在公司名称不能为空",
+															size : 'small'
+														});
+														return;
+													} else if ($("#Salary").val() == "") {
+														bootbox.alert({
+															message : "年薪不能为空",
+															size : 'small'
+														});
+														return;
+													} else if ($("#Workin").val() == "") {
+														bootbox.alert({
+															message : "从事工作不能为空",
+															size : 'small'
+														});
+														return;
+													} else if ($("#Graduation_year").val() == "") {
+														bootbox.alert({
+															message : "毕业年份不能为空",
+															size : 'small'
+														});
+														return;
+													}else if ($("#Excellence").val() == "") {
+														bootbox.alert({
+															message : "是否优秀不能为空",
+															size : 'small'
+														});
+														return;
+													}else if(!tag1){
+														bootbox.alert({
+															message : "该学生编号已存在，请重新输入",
+															size : 'small'
+														});
+													 return;
+													}
+											bootbox.confirm({
+											message: "是否确认修改",
+											buttons: {
+													confirm: {
+															label: 'Yes',
+															className: 'btn-success'
+															},
+													cancel: {
+															label: 'No',
+															className: 'btn-danger'
+															},
+														},
+													callback: function (result) {
+															if(result){
+																$("#employEditForm").submit();
+																}
+															}
+														});
+							});
 });

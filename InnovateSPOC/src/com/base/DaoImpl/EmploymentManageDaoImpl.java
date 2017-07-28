@@ -2,6 +2,7 @@ package com.base.DaoImpl;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 			 sp = (CallableStatement) conn
 					    .prepareCall("{CALL innovatespoc.query_employment(?,?,?,?,?,?)}");
 			 
-			 sp.setInt(1, size);
+			 	sp.setInt(1, size);
 			    sp.setInt(2, pageindex); 
 			    sp.setString(3, columnName);
 			    sp.setString(4, orderDir);
@@ -62,7 +63,6 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 			    ch.setExcellence(rs.getString("excellence"));
 			    list.add(ch);
 			    }
-			    System.out.println(list+"+aaaaaaaaaaaa");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,33 +71,38 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 		}
 		 el.setRecordsTotal(recordsTotal);
 		 el.setData(list);
-		 System.out.println(el+"+bbbbbbbbbbbbbbbbbb");
 		return el;
 	}
 	
 	// 向就业表employment中插入一条数据
-	  public String increaseEmpInfo(String str2) {
+	  public int increaseEmpInfo(String stuName,String companyName ,String wage,String work,String graduateYear,String excellence) {
 		
-		int flag;
-		String message=null;
+		
+		int flag=0;
 		Connection conn = null;
+		PreparedStatement ps=null;
+		ResultSet rs = null;
 		CallableStatement sp = null;
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-			    .prepareCall("{call baseweb.add_base(?,?)}");//待写
-		    sp.setString(1, str2);	  
+			    .prepareCall("{call innovatespoc.check_employment(?,?,?,?,?,?,?)}");//待写
+		    sp.setString(1, stuName);
+			sp.setString(2, companyName);
+			sp.setString(3, wage);
+			sp.setString(4, work);
+			sp.setString(5, graduateYear);
+			sp.setString(6, excellence);	  
 		    sp.execute();
-		    flag=sp.getInt(2);	 
-		    message=BaseUtils.getException(flag);
+		    flag=sp.getInt(7);	 
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
 		} finally {
-		    SqlConnectionUtils.free(conn, sp, null);
+		    SqlConnectionUtils.free(conn, sp, rs);
 		}
-		return message;
+		return flag;
 
 	    }
 	  
@@ -113,7 +118,7 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-			    .prepareCall("{call baseweb.`delete_prabaseinfo`(?,?)}");//待写
+			    .prepareCall("{call innovatespoc.delete_employment(?,?)}");//待写
 		    sp.setString(1, str);
 		    sp.execute();
 		    flag=sp.getInt(2);
@@ -131,8 +136,10 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 	  //实习基地维护中修改
 		@Override
 		public String updateEmpInfo(String sid, String company, String salary,
-				String workin, String graduationYear, int excellence) {
+				String workin, String graduationYear, String excellence) {
 			int flag;
+			//System.out.println(excellence+"aaaa");
+			//System.out.println(sid+"bbbb");
 			
 			String message=null;
 			Connection conn = null;
@@ -140,13 +147,13 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 			try {
 			    conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
-			    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.query_employment(?,?,?,?,?,?,?)}");//待写
+			    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_employment(?,?,?,?,?,?,?)}");//待写
 			    sp.setString(1, sid);
 			    sp.setString(2, company);
 			    sp.setString(3, salary);
 			    sp.setString(4, workin);
 			    sp.setString(5, graduationYear);
-			    sp.setInt(6, excellence);
+			    sp.setString(6, excellence);
 			    
 			    sp.execute();
 			    flag=sp.getInt(7);

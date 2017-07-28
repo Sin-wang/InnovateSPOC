@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.base.Po.employList;
+import com.base.Po.employment;
+import com.base.Po.studentList;
+import com.base.Po.students;
 import com.base.Service.EmploymentManageService;
  
 
@@ -49,14 +53,19 @@ public class EmploymentManageController {
 		    searchValue = null;
 		}
 		Integer pageindex = (startIndex / size + 1);
-		employList str =  new employList();
-		str = null;
+		int recordsTotal = 0;
+		List<employment> list = new ArrayList<employment>();
+		
+		employList str =  null;
 		str = employmentmanageservice.employment(pageindex, size, order, orderDir,searchValue);
+
+		list = str.getData();
+		recordsTotal = str.getRecordsTotal();
 		JSONObject getObj = new JSONObject();
 		getObj.put("draw", draw);
-		getObj.put("recordsFiltered", str.getRecordsTotal());
-		getObj.put("recordsTotal", str.getRecordsTotal());
-		getObj.put("data", str.getData());
+		getObj.put("recordsFiltered",recordsTotal);
+		getObj.put("recordsTotal", recordsTotal);
+		getObj.put("data", list);
 		response.setContentType("text/html;charset=UTF-8");
 
 		try {
@@ -89,14 +98,12 @@ public class EmploymentManageController {
     		String wage = request.getParameter("wage");// 年薪
     		String work = request.getParameter("work");// 从事工作
     		String graduateYear = request.getParameter("graduateYear");// 毕业年份
-    		 
-
-    		str2 += "('" + stuName + "','" + companyName + "'," + wage + ",'"
-    			+ work + "'," + graduateYear +  ")";
-
-    		String message=employmentmanageservice.increaseEmpInfo(str2);
-    		request.setAttribute("index", message);
-    		String str=(String) request.getAttribute("index");
+    		String excellence = request.getParameter("exc");
+    		/*str2 += "('" + stuName + "','" + companyName + "','" + wage + "','"
+    			+ work + "','" + graduateYear +  "','"+excellence+"')";*/
+    		
+    		int message=employmentmanageservice.increaseEmpInfo(stuName,companyName,wage,work,graduateYear,excellence);
+    		request.setAttribute("flag", message);
     		response.setContentType("text/html;charset=UTF-8");
     	/*    }
     	}*/
@@ -105,10 +112,10 @@ public class EmploymentManageController {
     
     //删除就业信息记录(批量)
     @RequestMapping("/delEmpinfo.do")
-    public String delBaseinfo(HttpServletRequest request,
+    public String delEmpinfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {
 	String str = request.getParameter("recordstr");
-
+	System.out.println(str+"str");
 	String message=employmentmanageservice.delInfo(str);
 	if(message.equals("success")){
 	    message="操作成功";
@@ -131,28 +138,32 @@ public class EmploymentManageController {
     }
     
  // 修改实习基地信息
-    @RequestMapping("/updateBaseInfo.do")
-    public String updateBaseInfo(HttpServletRequest request,
+    @RequestMapping("/updateEmpInfo.do")
+    public String updateEmpInfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {
-	String sid = request.getParameter("sid");
-	String company=request.getParameter("company");
+	String sid = request.getParameter("Sid");
+	System.out.println(sid+"sid");
+	String company=request.getParameter("Company");
 	if(company.equals("")){
 		company=null;
 	}
-	String salary=  request.getParameter("salary");
+	System.out.println(company+"company");
+	String salary=  request.getParameter("Salary");
 	if(salary.equals("")){
 		salary=null;
 	}
-	String workin =request.getParameter("workin");
+	String workin =request.getParameter("Workin");
 	if(workin.equals("")){
 		workin=null;
 	}
-	String graduationYear =request.getParameter("graduationYear");
+	String graduationYear =request.getParameter("Graduation_year");
 	if(graduationYear.equals("")){
 		graduationYear=null;
 	}
-	int excellence =Integer.valueOf(request.getParameter("excellence"));
-
+	String excellence =request.getParameter("Excellence");
+	if(excellence.equals("")){
+		excellence=null;
+	}
 	String message=employmentmanageservice.updateEmpInfo(sid,company,salary,workin,graduationYear,excellence);
 	if(message=="success"){
 	    message="操作成功";
@@ -171,6 +182,6 @@ public class EmploymentManageController {
 	    e.printStackTrace();
 	}
 
-	return null;
+	return "employmentManage";
     }
 }

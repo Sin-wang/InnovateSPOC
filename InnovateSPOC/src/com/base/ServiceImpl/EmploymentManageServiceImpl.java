@@ -42,9 +42,9 @@ public class EmploymentManageServiceImpl implements EmploymentManageService {
 	}
 	//增加就业管理信息
 	@Override
-	public String increaseEmpInfo(String str2) {
+	public int increaseEmpInfo(String stuName,String companyName ,String wage,String work,String graduateYear,String excellence) {
 		// TODO Auto-generated method stub
-		String message = employmentdao.increaseEmpInfo(str2);
+		int message = employmentdao.increaseEmpInfo(stuName,companyName,wage,work,graduateYear,excellence);
 		return message;
 	}
 	//删除就业管理信息
@@ -54,9 +54,10 @@ public class EmploymentManageServiceImpl implements EmploymentManageService {
 		return message;
 	
 	}
+	//修改就业管理信息
 	@Override
 	public String updateEmpInfo(String sid, String company, String salary,
-			String workin, String graduationYear, int excellence) {
+			String workin, String graduationYear, String excellence) {
 		// TODO Auto-generated method stub
 		String message = employmentdao.updateEmpInfo(sid,company,salary,workin,graduationYear,excellence);
 		return message;

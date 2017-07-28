@@ -1,9 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
-#daochu select{
+/*#daochu select{
 	width:100%;}
 .modal-body table tr td select{
-	width:100%;}
+	width:100%;}*/
 table thead > tr> td{
 	
 	font-size:16px;
@@ -16,6 +16,7 @@ table thead > tr> td{
 	}
 table thead tr th{
 	text-align:center;}
+/*
 table tbody tr td{
 	text-align:center;}
 	
@@ -42,8 +43,8 @@ tbody tr td span{
 	font-size:14px;
 	background:#d6dfe9;
 	border:none !important;}
-/*#topPlugin{
-	display:inline;}*/
+#topPlugin{
+	display:inline;}
 .bottom{
 	margin-top:10px;
 	}
@@ -156,3 +157,4 @@ tbody tr td span{
 #adddate{
 	text-align:left !important;
 }
+*/

@@ -24,7 +24,8 @@ public interface EmploymentManageService {
 	 返回值：   无返回值
 	 函数功能：增加就业管理信息
 	 */
-	public String increaseEmpInfo(String str2);
+	public int increaseEmpInfo(String stuName, String companyName,
+			String wage, String work, String graduateYear, String excellence);
 	
 	/*
 	  参数说明：str,为就业管理信息的编号   
@@ -39,5 +40,7 @@ public interface EmploymentManageService {
 	 函数功能：修改实习基地截止日期
 	 */
 	public String updateEmpInfo(String sid, String company, String salary,
-			String workin, String graduationYear, int excellence);
+			String workin, String graduationYear, String excellence);
+
+	
 }

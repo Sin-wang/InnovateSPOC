@@ -17,10 +17,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
-	 <link rel="stylesheet" href="../css/employmentManage.css"> 
+    <link rel="stylesheet" href="../css/teacher.css">
+
   </head>
   
   <body>
@@ -61,6 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="icon-copy" aria-hidden="true"></i><span>用户管理</span>
 								</a>
 									<ul class="nav nav-children">
+										<li><a href="user.jsp"><span class="text"></span>用户管理</a></li>
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
 										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
@@ -81,7 +83,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">学生简历管理</span></a></li>
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 
 									</ul>
 								</li>
@@ -117,7 +125,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">新闻信息管理</span></a></li>
+											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -143,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="employmentManage.jsp">就业信息管理</a></li>
+							<li><a href="RepairManage.jsp">用户管理</a></li>
 						</ol>
 					</div>
 					
@@ -153,27 +161,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-lg-12">
 						<form action="" method="post" enctype="multipart/form-data"
 							name="formApplyInfo" id="formApplyInfo">
-							<table id="employmentManage" class="cell-border" cellspacing="0"
+							<table id="major" class="cell-border" cellspacing="0"
 								width="100%">
 								<thead>
 									<tr bgcolor="#ECF1F5">
-										<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="8" id="button-left">
+									<td hidden id="exportMaintain">${exportMaintain}</td>
+										<td colspan="6" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
-										
 									</tr>
 									<tr>
-										<th>选择</th>
-										<th>学生编号</th>
-										<th>所在公司</th>
-										<th>年薪</th>
-										<th>从事工作</th>
-										<th>毕业年份</th>
-										<th>是否优秀</th>
-										<th>操作</th>
+										<td>序号</td>
+										<th>ID</th>
+										<th>用户名</th>
+										<th hidden>密码</th>
+										<th>修改</th>
 									</tr>
 								</thead>
 								<tbody class="text-center">
@@ -196,125 +200,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<!--row end-->
 	</div>
-	<!-- 弹出框增加 -->
-	<div class="modal fade" id="add" style="border:#3071a9 8px solid;overflow-x:hidden;">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			
-				<div class="modal-header" style="background:#3071a9; color:#FFF">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div id="closebas" class="glyphicon glyphicon-remove closeModal"
-				data-dismiss="modal"></div>
-					<h4 class="modal-title text-center" id="myModalLabel">增加就业信息</h4>
-				</div>
-				
-				<div class="modal-body table-responsive" id="modalbody">
-					<div class="row" style="margin-right:0px;">
-						<div class="col-md-12">
-							<form action="increaseEmpInfo.do" method="post" id="myForm"
-						enctype="multipart/form-data" class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-md-3 control-label">学生编号<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="sid"
-											name="stuName" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">所在公司<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="company"
-											name="companyName" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">年薪<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="salary"
-											name="wage" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">从事工作<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="workin"
-											name="work" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">毕业年份<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="graduation_year"
-											name="graduateYear" placeholder="">
-										</div>
-								</div>
-								
-								<div class="form-group">
-									<label class="col-md-3 control-label">是否优秀<span
-										class="setTag">*</span></label>
-									<div class="col-md-6">
-										<select class="form-control" id="excellence0" name="exc">
-											<option id="excellence0" value="是" >是</option>
-											<option id="excellence1" value="否" >否</option>
-										</select>
-									</div>
-								</div> 
-							</form>
-						</div>
-					</div>
-				</div>
-							
-				<div class="modal-footer">
-						<center>
-							<button type="button" class="btn btn-default" id="daoclose"
-										data-dismiss="modal">取消</button>
-							<button type="button" class="btn btn-primary" id="confirm">
-										确认</button>
-						</center>
-				</div>
-			
-			</div>
-		</div>
-	</div> 
 	
-	<!--单个删除确认对话框-->
-				<div class="modal fade" id="deleteOneModal" tabindex="-1"
-					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<!-- data-backdrop="static" 禁止点击弹框后面内容 -->
-					<form class="form-horizontal" role="form">
-						<div class="modal-dialog modal-sm ">
-							<!-- modal-sm 小的  modal-lg 大的 -->
-							<div class="modal-content" style="border:#4D719B 8px solid">
-								<div class="modal-header" style="background:#4D719B; color:#FFF">
-									<div class="glyphicon glyphicon-remove closeModal"
-										data-dismiss="modal"></div>
-									<h6 class="modal-title" id="myModalLabel"></h6>
-								</div>
-								<div class="modal-body" style="text-align: left;">
-									<h5>您确定要删除吗？</h5>
-								</div>
-								<div class="modal-footer">
-
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">取消</button>
-
-									<button type="button" class="btn btn-primary" id="delSubmit">
-										确认</button>
-								</div>
-							</div>
-							<!-- /.modal-content -->
-						</div>
-					</form>
-				</div>
-	<!-- 弹出框修改-->
+	<!-- 弹出框-->
 			<div class="modal fade" id="edit" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabe" aria-hidden="true">
 				<div class="modal-dialog">
@@ -322,46 +209,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-header" style="background:#3071a9; color:#FFF">
 							<div class="glyphicon glyphicon-remove closeModal"
 								data-dismiss="modal"></div>
-							<h4 class="modal-title text-center" id="myModalLabel">详情及修改</h4>
+							<h4 class="modal-title text-center" id="myModalLabel">用户信息修改</h4>
 						</div>
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updateEmpInfo.do" method="post" class="form-horizontal"
-										role="form" id="employEditForm">
+									<form action="updateuser.do" method="post" class="form-horizontal"
+										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
-												<td>学生编号:</td>
+												<td>ID ：</td>
 												<td><input type="text" class="form-control"
-													id="Sid" name="Sid" readonly="readonly"/></td>
+													id="id" name="id" readonly/></td>
 											</tr>
 											<tr>
-												<td>所在公司:</td>
+												<td>用户名 ：</td>
 												<td><input type="text" class="form-control"
-													id="Company" name="Company"  />
+													id="username" name="username" readonly/></td>
+											</tr>
+											<tr>
+												<td>密码 ：</td>
+												<td><input type="text" class="form-control"
+													id="password" name="password" />
 													</td>
 											</tr>
-											<tr>
-												<td>年薪:</td>
-												<td><input type="text" class="form-control" id="Salary" name="Salary"
-													/><span id="display1" style="color:#f00;"></span></td>
-											</tr>
-											<tr>
-												<td>从事工作：</td>
-												<td><input type="text" class="form-control" id="Workin" name="Workin"
-													/><span id="display1" style="color:#f00;"></span></td>
-											</tr>
-											<tr>
-												<td>毕业年份：</td>
-												<td><input type="text" class="form-control" id="Graduation_year" name="Graduation_year"
-													/><span id="display1" style="color:#f00;"></span></td>
-											</tr>
-											<tr>
-												<td>是否优秀：</td>
-												<td><input type="text" class="form-control" id="Excellence" name="Excellence"
-													/><span id="display1" style="color:#f00;"></span></td>
-											</tr>
-											
 										</table>
 									</form>
 								</div>
@@ -378,15 +249,75 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 	
-	
+	<!-- 弹出框 -->
+	<div class="modal fade" id="add" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title text-center" id="myModalLabel">用户信息</h4>
+				</div>
+				<div class="modal-body table-responsive">
+					<div class="row">
+						<div class="col-md-12">
+							<form action="adduser.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+										role="form" id="applyaddform">
+								<table class="table" style="border:none !important;">
+									<tr>
+										<td class="col-md-3 col-md-offset-2">ID:</td>
+										<td class="col-md-9"><input name="Id" id="Id" type="text" style="width:80%" class="form-control"/><span id="display1"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">用户名:</td>
+										<td class="col-md-9"><input name="Username" id="Username" type="text" style="width:80%" class="form-control"/><span id="display1"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">密码:</td>
+										<td class="col-md-9"><input name="Password" id="Password" type="password" style="width:80%" class="form-control"/></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<center>
+						<button type="button" class="btn btn-primary" id="save">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="../js/jquery.min.js"></script>
 	<!--datatable javascript-->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/myNeed/employmentManage.js"></script>
-	<script src="../js/jquery.dataTables.min.js"></script>	
+	<script src="../js/jquery.dataTables.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
+	<script src="../js/myNeed/user.js"></script>	
 	<script src="../js/kg.js"></script>
+	<script type="text/javascript">
+		var flag = document.getElementById('baseapply').value;
+		if (flag == true) {
+			bootbox.alert({
+				message : "操作成功",
+				size : 'small'
+			});
+		} else if (flag == false) {
+			bootbox.alert({
+				message : "教师编号已存在",
+				size : 'small'
+			});
+		}
+	</script>
 </body>
 </html>

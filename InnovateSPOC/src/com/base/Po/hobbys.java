@@ -7,64 +7,87 @@ import javax.persistence.Id;
 public class hobbys {
 
 	@Id
-	private int id;//ÐËÈ¤°®ºÃ±íid
-	private int sid;//Ñ§Éúid
-	private String hobby;//°®ºÃÃû³Æ
-	private String begin_time;//¿ªÊ¼Ê±¼ä
-	private String end_time;//½áÊøÊ±¼ä
-	private String HobbyDescription;//°®ºÃÄÚÈÝ
+	private int id;//ï¿½ï¿½È¤ï¿½ï¿½ï¿½Ã±ï¿½id
+	private String sid;//Ñ§ï¿½ï¿½id
+	private String hobby;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String begin_time;//ï¿½ï¿½Ê¼Ê±ï¿½ï¿½
+	private String end_time;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	private String hobby_description;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String sname;
 	
 	public hobbys() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public hobbys(int id, int sid, String hobby, String begin_time,
-			String end_time, String hobbyDescription) {
+
+	public hobbys(int id, String sid, String hobby, String begin_time,
+			String end_time, String hobby_description, String sname) {
 		super();
 		this.id = id;
 		this.sid = sid;
 		this.hobby = hobby;
 		this.begin_time = begin_time;
 		this.end_time = end_time;
-		HobbyDescription = hobbyDescription;
+		this.hobby_description = hobby_description;
+		this.sname = sname;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getSid() {
+
+	public String getSid() {
 		return sid;
 	}
-	public void setSid(int sid) {
+
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
+
 	public String getHobby() {
 		return hobby;
 	}
+
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
+
 	public String getBegin_time() {
 		return begin_time;
 	}
+
 	public void setBegin_time(String begin_time) {
 		this.begin_time = begin_time;
 	}
+
 	public String getEnd_time() {
 		return end_time;
 	}
+
 	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
 	}
-	public String getHobbyDescription() {
-		return HobbyDescription;
+
+	public String getHobby_description() {
+		return hobby_description;
 	}
-	public void setHobbyDescription(String hobbyDescription) {
-		HobbyDescription = hobbyDescription;
+
+	public void setHobby_description(String hobby_description) {
+		this.hobby_description = hobby_description;
 	}
+
+	public String getSname() {
+		return sname;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
 	
 	
 }

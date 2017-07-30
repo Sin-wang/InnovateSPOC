@@ -30,10 +30,10 @@ public class InternshipController {
 		    HttpServletResponse response){
 		int flag=0;
 		String studentId = request.getParameter("studentId");
-		String address = request.getParameter("address");
-		String begin = request.getParameter("begin");
-		String end = request.getParameter("end");
-		String description = request.getParameter("description");
+		String address = request.getParameter("address1");
+		String begin = request.getParameter("begin1");
+		String end = request.getParameter("end1");
+		String description = request.getParameter("description1");
 		flag = internshipService.addinternship(studentId, address, begin, end, description);
 		request.setAttribute("flag", flag);
 		return "internship";

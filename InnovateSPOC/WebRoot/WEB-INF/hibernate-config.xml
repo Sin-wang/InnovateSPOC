@@ -22,7 +22,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		<property name="username" value="hnndspocteam"></property>
 		<property name="password" value="%spoc&amp;2016%"></property>
 		
-		<!-- <property name="url" value="jdbc:mysql://localhost:3306/innovatespoc"></property>
+<!-- 		<property name="url" value="jdbc:mysql://localhost:3306/innovatespoc"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="rong0922"></property> -->
 

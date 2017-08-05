@@ -29,7 +29,7 @@ public class InternshipController {
 	public String addinternship(HttpServletRequest request,
 		    HttpServletResponse response){
 		int flag=0;
-		String studentId = request.getParameter("studentId");
+		String studentId = request.getParameter("deptSelectOne");
 		String address = request.getParameter("address1");
 		String begin = request.getParameter("begin1");
 		String end = request.getParameter("end1");

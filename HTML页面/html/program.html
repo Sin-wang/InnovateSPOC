@@ -7,6 +7,7 @@
 		<title>SPOC创新实验室程序组</title>
 		<link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 		<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+		<link href="../css/resume.css" type="text/css" rel="stylesheet"/>
 		<link rel="stylesheet" href="../css/program.css" />
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,46 +31,44 @@
 						<li>
 						  <a class="nav_stop" href="index.html">
 							<span class="name_ch">首页</span>
-							<span class="name_en">HOME</span>
 						  </a>
 						</li>
                          <li>
 							<a href="#">
 							  <span class="name_ch">程序组</span>
-							  <span class="name_en">introduction</span>
 							</a>
 						  </li>
                          <li>
 							<a href="#">
 							  <span class="name_ch">UI组</span>
-							  <span class="name_en">model</span>
 							</a>
 						  </li>
 						<li>
 							<a href="#">
 							  <span class="name_ch">3D组</span>
-							  <span class="name_en">feature</span>
 							</a>
 						  </li>							
 							 <li>
 							<a href="#">
 						  	  <span class="name_ch">CG特效组</span>
-							  <span class="name_en">teacher</span>
 							</a>
 						  </li>
 							 <li>
 							<a href="#">
 						  	  <span class="name_ch">企业招聘</span>
-							  <span class="name_en">advantage</span>
 							</a>
 						  </li>
-							 <li>
+						  <li>
 							<a href="#">
 						  <span class="name_ch">团队作品</span>
-							  <span class="name_en">management</span>
+							</a>
+						  </li>
+						  <li data-toggle="modal" data-target="#Login">
+							<a href="#">
+						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
-							  </ul>
+						</ul>
 					  </div>
 					  <div class="clear"></div>
 					</div>
@@ -233,7 +232,7 @@
 							<div class="item active">
 								<div class="row">
 								  <div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1">
-									<div class="thumbnail">
+									<div class="thumbnail" data-toggle="modal" data-target="#resume_myModal">
 									  <img src="../images/program/member1.png" alt="...">
 									  <div class="caption">
 										<h4>java工程师　李彩</h4>
@@ -312,7 +311,7 @@
 							<div class="item">
 								<div class="row">
 								  <div class="col-xs-2 col-md-2 col-md-offset-1 col-xs-offset-1">
-									<div class="thumbnail">
+									<div class="thumbnail" data-toggle="modal" data-target="#resume_myModal">
 									  <img src="../images/program/member1.png" alt="...">
 									  <div class="caption">
 										<h4>java工程师　李彩</h4>
@@ -753,6 +752,313 @@
 				</tr>
 			</table>
 		</div>
+		
+		<!--简历表-->
+		<!-- Modal -->
+		<div class="modal fade" id="resume_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="width:980px">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="resume_wrap">
+					<div style="display: table;">
+						<div id="section1">
+							<div id="section1_1">
+								<div id="portrait"></div>
+								<p>刘安奇</p>
+								<p>视觉传达专业</p>
+							</div>
+							<div id="section1_2">
+								<div class="information">
+									<div class="intro_title">
+										<div id="icon1" class="icon1"></div>
+										<div class="text">自我介绍<span>ABOUT ME</span></div>
+									</div>
+									<div class="intro_cotent">
+										<p>我平时喜欢看书和上网浏览信息。我的性格比较开朗、随和，能关心周围的任何事</p>
+										<p>我以前在所以有一定的实践经验，在外地求学的四年中我养成了坚强的性格，这种性格使我克服了学习中和生活中。。。。。。</p>
+									</div>
+								</div>
+								<div class="information">
+									<div class="intro_title">
+										<div id="icon2" class="icon1"></div>
+										<div class="text">联系方式<span>CONTACT ME</span></div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon3" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>上海市普陀区长椿街15号院</p>
+											<p class="font-s">Shanghai city Putuo District Changchun Street No.15</p>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon4" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>QQ：114391696</p>
+											<p class="font-s">QQ：114391696</p>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon5" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>手机号码：17866766789</p>
+											<p>Phone number：17866766789</p>
+										</div>
+									</div>
+								</div>
+								<div class="information">
+									<div class="intro_title">
+										<div id="icon6" class="icon1"></div>
+										<div class="text">专业技能<span>MY SKILLS</span></div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon5" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>PHOTSHOP</p>
+											<div style="width: 150px; height: 10px;">
+												<div class="progress progress_style" >
+												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+												  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon5" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>PHOTSHOP</p>
+											<div style="width: 150px; height: 10px;">
+												<div class="progress progress_style" >
+												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+												  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon5" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>PHOTSHOP</p>
+											<div style="width: 150px; height: 10px;">
+												<div class="progress progress_style" >
+												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+												  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon5" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p>PHOTSHOP</p>
+											<div style="width: 150px; height: 10px;">
+												<div class="progress progress_style" >
+												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+												  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="section2">
+							<div class="sec2_son">
+								<div class="sec2_title">
+									<div id="icon7" class="icon3"></div>
+									<div class="text2">实习经历<span>WORK EXPERIENCE</span></div>
+								</div>
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>小橘子科技有限公司<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+										<p>参与设计体验、设计流程的制定，建立高效的设计语言与设计规范；</p>
+									</div>
+								</div>
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>任我行旅游网<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+										<p>参与设计体验、设计流程的制定，建立高效的设计语言与设计规范；</p>
+									</div>
+								</div>
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>美好未来婴幼儿教育<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+										<p>参与设计体验、设计流程的制定，建立高效的设计语言与设计规范；</p>
+									</div>
+								</div>
+							</div>
+							<div class="sec2_son">
+								<div class="sec2_title">
+									<div id="icon7" class="icon3"></div>
+									<div class="text2">教育经历<span>EDUCATION EXPERIENCE</span></div>
+								</div>
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>北京大学<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+									</div>
+								</div>
+
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>中国人民大学<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+									</div>
+								</div>
+							</div>
+							<div class="sec2_son">
+								<div class="sec2_title">
+									<div id="icon7" class="icon3"></div>
+									<div class="text2">兴趣爱好<span>MY HOBBIES</span></div>
+								</div>
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>吉他乐器<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+									</div>
+								</div>
+
+								<div class="sec2_content">
+									<div class="icon4"></div>
+									<div class="sec2_text">
+										<h1>上网读书<span>2008.09-2010.09</span></h1>
+										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
+										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="project">
+						<div class="pro_title">
+							<div class="icon5"><span>P</span></div>
+							<p>我的主导项目<span>LEADING PROJECT</span></p>
+						</div>
+						<div class="pro_content">
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="project">
+						<div class="pro_title">
+							<div class="icon5"><span>P</span></div>
+							<p>我参与的项目<span>PARTICIPATE IN THE PROJECT</span></p>
+						</div>
+						<div class="pro_content">
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<!--登录-->
+		<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="width: 400px;">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title text-center" id="myModalLabel2">Login</h4>
+			  </div>
+			  <form method="post">
+				  <div class="modal-body" style="padding: 15px;">
+
+							  <div class="input-group" style="margin-top:15px;">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+								<input type="test" class="form-control" name="admin" id="admin" placeholder="账号">
+							  </div>
+							  <div class="input-group" style="margin-top:30px;">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								<input type="password" class="form-control" id="password" name="password" placeholder="密码">
+							  </div>
+				  </div>
+				  <div class="text-center" style="margin:20px 0 40px 0">
+					<button type="submit" class="btn btn-danger"   style="width:20%;">登录</button>
+				  </div>
+			  </form>
+
+
+			</div>
+		  </div>
+		</div>
+
+		
+		
 	</body>	
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>

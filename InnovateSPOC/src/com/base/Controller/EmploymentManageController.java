@@ -86,27 +86,18 @@ public class EmploymentManageController {
     @RequestMapping("/increaseEmpInfo.do")
     public String increaseEmpInfo(HttpServletRequest request,
     	    HttpServletResponse response, ModelMap map) {
-    	/*Cookie[] cookies = request.getCookies();// 获得所有cookie对象
-    	for (Cookie co : cookies) {
-    	    if (co.getName().equals("username")) {
-    		String userid = co.getValue();*/
 
-    		/*------参数2-----------*/
-    		String str2 = "";
     		String stuName = request.getParameter("stuName");// 学生id
     		String companyName = request.getParameter("companyName");// 所在公司
     		String wage = request.getParameter("wage");// 年薪
     		String work = request.getParameter("work");// 从事工作
     		String graduateYear = request.getParameter("graduateYear");// 毕业年份
     		String excellence = request.getParameter("exc");
-    		/*str2 += "('" + stuName + "','" + companyName + "','" + wage + "','"
-    			+ work + "','" + graduateYear +  "','"+excellence+"')";*/
+    		
     		
     		int message=employmentmanageservice.increaseEmpInfo(stuName,companyName,wage,work,graduateYear,excellence);
     		request.setAttribute("flag", message);
     		response.setContentType("text/html;charset=UTF-8");
-    	/*    }
-    	}*/
     	return "employmentManage";
         }
     
@@ -115,7 +106,6 @@ public class EmploymentManageController {
     public String delEmpinfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {
 	String str = request.getParameter("recordstr");
-	System.out.println(str+"str");
 	String message=employmentmanageservice.delInfo(str);
 	if(message.equals("success")){
 	    message="操作成功";
@@ -142,12 +132,10 @@ public class EmploymentManageController {
     public String updateEmpInfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {
 	String sid = request.getParameter("Sid");
-	System.out.println(sid+"sid");
 	String company=request.getParameter("Company");
 	if(company.equals("")){
 		company=null;
 	}
-	System.out.println(company+"company");
 	String salary=  request.getParameter("Salary");
 	if(salary.equals("")){
 		salary=null;

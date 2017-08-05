@@ -7,24 +7,24 @@ import javax.persistence.Id;
 public class project_work {
 
 	@Id
-	private int pid;//ÏîÄ¿×÷Æ·±íid
-	private int gid;//ËùÊô×é±ðid
-	private String project_name;//ÏîÄ¿Ãû
-	private String project_introduce;//ÏîÄ¿×÷Æ·½éÉÜ
-	private String project_address;//ÏîÄ¿µØÖ·
-	private String photo_address;//ÏîÄ¿½ØÍ¼£¨µØÖ·£©
-	private String wid;//×÷Æ·Àà±ð
-	private int expression;//±í´ï·½Ê½£¨ÊÇ·ñÊÇÊÓÆµ»òÕßÊÇ¾²Ö¡Í¼£©
-	private int best_work;//ÊÇ·ñÊÇÓÅÐã×÷Æ·
+	private int pid;//ï¿½ï¿½Ä¿ï¿½ï¿½Æ·ï¿½ï¿½id
+	private String gid;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id
+	private String project_name;//ï¿½ï¿½Ä¿ï¿½ï¿½
+	private String project_introduce;//ï¿½ï¿½Ä¿ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+	private String project_address;//ï¿½ï¿½Ä¿ï¿½ï¿½Ö·
+	private String photo_address;//ï¿½ï¿½Ä¿ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½
+	private String wid;//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½
+	private String expression;//ï¿½ï¿½ï·½Ê½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½Ö¡Í¼ï¿½ï¿½
+	private String best_work;//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
 	
 	public project_work() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public project_work(int pid, int gid, String project_name,
+	public project_work(int pid, String gid, String project_name,
 			String project_introduce, String project_address,
-			String photo_address, String wid, int expression, int best_work) {
+			String photo_address, String wid, String expression, String best_work) {
 		super();
 		this.pid = pid;
 		this.gid = gid;
@@ -43,10 +43,10 @@ public class project_work {
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	public int getGid() {
+	public String getGid() {
 		return gid;
 	}
-	public void setGid(int gid) {
+	public void setGid(String gid) {
 		this.gid = gid;
 	}
 	public String getProject_name() {
@@ -79,16 +79,16 @@ public class project_work {
 	public void setWid(String wid) {
 		this.wid = wid;
 	}
-	public int getExpression() {
+	public String getExpression() {
 		return expression;
 	}
-	public void setExpression(int expression) {
+	public void setExpression(String expression) {
 		this.expression = expression;
 	}
-	public int getBest_work() {
+	public String getBest_work() {
 		return best_work;
 	}
-	public void setBest_work(int best_work) {
+	public void setBest_work(String best_work) {
 		this.best_work = best_work;
 	}
 	

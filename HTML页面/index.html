@@ -25,45 +25,43 @@
 						<li>
 						  <a class="nav_stop" href="index.html">
 							<span class="name_ch">首页</span>
-							<span class="name_en">HOME</span>
 						  </a>
 						</li>
                          <li>
 							<a href="#">
 							  <span class="name_ch">程序组</span>
-							  <span class="name_en">introduction</span>
 							</a>
 						  </li>
                          <li>
 							<a href="#">
 							  <span class="name_ch">UI组</span>
-							  <span class="name_en">model</span>
 							</a>
 						  </li>
 						<li>
 							<a href="#">
 							  <span class="name_ch">3D组</span>
-							  <span class="name_en">feature</span>
 							</a>
 						  </li>							
 							 <li>
 							<a href="#">
 						  	  <span class="name_ch">CG特效组</span>
-							  <span class="name_en">teacher</span>
 							</a>
 						  </li>
 							 <li>
 							<a href="#">
 						  	  <span class="name_ch">企业招聘</span>
-							  <span class="name_en">advantage</span>
 							</a>
 						  </li>
 							 <li>
 							<a href="#">
 						  <span class="name_ch">团队作品</span>
-							  <span class="name_en">management</span>
 							</a>
-						  </li>						 
+						  </li>
+						  <li  data-toggle="modal" data-target="#Login">
+							<a href="#">
+						  <span class="name_ch">登录</span>
+							</a>
+						  </li>							 
 							  </ul>
 					  </div>
 					  <div class="clear"></div>
@@ -518,6 +516,37 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	<!--登录-->
+		<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="width: 400px;">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title text-center" id="myModalLabel2">Login</h4>
+			  </div>
+			  <form method="post">
+				  <div class="modal-body" style="padding: 15px;">
+
+							  <div class="input-group" style="margin-top:15px;">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+								<input type="test" class="form-control" name="admin" id="admin" placeholder="账号">
+							  </div>
+							  <div class="input-group" style="margin-top:30px;">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								<input type="password" class="form-control" id="password" name="password" placeholder="密码">
+							  </div>
+				  </div>
+				  <div class="text-center" style="margin:20px 0 40px 0">
+					<button type="submit" class="btn btn-danger"   style="width:20%;">登录</button>
+				  </div>
+			  </form>
+
+
+			</div>
+		  </div>
+		</div>
 	</body>	
 	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>

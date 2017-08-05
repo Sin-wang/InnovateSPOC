@@ -218,7 +218,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updateInternship.do" method="post" class="form-horizontal"
+									<form action="updatehobbys.do" method="post" class="form-horizontal"
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
@@ -296,8 +296,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<table class="table" style="border:none !important;">
 									<tr>
 										<td class="col-md-3 col-md-offset-2">学生id:</td>
-										<td class="col-md-9"><input name="studentId" id="studentId" type="text" style="width:80%" class="form-control"/><span id="display1"
-												style="color:#f00;"></span><input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" /></td>
+										<td class="col-md-9"><select class="form-control" id="deptSelectOne"
+													name="deptSelectOne" value="" style="width:80%">
+														<option id="deptSelect" value="" selected>请选择</option>
+												</select><input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" /></td>
 									</tr>
 									<!-- <tr>
 										<td class="col-md-3 col-md-offset-2">学生姓名:</td>

@@ -137,7 +137,7 @@ public class HobbysDaoImpl implements HobbysDao{
 		try {
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
-			String sql = "update hobbys set begin_time=?,end_time=?,practice_description=? where id =?";
+			String sql = "update hobbys set begin_time=?,end_time=?,hobby_description=? where id =?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, begin);
 			pstmt.setString(2, end);

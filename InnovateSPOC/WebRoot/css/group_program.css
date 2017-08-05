@@ -1,0 +1,64 @@
+.wrap{
+	width: 1024px;
+	margin: auto;
+}
+#head{
+	width: 1024px;
+	position: relative;
+}
+#types{
+	cursor: pointer;
+	width: 36px;
+}
+#type{
+	height: 50px;
+	background: #efefef;
+	display: none;
+}
+#search_author{
+	position: absolute;
+	right: 0%;
+	top: 0%;
+}
+#search_author input{
+	border-radius: 10px 10px 10px 10px;
+	margin-left: 10px;
+	box-shadow: none;
+	padding-left: 4px;
+	padding-right: 4px;
+	border: 1px solid grey;
+}
+#contents{
+}
+.content{
+	width: 230px;
+	height: 345px;
+	background: url(../images/group_program/bg.png) no-repeat;
+	background-size: 250px 180px;
+	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
+	float: left;
+	margin-right: 34px;
+	margin-top: 60px;
+}
+.content:nth-of-type(4),.content:nth-of-type(8){
+	margin-right: 0px;
+}
+.intro{
+	padding-top: 185px;
+
+}
+.intro h1{
+	text-shadow: 0px 5px 5px rgba(1,1,1,0.5);
+	font-size: 15px;
+	font-weight: 100;
+	margin-bottom: 30px;
+	padding-left: 15px;
+}
+.intro p{
+	font-size: 12px;
+	padding-left: 25px;
+}
+.intro p:nth-of-type(3){
+	border-top: 1px solid #EFEFEF;
+	padding-top: 10px;
+}

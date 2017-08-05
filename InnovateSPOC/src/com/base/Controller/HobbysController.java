@@ -29,7 +29,7 @@ public class HobbysController {
 	public String addhobby(HttpServletRequest request,
 		    HttpServletResponse response){
 		int flag=0;
-		String studentId = request.getParameter("studentId");
+		String studentId = request.getParameter("deptSelectOne");
 		String hobby = request.getParameter("hobby");
 		String begin = request.getParameter("begin");
 		String end = request.getParameter("end");
@@ -108,9 +108,9 @@ public class HobbysController {
 	public String updatehobbys(HttpServletRequest request,
 		    HttpServletResponse response){
 		int id = Integer.parseInt(request.getParameter("id"));
-		String begin = request.getParameter("begin");
-		String end = request.getParameter("end");
-		String description = request.getParameter("description");
+		String begin = request.getParameter("begin1");
+		String end = request.getParameter("end1");
+		String description = request.getParameter("description1");
 		hobbysService.updateHobby(id, begin, end, description);
 		return "hobbys";
 	}

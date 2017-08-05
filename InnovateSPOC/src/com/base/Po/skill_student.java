@@ -7,49 +7,76 @@ import javax.persistence.Id;
 public class skill_student {
 
 	@Id
-	private int id;//¼¼ÄÜÑ§Éú±íid
-	private int sid;//Ñ§Éúid
-	private int kid;//¼¼ÄÜid
-	private int skill_exp;//¼¼ÄÜÖµ
+	private int id;//ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½id
+	private String sid;//Ñ§ï¿½ï¿½id
+	private String sname;
+	private String kid;//ï¿½ï¿½ï¿½ï¿½id
+	private String skill_name;
+	private String skill_exp;//ï¿½ï¿½ï¿½ï¿½Öµ
 	
 	public skill_student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public skill_student(int id, int sid, int kid, int skill_exp) {
+
+	public skill_student(int id, String sid, String sname, String kid,
+			String skill_name, String skill_exp) {
 		super();
 		this.id = id;
 		this.sid = sid;
+		this.sname = sname;
 		this.kid = kid;
+		this.skill_name = skill_name;
 		this.skill_exp = skill_exp;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getSid() {
+
+	public String getSid() {
 		return sid;
 	}
-	public void setSid(int sid) {
+
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
-	public int getKid() {
+
+	public String getSname() {
+		return sname;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
+	public String getKid() {
 		return kid;
 	}
-	public void setKid(int kid) {
+
+	public void setKid(String kid) {
 		this.kid = kid;
 	}
-	public int getSkill_exp() {
+
+	public String getSkill_name() {
+		return skill_name;
+	}
+
+	public void setSkill_name(String skill_name) {
+		this.skill_name = skill_name;
+	}
+
+	public String getSkill_exp() {
 		return skill_exp;
 	}
-	public void setSkill_exp(int skill_exp) {
+
+	public void setSkill_exp(String skill_exp) {
 		this.skill_exp = skill_exp;
 	}
-	
-	
+
 
 }

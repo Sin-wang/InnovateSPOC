@@ -8,18 +8,18 @@ public class project_personnel {
 
 	@Id
 	private int id;//��Ŀ��Ա��id
-	private int sid;//学生id
-	private int pid;//��Ŀ��Ʒid
+	private String sid;//学生id
+	private String pid;//��Ŀ��Ʒid
 	private String participants;//������Ա
-	private int header;//�Ƿ�����
+	private String header;//�Ƿ�����
 	
 	public project_personnel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public project_personnel(int id, int sid, int pid, String participants,
-			int header) {
+	public project_personnel(int id, String sid, String pid, String participants,
+			String header) {
 		super();
 		this.id = id;
 		this.sid = sid;
@@ -36,19 +36,19 @@ public class project_personnel {
 		this.id = id;
 	}
 
-	public int getSid() {
+	public String getSid() {
 		return sid;
 	}
 
-	public void setSid(int sid) {
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
 
-	public int getPid() {
+	public String getPid() {
 		return pid;
 	}
 
-	public void setPid(int pid) {
+	public void setPid(String pid) {
 		this.pid = pid;
 	}
 
@@ -60,11 +60,11 @@ public class project_personnel {
 		this.participants = participants;
 	}
 
-	public int getHeader() {
+	public String getHeader() {
 		return header;
 	}
 
-	public void setHeader(int header) {
+	public void setHeader(String header) {
 		this.header = header;
 	}
 	

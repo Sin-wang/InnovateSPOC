@@ -3,7 +3,7 @@ var obj = [];
 var tag1=true;
 var XN=0;
 $(document).ready(function() {
-					var page = $('#projectWork').DataTable(
+					var page = $('#projectPersonnel').DataTable(
 									{
 										
 										"processing" : true,
@@ -16,73 +16,45 @@ $(document).ready(function() {
 										"filter" : true,
 										"dom" : 'ftipr<"bottom"l>',
 										"ajax" : {
-											"url" : "sendWorkinfo.do",
+											"url" : "sendPersoninfo.do",
 											"type" : "POST"
 										},
 										"aoColumns" : [
 												{ // aoColumns设置列时，不可以任意指定列，必须列出所有列。
 													
-													"mData" : "pid",
+													"mData" : "id",
 													"orderable" : false, // 禁用排序
 													"sDefaultContent" : "",
 													"sWidth" : "5%"
 												},
 												{ // aoColumns设置列时，不可以任意指定列，必须列出所有列。
 													
-													"mData" : "gid",
+													"mData" : "pid",
 													"orderable" : false, // 禁用排序
 													"sDefaultContent" : "",
 													"sWidth" : "10%"
 												},
 												{
-													"mData" : "project_name",
+													"mData" : "sid",
 													"orderable" : true, // 禁用排序
 													"sDefaultContent" : "",
 													"sWidth" : "10%",
 
 												},
 												{ // aoColumns设置列时，不可以任意指定列，必须列出所有列。
-													"mData" : "wid",
+													"mData" : "participants",
 													"orderable" : true, // 禁用排序
 													"sDefaultContent" : "",
 													"sWidth" : "10%"
 												},
 												{ // aoColumns设置列时，不可以任意指定列，必须列出所有列。
-													"mData" : "expression",
+													"mData" : "header",
 													"orderable" : false, // 禁用排序
 													"sDefaultContent" : "",
 													"sWidth" : "8%"
 												},
 												{
-													"mData" : "best_work",
-													"orderable" : false, // 禁用排序
-													"sDefaultContent" : "",
-													"sWidth" : "10%",
-
-												},
-												{
-													"mData" : "project_introduce",
-													"orderable" : false, // 禁用排序
-													"visible" : false,
-													"sDefaultContent" : "",
-													"sWidth" : "6%"
-												} ,
-												{
-													"mData" : "project_address",
-													"orderable" : false, // 禁用排序
-													"visible" : false,
-													"sDefaultContent" : "",
-													"sWidth" : "6%"
-												} ,
-												{
-													"mData" : "photo_address",
-													"orderable" : false, // 禁用排序
-													"visible" : false,
-													"sDefaultContent" : "",
-													"sWidth" : "6%"
-												} ,
-												{
-													"mData" : "pid",
+													"mData" : "id",
 													"orderable" : false, // 禁用排序
 													"sDefaultContent" : "",
 													"sWidth" : "8%",
@@ -98,7 +70,7 @@ $(document).ready(function() {
 										"columnDefs" : [ {
 											"orderable" : false, // 禁用排序
 											"targets" : [ 0 ], // 指定的列
-											"data" : "pid",
+											"data" : "id",
 											"render" : function(data, type, row) {	
 												
 												return '<label><input type="checkbox" name="recordcheck" value="'
@@ -125,14 +97,12 @@ $(document).ready(function() {
 							//增加框的js控制
 							$("#confirm").click(function(){
 								var tag=1;
-								var gid = $("#gid0").val;
-								var project_name = $("#project_name").val;
-								var project_introduce = $("#project_introduce").val;
-								var project_address = $("#project_address").val;
-								var photo_address = $("#photo_address").val;
-								var wid = $("#wid").val;
-								var expression = $("#expression").val;
-								var best_work = $("#best_work").val;
+								var pid = $("#pid").val;
+								
+								var sid = $("#sid").val;
+								var participants = $("#participants").val;
+								var header = $("#header").val;
+								
 								
 								if(!tag){		
 									 bootbox.alert({
@@ -141,62 +111,28 @@ $(document).ready(function() {
 										});
 									 return;
 								}	
-								if(gid==""){
-									 bootbox.alert({
-											message : "请填写所属组别",
-											size : 'small'
-										});
-									 return;
-								}
-								if(project_name==""){
+								if(pid==""){
 									 bootbox.alert({
 											message : "请填写项目名称",
 											size : 'small'
 										});
 									 return;
 								}
-								if(project_introduce==""){
+								if(sid==""){
 									 bootbox.alert({
-											message : "请填写项目作品介绍",
+											message : "请填写学生编号",
 											size : 'small'
 										});
 									 return;
 								}
-								if(project_address==""){
+								if(participants==""){
 									 bootbox.alert({
-											message : "请填写项目地址",
+											message : "请填写参与人员",
 											size : 'small'
 										});
 									 return;
 								}
-								if(photo_address==""){
-									 bootbox.alert({
-											message : "请填写项目截图",
-											size : 'small'
-										});
-									 return;
-								}
-								if(wid==""){
-									 bootbox.alert({
-											message : "请填写作品类别",
-											size : 'small'
-										});
-									 return;
-								}
-								if(best_work==""){
-									 bootbox.alert({
-											message : "请填写是否优秀",
-											size : 'small'
-										});
-									 return;
-								}
-								if(expression==""){
-									 bootbox.alert({
-											message : "请填写表达方式",
-											size : 'small'
-										});
-									 return;
-								}
+								
 								
 								$("#myForm").submit();
 							});
@@ -222,22 +158,13 @@ $(document).ready(function() {
 							$("#delSubmit").click(function() {										
 												var recordstr = '(';
 												var i = 0;									
-												$(
-														"input[type='checkbox'][name='recordcheck']:checked")
-														.each(
+												$("input[type='checkbox'][name='recordcheck']:checked").each(
 																function() {
 
 																	if (i != 0) {
-																		recordstr = recordstr
-																				+ ",'"
-																				+ $(
-																						this)
-																						.val()+"'";
+																		recordstr = recordstr+ ",'"+ $(this).val()+"'";
 																	} else {
-																		recordstr = recordstr
-																				+ "'"+$(
-																						this)
-																						.val()+"'";
+																		recordstr = recordstr+ "'"+$(this).val()+"'";
 																	}
 
 																	i++;
@@ -248,7 +175,7 @@ $(document).ready(function() {
 													data : {
 														"recordstr" : recordstr
 													},
-													url : 'delWorkinfo.do',
+													url : 'delPersoninfo.do',
 													async : true,
 													type : "POST",
 													dataType : "json",
@@ -283,44 +210,35 @@ $(document).ready(function() {
 							$(document).on("click", "#updateDetail", function() {	
 								
 								index = $(this).attr("value");
-								$("#Pid").val(obj[index].pid); 
-								$("#Gid").val(obj[index].gid); 
-								$("#ProjectName").val(obj[index].project_name);
-								$("#WorkCategory0").val(obj[index].wid);
-								$("#Expression").val(obj[index].expression);
-								$("#BestWork").val(obj[index].best_work);
-								$("#ProjectIntroduce").val(obj[index].project_introduce);
-								
+								$("#Id").val(obj[index].id); 
+								$("#ProjectName").val(obj[index].pid); 
+								$("#StuName").val(obj[index].sid);
+								$("#Participants").val(obj[index].participants);
+								$("#Header").val(obj[index].header);
 								$("#edit").modal('show');
 							});
 							$("#saverun").click(function(){
-													if ($("#Gid").val() == "") {
+													if ($("#ProjectName").val() == "") {
 														bootbox.alert({
-															message : "所属组别不能为空",
+															message : "项目作品不能为空",
 															size : 'small'
 														});
 														return;
-													} else if ($("#ProjectName").val() == "") {
+													} else if ($("#StuName").val() == "") {
 														bootbox.alert({
-															message : "项目名称不能为空",
+															message : "学生名称不能为空",
 															size : 'small'
 														});
 														return;
-													} else if ($("#WorkCategory0").val() == "") {
-														bootbox.alert({
-															message : "作品类别不能为空",
-															size : 'small'
-														});
-														return;
-													} else if ($("#BestWork").val() == "") {
+													} else if ($("#Participants").val() == "") {
 														bootbox.alert({
 															message : "是否优秀不能为空",
 															size : 'small'
 														});
 														return;
-													}else if ($("#ProjectIntroduce").val() == "") {
+													}else if ($("#Header").val() == "") {
 														bootbox.alert({
-															message : "项目介绍不能为空",
+															message : "是否为负责人不能为空",
 															size : 'small'
 														});
 														return;
@@ -345,7 +263,7 @@ $(document).ready(function() {
 														},
 													callback: function (result) {
 															if(result){
-																$("#workEditForm").submit();
+																$("#personEditForm").submit();
 																}
 															}
 														});

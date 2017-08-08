@@ -20,7 +20,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
-	 <link rel="stylesheet" href="../css/employmentManage.css"> 
+	<link rel="stylesheet" href="../css/employmentManage.css">
+	<link rel="stylesheet" href="../css/practicebaseapply.css">
   </head>
   
   <body>
@@ -88,7 +89,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
 										<li><a
 											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
-
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -99,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 										<li><a
 											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
-
+										
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -151,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="employmentManage.jsp">就业信息管理</a></li>
+							<li><a href="projectPersonnel.jsp">作品人员管理</a></li>
 						</ol>
 					</div>
 					
@@ -161,7 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-lg-12">
 						<form action="" method="post" enctype="multipart/form-data"
 							name="formApplyInfo" id="formApplyInfo">
-							<table id="employmentManage" class="cell-border" cellspacing="0"
+							<table id="projectPersonnel" class="cell-border" cellspacing="0"
 								width="100%">
 								<thead>
 									<tr bgcolor="#ECF1F5">
@@ -175,12 +175,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</tr>
 									<tr>
 										<th>选择</th>
+										<th>项目作品</th>
 										<th>学生编号</th>
-										<th>所在公司</th>
-										<th>年薪</th>
-										<th>从事工作</th>
-										<th>毕业年份</th>
-										<th>是否优秀</th>
+										<th>参与人员</th>
+										<th>是否是负责人</th>
 										<th>操作</th>
 									</tr>
 								</thead>
@@ -216,14 +214,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</button>
 					<div id="closebas" class="glyphicon glyphicon-remove closeModal"
 				data-dismiss="modal"></div>
-					<h4 class="modal-title text-center" id="myModalLabel">增加就业信息</h4>
+					<h4 class="modal-title text-center" id="myModalLabel">增加项目人员信息</h4>
 				</div>
 				
 				<div class="modal-body table-responsive" id="modalbody">
 					<div class="row" style="margin-right:0px;">
 						<div class="col-md-12">
-							<form action="increaseEmpInfo.do" method="post" id="myForm"
+							<form action="increasePersonInfo.do" method="post" id="myForm"
 						enctype="multipart/form-data" class="form-horizontal" role="form">
+								 
+								<div class="form-group">
+								<input type="hidden" value="<%=request.getAttribute("flag")%>" id="proname0" />
+									<label class="col-md-3 control-label">项目作品<span
+										class="setTag">*</span></label>
+									<div class="col-md-6">
+										<input type="text" class="form-control" id="Pid"
+											name="proName" placeholder="">
+									</div>
+								</div> 
 								<div class="form-group">
 									<label class="col-md-3 control-label">学生编号<span
 									class="setTag">*</span></label>
@@ -232,49 +240,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											name="stuName" placeholder="">
 										</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">所在公司<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="company"
-											name="companyName" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">年薪<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="salary"
-											name="wage" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">从事工作<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="workin"
-											name="work" placeholder="">
-										</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">毕业年份<span
-									class="setTag">*</span></label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="graduation_year"
-											name="graduateYear" placeholder="">
-										</div>
-								</div>
 								
 								<div class="form-group">
-									<label class="col-md-3 control-label">是否优秀<span
+									<label class="col-md-3 control-label">参与人员<span
 										class="setTag">*</span></label>
 									<div class="col-md-6">
-										<select class="form-control" id="excellence0" name="exc">
-											<option id="excellence0" value="是" >是</option>
-											<option id="excellence1" value="否" >否</option>
+										<input type="text" class="form-control" id="participants"
+											name="participants" placeholder="">
+									</div>
+								</div> 
+								
+								<div class="form-group">
+									<label class="col-md-3 control-label">是否是负责人<span
+										class="setTag">*</span></label>
+									<div class="col-md-6">
+										<select class="form-control" id="header" name="header">
+											<option id="header0" value="是" >是</option>
+											<option id="header1" value="否" >否</option>
 										</select>
 									</div>
 								</div> 
+								
 							</form>
 						</div>
 					</div>
@@ -294,7 +280,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div> 
 	
 	<!--单个删除确认对话框-->
-				<div class="modal fade" id="deleteOneModal" tabindex="-1"
+				<div class="modal fade" id="deleteModal" tabindex="-1"
 					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<!-- data-backdrop="static" 禁止点击弹框后面内容 -->
 					<form class="form-horizontal" role="form">
@@ -335,39 +321,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updateEmpInfo.do" method="post" class="form-horizontal"
-										role="form" id="employEditForm">
+									<form action="updatePersonInfo.do" method="post" class="form-horizontal"
+										role="form" id="personEditForm">
 										<table class="table" style="border:none !important;">
 											<tr>
-												<td>学生编号:</td>
+											<input type="text" class="form-control" id="Id"
+											name="Id" style="display:none"/>
+												<td>项目作品:</td>
 												<td><input type="text" class="form-control"
-													id="Sid" name="Sid" readonly="readonly"/></td>
-											</tr>
-											<tr>
-												<td>所在公司:</td>
-												<td><input type="text" class="form-control"
-													id="Company" name="Company"  />
+													id="ProjectName" name="ProjectName" readonly="readonly"  />
 													</td>
 											</tr>
 											<tr>
-												<td>年薪:</td>
-												<td><input type="text" class="form-control" id="Salary" name="Salary"
-													/><span id="display1" style="color:#f00;"></span></td>
+												<td>学生编号:</td>
+												<td>
+												<input type="text" class="form-control"
+													id="StuName" name="StuName" readonly="readonly" />
+													</td>
 											</tr>
 											<tr>
-												<td>从事工作：</td>
-												<td><input type="text" class="form-control" id="Workin" name="Workin"
-													/><span id="display1" style="color:#f00;"></span></td>
+												<td>参与人员:</td>
+												<td>
+												<textarea class="form-control" rows="3" id="Participants" name="Participants">
+												</textarea>
+													</td>
 											</tr>
 											<tr>
-												<td>毕业年份：</td>
-												<td><input type="text" class="form-control" id="Graduation_year" name="Graduation_year"
-													/><span id="display1" style="color:#f00;"></span></td>
-											</tr>
-											<tr>
-												<td>是否优秀：</td>
-												<td><input type="text" class="form-control" id="Excellence" name="Excellence"
-													/><span id="display1" style="color:#f00;"></span></td>
+												<td>是否为负责人：</td>
+												<td >
+													<select class="form-control" id="Header" name="Header">
+															<option id="header0"  value="">请选择</option>
+															<option id="header1" value="是" >是</option>
+															<option id="header2" value="否" >否</option>
+													</select>
+												</td>
 											</tr>
 											
 										</table>
@@ -392,9 +379,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--datatable javascript-->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/myNeed/employmentManage.js"></script>
+	<script src="../js/myNeed/projectPersonnel.js"></script>
 	<script src="../js/jquery.dataTables.min.js"></script>	
 	<script src="../js/bootbox.min.js"></script>
 	<script src="../js/kg.js"></script>
+		<script type="text/javascript">
+		var flag = document.getElementById('proname0').value;
+		if (flag == "success" ) {
+			bootbox.alert({
+				message : "操作成功",
+				size : 'small'
+			});
+		} else if (flag == "fail") {
+			bootbox.alert({
+				message : "操作失败",
+				size : 'small'
+			});
+		}
+	</script>
 </body>
 </html>

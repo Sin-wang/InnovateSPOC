@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+.jianju{
+	margin-top:40px;}
+#lastxg button{
+	float:right;
+	margin-left:10px;}
+#preview{
+	width:120px;
+	height:120px;
+	border:1px solid #000;
+	border-radius:60px;
+	overflow:hidden;
+}
+#imghead {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+}
+
+

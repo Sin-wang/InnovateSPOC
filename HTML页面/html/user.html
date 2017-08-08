@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+  </head>
+  <body>
+    
+
+
+
+	<div class="container-fluid content">
+    	<div class="row">
+			<div class="main " style="min-height: 584px;">					
+					<!-- 主面板内容 -->
+					<div class="row form">
+                    	<form role="form" id="userform">
+							<div class="col-md-6  col-md-offset-2 form-group xgarea form-horizontal">
+                              <div class="form-group jianju text-left">
+                                <label for="inputEmail3" class="col-sm-2 control-label">姓  名</label>
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group jianju">
+                                <label for="inputEmail3" class="col-sm-2 control-label">联系电话</label>
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group jianju">
+                                <label for="inputEmail3" class="col-sm-2 control-label">密码修改</label>
+                                <div class="col-sm-8">
+                                  <input type="password" class="form-control" id="possword">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group jianju">
+                                <label for="inputEmail3" class="col-sm-2 control-label">确认密码</label>
+                                <div class="col-sm-8">
+                                  <input type="password" class="form-control" id="repossword" onBlur="password()">
+                                </div>
+                              </div>
+                              
+                              
+                              
+                              <div class="form-group jianju" >
+                                <div class="col-sm-offset-5 col-sm-5" id="lastxg">
+                                   <button type="submit" class="btn btn-success" id="submit">确认修改</button>
+                                  <button type="reset" class="btn btn-danger">重置</button>
+                                </div>
+                              </div>
+                            
+						</div>
+                        
+                        <div class="col-md-3">
+                        	<div class="form-group">
+                                <div class="col-sm-10">
+                                  <div id="preview">
+    								<img id="imghead" class="img-circle bk-img-60" width="100%" height="auto" border="0" src="../images/big.jpg">
+								  </div>
+                                  <div style="margin:20px 18px;">
+                                  <label class="btn btn-primary" for="file" >浏览头像</label>
+								  <form><input type="file" onchange="previewImage(this)" id="file" style="position:absolute;clip:rect(0 0 0 0);"></form>                           
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        </form>
+					</div>
+				</div><!-- End Sidebar-->                 
+                
+                 
+            
+        </div><!--row end-->
+    </div>
+	<div class="clearfix"></div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/user.js"></script>
+  </body>
+</html>

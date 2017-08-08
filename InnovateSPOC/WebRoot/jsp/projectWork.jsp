@@ -82,8 +82,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">学生简历管理</span></a></li>
-
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -92,7 +97,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
-
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
+										
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -238,6 +245,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<input type="text" class="form-control" id="project_name"
 											name="projectName" placeholder="">
 										</div>
+										<input type="hidden" value="<%=request.getAttribute("flag")%>" id="projectname0" />
 								</div>
 								
 								<div class="form-group">
@@ -363,6 +371,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										role="form" id="workEditForm">
 										<table class="table" style="border:none !important;">
 											<tr>
+												<input type="text" class="form-control" id="Pid"
+										name="Pid" style="display:none"/>
 												<td>所属组别: </td>
 												<td>
 												<select class="form-control" id="Gid" name="Gid">
@@ -456,5 +466,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/jquery.dataTables.min.js"></script>	
 	<script src="../js/bootbox.min.js"></script>
 	<script src="../js/kg.js"></script>
+	<script type="text/javascript">
+		var flag = document.getElementById('projectname0').value;
+		if (flag == "success" ) {
+			bootbox.alert({
+				message : "操作成功",
+				size : 'small'
+			});
+		} else if (flag == "fail") {
+			bootbox.alert({
+				message : "操作失败",
+				size : 'small'
+			});
+		}
+	</script>
 </body>
 </html>

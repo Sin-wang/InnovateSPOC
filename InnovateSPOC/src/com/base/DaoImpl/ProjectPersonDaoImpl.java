@@ -15,9 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
-import com.base.Dao.ProjectWorkDao;
-import com.base.Po.project_work;
-import com.base.Po.workList;
+import com.base.Dao.ProjectPersonDao;
+import com.base.Po.personnelList;
+import com.base.Po.project_personnel;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
 
@@ -26,18 +26,18 @@ import com.base.utils.SqlConnectionUtils;
  *
  */
 
-@Repository("ProjectWorkDao")
+@Repository("ProjectPersonDao")
 
-public class ProjectWorkDaoImpl implements ProjectWorkDao {
+public class ProjectPersonDaoImpl implements ProjectPersonDao {
 	
 	@Autowired
     private SessionFactory sessionFactory;
 	
 	@Override
-	public workList projectwork(int pageindex, int size,
+	public personnelList projectPerson(Integer pageindex, Integer size,
 			String columnName, String orderDir, String searchValue) {
-		workList  wl = new workList();
-		List<project_work> list = new ArrayList<project_work>();
+		personnelList  pl = new personnelList();
+		List<project_personnel> list = new ArrayList<project_personnel>();
 		int recordsTotal = 0;
 		Connection conn = null;
 		CallableStatement sp = null;
@@ -46,7 +46,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 					    sessionFactory).getConnection();
 			 sp = (CallableStatement) conn
-					    .prepareCall("{CALL innovatespoc.query_ProjectWork(?,?,?,?,?,?)}");
+					    .prepareCall("{CALL innovatespoc.query_ProjectPersonnel(?,?,?,?,?,?)}");
 			 
 			 	sp.setInt(1, size);
 			    sp.setInt(2, pageindex); 
@@ -59,16 +59,12 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 			    rs = sp.getResultSet();
 			    
 			    while (rs.next()) {
-			    project_work ch = new project_work();
-			    ch.setPid(rs.getInt("pid"));
-			    ch.setGid(rs.getString("gname"));
-			    ch.setProject_name(rs.getString("project_name"));
-			    ch.setProject_introduce(rs.getString("project_introduce"));
-			    ch.setProject_address(rs.getString("project_address"));
-			    ch.setPhoto_address(rs.getString("photo_address"));
-			    ch.setWid(rs.getString("work_name"));
-			    ch.setExpression(rs.getString("expression"));
-			    ch.setBest_work(rs.getString("best_work"));
+			    project_personnel ch = new project_personnel();
+			    ch.setId(rs.getInt("id"));
+			    ch.setPid(rs.getString("project_name"));
+			    ch.setSid(rs.getString("sname"));
+			    ch.setParticipants(rs.getString("participants"));
+			    ch.setHeader(rs.getString("header"));
 			    list.add(ch);
 			    }
 		} catch (SQLException e) {
@@ -77,16 +73,14 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		} finally {
 		    SqlConnectionUtils.free(conn, sp, rs);
 		}
-		 wl.setRecordsTotal(recordsTotal);
-		 wl.setData(list);
-		return wl;
+		 pl.setRecordsTotal(recordsTotal);
+		 pl.setData(list);
+		return pl;
 	}
 
 	@Override
-	public int increaseWorkInfo(String groupName, String projectName,
-			String projectIntroduce, String projectAddress,
-			String photoAddress, String workCategory, String express,
-			String bestWork) {
+	public int increasePersonInfo(String proName, String stuName,
+			String participants, String header) {
 		// TODO Auto-generated method stub
 		int flag=0;
 		Connection conn = null;
@@ -96,17 +90,14 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-			    .prepareCall("{call innovatespoc.check_ProjectWork(?,?,?,?,?,?,?,?,?)}");//待写
-		    sp.setString(1, groupName);
-			sp.setString(2, projectName);
-			sp.setString(3, projectIntroduce);
-			sp.setString(4, projectAddress);
-			sp.setString(5, photoAddress);
-			sp.setString(6, workCategory);
-			sp.setString(7, express);	
-			sp.setString(8, bestWork);	
+			    .prepareCall("{call innovatespoc.check_ProjectPersonnel(?,?,?,?,?)}");//待写
+		    sp.setString(1, proName);
+			
+			sp.setString(2, participants);
+			sp.setString(3, header);
+			sp.setString(4, stuName);
 		    sp.execute();
-		    flag=sp.getInt(9);	 
+		    flag=sp.getInt(5);	 
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
@@ -129,7 +120,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-			    .prepareCall("{call innovatespoc.delete_ProjectWork(?,?)}");//待写
+			    .prepareCall("{call innovatespoc.delete_ProjectPersonnel(?,?)}");//待写
 		    sp.setString(1, str);
 		    sp.execute();
 		    flag=sp.getInt(2);
@@ -141,40 +132,32 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		} finally {
 		    SqlConnectionUtils.free(conn, sp, rs);
 		}
-		return message;
-
-	    }
+	return message;
+	}
 
 	@Override
-	public String updateWorkInfo(int pid,String gid, String projectName,
-			String workCategory, String expression, String bestWork,
-			String projectIntroduce) {
+	public String updatePersonInfo(int id, String projectName, String stuName,
+			String participants, String header) {
 		// TODO Auto-generated method stub
 
 		int flag;
-		//System.out.println(excellence+"aaaa");
-		//System.out.println(sid+"bbbb");
-		
+		System.out.println(id+"||"+projectName+"||"+stuName+"||"+participants+"||"+header);
 		String message=null;
 		Connection conn = null;
 		CallableStatement sp = null;
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_ProjectWork(?,?,?,?,?,?,?,?)}");//待写
-		    sp.setInt(1, pid);
-		    sp.setString(2, gid);
-		    sp.setString(3, projectName);
-		    sp.setString(4, projectIntroduce);
-		    sp.setString(5, workCategory);
-		    sp.setString(6, expression);
-		    sp.setString(7, bestWork);
-		    
-		    
+		    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_ProjectPersonnel(?,?,?,?,?,?)}");//待写
+		    sp.setInt(1, id);
+		    sp.setString(2, projectName);
+		    sp.setString(3, participants);
+		    sp.setString(4, header);
+		    sp.setString(5, stuName);
 		    sp.execute();
-		    flag=sp.getInt(8);
-		   System.out.println(flag);
+		    flag=sp.getInt(6);
 		    message=BaseUtils.getException(flag);
+		    System.out.println(message);
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
@@ -182,7 +165,10 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		    SqlConnectionUtils.free(conn, sp, null);
 		}
 		return message;
+		
 	}
 
 
+	
+	
 }

@@ -36,7 +36,7 @@ public class ProjectWorkController {
 	  
 	 //获取数据信息
 	@RequestMapping("/sendWorkinfo.do")
-	 public String sendEmployinfo(HttpServletRequest request,
+	 public String sendWorkinfo(HttpServletRequest request,
 			    HttpServletResponse response, ModelMap map) {
 					
 		Integer size = Integer.parseInt(request.getParameter("length"));
@@ -80,7 +80,7 @@ public class ProjectWorkController {
 	
 	// 增加就业信息记录
     @RequestMapping("/increaseWorkInfo.do")
-    public String increaseEmpInfo(HttpServletRequest request,
+    public String increaseWorkInfo(HttpServletRequest request,
     	    HttpServletResponse response, ModelMap map) {
     	
     		String groupName = request.getParameter("groupName");
@@ -188,7 +188,13 @@ public class ProjectWorkController {
     		}
     		//System.out.println(groupName+"||"+projectName+"||"+projectIntroduce+"||"+projectAddress+"||"+photoAddress+"||"+workCategory+"||"+express+"||"+bestWork);
     		int message=ProjectWorkService.increaseWorkInfo(groupName,projectName,projectIntroduce,projectAddress,photoAddress,workCategory,express,bestWork);
-    		request.setAttribute("flag", message);
+    		String flag = null;
+    		if(message == 500 ){
+    			flag = "fail";
+    		}else{
+    			flag = "success";
+    		}
+    		request.setAttribute("flag", flag);
     		response.setContentType("text/html;charset=UTF-8");
 
     	return "projectWork";
@@ -225,12 +231,12 @@ public class ProjectWorkController {
     @RequestMapping("/updateWorkInfo.do")
     public String updateWorkInfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {
-	String Gid = request.getParameter("Gid");
+	int Pid =Integer.parseInt(request.getParameter("Pid"));
+	String Gid=request.getParameter("Gid");
 	String ProjectName=request.getParameter("ProjectName");
 	if(ProjectName.equals("")){
 		ProjectName=null;
 	}
-	System.out.println(ProjectName+"ProjectName");
 	String WorkCategory=  request.getParameter("WorkCategory");
 	if(WorkCategory.equals("")){
 		WorkCategory=null;
@@ -247,8 +253,8 @@ public class ProjectWorkController {
 	if(ProjectIntroduce.equals("")){
 		ProjectIntroduce=null;
 	}
-	System.out.println(Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);
-	String message = ProjectWorkService.updateWorkInfo(Gid,ProjectName,WorkCategory,Expression,BestWork,ProjectIntroduce);
+	System.out.println(Pid+"||"+Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);
+	String message = ProjectWorkService.updateWorkInfo(Pid,Gid,ProjectName,WorkCategory,Expression,BestWork,ProjectIntroduce);
 	if(message=="success"){
 	    message="操作成功";
 	}else if(message=="fail"){

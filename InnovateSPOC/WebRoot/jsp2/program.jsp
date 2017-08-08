@@ -232,170 +232,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="carousel_menber" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="team_list">
-						<li data-target="#carousel_menber" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_menber" data-slide-to="1"></li>
+						
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-							<div class="item active">
-								<div class="row">
-								  <div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1">
-									<div class="thumbnail" data-toggle="modal" data-target="#resume_myModal">
-									  <img src="../images/program/member1.png" alt="...">
-									  <div class="caption">
-										<h4>java工程师　李彩</h4>
-										<p>性格开朗、稳重、充满活力，有良好的社交能力，担任项目开发的组长，具备强烈的责任心、对外沟通和团队协作能力。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-sm-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member2.png" alt="...">
-									  <div class="caption">
-										<h4>java工程师　潘葛</h4>
-										<p>喜欢新技术，性格开朗、生活规律、吃苦耐劳、做事认真讲求方法，有较强的沟通协调能力及团队协作精神。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-sm-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member3.png" alt="...">
-									  <div class="caption">
-										<h4>数据库工程师　宋超</h4>
-										<p>担任思博客学生团队队长和副班长，善于处理各种人际关系。做事情始终坚持有始有终愿意接受新的知识，有较强的的自学能力。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-sm-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member4.png" alt="...">
-									  <div class="caption">
-										<h4>前端工程师　赵勇</h4>
-										<p>待人热情、真诚，时间观念强。有良好的社交能力，善于处理各种人际关系，虚心求教能迅速的适应各种环境。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-sm-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member5.png" alt="...">
-									  <div class="caption">
-										<h4>游戏工程师　张子晔</h4>
-										<p>具有独立思考能力对于自己感兴趣的事情非常专注、认真，能在企业中找到自己合适的位置，并融入其中，为企业创造价值。</p>
-									  </div>
-									</div>
-								  </div>
-								</div>
-								<!--<div class="team_item">
-									<img src="../images/program/member1.png">
-									<h6>java工程师　李彩</h6>
-									<p>性格开朗、稳重、充满活力，有良好的社交能力，担任项目开发的组长，具备强烈的责任心、对外沟通和团队协作能力。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member2.png">
-									<h6>java工程师　潘葛</h6>
-									<p>喜欢新技术，性格开朗、生活规律、吃苦耐劳、做事认真讲求方法，有较强的沟通协调能力及团队协作精神。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member3.png">
-									<h6>数据库工程师　宋超</h6>
-									<p>担任思博客学生团队队长和副班长，善于处理各种人际关系。做事情始终坚持有始有终愿意接受新的知识，有较强的的自学能力。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member4.png">
-									<h6>前端工程师　赵勇</h6>
-									<p>待人热情、真诚，时间观念强。有良好的社交能力，善于处理各种人际关系，虚心求教能迅速的适应各种环境。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member5.png">
-									<h6>游戏工程师　张子晔</h6>
-									<p>具有独立思考能力对于自己感兴趣的事情非常专注、认真，能在企业中找到自己合适的位置，并融入其中，为企业创造价值。</p>
-								</div>-->
-							</div>
-
-							<div class="item">
-								<div class="row">
-								  <div class="col-xs-2 col-md-2 col-md-offset-1 col-xs-offset-1">
-									<div class="thumbnail" data-toggle="modal" data-target="#resume_myModal">
-									  <img src="../images/program/member1.png" alt="...">
-									  <div class="caption">
-										<h4>java工程师　李彩</h4>
-										<p>性格开朗、稳重、充满活力，有良好的社交能力，担任项目开发的组长，具备强烈的责任心、对外沟通和团队协作能力。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-xs-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member2.png" alt="...">
-									  <div class="caption">
-										<h4>java工程师　潘葛</h4>
-										<p>喜欢新技术，性格开朗、生活规律、吃苦耐劳、做事认真讲求方法，有较强的沟通协调能力及团队协作精神。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-xs-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member3.png" alt="...">
-									  <div class="caption">
-										<h4>数据库工程师　宋超</h4>
-										<p>担任思博客学生团队队长和副班长，善于处理各种人际关系。做事情始终坚持有始有终愿意接受新的知识，有较强的的自学能力。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-xs-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member4.png" alt="...">
-									  <div class="caption">
-										<h4>前端工程师　赵勇</h4>
-										<p>待人热情、真诚，时间观念强。有良好的社交能力，善于处理各种人际关系，虚心求教能迅速的适应各种环境。</p>
-									  </div>
-									</div>
-								  </div>
-								  
-								  <div class="col-xs-2 col-md-2">
-									<div class="thumbnail">
-									  <img src="../images/program/member5.png" alt="...">
-									  <div class="caption">
-										<h4>游戏工程师　张子晔</h4>
-										<p>具有独立思考能力对于自己感兴趣的事情非常专注、认真，能在企业中找到自己合适的位置，并融入其中，为企业创造价值。</p>
-									  </div>
-									</div>
-								  </div>
-								</div>
-								<!--<div class="team_item">
-									<img src="../images/program/member1.png">
-									<h6>java工程师　李彩</h6>
-									<p>性格开朗、稳重、充满活力，有良好的社交能力，担任项目开发的组长，具备强烈的责任心、对外沟通和团队协作能力。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member2.png">
-									<h6>java工程师　潘葛</h6>
-									<p>喜欢新技术，性格开朗、生活规律、吃苦耐劳、做事认真讲求方法，有较强的沟通协调能力及团队协作精神。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member3.png">
-									<h6>数据库工程师　宋超</h6>
-									<p>担任思博客学生团队队长和副班长，善于处理各种人际关系。做事情始终坚持有始有终愿意接受新的知识，有较强的的自学能力。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member4.png">
-									<h6>前端工程师　赵勇</h6>
-									<p>待人热情、真诚，时间观念强。有良好的社交能力，善于处理各种人际关系，虚心求教能迅速的适应各种环境。</p>
-								</div>
-								<div class="team_item">
-									<img src="../images/program/member5.png">
-									<h6>游戏工程师　张子晔</h6>
-									<p>具有独立思考能力对于自己感兴趣的事情非常专注、认真，能在企业中找到自己合适的位置，并融入其中，为企业创造价值。</p>
-								</div>-->
-							</div>
-				  	</div>
+					  <div class="carousel-inner" id="show_teamMumber">
+														
+				  	 </div>
 				</div>
 			</div>
 		</div>
@@ -408,26 +251,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="carousel_work" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="work_list">
-						<li data-target="#carousel_work" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_work" data-slide-to="1"></li>
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					  
-							<div class="item active">
-								<div class="work_item">
-									<img src="../images/program/work1.png">
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="work_item">
-									<img src="../images/program/work1.png">
-								</div>
-							</div>
-							
-				  	</div>
+					  <div class="carousel-inner" id="show_work">							
+				  	  </div>
 			</div>
 		</div>
 		
@@ -442,74 +270,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="carousel_employee" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="employee_list">
-						<li data-target="#carousel_employee" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_employee" data-slide-to="1"></li>
+					
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					  
-							<div class="item active">
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people1.png">
-									</div>
-									<h3 class="employee_h3">朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people2.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people3.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people4.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people1.png">
-									</div>
-									<h3 class="employee_h3">朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people2.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people3.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people4.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>
+					  <div class="carousel-inner" id="show_employee">
+					  </div>
 							
 				  	</div>
 			</div>
@@ -520,50 +286,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="teacher_title">
 				<img src="../images/program/title3.png">
 			</div>
-			<h5>学院多个重点教师组合授课。每位教师只讲授自己擅长的领域，让成员博采众家之长。指导教
-师还会传授国际新技术和设计理念，让成员刚加入SPOC就具备行业视野。</h5>
+			<h5 class="text-center">
+					学院多个重点教师组合授课。每位教师只讲授自己擅长的领域，让成员博采众家之长。<br><br>
+					指导教师还会传授国际新技术和设计理念，让成员刚加入SPOC就具备行业视野。
+			</h5>
 		
 			<div id="carousel_teacher" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="teacher_list">
-						<li data-target="#carousel_teacher" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_teacher" data-slide-to="1"></li>
+						
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					  
-							<div class="item active">
-								<div class="teacher_item">
-									<div class="teacher_left">
-										<img src="../images/program/teacher.png">
-									</div>
-									<div class="teacher_bg">
-										<div class="teacher_right">
-											<h3 class="text-left">罗旭</h3>
-											<p>湖南农业大学 互联网+移动应用创新班</p>
-											<p class="p2">2我是一个对理想有着执着追求的人，坚信是金子总会发光。大学毕业后的工作，让我在文案策划方面有了很大的提高，文笔流畅，熟悉传媒工作、广告学制作与设计等工作方面。为人热情，活泼，大方， 本人好学上进，诚信、敬业、责任心强，有强烈的团体精神，对工作认真积极，严谨负责。</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="teacher_item">
-									<div class="teacher_left">
-										<img src="../images/program/teacher.png">
-									</div>
-									<div class="teacher_bg">
-										<div class="teacher_right">
-											<h3 class="text-left">罗旭</h3>
-											<p>湖南农业大学 互联网+移动应用创新班</p>
-											<p class="p2">2我是一个对理想有着执着追求的人，坚信是金子总会发光。大学毕业后的工作，让我在文案策划方面有了很大的提高，文笔流畅，熟悉传媒工作、广告学制作与设计等工作方面。为人热情，活泼，大方， 本人好学上进，诚信、敬业、责任心强，有强烈的团体精神，对工作认真积极，严谨负责。</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-				  	</div>
+					  <div class="carousel-inner" id="show_teacher">
+					  														
+				  	  </div>
 			</div>
 		</div>
 		
@@ -1071,4 +808,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</body>	
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../js/bootbox.min.js" type="text/javascript"></script>
+	<script src="../js/program.js" type="text/javascript"></script>
 </html>

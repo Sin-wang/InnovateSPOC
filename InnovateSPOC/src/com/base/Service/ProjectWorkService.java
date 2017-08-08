@@ -22,7 +22,7 @@ public interface ProjectWorkService {
 
 	public String delInfo(String str);
 
-	public String updateWorkInfo(String gid, String projectName,
+	public String updateWorkInfo(int pid,String gid, String projectName,
 			String workCategory, String expression, String bestWork,
 			String projectIntroduce);
 

@@ -1,6 +1,9 @@
 package com.base.Dao;
 
+import java.util.List;
+
 import com.base.Po.educationList;
+import com.base.Po.education_experience;
 
 public interface EducationExperienceDao {
 
@@ -13,4 +16,6 @@ public interface EducationExperienceDao {
 	public String delEducation(String str);
 	
 	public void updateEducation(int id,String begin,String end, String description);
+	
+	public List<education_experience> get_education_experience(String sid);
 }

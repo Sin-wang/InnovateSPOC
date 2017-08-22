@@ -2,6 +2,7 @@ package com.base.Service;
 
 import java.util.List;
 
+import com.base.Po.skill_student;
 import com.base.Po.skill_studentList;
 import com.base.Po.skills;
 import com.base.Po.students;
@@ -20,4 +21,6 @@ public interface SkillStudentService {
 	public void updateSkill(int id,String exp);
 
 	public List<students> getsname();
+	
+	public List<skill_student> get_skill_student(String sid);
 }

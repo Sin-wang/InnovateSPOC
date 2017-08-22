@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Repository;
 import com.base.Dao.EducationExperienceDao;
 import com.base.Po.educationList;
 import com.base.Po.education_experience;
+import com.base.Po.students;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
 
@@ -147,5 +150,25 @@ public class EducationExperienceDaoImple implements EducationExperienceDao{
 		}finally{
 			SqlConnectionUtils.free(conn, pstmt, rs);
 		}
+	}
+
+	//获得教育经历
+	@Override
+	public List<education_experience> get_education_experience(String sid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		List<education_experience> list = null;
+		String hql ="from education_experience where sid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, sid);
+	    	 list=query.list();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
 	}
 }

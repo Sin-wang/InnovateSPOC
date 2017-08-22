@@ -1,6 +1,9 @@
 package com.base.Service;
 
+import java.util.List;
+
 import com.base.Po.educationList;
+import com.base.Po.education_experience;
 
 public interface EducationExperienceService {
 
@@ -14,4 +17,5 @@ public interface EducationExperienceService {
 	
 	public void updateEducation(int id,String begin,String end, String description);
 
+	public List<education_experience> get_education_experience(String sid);
 }

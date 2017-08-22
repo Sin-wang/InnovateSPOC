@@ -229,47 +229,44 @@ $("#ck1").on("click", function () {
 $("#save").click(function(){
 		if(!tag){		
 			 bootbox.alert({
-					message : "该学生id已存在，请重新输入",
+					message : "该学生id不存在，请重新输入",
 					size : 'small'
 				});
 			 return;
 		}
-		if($("#studentId").val()==""){
+		if($("#deptSelectOne").val()==""){
 				bootbox.alert({
-				message : "请填写学生id",
+				message : "请填写学生名称",
 				size : 'small'
 			});	
 			return;
-		}else if($("#studentName").val()==""){
+		}else if($("#deptSelectOne1").val()==""){
 				bootbox.alert({
-				message : "请填写学生名称",
+				message : "请填写技能名",
 				size : 'small'
 				});	
 				return;
 		}					
-		else if($("#password").val()==""){
+		else if($("#exp1").val()==""){
 				bootbox.alert({
-				message : "请填写密码",
+				message : "请填写技能值",
 				size : 'small'
 				});	
 				return;
 		}
-		else if($("#Areason").val()==""){
-				bootbox.alert({
-				message : "请填写自我介绍",
-				size : 'small'
-				});	
-				return;
-		}/*
-			 * else if($("#file").val()==""){ bootbox.alert({ message :
-			 * "请填写专业名称", size : 'small' }); return; }
-			 */
 		
 		$("#applyaddform").submit();				
 });
 
 //修改
 $("#saverun").click(function(){
+	if($("#exp").val()==""){
+		bootbox.alert({
+		message : "请填写技能值",
+		size : 'small'
+		});	
+		return;
+	}
 	bootbox.confirm({
 		message: "是否确认修改",
 		buttons: {

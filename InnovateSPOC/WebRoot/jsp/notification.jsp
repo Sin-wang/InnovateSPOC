@@ -1,27 +1,28 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-	<meta charset="UTF-8">
-	<title>思博客实验室管理系统</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/teacher.css">
+<head>
+<meta charset="UTF-8">
+<title>湖南农业大学基地实习综合管理系统</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="renderer" content="webkit">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  </head>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
   
   <body>
 	<div class="navbar" role="navigation">
@@ -61,6 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="icon-copy" aria-hidden="true"></i><span>用户管理</span>
 								</a>
 									<ul class="nav nav-children">
+										<li><a href="user.jsp"><span class="text"></span>用户管理</a></li>
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
 										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
@@ -71,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">组别信息管理</span></a></li>
+											href="groupManage.jsp"><span class="text">组别信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -81,7 +83,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="studentResume.jsp"><span class="text">学生简历管理</span></a></li>
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 
 									</ul>
 								</li>
@@ -90,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">作品信息管理</span></a></li>
+											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -99,7 +107,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">就业信息管理</span></a></li>
+											href="employmentManage.jsp"><span class="text">就业信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -108,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">企业交流信息管理</span></a></li>
+											href="communication_company.jsp"><span class="text">企业交流信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -143,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">教师管理</a></li>
+							<li><a href="RepairManage.jsp">新闻发布</a></li>
 						</ol>
 					</div>
 					
@@ -163,20 +171,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="col-sm-6">
 											<select class="form-control" id="msglx_list">
 												<option value="1" selected="selected">通知公告</option>
-												<option value="2">系统消息</option>
-											</select>
-										</div>
-									</div>
-								</fieldset>
-								<fieldset>
-									<div class="form-group" id='part' style="display:none;">
-										<label for="#collage_list" class="col-sm-3 control-label">部门</label>
-										<div class="col-sm-6">
-											<select class="form-control" id="collage_list">
-												<option value="0">全部</option>
-												<c:forEach items='${applyDeptList}' var='applyDept'>
-													<option value=" ${applyDept.aid }">${applyDept.dept }</option>
-												</c:forEach>
 											</select>
 										</div>
 									</div>
@@ -201,8 +195,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-lg-12 form-group">
 						<div class="col-md-4" id="btns">
 							<button id="sendNotifitation" class="btn btn-default">发布通知</button>
-							<button id="sendMessage" class="btn btn-default"
-								style="display:none";>发布消息</button>
 							<button id="setContent" class="btn btn-default">清空内容</button>
 
 
@@ -213,26 +205,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="../js/jquery.min.js"></script>
-	<!--datatable javascript-->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/jquery.dataTables.min.js"></script>	
-	<script src="../js/kg.js"></script>
 	<script src="../js/bootbox.min.js"></script>
-	<script src="../js/teacher.js"></script>
-	<script type="text/javascript">
-		var flag = document.getElementById('baseapply').value;
-		if (flag == true) {
-			bootbox.alert({
-				message : "操作成功",
-				size : 'small'
-			});
-		} else if (flag == false) {
-			bootbox.alert({
-				message : "操作失败",
-				size : 'small'
-			});
-		}
-	</script>
+	<script src="../js/jquery.cokie.min.js"></script>
+	<script type="text/javascript" charset="utf-8"
+		src="../js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8"
+		src="../js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript" charset="utf-8"
+		src="../js/ueditor/lang/zh-cn/zh-cn.js"></script>
+	<script src="../js/jquery.cokie.min.js"></script>
+	<script src="../js/kg.js"></script>
+	<script type="text/javascript" src="../js/ueditor/myeditor.js"></script>
 </body>
 </html>

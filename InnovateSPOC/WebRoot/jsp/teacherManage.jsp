@@ -62,6 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="icon-copy" aria-hidden="true"></i><span>用户管理</span>
 								</a>
 									<ul class="nav nav-children">
+										<li><a href="user.jsp"><span class="text"></span>用户管理</a></li>
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
 										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
@@ -72,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">组别信息管理</span></a></li>
+											href="groupManage.jsp"><span class="text">组别信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -97,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">作品信息管理</span></a></li>
+											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -115,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">企业交流信息管理</span></a></li>
+											href="communication_company.jsp"><span class="text">企业交流信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -235,7 +236,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>个人简介 ：</td>
+												<td>个人简介 ：<span class="setTag">*</span></td>
 												<td><!-- <input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
 													/><span id="display1" style="color:#f00;"></span>
 													<input type="text" id="copyMname" hidden/> -->
@@ -278,17 +279,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
-										<td class="col-md-3 col-md-offset-2">教师id:</td>
+										<td class="col-md-3 col-md-offset-2">教师id:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="teacherId" id="teacherId" type="text" style="width:80%" class="form-control"/><span id="display1"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">教师姓名:</td>
+										<td class="col-md-3 col-md-offset-2">教师姓名:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="teacherName" id="teacherName" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">性别:</td>
+										<td class="col-md-3 col-md-offset-2">性别:<span class="setTag">*</span></td>
 										<td class="col-md-9" id="sex-style">
 											<label class="radio-inline">
 												<input id="sex" name="sex" type="radio" value="男" checked/>男
@@ -306,11 +307,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">密码:</td>
+										<td class="col-md-3 col-md-offset-2">密码:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="password" id="password" type="password" style="width:80%" class="form-control"/></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">自我介绍:</td>
+										<td class="col-md-3 col-md-offset-2">自我介绍:<span class="setTag">*</span></td>
 										<td class="col-md-9"><textarea class="form-control" id="Areason" name="Areason"></textarea></td>
 									</tr>
 									<%-- <tr>

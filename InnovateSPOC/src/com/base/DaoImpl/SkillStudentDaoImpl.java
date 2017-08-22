@@ -184,5 +184,24 @@ public class SkillStudentDaoImpl implements SkillStudentDao{
 		}
 		return list;
 	}
+
+	@Override
+	public List<skill_student> get_skill_student(String sid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		List<skill_student> list =null;
+		String hql ="from skill_student where sid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, sid);
+	    	 list=query.list();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
 	
 }

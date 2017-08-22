@@ -286,7 +286,7 @@ ul{
 	font-size: 18px;
 }
 .memberCreations{
-	width:1305px;
+	width:980px;
 	height:1000px;
 	margin: auto;
 	margin-top:12%;
@@ -294,14 +294,19 @@ ul{
 	}	
 .CreationPartOne{
 	float:left;
-	width:510px;	
-	margin-left:120px;
+	width:450px;	
 	}
+.CreationPartOne img{
+	width: 450px;
+}
 .CreationPartTwo{
 	float:left;
-	width:585px;
-	margin-left:16px;
+	width:510px;
+	margin-left:15px;
 	}
+.CreationPartTwo img{
+	width: 510px;
+}
 .PartOne{
 	margin-top:20px;	
 }
@@ -312,6 +317,9 @@ ul{
 	position:absolute;	
 	top:30px;
 	left:45px;	
+	}
+.creationIcon img{
+	width: 350px;
 	}
 .PartTwo{
 	margin-top:11px;	
@@ -361,7 +369,6 @@ ul{
 	}	
 #myCarousel2{
 	position:relative;
-	width:1200px;
 	margin:auto;
 	}
 #myCarousel2Ol{	
@@ -408,17 +415,11 @@ ul{
 	height:160px;
 	}
 .more{
-	margin-top:40px;
 	font-size:16px;
 	width:980px;
 	margin:auto;
 	margin-top:80px;
 	text-align:right;	
-	}
-.aboutTeacher{
-	width:100%;	
-	margin-top:5%;
-	text-align:center;
 	}
 
 .brief{	
@@ -426,57 +427,76 @@ ul{
 	text-align:left;
 	margin:auto;
 	margin-top:25px;
+	margin-bottom: 20px;
 	width:600px;
 	}
-#carouselTeacher{
-	width:1211px;
-	height:376px;
-	position:relative;
-	margin:auto;
-	margin-top:80px;
-	background:url(../images/3D/teacherDescription.png);
-	background-size: contain;
-	}
-#carouselTeacherOl{
-	position:absolute;
-	top:100%;
-	}
-.teacherPart{
-	width:1211px;
-	
-	margin:auto;
-	}
-.teacherPartOne{
-	width:480px;
-	height:359px;
+.teacher{
+	width: 980px;
+	margin: auto;
+	position: relative;
+}
+.teacher_title{
+	width: 313px;
+	height: 63px;
+	margin: auto;
+	margin-top: 10%;
+}
+.teacher_item{
+	width: 980px;
+}
+.teacher_left{
 	float:left;
-	}
-.teacherPartTwo{
-	margin:20px;
-	width:500px;
-	height:340px;
-	float:left;
-	}
-.teacherPartTwo h1{
-	font-size:24px;
-	color:#fff;
-	font-weight:200;
-	text-align:left;
-	}
-.teacherPartTwo h3{
-	font-size:18px;
-	font-weight:200;
-	color:#fff;	
-	text-align:left;
-	}	
-.teacherPartTwo p{
-	font-size:16px;
-	font-weight:200;
-	color:#fff;	
-	width:600px;	
-	margin-top:40px;
-	text-align:left;
-	}
+	height: 305px;
+	overflow: hidden;
+}
+.teacher_left img{
+	height: 305px;
+}
+.teacher_right{
+	color: #fff;
+	width: 635px;
+	float: left;
+	height: 305px;
+	background-color: rgba(236,67,61,0.9);
+}
+.teacher_right p{
+	margin-left: 20px;
+	font-size: 16px;
+	display:block;
+	padding-right: 20px;
+}
+.teacher_right h3{
+	margin-left: 20px;
+}
+.p2{
+	padding-top: 30px;
+}
+.teacher_bg{
+	background:url(../images/program/modal.png);
+	background-size: cover;
+	float: left;
+	height: 305px;
+	position: relative;
+}
+#teacher_list{
+	position: absolute;
+	top: 100%;
+}
+.teacher .carousel-indicators li{
+	width: 12px;
+	height: 12px;
+	background-color: #D1D1D1;
+	border: 0;
+	border-radius: 50%;
+	margin:20px 19px 0 0;
+	text-indent: 0;
+}
+.teacher .carousel-indicators .active{
+	background: #ec433d;
+}
+.teacher .carousel ol li{
+	*display: inline;
+}
 .enterprise{
 	width:100%;
 	height:700px;

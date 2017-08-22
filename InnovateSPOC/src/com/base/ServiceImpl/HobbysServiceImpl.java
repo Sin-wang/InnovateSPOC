@@ -1,10 +1,13 @@
 package com.base.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.HobbysDao;
 import com.base.Po.hobbyList;
+import com.base.Po.hobbys;
 import com.base.Service.HobbysService;
 
 @Service("HobbysService")
@@ -46,6 +49,13 @@ public class HobbysServiceImpl implements HobbysService{
 	public void updateHobby(int id, String begin, String end, String description) {
 		// TODO Auto-generated method stub
 		hobbysDao.updateHobby(id, begin, end, description);
+	}
+
+	@Override
+	public List<hobbys> get_hobbys(String sid) {
+		// TODO Auto-generated method stub
+		List<hobbys> list = hobbysDao.get_hobbys(sid);
+		return list;
 	}
 
 }

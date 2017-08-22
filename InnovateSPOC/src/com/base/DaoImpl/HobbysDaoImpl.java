@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
@@ -150,5 +152,24 @@ public class HobbysDaoImpl implements HobbysDao{
 		}finally{
 			SqlConnectionUtils.free(conn, pstmt, rs);
 		}
+	}
+
+	@Override
+	public List<hobbys> get_hobbys(String sid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		List<hobbys> list =null;
+		String hql ="from hobbys where sid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, sid);
+	    	 list=query.list();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
 	}
 }

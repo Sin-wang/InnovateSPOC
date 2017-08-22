@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.base.Po.students;
 import com.base.Po.teacherList;
 import com.base.Po.teachers;
 import com.base.Service.TeacherService;
@@ -140,5 +142,24 @@ public class TeachermanageController {
 	    e.printStackTrace();
 	}
 	return null;
+    }
+    
+    //获得教师
+    @RequestMapping("/getTeacher.do")
+    public String getTeacher(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<teachers> list = teacherService.getTeacher();
+		try {
+		    List list4 = new ArrayList();
+		    list4.add(list);
+		    JSONArray json = JSONArray.fromObject(list4);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
     }
 }

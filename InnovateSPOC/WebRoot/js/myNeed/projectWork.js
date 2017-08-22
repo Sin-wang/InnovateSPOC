@@ -284,13 +284,12 @@ $(document).ready(function() {
 								
 								index = $(this).attr("value");
 								$("#Pid").val(obj[index].pid); 
-								$("#Gid").val(obj[index].gid); 
+								$("#Gid").val(obj[index].gid);
 								$("#ProjectName").val(obj[index].project_name);
 								$("#WorkCategory0").val(obj[index].wid);
 								$("#Expression").val(obj[index].expression);
 								$("#BestWork").val(obj[index].best_work);
 								$("#ProjectIntroduce").val(obj[index].project_introduce);
-								
 								$("#edit").modal('show');
 							});
 							$("#saverun").click(function(){
@@ -350,4 +349,69 @@ $(document).ready(function() {
 															}
 														});
 							});
+							//获取作品类别
+							$.ajax({
+								type : 'POST',
+								dataType : 'json',		
+								url : 'getCategory.do',  
+								async : false,
+								cache : false,
+								error : function(request) {
+									bootbox.alert({
+										message : "请求异常1",
+										size : 'small'
+									});
+								},
+								success : function(data) {
+									for ( var i=0;i<data[0].length;i++) {				
+										$("#wid").after(
+												"<option value="+data[0][i].work_name+">"
+														+ data[0][i].work_name + "</option>");				
+										
+									}	
+									
+									for ( var i=0;i<data[0].length;i++) {				
+										$("#Wid1").after(
+												"<option value="+data[0][i].work_name+">"
+														+ data[0][i].work_name + "</option>");				
+										
+									}	
+								}
+
+							});
+							
+							//获取组别
+							$.ajax({
+								type : 'POST',
+								dataType : 'json',		
+								url : 'getGroup.do',  
+								async : false,
+								cache : false,
+								error : function(request) {
+									bootbox.alert({
+										message : "请求异常21",
+										size : 'small'
+									});
+								},
+								success : function(data) {
+									
+									for ( var i=0;i<data[0].length;i++) {				
+										$("#Gid1").after(
+												"<option value="+data[0][i].gname+">"
+														+ data[0][i].gname + "</option>");				
+										
+									}	
+									for ( var i=0;i<data[0].length;i++) {				
+										$("#gid").after(
+												"<option value="+data[0][i].gname+">"
+														+ data[0][i].gname + "</option>");				
+										
+									}
+									
+									
+									
+								}
+
+							});
+							
 });

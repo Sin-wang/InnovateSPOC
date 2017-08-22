@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">组别信息管理</span></a></li>
+											href="groupManage.jsp"><span class="text">组别信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -98,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">作品信息管理</span></a></li>
+											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -116,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">企业交流信息管理</span></a></li>
+											href="communication_company.jsp"><span class="text">企业交流信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -228,7 +228,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													id="username" name="username" readonly/></td>
 											</tr>
 											<tr>
-												<td>密码 ：</td>
+												<td>密码 ：<span class="setTag">*</span></td>
 												<td><input type="text" class="form-control"
 													id="password" name="password" />
 													</td>
@@ -268,17 +268,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
-										<td class="col-md-3 col-md-offset-2">ID:</td>
+										<td class="col-md-3 col-md-offset-2">ID:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="Id" id="Id" type="text" style="width:80%" class="form-control"/><span id="display1"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">用户名:</td>
+										<td class="col-md-3 col-md-offset-2">用户名:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="Username" id="Username" type="text" style="width:80%" class="form-control"/><span id="display1"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">密码:</td>
+										<td class="col-md-3 col-md-offset-2">密码:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="Password" id="Password" type="password" style="width:80%" class="form-control"/></td>
 									</tr>
 								</table>

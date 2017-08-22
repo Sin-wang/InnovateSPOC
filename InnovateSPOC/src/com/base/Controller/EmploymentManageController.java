@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.hibernate.hql.internal.ast.tree.IntoClause;
@@ -24,8 +25,10 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.base.Po.employList;
 import com.base.Po.employment;
+import com.base.Po.groups;
 import com.base.Po.studentList;
 import com.base.Po.students;
+import com.base.Po.teachers;
 import com.base.Service.EmploymentManageService;
  
 
@@ -171,5 +174,45 @@ public class EmploymentManageController {
 	}
 
 	return "employmentManage";
+    }
+    
+    //获得就业学员
+    @RequestMapping("/getEmploy.do")
+    public String getEmploy(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<employment> list = employmentmanageservice.getEmploy();
+		try {
+		    List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+  //获得企业招聘所需的就业学员信息
+    @RequestMapping("/getEmployeeAllInfo.do")
+    public String getEmployeeAllInfo(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<groups> list1 = employmentmanageservice.getGroup();
+    	List<employment> list2 = employmentmanageservice.getEmploy();
+		try {
+		    List listReturn = new ArrayList();
+		    listReturn.add(list1);
+		    listReturn.add(list2);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
     }
 }

@@ -1,6 +1,9 @@
 package com.base.Service;
 
+import java.util.List;
+
 import com.base.Po.teacherList;
+import com.base.Po.teachers;
 
 public interface TeacherService {
     /**
@@ -20,4 +23,6 @@ public interface TeacherService {
 	public String deleteTeacher(String str);
 
 	public void updateteacher(String tid, String tintroduce);
+
+	public List<teachers> getTeacher();
 }

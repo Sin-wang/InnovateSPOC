@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.SkillStudentDao;
+import com.base.Po.skill_student;
 import com.base.Po.skill_studentList;
 import com.base.Po.skills;
 import com.base.Po.students;
@@ -62,6 +63,13 @@ public class SkillStudentServiceImpl implements SkillStudentService{
 	public List<students> getsname() {
 		// TODO Auto-generated method stub
 		List<students> list = skillStudentdao.getsname();
+		return list;
+	}
+
+	@Override
+	public List<skill_student> get_skill_student(String sid) {
+		// TODO Auto-generated method stub
+		List<skill_student> list= skillStudentdao.get_skill_student(sid);
 		return list;
 	}
 	

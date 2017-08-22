@@ -8,12 +8,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 import com.base.Dao.StudentDao;
+import com.base.Po.groups;
 import com.base.Po.studentList;
 import com.base.Po.students;
 import com.base.utils.BaseUtils;
@@ -28,18 +31,19 @@ public class StudentDaoImpl implements StudentDao{
 	public int addstudent(String studentId, String studentName, String sex,
 			String areason, String password, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
-			String emp) {
+			String emp,int gid) {
 		// TODO Auto-generated method stub
 		int flag=0;
 		Connection conn = null;
 		PreparedStatement ps=null;
 		ResultSet rs = null;
 		CallableStatement sp = null;
+		System.out.println(gid);
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-					.prepareCall("{CALL innovatespoc.check_student(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+					.prepareCall("{CALL innovatespoc.check_student(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 			sp.setString(1, studentId);
 			sp.setString(2, studentName);
 			sp.setString(3, areason);
@@ -53,8 +57,9 @@ public class StudentDaoImpl implements StudentDao{
 			sp.setString(11, major);
 			sp.setString(12, gra);
 			sp.setString(13, emp);
+			sp.setInt(14, gid);
 			sp.execute();
-		    flag = sp.getInt(14);
+		    flag = sp.getInt(15);
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
@@ -102,6 +107,8 @@ public class StudentDaoImpl implements StudentDao{
 				ch.setMajor(rs.getString("major"));
 				ch.setGraduation(rs.getString("graduation"));
 				ch.setEmployed(rs.getString("employed"));
+				ch.setGname(rs.getString("gname"));
+				ch.setGid(rs.getInt("gid"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -145,14 +152,14 @@ public class StudentDaoImpl implements StudentDao{
 	@Override
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor){
+			String qq, String smajor, int gid, String gra, String emp){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
-			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=? where sid =?";
+			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=?,gid=?,graduation=?,employed=? where sid =?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Sintroduce);
 			pstmt.setString(2, chinese_address);
@@ -160,7 +167,10 @@ public class StudentDaoImpl implements StudentDao{
 			pstmt.setString(4, phone);
 			pstmt.setString(5, qq);
 			pstmt.setString(6, smajor);
-			pstmt.setString(7, sid);
+			pstmt.setInt(7, gid);
+			pstmt.setString(8, gra);
+			pstmt.setString(9, emp);
+			pstmt.setString(10, sid);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -168,5 +178,74 @@ public class StudentDaoImpl implements StudentDao{
 		}finally{
 			SqlConnectionUtils.free(conn, pstmt, rs);
 		}
+	}
+
+	@Override
+	public List<groups> getGroup() {
+		Session session=sessionFactory.openSession();		
+		String hql="from groups";
+		List<groups> list=null;
+		
+	    try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+	
+	@Override
+	public List<students> get_UIstudent(){
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = 2";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<students> get_Pstudent() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = 1";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<students> getStudents(String sid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		List<students> list = null;
+		String hql ="from students where sid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, sid);
+	    	 list=query.list();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
 	}
 }

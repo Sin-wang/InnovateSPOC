@@ -230,6 +230,13 @@ $("#save").click(function(){
 
 //修改
 $("#saverun").click(function(){
+	if($("#Tintroduce").val()==""){
+		bootbox.alert({
+		message : "请填写自我介绍",
+		size : 'small'
+		});	
+		return;
+	}
 	bootbox.confirm({
 		message: "是否确认修改",
 		buttons: {

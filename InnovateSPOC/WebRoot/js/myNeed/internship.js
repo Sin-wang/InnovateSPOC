@@ -216,7 +216,7 @@ $("#ck1").on("click", function () {
 $("#save").click(function(){
 		if($("#studentId").val()==""){
 				bootbox.alert({
-				message : "请填写学生id",
+				message : "请填写学生姓名",
 				size : 'small'
 			});	
 			return;
@@ -247,16 +247,30 @@ $("#save").click(function(){
 				});	
 				return;
 		}
-		/*
-			 * else if($("#file").val()==""){ bootbox.alert({ message :
-			 * "请填写专业名称", size : 'small' }); return; }
-			 */
-		
 		$("#applyaddform").submit();				
 });
 
 //修改
 $("#saverun").click(function(){
+	if ($("#begin").val() == "") {
+		bootbox.alert({
+			message : "请填写开始时间",
+			size : 'small'
+		});
+		return;
+	} else if ($("#end").val() == "") {
+		bootbox.alert({
+			message : "请填写结束时间",
+			size : 'small'
+		});
+		return;
+	} else if ($("#description").val() == "") {
+		bootbox.alert({
+			message : "请填写实习内容",
+			size : 'small'
+		});
+		return;
+	}
 	bootbox.confirm({
 		message: "是否确认修改",
 		buttons: {

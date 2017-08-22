@@ -1,10 +1,14 @@
 package com.base.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.StudentDao;
+import com.base.Po.groups;
 import com.base.Po.studentList;
+import com.base.Po.students;
 import com.base.Service.StudentService;
 
 @Service("StudentService")
@@ -17,8 +21,8 @@ public class StudentServiceImpl implements StudentService {
 	public int addStudent(String studentId, String studentName, String sex,
 			String areason, String password, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
-			String emp) {
-		int flag = studentdao.addstudent(studentId,studentName,sex,areason,password,caddress,eaddress,telephone,qq,enrollmentYear,major,gra,emp);
+			String emp,int gid) {
+		int flag = studentdao.addstudent(studentId,studentName,sex,areason,password,caddress,eaddress,telephone,qq,enrollmentYear,major,gra,emp,gid);
 		return flag;
 	}
 
@@ -49,8 +53,35 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor) {
+			String qq, String smajor,int gid , String gra, String emp) {
 		// TODO Auto-generated method stub
-		studentdao.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor);
+		studentdao.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp);
+	}
+
+	@Override
+	public List<groups> getGroup() {
+		// TODO Auto-generated method stub
+		List<groups> list = studentdao.getGroup();
+		return list;
+	}
+	
+	@Override
+	public List<students> get_UIstudent(){
+		List<students> list = studentdao.get_UIstudent();
+		return list;
+	}
+
+	@Override
+	public List<students> get_Pstudent() {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.get_Pstudent();
+		return list;
+	}
+
+	@Override
+	public List<students> getStudents(String sid) {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.getStudents(sid);
+		return list;
 	}
 }

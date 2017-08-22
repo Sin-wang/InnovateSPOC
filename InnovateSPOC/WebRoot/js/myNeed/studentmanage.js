@@ -42,6 +42,19 @@ $(document).ready(
 							"sDefaultContent" : "",
 						// "sWidth" : "5%",
 
+						}, {
+							"mData" : "gname",
+							"orderable" : true, // 禁用排序
+							"sDefaultContent" : "",
+						// "sWidth" : "5%",
+
+						}, {
+							"mData" : "gid",
+							"orderable" : true, // 禁用排序
+							"sDefaultContent" : "",
+							"visible":false,
+						// "sWidth" : "5%",
+
 						},{
 							"mData" : "student_introduce",
 							"orderable" : false, // 禁用排序
@@ -143,6 +156,32 @@ $(document).ready(
 							}
 						}
 					});
+				//学生列表
+				 $.ajax({
+		  				type : 'POST',
+		  				dataType : 'json',
+		  				url : 'get_group.do',
+		  				async : false,
+		  				cache : false,
+		  				error : function(request) {
+		  					bootbox.alert({
+		  	     			  message: "请求异常",
+		  	     			  size: 'small'
+		  	     		  });
+		  				},
+		  				success : function(data) {
+		  					for ( var i=0;i<data[0].length;i++){
+								$("#deptSelect1").after(
+										"<option value="+data[0][i].gid+">"
+												+ data[0][i].gname + "</option>");
+							}
+		  					for ( var i=0;i<data[0].length;i++){
+								$("#Select").after(
+										"<option value="+data[0][i].gid+">"
+												+ data[0][i].gname + "</option>");
+							}
+		  				}
+		  			}); 
 		});
 
 //修改操作
@@ -150,6 +189,11 @@ $(document).on("click", "#checkdetale1", function() {
 	var index=$(this).val();	
 	$("#display1").html("");
 	tag1=true;
+	var object_this;
+	object_this=$("#edit");
+	object_this.find("#SelectOne").val(obj[index].gid);
+	object_this.find("#SelectOne1").val(obj[index].graduation);
+	object_this.find("#SelectOne2").val(obj[index].employed);
 	$("#sid").val(obj[index].sid);
 	$("#sname").val(obj[index].sname);
 	$("#sex").val(obj[index].sex);
@@ -160,8 +204,8 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#qq").val(obj[index].qq);
 	$("#school_year").val(obj[index].school_year);
 	$("#smajor").val(obj[index].major);
-	$("#graduation").val(obj[index].graduation);
-	$("#employed").val(obj[index].employed);
+//	$("#graduation").val(obj[index].graduation);
+//	$("#employed").val(obj[index].employed);
 	$("#edit").modal('show');
 	
 });
@@ -285,6 +329,13 @@ $("#save").click(function(){
 
 //修改
 $("#saverun").click(function(){
+	if($("#Sintroduce").val()==""){
+		bootbox.alert({
+		message : "请填写自我介绍",
+		size : 'small'
+		});	
+		return;
+	}	
 	bootbox.confirm({
 		message: "是否确认修改",
 		buttons: {

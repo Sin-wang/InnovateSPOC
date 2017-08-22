@@ -1,9 +1,12 @@
 package com.base.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.InternshipDao;
+import com.base.Po.internship;
 import com.base.Po.internshipList;
 import com.base.Service.InternshipService;
 
@@ -46,6 +49,13 @@ public class InternshipServiceImpl implements InternshipService{
 	public void updateInternship(int id,String begin, String end, String description) {
 		// TODO Auto-generated method stub
 		internshipDao.updateInternship(id,begin, end, description);
+	}
+
+	@Override
+	public List<internship> get_internship(String sid) {
+		// TODO Auto-generated method stub
+		List<internship> list = internshipDao.get_internship(sid);
+		return list;
 	}
 	
 //	@Override

@@ -3,7 +3,11 @@
  */
 package com.base.Service;
 
+import java.util.List;
+
 import com.base.Po.employList;
+import com.base.Po.employment;
+import com.base.Po.groups;
 
 /**
  * @author 鸡毛大大
@@ -41,6 +45,11 @@ public interface EmploymentManageService {
 	 */
 	public String updateEmpInfo(String sid, String company, String salary,
 			String workin, String graduationYear, String excellence);
+
+	public List<employment> getEmploy();
+
+	public List<groups> getGroup(); 
+ 
 
 	
 }

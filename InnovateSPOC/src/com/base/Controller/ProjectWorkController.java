@@ -10,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.base.Po.groups;
 import com.base.Po.project_work;
 import com.base.Po.workList;
+import com.base.Po.work_category;
 import com.base.Service.ProjectWorkService;
 import com.base.utils.ExcelReport;
  
@@ -82,17 +85,19 @@ public class ProjectWorkController {
     @RequestMapping("/increaseWorkInfo.do")
     public String increaseWorkInfo(HttpServletRequest request,
     	    HttpServletResponse response, ModelMap map) {
-    	
+    		System.out.println(request.getParameter("groupName")+"aaaa");
     		String groupName = request.getParameter("groupName");
+    		
     		String projectName = request.getParameter("projectName");
     		String projectIntroduce = request.getParameter("projectIntroduce");
-    		//String projectAddress = request.getParameter("projectAddress");
+    		String projectAddress = request.getParameter("projectAddress");
     		//String photoAddress = request.getParameter("photoAddress");
     		String workCategory = request.getParameter("workCategory");
     		String express = request.getParameter("express");
     		String bestWork = request.getParameter("bestWork");
     		
-    		// 项目作品地址
+    
+    		/*// 项目作品地址
     		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
     		String path = null;
     		String projectAddress = null;
@@ -101,7 +106,8 @@ public class ProjectWorkController {
     		MultipartFile mFile = multipartRequest.getFile("projectAddress");// 申请材料保存地址
     		if (!mFile.isEmpty()) {
     		    // 得到上传服务器的路径
-    		    path = ExcelReport.getWebRootUrl(request, "/material/");
+    			// path = request.getSession().getServletContext().getRealPath("/imgdraw/");
+    		    path = ExcelReport.getWebRootUrl(request, "/imgdraw/");
     		    // 得到上传的文件的文件名
     		    String fileName = mFile.getOriginalFilename();
     		    String fileType = fileName.substring(fileName
@@ -122,7 +128,7 @@ public class ProjectWorkController {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
     		    }
-    		    path += projectAddress;
+    		    path += "/"+projectAddress;
     		    // 文件流写到服务器端
     		    try {
     			FileOutputStream outputStream = new FileOutputStream(
@@ -134,10 +140,13 @@ public class ProjectWorkController {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
     		    }
-    		    projectAddress = "../material/" + projectAddress;
+    		    projectAddress = "../imgdraw/" + projectAddress;
+    		   // projectAddress = "../imgdraw/" + projectAddress;
+
+    		    
     		} else {
     			projectAddress = null;
-    		}
+    		}*/
     		
     		// 项目截图地址
     		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
@@ -148,8 +157,10 @@ public class ProjectWorkController {
     		MultipartFile mFile2 = multipartRequest2.getFile("photoAddress");// 申请材料保存地址
     		//MultipartFile mFile2 = multipartRequest.getFile("material_path2");// 申请材料保存地址
     		if (!mFile2.isEmpty()) {
-    		    // 得到上传服务器的路径
-    		    path2 = ExcelReport.getWebRootUrl(request, "/material/");
+    			// 得到上传服务器的路径
+				
+				// path2 = request.getSession().getServletContext().getRealPath("/imgdraw/");
+    		    path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
     		    // 得到上传的文件的文件名
     		    String fileName = mFile2.getOriginalFilename();
     		    String fileType = fileName.substring(fileName
@@ -170,7 +181,7 @@ public class ProjectWorkController {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
     		    }
-    		    path2 += photoAddress;
+    		    path2 += "/"+photoAddress;
     		    // 文件流写到服务器端
     		    try {
     			FileOutputStream outputStream = new FileOutputStream(
@@ -182,11 +193,11 @@ public class ProjectWorkController {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
     		    }
-    		    photoAddress = "../material/" + photoAddress;
+    		    photoAddress = "../imgdraw/" + photoAddress;
     		} else {
     			photoAddress = null;
     		}
-    		//System.out.println(groupName+"||"+projectName+"||"+projectIntroduce+"||"+projectAddress+"||"+photoAddress+"||"+workCategory+"||"+express+"||"+bestWork);
+    		System.out.println(groupName+"||"+projectName+"||"+projectIntroduce+"||"+projectAddress+"||"+photoAddress+"||"+workCategory+"||"+express+"||"+bestWork);
     		int message=ProjectWorkService.increaseWorkInfo(groupName,projectName,projectIntroduce,projectAddress,photoAddress,workCategory,express,bestWork);
     		String flag = null;
     		if(message == 500 ){
@@ -274,4 +285,62 @@ public class ProjectWorkController {
 
 	return "projectWork";
     }
+    
+  //获得所有作品
+    @RequestMapping("/getWork.do")
+    public String getWork(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<project_work> list = ProjectWorkService.getWork();
+		try {
+		    List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+    //获得作品类别
+    @RequestMapping("/getCategory.do")
+    public String getCategory(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<work_category> list = ProjectWorkService.getCategory();
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    //获得组别
+    @RequestMapping("/getGroup.do")
+    public String getGroup(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<groups> list = ProjectWorkService.getGroup(); 
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+  
 }

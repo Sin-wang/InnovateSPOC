@@ -1,10 +1,13 @@
 package com.base.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.EducationExperienceDao;
 import com.base.Po.educationList;
+import com.base.Po.education_experience;
 import com.base.Service.EducationExperienceService;
 
 @Service("EdecationExperienceService")
@@ -47,5 +50,12 @@ public class EducationExperienceServiceImpl implements EducationExperienceServic
 			String description) {
 		// TODO Auto-generated method stub
 		edecationExperienceDao.updateEducation(id, begin, end, description);
+	}
+
+	@Override
+	public List<education_experience> get_education_experience(String sid) {
+		// TODO Auto-generated method stub
+		List<education_experience> list = edecationExperienceDao.get_education_experience(sid);
+		return list;
 	}
 }

@@ -1,10 +1,13 @@
 package com.base.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.TeacherDao;
 import com.base.Po.teacherList;
+import com.base.Po.teachers;
 import com.base.Service.TeacherService;
 
 @Service("TeacherService")
@@ -51,6 +54,13 @@ public class TeacherServiceImpl implements TeacherService {
 	@Override
 	public void updateteacher(String tid, String tintroduce) {
 		teacherdao.updateteacher(tid, tintroduce);
+	}
+
+	@Override
+	public List<teachers> getTeacher() {
+		// TODO Auto-generated method stub
+		List<teachers> list= teacherdao.getTeacher();
+		return list;
 	} 
 	
 	

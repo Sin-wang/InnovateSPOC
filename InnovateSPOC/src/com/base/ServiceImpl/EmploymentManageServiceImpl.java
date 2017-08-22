@@ -3,11 +3,15 @@
  */
 package com.base.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.EmploymentManageDao;
 import com.base.Po.employList;
+import com.base.Po.employment;
+import com.base.Po.groups;
 import com.base.Service.EmploymentManageService;
 
 @Service("EmploymentManageService")
@@ -61,5 +65,17 @@ public class EmploymentManageServiceImpl implements EmploymentManageService {
 		// TODO Auto-generated method stub
 		String message = employmentdao.updateEmpInfo(sid,company,salary,workin,graduationYear,excellence);
 		return message;
+	}
+	@Override
+	public List<employment> getEmploy() {
+		// TODO Auto-generated method stub
+		List<employment> list = employmentdao.getEmploy();
+		return list;
+	}
+	@Override
+	public List<groups> getGroup() {
+		// TODO Auto-generated method stub
+		List<groups> list = employmentdao.getGroup();
+		return list;
 	}
 }

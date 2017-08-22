@@ -232,9 +232,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="setTag">*</span></label>
 									<div class="col-md-6">
 										<select class="form-control" id="gid0" name="groupName">
-											<option id="gid" 	 value="">请选择</option>
-											<option id="gid1" value="程序" >程序</option>
-											<option id="gid2" value="交互" >交互</option>
+											<option id="gid"  value="">请选择</option>
 										</select>
 									</div>
 								</div> 
@@ -253,12 +251,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="setTag">*</span></label>
 									<div class="col-md-6">
 										<select class="form-control" id="wid0" name="workCategory">
-											<option id="wid" 	 value="">请选择</option>
-											<option id="wid1" value="程序" >程序</option>
-											<option id="wid2" value="平面" >平面</option>
-											<option id="wid3" value="微课" >微课</option>
-											<option id="wid4" value="视频" >视频</option>
-											<option id="wid5" value="三维" >三维</option>
+											<option id="wid" value="">请选择</option>
+											
 										</select>
 									</div>
 								</div> 
@@ -285,7 +279,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div> 
 								<div class="form-group">
 									<label class="col-md-3 control-label">作品介绍<span
-									class="setTag">*</span></label>
+									class="setTag">*</span></label> 
 										<div class="col-md-6">
 											<input type="text" class="form-control" id="project_introduce"
 											name="projectIntroduce" placeholder="">
@@ -295,7 +289,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 										<label class="col-md-3 control-label">项目地址</label>
 										<div class="col-md-6">
-											<input type="file" id="project_address" placeholder=""
+											<input type="text" id="project_address"  class="form-control" placeholder=""
 												name="projectAddress">
 										</div>
 								</div>
@@ -375,11 +369,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										name="Pid" style="display:none"/>
 												<td>所属组别: </td>
 												<td>
-												<select class="form-control" id="Gid" name="Gid">
-													<option id="Gid1" value="">请选择</option>
-													<option id="Gid2" value="程序">程序</option>
-													<option id="Gid3" value="交互">交互</option>
-												</select>
+													<select class="form-control" id="Gid" name="Gid">
+														<option id="Gid1" value="">请选择</option>
+													</select>
 												</td>
 											</tr>
 											<tr>
@@ -391,14 +383,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td>作品类别:</td>
 												<td>
-														<select class="form-control" id="WorkCategory0" name="WorkCategory">
-															<option id="WorkCategory"  value="">请选择</option>
-															<option id="WorkCategory1" value="程序" >程序</option>
-															<option id="WorkCategory2" value="平面" >平面</option>
-															<option id="WorkCategory3" value="微课" >微课</option>
-															<option id="WorkCategory4" value="视频" >视频</option>
-															<option id="WorkCategory5" value="三维" >三维</option>
-														</select>
+													<select class="form-control" id="WorkCategory0" name="WorkCategory">
+														<option id="Wid1"  value="">请选择</option>
+													</select>
 
 												</td>
 											</tr>

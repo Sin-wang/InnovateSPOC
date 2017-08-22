@@ -1,6 +1,9 @@
 package com.base.Dao;
 
+import java.util.List;
+
 import com.base.Po.hobbyList;
+import com.base.Po.hobbys;
 
 public interface HobbysDao {
 
@@ -12,4 +15,6 @@ public interface HobbysDao {
 	public String delHobby(String str);
 	
 	public void updateHobby(int id,String begin,String end,String description);
+	
+	public List<hobbys> get_hobbys(String sid);
 }

@@ -62,6 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="icon-copy" aria-hidden="true"></i><span>用户管理</span>
 								</a>
 									<ul class="nav nav-children">
+										<li><a href="user.jsp"><span class="text"></span>用户管理</a></li>
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
 										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
@@ -72,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">组别信息管理</span></a></li>
+											href="groupManage.jsp"><span class="text">组别信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -97,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">作品信息管理</span></a></li>
+											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -115,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">企业交流信息管理</span></a></li>
+											href="communication_company.jsp"><span class="text">企业交流信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -243,7 +244,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>技能值 ：</td>
+												<td>技能值 ：<span class="setTag">*</span></td>
 												<td><input type="text" class="form-control"
 													id="exp" name="exp"/>
 													</td>
@@ -283,7 +284,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
-										<td class="col-md-3 col-md-offset-2">学生id:</td>
+										<td class="col-md-3 col-md-offset-2">学生姓名:<span class="setTag">*</span></td>
 										<td class="col-md-9"><select class="form-control" id="deptSelectOne"
 													name="deptSelectOne" value="" style="width:80%">
 														<option id="deptSelect" value="" selected>请选择</option>
@@ -295,14 +296,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												style="color:#f00;"></span></td>
 									</tr> -->
 									<tr>
-										<td class="col-md-3 col-md-offset-2">技能名:</td>
+										<td class="col-md-3 col-md-offset-2">技能名:<span class="setTag">*</span></td>
 										<td class="col-md-9"><select class="form-control" id="deptSelectOne1"
 													name="deptSelectOne1" value="" style="width:80%">
 														<option id="deptSelect1" value="" selected>请选择</option>
 												</select></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">技能值:</td>
+										<td class="col-md-3 col-md-offset-2">技能值:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="exp1" id="exp1" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span>
 												<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />

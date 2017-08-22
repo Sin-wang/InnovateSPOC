@@ -1,6 +1,9 @@
 package com.base.Dao;
 
+import java.util.List;
+
 import com.base.Po.teacherList;
+import com.base.Po.teachers;
 
 public interface TeacherDao {
     /**
@@ -20,4 +23,6 @@ public interface TeacherDao {
 	public String deleteTeacher(String str);
 
 	public void updateteacher(String tid, String tintroduce);
+
+	public List<teachers> getTeacher();
 }

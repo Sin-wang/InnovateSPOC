@@ -29,7 +29,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			border-radius:60px;
 			overflow:hidden;
 		}
-
+#preview2{
+			width:120px;
+			height:120px;
+			border:1px solid #000;
+			border-radius:60px;
+			overflow:hidden;
+		}
     </style>
   </head>
   
@@ -134,8 +140,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
-
+											href="notification.jsp"><span class="text">发布新闻</span></a></li>
+										<li><a href="newlist.do">新闻管理</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -187,6 +193,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<td>序号</td>
 										<th>标题</th>
 										<th hidden>图片</th>
+										<th>所属组别</th>
 										<th>查看修改</th>
 									</tr>
 								</thead>
@@ -224,7 +231,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updatestudent.do" method="post" class="form-horizontal"
+									<form action="updateCompany.do" method="post" class="form-horizontal"
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
@@ -240,7 +247,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tr>
 											<tr>
 												<td>
-												<input type="text" class="form-control" id="title" name="title" value="思博课"/>
+												<div class="form-group">
+													    <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="title" name="title" value="">
+													    </div>
+													  </div>
+												</td>
+											</tr>
+											<tr hidden>
+												<td>
+													<div class="form-group">
+													    <label for="id" class="col-sm-2 control-label">编号</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="id" name="id">
+													    </div>
+													  </div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+													    <label for="gname" class="col-sm-2 control-label">组别</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="gname" name="gname">
+													    </div>
+													  </div>
 												</td>
 											</tr>
 										</table>
@@ -269,28 +301,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title text-center" id="myModalLabel">学生信息</h4>
+					<h4 class="modal-title text-center" id="myModalLabel">企业交流信息</h4>
 				</div>
 				<div class="modal-body table-responsive">
 					<div class="row">
 						<div class="col-md-12">
-							<form action="addstudent.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+							<form action="addCompant.do" method="post" class="form-horizontal" enctype="multipart/form-data"
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
 												<td>
-   													<div id="preview">
-    													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
+   													<!-- <div id="preview2">
+    													<img id="imghead2" width="100%" height="auto" border="0" src="../images/big.jpg">
 								  					</div>
                                   					<div style="margin:20px 18px;">
-                                  						<label class="btn btn-primary" for="file" >修改图片</label>
-								  						<input type="file" onchange="previewImage(this)" id="file" name="photo" style="position:absolute;clip:rect(0 0 0 0);">                          
-                                  					</div>
+                                  						<label class="btn btn-primary" for="file2" >上传图片</label>  -->
+								  						<input type="file" id="file2" name="photo">                          
+                                  					<!-- </div> -->
                                   				</td>
+											</tr>
+											
+											<tr>
+												<td>
+													<div class="form-group">
+													    <label for="addtitle" class="col-sm-2 control-label">标题</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="addtitle" name="title" value="">
+													    </div>
+													  </div>
+												</td>
 											</tr>
 											<tr>
 												<td>
-												<input type="text" class="form-control" id="title" name="title" value="思博课"/>
+													<div class="form-group">
+													    <label for="addgname" class="col-sm-2 control-label">组别</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="addgname" name="gname">
+													    </div>
+													  </div>
 												</td>
 											</tr>
 								</table>

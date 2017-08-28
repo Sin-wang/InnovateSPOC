@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_Pstudent.do',
+ 			url : 'get_CGstudent.do',
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -12,7 +12,7 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
-				var Pstring='';
+ 				var Pstring='';
 				var Liststring='<li data-target="#carousel_menber" data-slide-to="0" class="active"></li>';
 				var num=0;
 				var num1=data[0].length/5;
@@ -58,7 +58,7 @@ $(document).ready(function() {
 					Pstring=Pstring+'</div></div>';
 				}
 				$("#team_list").append(Liststring);
- 				$("#show_teamMumber").append(Pstring);
+ 				$("#team_Mumber").append(Pstring);
 			}
         });		
 	
@@ -125,7 +125,7 @@ $(document).ready(function() {
 			}
         });
 		
-//团队教师获取数据的请求
+	//团队教师获取数据的请求
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
@@ -137,16 +137,15 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
-				
 				var Tstring="";
 				var Liststr="";
- 				for(var m=0;m<data[0].length;m++){
-					if(m===0){
+ 				for(var i=0;i<data[0].length;i++){
+					if(i===0){
 						Tstring=Tstring+'<div class="item active"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="../images/CG/07 teacher2.png"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
-						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+m+'" class="active"></li>';
+						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'" class="active"></li>';
 					}else{
 						Tstring=Tstring+'<div class="item"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="../images/CG/07 teacher2.png"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
-						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+m+'"></li>';
+						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'"></li>';
 					}
 				}
 				$("#teacher_list").append(Liststr);
@@ -154,7 +153,7 @@ $(document).ready(function() {
  			}
         });
 	
-	//获得作品信息
+/*	//获得作品信息
 	$.ajax({
     	type : 'POST',
 			dataType : 'json',
@@ -169,7 +168,7 @@ $(document).ready(function() {
 			
 			
 			}
-    });
+    });*/
 	
 	
 	

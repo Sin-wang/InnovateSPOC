@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 .main_box {
-    position: absolute; top:50%; left:50%; margin-top:-260px; margin-left: -300px; padding: 30px; width:600px; height:460px;
+    position: absolute; top:50%; left:50%; margin-top:-260px; margin-left: -300px; padding: 30px; width:600px; height:530px;
 	background:url(../images/1.png);
     border-radius: 10px;
 }

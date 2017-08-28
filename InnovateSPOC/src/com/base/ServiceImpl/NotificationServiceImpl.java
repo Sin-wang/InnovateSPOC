@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.DaoImpl.NotificationDaoImpl;
+import com.base.Po.news;
 import com.base.Service.NotificationService;
 
 
@@ -29,5 +30,11 @@ public class NotificationServiceImpl implements NotificationService{
 		// TODO Auto-generated method stub
 		
 		return notificationDaoImpl.getNotificationInfo(currentPage,itemsPerPage);
+	}
+
+
+	public news getNotification(String id) {
+		// TODO Auto-generated method stub
+		return notificationDaoImpl.getNotification(id);
 	}
 }

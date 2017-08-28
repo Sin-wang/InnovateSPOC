@@ -17,8 +17,8 @@ public class TeacherServiceImpl implements TeacherService {
     private TeacherDao teacherdao;
 	
 	@Override
-	public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password) {
-		int flag = teacherdao.addTeacher(teacherId, teacherName, sex, Areason,password);
+	public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,int gid) {
+		int flag = teacherdao.addTeacher(teacherId, teacherName, sex, Areason,password,gid);
 		return flag;
 	}
 
@@ -52,8 +52,8 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public void updateteacher(String tid, String tintroduce) {
-		teacherdao.updateteacher(tid, tintroduce);
+	public void updateteacher(String tid, String tintroduce,int gid) {
+		teacherdao.updateteacher(tid, tintroduce,gid);
 	}
 
 	@Override

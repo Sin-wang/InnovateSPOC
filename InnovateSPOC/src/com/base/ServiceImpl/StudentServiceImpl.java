@@ -84,4 +84,18 @@ public class StudentServiceImpl implements StudentService {
 		List<students> list = studentdao.getStudents(sid);
 		return list;
 	}
+
+	@Override
+	public List<students> get_3Dstudent() {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.get_3Dstudent();
+		return list;
+	}
+
+	@Override
+	public List<students> get_CGstudent() {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.get_CGstudent();
+		return list;
+	}
 }

@@ -38,7 +38,8 @@ public class TeachermanageController {
 		String Areason = request.getParameter("Areason");
 		String password = request.getParameter("password");
 //		String photo = request.getParameter("file");
-		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password);
+		int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
+		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,gid);
 		request.setAttribute("flag", flag);
 		return "teacherManage";
 	}
@@ -114,7 +115,8 @@ public class TeachermanageController {
     	    HttpServletResponse response) {
     	String tid = request.getParameter("tid");
     	String Tintroduce = request.getParameter("Tintroduce");
-    	teacherService.updateteacher(tid, Tintroduce);
+    	int gid = Integer.parseInt(request.getParameter("SelectOne"));
+    	teacherService.updateteacher(tid, Tintroduce,gid);
     	return "teacherManage";
     	
     }

@@ -102,7 +102,7 @@ $(document).ready(function() {
          			  size: 'small'
          		  });
  			},
-			success : function(data) {alert(data[0].length);
+			success : function(data) {
 			var Wstring='';
 			var Wstr='';
 				for (var i=0;i<data[0].length;i++){
@@ -176,4 +176,39 @@ $(document).ready(function() {
 			}
     
     });
+	
+	
+	//企业交流管理
+	$.ajax({
+    	type : 'POST',
+			dataType : 'json',
+			url : 'getPcompany.do',
+			error : function(request) {
+				bootbox.alert({
+     			  message: "请求异常",
+     			  size: 'small'
+     		  });
+			},
+			success : function(data) {
+				/*alert(data[0].length);*/
+				alert(data[0].length+"****"+data[0][0].photo+"****"+data[0][0].title);
+				
+				/*$("#img1").attr("src",data[0][0].photo);
+				$("#img2").attr("src",data[0][1].photo);
+				$("#img3").attr("src",data[0][2].photo);
+				$("#img4").attr("src",data[0][3].photo);
+				$("#img5").attr("src",data[0][4].photo);
+				
+				$("#title1").attr("src",data[0][0].title);
+				$("#title2").attr("src",data[0][1].title);
+				$("#title3").attr("src",data[0][2].title);
+				$("#title4").attr("src",data[0][3].title);
+				$("#title5").attr("src",data[0][4].title);*/
+			}
+    });
+	
+	
+	
+	
+	
 });

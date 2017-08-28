@@ -12,18 +12,23 @@ public class teachers {
 	private String tname;//��ʦ����
 	private String teacher_introduce;//���ҽ���
 	private String photo_address;//��Ƭ����ַ��
+	private String gname;
+	private int gid;
 	public teachers() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public teachers(String tid, String sex, String tname,
-			String teacher_introduce, String photo_address) {
+			String teacher_introduce, String photo_address, String gname,
+			int gid) {
 		super();
 		this.tid = tid;
 		this.sex = sex;
 		this.tname = tname;
 		this.teacher_introduce = teacher_introduce;
 		this.photo_address = photo_address;
+		this.gname = gname;
+		this.gid = gid;
 	}
 	public String getTid() {
 		return tid;
@@ -55,6 +60,19 @@ public class teachers {
 	public void setPhoto_address(String photo_address) {
 		this.photo_address = photo_address;
 	}
+	public String getGname() {
+		return gname;
+	}
+	public void setGname(String gname) {
+		this.gname = gname;
+	}
+	public int getGid() {
+		return gid;
+	}
+	public void setGid(int gid) {
+		this.gid = gid;
+	}
+	
 	
 	
 }

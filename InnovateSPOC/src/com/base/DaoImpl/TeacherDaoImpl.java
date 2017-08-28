@@ -29,7 +29,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	 //增加教师
 	 @Override
-	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password) {
+	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,int gid) {
 		 	int flag=0;
 			Connection conn = null;
 			PreparedStatement ps=null;
@@ -39,14 +39,15 @@ public class TeacherDaoImpl implements TeacherDao{
 			    conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
 			    sp = (CallableStatement) conn
-						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?)}");
+						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?)}");
 				sp.setString(1, teacherId);
 				sp.setString(2, teacherName);
 				sp.setString(3, sex);
 				sp.setString(4, Areason);
 				sp.setString(5, password);
+				sp.setInt(6, gid);
 				sp.execute();
-			    flag = sp.getInt(6);
+			    flag = sp.getInt(7);
 			} catch (SQLException e) {
 			    // TODO Auto-generated catch block
 			    e.printStackTrace();
@@ -111,6 +112,8 @@ public class TeacherDaoImpl implements TeacherDao{
 				ch.setTname(rs.getString("name"));
 				ch.setSex(rs.getString("sex"));
 				ch.setTeacher_introduce(rs.getString("introduce"));
+				ch.setGid(rs.getInt("gid"));
+				ch.setGname(rs.getString("gname"));
 //				ch.setPhoto_address(rs.getString("photo_address"));
 				list.add(ch);
 			}
@@ -153,7 +156,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	//修改教师信息
 	@Override
-	public void updateteacher(String tid, String tintroduce) {
+	public void updateteacher(String tid, String tintroduce, int gid) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement ps=null;
@@ -161,10 +164,11 @@ public class TeacherDaoImpl implements TeacherDao{
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    String sql =("update teachers set teacher_introduce=? where tid=?");
+		    String sql =("update teachers set teacher_introduce=?,gid=? where tid=?");
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, tintroduce);
-		    ps.setString(2, tid);
+		    ps.setInt(2, gid);
+		    ps.setString(3, tid);
 		    ps.executeUpdate();
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block

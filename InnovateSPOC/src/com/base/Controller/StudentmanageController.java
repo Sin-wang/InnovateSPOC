@@ -65,7 +65,6 @@ public class StudentmanageController {
 			String gra = request.getParameter("gra");
 			String emp = request.getParameter("emp");
 			int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
-			System.out.println(gid);
 //			String photo = request.getParameter("file");
 			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,gid);
 			request.setAttribute("flag", flag);
@@ -212,7 +211,45 @@ public class StudentmanageController {
 			}
 			return null;
 		}
-		
+	
+	//获得3d学生
+	@RequestMapping("get_3Dstudent.do")
+	public String get_3Dstudent(HttpServletRequest request,
+			HttpServletResponse response) {
+		List<students> list1 = studentService.get_3Dstudent();
+		try {
+			List list4 = new ArrayList();
+			list4.add(list1);
+			JSONArray json = JSONArray.fromObject(list4);
+			response.setContentType("text/html;charset=UTF-8");
+			response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//获得CG学生
+	@RequestMapping("get_CGstudent.do")
+	public String get_CGstudent(HttpServletRequest request,
+			HttpServletResponse response) {
+		List<students> list1 = studentService.get_CGstudent();
+		try {
+			List list4 = new ArrayList();
+			list4.add(list1);
+			JSONArray json = JSONArray.fromObject(list4);
+			response.setContentType("text/html;charset=UTF-8");
+			response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	//获得学生简历
 	@RequestMapping("get_resume.do")
 	public String get_resume(HttpServletRequest request,

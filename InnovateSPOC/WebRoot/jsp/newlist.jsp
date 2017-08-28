@@ -137,8 +137,8 @@
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
-
+											href="notification.jsp"><span class="text">发布新闻</span></a></li>
+										<li><a href="newlist.do">新闻管理</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -298,6 +298,16 @@
 				$('body').load('newlist.do?page=' + page);
 			}
 		}
+	</script>
+	<script type="text/javascript">
+		$(document).ready(
+				$.ajax({
+					url : 'newlist.do',
+					type : 'post',
+					dataType : 'json',
+				})
+				);
+			
 	</script>
 </body>
 </html>

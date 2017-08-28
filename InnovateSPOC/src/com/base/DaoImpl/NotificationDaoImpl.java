@@ -68,12 +68,13 @@ public class NotificationDaoImpl implements NotificationDao{
 			int maxItems=sp.getInt(3);//接收输出参数
 			//接收结果集
 			rs=sp.getResultSet();   //获得结果集
-			
+			System.out.println(rs);
 			while(rs.next())
 			{
 				news notification=new news();
 				notification.setId(rs.getInt("id"));
 				notification.setTitle(rs.getString("title"));
+				notification.setContent(rs.getString("content"));
 				listNews.add(notification);
 			}
 			
@@ -92,5 +93,21 @@ public class NotificationDaoImpl implements NotificationDao{
 		}
 		return list;
 
+	}
+
+	public news getNotification(String id) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		String hql = "from news where id=" + id;
+		List<news> list=null;
+		try {
+			Query query = session.createQuery(hql);
+			list =  query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			session.close();
+		}
+		return list.get(0);
 	}
 }

@@ -22,47 +22,52 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="cc_c">
 					  <div class="logo">
 						<div class="logo_bg">						  
-							<img src="../images/index/logo.png" width="100px">						
+							<img src="../images/index/logo.png" width="200px">						
 						</div>
 					  </div>
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a class="nav_stop" href="index.html">
+						  <a class="nav_stop" href="../index.html">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
                          <li>
-							<a href="#">
+							<a href="program.jsp">
 							  <span class="name_ch">程序组</span>
 							</a>
 						  </li>
                          <li>
-							<a href="#">
+							<a href="UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
 						<li>
-							<a href="#">
+							<a href="3D.jsp">
 							  <span class="name_ch">3D组</span>
 							</a>
 						  </li>							
 							 <li>
-							<a href="#">
+							<a href="CG.jsp">
 						  	  <span class="name_ch">CG特效组</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="recruit.jsp">
 						  	  <span class="name_ch">企业招聘</span>
 							</a>
 						  </li>
-							 <li>
+						  <li>
 							<a href="#">
 						  <span class="name_ch">团队作品</span>
 							</a>
+						  </li>
+						  <li>
+							<a href="../login.html">
+						  <span class="name_ch">登录</span>
+							</a>
 						  </li>						 
-							  </ul>
+						</ul>
 					  </div>
 					  <div class="clear"></div>
 					</div>

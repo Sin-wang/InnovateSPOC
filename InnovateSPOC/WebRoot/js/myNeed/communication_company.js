@@ -16,7 +16,7 @@ $(document).ready(
 						"bfilter" : true,
 						"dom" : 'ftipr<"bottom"l>',
 						"ajax" : {
-							"url" : "",
+							"url" : "quertCompany.do",
 							"type" : "POST"
 						},
 						"aoColumns" : [ {
@@ -35,6 +35,13 @@ $(document).ready(
 							"orderable" : true, // 禁用排序
 							"sDefaultContent" : "",
 							"visible":false,
+						// "sWidth" : "2%",
+
+						},{
+							"mData" : "gname",
+							"orderable" : true, // 禁用排序
+							"sDefaultContent" : "",
+							//"visible":false,
 						// "sWidth" : "2%",
 
 						},
@@ -86,6 +93,8 @@ $(document).on("click", "#checkdetale1", function() {
 	tag1=true;
 	$("#imghead").attr("src",obj[index].photo);
 	$("#title").val(obj[index].title);
+	$("#gname").val(obj[index].gname);
+	$("#id").val(obj[index].id);
 	$("#edit").modal('show');
 	
 });
@@ -108,6 +117,105 @@ $("#saverun").click(function(){
 				callback: function (result) {
 						if(result){
 							$("#majoreditform").submit();
+							}
+						}
+					});
+});
+
+
+var flag=0;
+$("#delete").click(function(){
+	flag = 0;
+	$("#companyManage input[name='idname']").each(function () {
+		if($(this).prop("checked")==true){
+			flag=1;
+		}
+	});
+	if(flag==0){
+		bootbox.alert({
+			  message: "您还没有选择任何内容",
+			  size: 'small'
+		  });
+	}else{
+		bootbox.confirm({
+			message: "确定删除？",
+			size: 'small',
+			buttons: {
+				confirm: {
+					label: '确定',
+					className: 'btn-success'
+				},
+				cancel: {
+					label: '取消',
+					className: 'btn-danger'
+				},
+			},
+			callback: function (result) {									
+				if(result){									
+					var deletstr = "('";//删除记录的格式(1,2,3,4,5)									
+					var i=0;
+					$("input[type='checkbox'][name='idname']:checked").each(function() {															
+											if (i != 0) {
+												deletstr = deletstr+ "','"+ $(this).val();
+											}
+											else{
+												deletstr = deletstr+ $(this).val();
+												}
+											i++;
+										});
+						deletstr = deletstr + "')";
+						alert(deletstr);
+						$.ajax({
+							url : 'delCompany.do',
+							type : 'post',
+							dataType : 'json',
+							data : {
+								"deletstr" : deletstr
+							},
+							success : function(msg) {
+								bootbox.alert({
+									message : msg.str,
+									size : 'small'
+								});
+								applytable.draw(false);
+							}
+						});//end
+
+				}
+			}
+		});
+
+	}
+});
+//全选
+$("#ck1").on("click", function () {
+	if ($(this).prop("checked") === true) {
+		$("#companyManage input[name='idname']").prop("checked", true);
+		
+	} else {
+		$("#companyManage input[name='idname']").prop("checked", false);
+		
+	}					
+ });
+
+
+$("#save").click(function(){
+	bootbox.confirm({
+		message: "是否确认添加",
+		size: 'small',
+		buttons: {
+				confirm: {
+						label: '确定',
+						className: 'btn-success'
+						},
+				cancel: {
+						label: '取消',
+						className: 'btn-danger'
+						},
+					},
+				callback: function (result) {
+						if(result){
+							$("#applyaddform").submit();
 							}
 						}
 					});
@@ -149,6 +257,45 @@ function previewImage(file)
     div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
   }
 }
+
+
+/*function previewImage2(file2)
+{
+ 
+  var MAXWIDTH  = 120; 
+  var MAXHEIGHT = 120;
+  var div = document.getElementById('preview2');
+  if (file2.files && file2.files[0])
+  {
+      div.innerHTML ='<img id=imghead2>';
+      var img2 = document.getElementById('imghead2');
+      img2.onload = function(){
+    	
+    	
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 120, 120);
+        img2.width  =  rect.width;
+        img2.height =  rect.height;
+//         img.style.marginLeft = rect.left+'px';
+        img2.style.marginTop = rect.top+'px';
+      };
+      var reader = new FileReader();
+      reader.onload = function(evt){img2.src = evt.target.result;};
+      reader.readAsDataURL(file.files[0]);
+  }
+  else //兼容IE
+  {
+    var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+    file2.select();
+    var src = document.selection.createRange().text;
+    div.innerHTML = '<img id=imghead2>';
+    var img2 = document.getElementById('imghead2');
+    img2.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+    var rect = clacImgZoomParam2(MAXWIDTH, MAXHEIGHT, img2.offsetWidth, img2.offsetHeight);
+    status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+    div.innerHTML = "<div id=divhead2 style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+  }
+}
+*/
 function clacImgZoomParam( maxWidth, maxHeight, width, height ){
     var param = {top:0, left:0, width:width, height:height};
     if( width>maxWidth || height>maxHeight )
@@ -170,4 +317,25 @@ function clacImgZoomParam( maxWidth, maxHeight, width, height ){
     param.top = Math.round((maxHeight - param.height) / 2);
     return param;
 }
-
+/*function clacImgZoomParam2( maxWidth, maxHeight, width, height ){
+	alert("111");
+    var param = {top:0, left:0, width:width, height:height};
+    if( width>maxWidth || height>maxHeight )
+    {
+        var rateWidth = width / maxWidth;
+        var rateHeight = height / maxHeight;
+         
+        if( rateWidth > rateHeight )
+        {
+            param.width =  maxWidth;
+            param.height = Math.round(height / rateWidth);
+        }else
+        {
+            param.width = Math.round(width / rateHeight);
+            param.height = maxHeight;
+        }
+    }
+    param.left = Math.round((maxWidth - param.width) / 2);
+    param.top = Math.round((maxHeight - param.height) / 2);
+    return param;
+}*/

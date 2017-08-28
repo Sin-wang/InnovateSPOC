@@ -47,7 +47,7 @@ public class LoginController {
 	if (adminValue) {
 	    CookieUtils.addCookie("username", userid, response);	    
 	    CookieUtils.addCookie("logintime",String.valueOf(new Date().getTime()), response);	   
-	    return "redirect:jsp/teacherManage.jsp";
+	    return "redirect:jsp/user.jsp";
 	} else {
 	    return "redirect:login.html";
 	}

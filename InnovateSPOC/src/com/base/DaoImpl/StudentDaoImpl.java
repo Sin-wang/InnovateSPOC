@@ -248,4 +248,37 @@ public class StudentDaoImpl implements StudentDao{
 		}
 		return list;
 	}
+
+	@Override
+	public List<students> get_3Dstudent() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = 5";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<students> get_CGstudent() {
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = 6";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
 }

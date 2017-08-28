@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.base.Po.news;
 import com.base.ServiceImpl.NotificationServiceImpl;
 import com.base.utils.MessageUtils;
 
@@ -45,6 +46,7 @@ public class NotificationController {
 			response.setContentType("text/html;charset=UTF-8");
 			// 获取当前是第几页
 			String currentPage = request.getParameter("page");
+			System.out.println(currentPage);
 			if (currentPage == null)
 				currentPage = "1";
 			map.addAttribute("page", currentPage); // 返回当前页码
@@ -77,5 +79,21 @@ public class NotificationController {
 			}
 
 			return "newlist";
+		}
+		
+		//通知详情页面
+		@RequestMapping("jsp/newdetail.do")
+		public String newdetail(ModelMap map, HttpServletRequest request,
+				HttpServletResponse response) {
+					
+			response.setContentType("text/html;charset=UTF-8");
+			// 获取要读取的通知详情id
+			String id = request.getParameter("id");
+			news notification =null;
+			if (id != null)
+				notification = notificationServiceImpl.getNotification(id);
+			
+			map.addAttribute("notification", notification);
+			return "newdetail";
 		}
 }

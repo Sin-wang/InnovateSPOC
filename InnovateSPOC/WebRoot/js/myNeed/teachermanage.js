@@ -43,6 +43,19 @@ $(document).ready(
 						// "sWidth" : "5%",
 
 						},{
+							"mData" : "gname",
+							"orderable" : true, // 禁用排序
+							"sDefaultContent" : "",
+						// "sWidth" : "5%",
+
+						}, {
+							"mData" : "gid",
+							"orderable" : true, // 禁用排序
+							"sDefaultContent" : "",
+							"visible":false,
+						// "sWidth" : "5%",
+
+						},{
 							"mData" : "teacher_introduce",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
@@ -87,6 +100,32 @@ $(document).ready(
 							}
 						}
 					});
+			//学生列表
+			 $.ajax({
+	  				type : 'POST',
+	  				dataType : 'json',
+	  				url : 'get_group.do',
+	  				async : false,
+	  				cache : false,
+	  				error : function(request) {
+	  					bootbox.alert({
+	  	     			  message: "请求异常",
+	  	     			  size: 'small'
+	  	     		  });
+	  				},
+	  				success : function(data) {
+	  					for ( var i=0;i<data[0].length;i++){
+							$("#deptSelect1").after(
+									"<option value="+data[0][i].gid+">"
+											+ data[0][i].gname + "</option>");
+						}
+	  					for ( var i=0;i<data[0].length;i++){
+							$("#Select").after(
+									"<option value="+data[0][i].gid+">"
+											+ data[0][i].gname + "</option>");
+						}
+	  				}
+	  			}); 
 		});
 
 //修改操作
@@ -94,6 +133,10 @@ $(document).on("click", "#checkdetale1", function() {
 	
 	var index=$(this).val();	
 	$("#display1").html("");
+	object_this=$("#edit");
+	object_this.find("#SelectOne").val(obj[index].gid);
+	object_this.find("#SelectOne1").val(obj[index].graduation);
+	object_this.find("#SelectOne2").val(obj[index].employed);
 	tag1=true;
 	$("#tid").val(obj[index].tid);
 	$("#tname").val(obj[index].tname);

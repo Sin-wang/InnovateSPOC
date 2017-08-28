@@ -32,38 +32,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="cc_c">
 					  <div class="logo">
 						<div class="logo_bg">						  
-							<img src="images/index/logo.png" width="100px">						
+							<img src="../images/index/logo.png" width="200px">						
 						</div>
 					  </div>
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a class="nav_stop" href="index.html">
+						  <a class="nav_stop" href="../index.html">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
                          <li>
-							<a href="#">
+							<a href="program.jsp">
 							  <span class="name_ch">程序组</span>
 							</a>
 						  </li>
                          <li>
-							<a href="#">
+							<a href="UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
 						<li>
-							<a href="#">
+							<a href="3D.jsp">
 							  <span class="name_ch">3D组</span>
 							</a>
 						  </li>							
 							 <li>
-							<a href="#">
+							<a href="CG.jsp">
 						  	  <span class="name_ch">CG特效组</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="recruit.jsp">
 						  	  <span class="name_ch">企业招聘</span>
 							</a>
 						  </li>
@@ -72,8 +72,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li data-toggle="modal" data-target="#Login">
-							<a href="#">
+						  <li>
+							<a href="../login.html">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
@@ -307,24 +307,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="caress_content">
 				<div class="caress_left">
 					<div class="caress_item">
-						<img src="../images/program/employee1.png">
-						<span>企业对接交流</span>
+						<img src="../images/program/employee1.png" id="img1" width="298px" height="157px">
+						<span id="title1">企业对接交流</span>
 					</div>
 					<div class="caress_item text-right">
-						<span class="text-left">企业对接交流</span>
-						<img src="../images/program/employee2.png">
+						<span id="title2" class="text-left">企业对接交流</span>
+						<img src="../images/program/employee2.png" id="img2" width="291px" height="164px">
 					</div>
 					<div class="caress_item">
-						<img src="../images/program/employee3.png">
-						<span>企业对接交流</span>
+						<img src="../images/program/employee3.png" id="img3" width="280px" height="158px">
+						<span id="title3">企业对接交流</span>
 					</div>
 				</div>
 				<div class="caress_right">
 					<div class="caress_item2">
-						<img src="../images/program/employee4.png">
+						<img src="../images/program/employee4.png" id="img4" width="288" height="163"><br>
+						<span id="title4">企业对接交流</span>
 					</div>
 					<div class="caress_item2">
-						<img src="../images/program/employee5.png">
+						<img src="../images/program/employee5.png" id="img5" width="261" height="133"><br>
+						<span id="title5">企业对接交流</span>
 					</div>
 				</div>
 			</div>

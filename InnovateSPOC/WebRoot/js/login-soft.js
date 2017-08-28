@@ -33,7 +33,10 @@ var Login = function () {
 	                },
 	                authCode: {
 	                    required: true
-	                }
+	                },
+					userType:{
+						required:true
+					}
 	                
 	            },
 
@@ -46,7 +49,10 @@ var Login = function () {
 	                },
 	                authCode: {
 	                    required: "验证码必填"
-	                }
+	                },
+					userType:{
+						required:"身份必选"
+					}
 	            },
 
 	            invalidHandler: function (event, validator) { //display error alert on form submit   

@@ -7,7 +7,14 @@ import org.springframework.stereotype.Service;
 
 
 
+
+
+
+
+
+
 import com.base.Po.studentList;
+import com.base.Po.userCenter;
 import com.base.Po.userList;
 import com.base.Service.UserService;
 import com.base.Dao.UserDao;
@@ -20,7 +27,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userdao;
     @Override
-    public boolean login(String username, String password) {
+    public int login(String username, String password) {
 	// TODO Auto-generated method stub
 	return userdao.login(username, password);
     }
@@ -55,6 +62,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		String message= userdao.delUser(str);
 		return message;
+	}
+	@Override
+	public userCenter getImage(String userid) {
+			userCenter ui = userdao.getImage(userid);
+		// TODO Auto-generated method stub
+		return ui;
 	}
 
 }

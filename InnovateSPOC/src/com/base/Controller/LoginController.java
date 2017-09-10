@@ -17,10 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
+import org.hibernate.hql.internal.ast.tree.IntoClause;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.base.Po.userCenter;
 import com.base.Service.UserService;
 import com.base.utils.CookieUtils;
 
@@ -36,6 +38,7 @@ public class LoginController {
 	    HttpServletResponse response, HttpSession session) {        
 	String userid = request.getParameter("username");
 	String pwd = request.getParameter("pwd");
+	String userType = request.getParameter("userType");
 	String authCode = request.getParameter("authCode");	
 	// 判断验证码
 	String strCode = (String) session.getAttribute("strCode");
@@ -43,12 +46,36 @@ public class LoginController {
 	    return "redirect:login.html";
 	}
 	// 判断登录是否成功
-	boolean adminValue = userService.login(userid, pwd);
-	if (adminValue) {
+	int adminValue =0;
+	adminValue = userService.login(userid, pwd);
+	//System.out.println(adminValue+"login");
+	if (adminValue == Integer.parseInt(userType)) {
+		
 	    CookieUtils.addCookie("username", userid, response);	    
-	    CookieUtils.addCookie("logintime",String.valueOf(new Date().getTime()), response);	   
-	    return "redirect:jsp/user.jsp";
-	} else {
+	    CookieUtils.addCookie("logintime",String.valueOf(new Date().getTime()), response);
+	    CookieUtils.addCookie("userType", userType,response);
+	    String src="../imgdraw/big.jpg";
+		String name="";
+
+    	userCenter ui=userService.getImage(userid);			
+		
+		if(ui!=null && ui.getTSflag() == 2){
+		  src=ui.getHeadshot();
+		  name=ui.getSname();
+		  //System.out.println(src+"||src");
+		}else if(ui!=null && ui.getTSflag() == 1){
+			src = ui.getPhoto_address();
+			name = ui.getTname();
+		}		
+		CookieUtils.addCookie("image", src,response);
+	    if(adminValue == 0){
+	    	return "redirect:jsp/user.jsp";
+	    }else{
+	    	return adminValue == 1?"redirect:jsp/TeachersCenter.jsp":"redirect:jsp/userCenter.jsp";
+	    }
+	    
+	    
+	} else { 
 	    return "redirect:login.html";
 	}
     }

@@ -62,9 +62,9 @@ public class ProjectWorkServiceImpl implements ProjectWorkService {
 	@Override
 	public String updateWorkInfo(int pid,String gid, String projectName,
 			String workCategory, String expression, String bestWork,
-			String projectIntroduce) {
+			String projectIntroduce, String photo) {
 		// TODO Auto-generated method stub
-		String message=workdao.updateWorkInfo(pid,gid,projectName,workCategory,expression,bestWork,projectIntroduce);
+		String message=workdao.updateWorkInfo(pid,gid,projectName,workCategory,expression,bestWork,projectIntroduce,photo);
 		return message;
 	}
 

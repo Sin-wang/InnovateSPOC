@@ -21,7 +21,16 @@
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<style type="text/css">
+#preview{
+	margin-top:25px;
+	width:300px;
+	height:300px;
+	border:1px solid #000;
+	overflow:hidden;
+}
 
+</style>
 </head>
   
   <body>
@@ -99,6 +108,8 @@
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 
 									</ul>
 								</li>
@@ -160,44 +171,53 @@
 				<div class="row form">
 
 
+					<form action="saveNotification.do" method="post" class="form-horizontal"
+										role="form" id="majoreditform" enctype="multipart/form-data">
+						<div class="col-lg-12 form-group">
 
-					<div class="col-lg-12 form-group">
+							<div class=" col-md-4">
+									<fieldset>
+										<div class="form-group">
+											<label for="#title" class="col-sm-3 control-label">通知标题</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="title" name="title"></input>
+											</div>
+										</div>
+									</fieldset>
+							</div>
 
-						<div class=" col-md-4">
-							<form class="form-horizontal" role="form">
-								<fieldset>
-									<div class="form-group">
-										<label for="#msglx_list" class="col-sm-3 control-label">消息类型</label>
-										<div class="col-sm-6">
-											<select class="form-control" id="msglx_list">
-												<option value="1" selected="selected">通知公告</option>
-											</select>
-										</div>
-									</div>
-								</fieldset>
-								<fieldset>
-									<div class="form-group" id='titleform'>
-										<label for="#title" class="col-sm-3 control-label">通知标题</label>
-										<div class="col-sm-6">
-											<input type="text" class="form-control" id="title"></input>
-										</div>
-									</div>
-								</fieldset>
-							</form>
 						</div>
 
-					</div>
+						<div class="row form-group">
+							<div class="col-lg-12">
 
-					<div class="col-lg-12 form-group">
-						<script id="editor" type="text/plain"
-							style="width:1024px;height:500px;"></script>
-					</div>
+								<div class="col-md-6">
+									<p class="text-center">通知内容</p>
+									<textarea class="form-control" rows="14" id="Newcontent" name="Newcontent"></textarea>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="col-sm-10">
+											<div id="preview">
+												<img id="imghead" width="100%" height="auto" border="0"
+													src="../images/big.jpg">
+											</div>
+											<div style="margin:20px 18px;">
+												<label class="btn btn-primary" for="file">浏览头像</label>
+												<input type="file" onchange="previewImage(this)" id="file" name="photo2" style="position:absolute;clip:rect(0 0 0 0);"> 
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</form>
 					<div class="col-lg-12 form-group">
 						<div class="col-md-4" id="btns">
 							<button id="sendNotifitation" class="btn btn-default">发布通知</button>
 							<button id="setContent" class="btn btn-default">清空内容</button>
-
-
 						</div>
 					</div>
 
@@ -209,14 +229,68 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
 	<script src="../js/jquery.cokie.min.js"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="../js/ueditor/ueditor.config.js"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="../js/ueditor/ueditor.all.min.js"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="../js/ueditor/lang/zh-cn/zh-cn.js"></script>
 	<script src="../js/jquery.cokie.min.js"></script>
 	<script src="../js/kg.js"></script>
-	<script type="text/javascript" src="../js/ueditor/myeditor.js"></script>
+	<script type="text/javascript">
+	function previewImage(file)
+    {
+      var MAXWIDTH  = 300; 
+      var MAXHEIGHT = 300;
+      var div = document.getElementById('preview');
+      if (file.files && file.files[0])
+      {
+          div.innerHTML ='<img id=imghead>';
+          var img = document.getElementById('imghead');
+          img.onload = function(){
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 300, 300);
+            img.width  =  rect.width;
+            img.height =  rect.height;
+//             img.style.marginLeft = rect.left+'px';
+            img.style.marginTop = rect.top+'px';
+          };
+          var reader = new FileReader();
+          reader.onload = function(evt){img.src = evt.target.result;};
+          reader.readAsDataURL(file.files[0]);
+      }
+      else //兼容IE
+      {
+        var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+        file.select();
+        var src = document.selection.createRange().text;
+        div.innerHTML = '<img id=imghead>';
+        var img = document.getElementById('imghead');
+        img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+        status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+        div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+      }
+    }
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight )
+        {
+            var rateWidth = width / maxWidth;
+            var rateHeight = height / maxHeight;
+             
+            if( rateWidth > rateHeight )
+            {
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else
+            {
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+	
+    
+
+	</script>
+	<script type="text/javascript" src="../js/myNeed/notification.js"></script> 
+	<script type="text/javascript" src="../js/ueditor/myeditor.js"></script> 
 </body>
 </html>

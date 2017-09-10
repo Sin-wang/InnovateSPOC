@@ -11,7 +11,23 @@ public class User {
     private String uid;
     private String username;
     private String password;
-    
+    private int rol;
+	public User(String uid, String username, String password, int rol) {
+		super();
+		this.uid = uid;
+		this.username = username;
+		this.password = password;
+		this.rol = rol;
+	}
+
+	public int getRol() {
+		return rol;
+	}
+
+	public void setRol(int rol) {
+		this.rol = rol;
+	}
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub

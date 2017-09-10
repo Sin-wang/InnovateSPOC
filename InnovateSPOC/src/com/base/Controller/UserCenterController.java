@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.hibernate.hql.internal.ast.tree.IntoClause;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,19 +23,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.base.Po.employList;
-import com.base.Po.employment;
+import com.base.Po.userCenter;
 import com.base.Service.UserCenterService;
 import com.base.utils.CookieUtils;
 import com.base.utils.ExcelReport;
- 
-
 
 @Controller("UserCenterController")
 @RequestMapping("/jsp")
-//就业信息管理控制层
+// 个人中心管理控制层
 public class UserCenterController {
-	
+
 	@Autowired
 	private UserCenterService usercenterservice;
 
@@ -42,14 +40,20 @@ public class UserCenterController {
 	@RequestMapping("/Userupdate.do")
 	public String Userupdate(HttpServletRequest request,
 			HttpServletResponse response, ModelMap map) throws IOException {
-		String filename = null;
+		String filename = "../images/big.jpg";
 		Cookie[] cookies = request.getCookies();// 获得所有cookie对象
-		boolean flag = false;
+		String userType = null;
+		for(Cookie co1 : cookies){
+			if(co1.getName().equals("userType")){
+				 userType = co1.getValue();
+				 
+			}
+		}
 		for (Cookie co : cookies) { // 遍历cookie数组
-			// System.out.println(co.getName());
+			
 			if (co.getName().equals("username")) { // 判断此cookie的key值是否是username
-				String id = co.getValue();
-
+				String id =   co.getValue();
+				
 				// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
@@ -61,15 +65,15 @@ public class UserCenterController {
 					 * .getRealPath("/imgdraw/");
 					 */
 					String path = ExcelReport.getWebRootUrl(request,"/imgdraw/");
- 
 					//先删除原有的图像
 					String deleteFile = CookieUtils.getCookieImage(request,response);
+					System.out.println(deleteFile);
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path+deleteFile);
 					if (tempFile.isFile() && tempFile.exists()) { 
 					   tempFile.delete();
 					}
-					//System.out.println(path+deleteFile);
+					System.out.println(path+deleteFile);
 					
 					// 得到上传的文件的文件名
 					String fileName = mFile.getOriginalFilename();
@@ -87,67 +91,92 @@ public class UserCenterController {
 					outputStream.close();
 					filename = "../imgdraw/" + filename;
 					
-					//重新写cookie中的img属性值
+					//重新写cookie中的image属性值
 					CookieUtils.addCookie("image", filename,response);
-					
+				
 				}
+				//System.out.println(filename+"||filename");
 				String name = request.getParameter("name");
-				if (name.equals("")){
+				if (name.equals("")) {
 					name = null;
 				}
+				
 				String sex = request.getParameter("sex");
-				if (sex.equals("")){
+				if (sex.equals("")) {
 					sex = null;
 				}
+				
 				String phone = request.getParameter("phone");
 				if (phone.equals("")) {
 					phone = null;
 				}
-				
+			
 				String qq = request.getParameter("qq");
-				if (qq.equals("")){
+				if (qq.equals("")) {
 					qq = null;
 				}
-				
+
 				String major = request.getParameter("major");
-				if (major.equals("")){
+				if (major.equals("")) {
 					major = null;
 				}
+
 				String school_year = request.getParameter("school_year");
-				if (school_year.equals("")){
+				if (school_year.equals("")) {
 					school_year = null;
 				}
 				String possword = request.getParameter("possword");
 				if (possword.equals("")) {
 					possword = null;
 				}
-				
+
 				String chinese_address = request.getParameter("chinese_address");
-				if (chinese_address.equals("")){
+				if (chinese_address.equals("")) {
 					chinese_address = null;
 				}
 				String english_address = request.getParameter("english_address");
-				if (english_address.equals("")){
+				if (english_address.equals("")) {
 					english_address = null;
 				}
 				String graduation = request.getParameter("graduation");
-				if (graduation.equals("")){
+				if (graduation.equals("")) {
 					graduation = null;
 				}
 				String employed = request.getParameter("employed");
-				if (employed.equals("")){
+				if (employed.equals("")) {
 					employed = null;
 				}
 				String introduce = request.getParameter("introduce");
-				if (introduce.equals("")){
+				if (introduce.equals("")) {
 					introduce = null;
 				}
-				usercenterservice.update(id, name, phone, possword, filename);
+				usercenterservice.update(id,userType, name,sex, phone,qq,major,school_year, possword,chinese_address,english_address,graduation,employed, introduce,filename);
 			}
 		}
 
-		//CookieUtils.addCookie("image", filename, response);
+		
+		return Integer.parseInt(userType) == 2 ?"redirect:userCenter.jsp" : "redirect:TeachersCenter.jsp";
+	}
 
-		return "redirect:user.jsp";
+	// 获取个人信息
+	@RequestMapping("/getPersonInfo.do")
+		public String getPersonInfo(HttpServletRequest request,
+				HttpServletResponse response, ModelMap map) {
+		Cookie[] cookies = request.getCookies();// 获得所有cookie对象
+		for (Cookie co : cookies) { // 遍历cookie数组
+				if (co.getName().equals("username")) { // 判断此cookie的key值是否是username
+					String id = co.getValue();
+					List<userCenter> list = usercenterservice.getPersonInfo(id);
+					JSONArray json = JSONArray.fromObject(list);
+					response.setContentType("text/html;charset=UTF-8");
+					try {
+						response.getWriter().print(json.toString());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+		}
+		return null;
 	}
 }

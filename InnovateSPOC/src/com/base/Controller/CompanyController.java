@@ -221,14 +221,14 @@ public class CompanyController {
 		int id = Integer.parseInt(request.getParameter("id"));
 		String photo = null;
 		
-		/*// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
+		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
-				MultipartFile mFile2 = multipartRequest.getFile("photo");
+				MultipartFile mFile2 = multipartRequest.getFile("photo2");
 				// 得到上传服务器的路径
 				
-				  String path = request.getSession().getServletContext()
-				  .getRealPath("/imgdraw/");
+				 /* String path = request.getSession().getServletContext()
+				  .getRealPath("/imgdraw/");*/
 				 
 				String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
 
@@ -239,7 +239,7 @@ public class CompanyController {
 					    response);
 				    deleteFile = deleteFile.substring(deleteFile
 					    .lastIndexOf("/"));
-				    File tempFile = new File(path + deleteFile);
+				    File tempFile = new File(path2 + deleteFile);
 				    if (tempFile.isFile() && tempFile.exists()) {
 					tempFile.delete();
 					// System.out.println(filename+"rrrrrr");
@@ -252,7 +252,7 @@ public class CompanyController {
 				    InputStream inputStream = mFile2.getInputStream();
 				    byte[] b = new byte[1048576];
 				    int length = inputStream.read(b);
-				    path += "/" + photo;
+				    path2 += "/" + photo;
 				    // 文件流写到服务器端
 				    FileOutputStream outputStream = new FileOutputStream(path2);
 				    outputStream.write(b, 0, length);
@@ -262,7 +262,7 @@ public class CompanyController {
 
 				    // 重新写cookie中的img属性值
 				    CookieUtils.addCookie("image", photo, response);
-				}*/
+				}
 		
 		companyservice.updateCompany(title, photo,gname,id);
 		return "communication_company";

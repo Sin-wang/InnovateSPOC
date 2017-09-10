@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a href="index.html">
+						  <a href="index.jsp">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="group_project.jsp">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
@@ -515,44 +515,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <div class="enterpriseLeft">
             <div class="enterpriseLeftItem" >
               <div class="leftItemDescOne">
-                 <p></p>  
+                <p id="Etitle1">企业交流管理</p>
               </div>
               <div class="leftItemPicOne">
-                <img src="../images/3D/employee1.png">
+                <img src="" id="Eimg1">
               </div>
+              
             </div>
             <div class="enterpriseLeftItem" >
               <div class="leftItemPicTwo">
-                <img src="../images/3D/employee2.png">
+                <img src="" id="Eimg2">
               </div>
               <div class="leftItemDescTwo">
-                <p></p> 
+                <p id="Etitle2"></p> 
               </div>              
             </div>
             <div class="enterpriseLeftItem" >
               <div class="leftItemDescThree">
-                <p></p> 
+                <p id="Etitle3"></p> 
               </div>
               <div class="leftItemPicThree">
-                <img src="../images/3D/employee3.png">
+                <img src="" id="Eimg3">
               </div>
             </div>
           </div>
           <div class="enterpriseRight">
             <div class="enterpriseRightItem">             
               <div class="rightItemPicOne">
-                <img src="../images/3D/employee4.png">
+                <img src="" id="Eimg4">
               </div>
                <div class="rightItemDesc">
-                <p></p> 
+                <p id="Etitle4"></p> 
               </div>
             </div>
             <div class="enterpriseRightItem">
               <div class="rightItemDesc">
-                <p></p> 
+                <p id="Etitle5"></p> 
               </div>
               <div class="rightItemPicTwo">
-                <img src="../images/3D/employee5.png">
+                <img src="" id="Eimg5">
               </div>
             </div>
           </div>
@@ -677,7 +678,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div style="display: table;">
 						<div id="section1">
 							<div id="section1_1">
-								<div id="portrait"></div>
+								<div id="portrait">
+									<img src="../images/big.jpg" id="headshot">
+								</div>
 								<p id="resumeName"></p>
 								<p id="resumeMajor"></p>
 							</div>

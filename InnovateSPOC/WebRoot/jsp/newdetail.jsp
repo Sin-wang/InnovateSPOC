@@ -36,6 +36,52 @@
 	{
 	border-top: 0 solid #ddd;
 }
+.recruit{
+	height:250px;
+	margin-bottom:40px;
+	background-color:#F2F2F2;
+}
+.recruit_left{
+	float:left;
+	height: 250px;
+	overflow: hidden;
+}
+.recruit img{
+	height: 250px;
+	width: 255px;
+	position:absolute;
+}
+.recruit_body{
+	margin-left:110px;
+	height: 250px;
+}
+.recruit-heading{
+	font-family:"微软雅黑"; 
+	font-size: 24px; 
+	letter-spacing: 2px;
+	color: #464646;
+	margin-left: 250px;
+	}
+.recruit_body p{
+	font-size: 18px;
+	font-family:"微软雅黑";
+	color:#555;
+	margin-left: 250px;
+	margin-right: 20px;
+	display:block;
+	padding-right: 20px;
+	line-height: 45px;
+	letter-spacing:1px;
+	}
+	
+
+.recruit .news-bottom{
+	height: 7px;
+	background:#FF6262;
+	width:1020px;	
+	margin-top:243px;
+	position: absolute;
+}
 </style>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -116,6 +162,8 @@
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 
 									</ul>
 								</li>
@@ -180,8 +228,19 @@
 							<h1 class="text-center">${notification.title }</h1>
 						</div>
 						<div class="content" id="newdetail">
-							<!-- 在此插入新闻详情。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。-->
-							${notification.content }
+							 
+							
+							 <div class="recruit">
+						        <div class="news-bottom"></div>	
+								<div class="recruit_left">
+								    <img src="${notification.photo }">
+								</div>						
+								<div class="recruit_body">
+									<!-- </br><h3 class="recruit-heading">梁统荣</h3></br> -->
+									<p>${notification.content }</p> 	
+								</div>	
+						    </div> 
+							
 						</div>
 					</div>
 				</div>

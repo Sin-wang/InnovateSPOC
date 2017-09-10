@@ -154,7 +154,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 	@Override
 	public String updateWorkInfo(int pid,String gid, String projectName,
 			String workCategory, String expression, String bestWork,
-			String projectIntroduce) {
+			String projectIntroduce,String photo) {
 		// TODO Auto-generated method stub
 
 		int flag;
@@ -167,7 +167,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_ProjectWork(?,?,?,?,?,?,?,?)}");//待写
+		    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_ProjectWork(?,?,?,?,?,?,?,?,?)}");//待写
 		    sp.setInt(1, pid);
 		    sp.setString(2, gid);
 		    sp.setString(3, projectName);
@@ -175,11 +175,12 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		    sp.setString(5, workCategory);
 		    sp.setString(6, expression);
 		    sp.setString(7, bestWork);
+		    sp.setString(8, photo);
 		    
 		    
 		    sp.execute();
-		    flag=sp.getInt(8);
-		   System.out.println(flag);
+		    flag=sp.getInt(9);
+		  // System.out.println(flag);
 		    message=BaseUtils.getException(flag);
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block

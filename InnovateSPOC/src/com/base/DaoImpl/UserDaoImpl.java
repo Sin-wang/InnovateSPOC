@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.base.Dao.UserDao;
 import com.base.Po.User;
+import com.base.Po.userCenter;
 import com.base.Po.userList;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
@@ -27,11 +28,13 @@ public class UserDaoImpl implements UserDao {
     
     @Autowired
     private SessionFactory sessionFactory;
+    
+    //根据账号密码进行验证  返回角色值
     @Override
-    public boolean login(String username, String password) {
+    public int login(String username, String password) {
 	Session session = sessionFactory.openSession();
-	String hql = "from User where username=? and password=?";
-	boolean flag = false;
+	String hql = "from User where uid=? and password=?";
+	int flag = -1;
 
 	try {
 	    Query query = session.createQuery(hql);
@@ -39,14 +42,15 @@ public class UserDaoImpl implements UserDao {
 	    query.setString(1, password);
 	    User ui = (User) query.uniqueResult();
 	    if (ui != null) {
-		flag = true;
+		flag = ui.getRol();
 	    }
-
+	    //System.out.println(flag+"||flag");
 	} catch (Exception e) {
 	    System.out.println(e);
 	} finally {
 	    session.close();
 	}
+	
 	return flag;
     }
     
@@ -167,5 +171,50 @@ public class UserDaoImpl implements UserDao {
 		}
 		return message;
 	}
+
+	//根据id查找对应的表  获取头像地址
+	@Override
+	public userCenter getImage(String userid) {
+
+		Connection conn = null;
+		CallableStatement sp = null;
+		ResultSet rs = null;
+		userCenter ch = new userCenter();
+		//List<userCenter> list = new ArrayList<userCenter>();
+		try {
+		    conn = (Connection) SessionFactoryUtils.getDataSource(
+			    sessionFactory).getConnection();
+		    sp = (CallableStatement) conn
+			    .prepareCall("{CALL innovatespoc.SelTeacher(?)}");
+		    sp.setString(1, userid);
+		    sp.execute();
+		    rs = sp.getResultSet();
+		    while (rs.next()) {
+		    	
+		    	if(rs.getInt("rol") == 2){
+		 			ch.setSname(rs.getString("sname"));
+		 			ch.setHeadshot(rs.getString("headshot"));
+		 			
+		    	}else if(rs.getInt("rol") == 1){
+		    		ch.setTname(rs.getString("tname"));
+					ch.setPhoto_address(rs.getString("photo_address"));
+		    	}
+		    	ch.setTSflag(rs.getInt("rol"));
+			
+			/*ch.setTSflag(rs.getInt("rol"));
+			list.add(ch);*/
+		    }
+		} catch (SQLException e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		} finally {
+		    SqlConnectionUtils.free(conn, sp, rs);
+		}
+
+		return ch;
+	    
+		
+	}
+
 
 }

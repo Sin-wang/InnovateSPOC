@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a class="nav_stop" href="../index.html">
+						  <a href="../index.html">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
                          <li>
-							<a href="UI.jsp">
+							<a class="nav_stop" href="UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
@@ -538,30 +538,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="p9_con">
 					<div id="p9_conl">
 						<div>
-							<img class="p9_img left1" src="../images/UI/p9_con1.jpg" />
-							<p>07年加入腾讯，现任TGideas视觉设计主管,目 前负责腾讯互动娱乐旗下《英雄联盟》、 《洛克王国》，整合品牌及平台产品的创意、视觉及设计管理工作。</p>
+							<img class="p9_img left1" src="" id="img1"/>
+							<p id="title1"></p>
 						</div>
 						<div>
-							<p>京东创界同盟&JD+设计负责人，拥有十几年的移动用 户体验设计经验，带领设计团队在工业设计，交互设 计，界面设计，用户研究等设领域，打造优秀的产品设计。</p>
-							<img class="p9_img right1" src="../images/UI/p9_con3.jpg" />
+							<p id="title2"></p>
+							<img class="p9_img right1" src="" id="img2"/>
 						</div>
 						<div>
-							<img class="p9_img left1" src="../images/UI/p9_con4.jpg" />
-							<p>李一奇，锤子科技第 36 号员工，现为锤子科技 资深视觉设计师，Smartisan OS 第三方图标管理 员。Smartisa OS的桌面因为他的作品而更加和谐统一。</p>
+							<img class="p9_img left1" src="" id="img3"/>
+							<p id="title3"></p>
 						</div>
 					</div>
 					<div id="p9_conr">
 						<div>
-							<img src="../images/UI/p9_con2.jpg" class="p9_img" />
-							<p>2011年加入百度用户体验部，任高级设计经理， 目前团队负责百度熊孩子产品及运营设计，曾 先后负责百度hao123、百度新首页、百度账号、贴吧产品及运营设计等项目。</p>
+							<img src="" class="p9_img" id="img4"/>
+							<p id="title4"></p>
 						</div>
 						<div>
-							<p>吴卓浩自1998年进入用户体验设计与研究领域， 2006年创立Google中国用户体验团队，2010年 创立创新工场用户体验团，2012年底创立INWAY Design。</p>
-							<img src="../images/UI/p9_con5.jpg" class="p9_img" />
+							<p id="title5"></p>
+							<img src="" class="p9_img" id="img5"/>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			
 			<!--part10-->
 			<div id="part10">
@@ -651,7 +652,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div style="display: table;">
 						<div id="section1">
 							<div id="section1_1">
-								<div id="portrait"></div>
+								<div id="portrait">
+									<img src="../images/big.jpg" id="headshot">
+								</div>
 								<p>刘安奇</p>
 								<p>视觉传达专业</p>
 							</div>

@@ -29,7 +29,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	 //增加教师
 	 @Override
-	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,int gid) {
+	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid) {
 		 	int flag=0;
 			Connection conn = null;
 			PreparedStatement ps=null;
@@ -39,15 +39,16 @@ public class TeacherDaoImpl implements TeacherDao{
 			    conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
 			    sp = (CallableStatement) conn
-						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?)}");
+						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?,?)}");
 				sp.setString(1, teacherId);
 				sp.setString(2, teacherName);
 				sp.setString(3, sex);
-				sp.setString(4, Areason);
-				sp.setString(5, password);
-				sp.setInt(6, gid);
+				sp.setString(4, filename);
+				sp.setString(5, Areason);
+				sp.setString(6, password);
+				sp.setInt(7, gid);
 				sp.execute();
-			    flag = sp.getInt(7);
+			    flag = sp.getInt(8);
 			} catch (SQLException e) {
 			    // TODO Auto-generated catch block
 			    e.printStackTrace();
@@ -114,7 +115,7 @@ public class TeacherDaoImpl implements TeacherDao{
 				ch.setTeacher_introduce(rs.getString("introduce"));
 				ch.setGid(rs.getInt("gid"));
 				ch.setGname(rs.getString("gname"));
-//				ch.setPhoto_address(rs.getString("photo_address"));
+				ch.setPhoto_address(rs.getString("photo_address"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -156,7 +157,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	//修改教师信息
 	@Override
-	public void updateteacher(String tid, String tintroduce, int gid) {
+	public void updateteacher(String tid, String tintroduce, int gid,String photo) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement ps=null;
@@ -164,11 +165,12 @@ public class TeacherDaoImpl implements TeacherDao{
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    String sql =("update teachers set teacher_introduce=?,gid=? where tid=?");
+		    String sql =("update teachers set teacher_introduce=?,gid=?,photo_address=? where tid=?");
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, tintroduce);
 		    ps.setInt(2, gid);
-		    ps.setString(3, tid);
+		    ps.setString(3, photo);
+		    ps.setString(4, tid);
 		    ps.executeUpdate();
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
@@ -180,12 +182,13 @@ public class TeacherDaoImpl implements TeacherDao{
 	
 	//获得教师
 	@Override
-	public List<teachers> getTeacher(){
+	public List<teachers> getTeacher(int gid){
 		List<teachers> list = null;
 		Session session=sessionFactory.openSession();		
-		String hql="from teachers";
+		String hql="from teachers where gid=?";
 		try {
 	    	 Query query=session.createQuery(hql);
+	    	 query.setInteger(0, gid);
 	    	 list=query.list();
 		} catch (Exception e) {
 			System.out.println(e);

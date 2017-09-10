@@ -1,5 +1,6 @@
 package com.base.Dao;
 
+import com.base.Po.userCenter;
 import com.base.Po.userList;
 
 public interface UserDao {
@@ -10,7 +11,7 @@ public interface UserDao {
      * @param password
      * @return
      */
-    public boolean login(String username, String password);
+    public int login(String username, String password);
     
     public int addUser(String id,String username,String password);
     
@@ -20,4 +21,9 @@ public interface UserDao {
     public void updateUser(String id,String password);
     
     public String delUser(String str);
+
+
+	public userCenter getImage(String userid);
+
+ 
 }

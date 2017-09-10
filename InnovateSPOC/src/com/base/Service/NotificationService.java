@@ -2,6 +2,8 @@ package com.base.Service;
 
 import java.util.List;
 
+import com.base.Po.news;
+
 public interface NotificationService {
 
 	/*
@@ -17,4 +19,8 @@ public interface NotificationService {
 	   函数功能：获得当前页的公告记录
 	 */	
 	 public List getNotificationInfo(String currentPage,String itemsPerPage); 
+	 
+	 public String delnews(int nid);
+	 
+	 public List<news> getNews();
 }

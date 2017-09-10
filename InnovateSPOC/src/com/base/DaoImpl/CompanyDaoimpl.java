@@ -134,12 +134,12 @@ public class CompanyDaoimpl implements CompanyDao{
 		ResultSet rs = null;
 		try {
 			
-			System.out.println("************************");
+			/*System.out.println("************************");
 			System.out.println(title);
 			System.out.println(photo);
 			System.out.println(gname);
 			System.out.println(id);
-			System.out.println("************************");
+			System.out.println("************************");*/
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
 			String sql = "update communication_company set title =?, photo =?, gname=?  where id =?";
@@ -162,7 +162,7 @@ public class CompanyDaoimpl implements CompanyDao{
 	public List<Company> get_Pcompany() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from Company where gname='程序组'";
+		String hql="from communication_company where gname='程序组'";
 		List<Company> list=null;
 		try {
 	    	 Query query=session.createQuery(hql);
@@ -179,7 +179,7 @@ public class CompanyDaoimpl implements CompanyDao{
 	public List<Company> get_Ucompany() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from Company";
+		String hql="from communication_company where gname='UI组'";
 		List<Company> list=null;
 		try {
 	    	 Query query=session.createQuery(hql);
@@ -196,7 +196,7 @@ public class CompanyDaoimpl implements CompanyDao{
 	public List<Company> get_Dcompany() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from Company";
+		String hql="from communication_company where gname='3D组'";
 		List<Company> list=null;
 		try {
 	    	 Query query=session.createQuery(hql);

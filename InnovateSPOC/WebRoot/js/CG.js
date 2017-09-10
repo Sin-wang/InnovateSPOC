@@ -4,7 +4,10 @@ $(document).ready(function() {
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_CGstudent.do',
+ 			url : 'get_student.do',
+ 			data :{
+ 				gid :6
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -37,9 +40,9 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<5;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="../images/program/member1.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="../images/program/member2.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -47,9 +50,9 @@ $(document).ready(function() {
 						var maxNum=data[0].length-(num-1)*5;
 						for(var a=0;a<maxNum;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="../images/program/member1.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+data[0][5*(i-1)+a].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="../images/program/member2.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+data[0][5*(i-1)+a].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -74,7 +77,6 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
- 				alert(data[0].length);
 			    var total2=data[0].length;
 				var Pstring='';
 				var Liststring='<li data-target="#carousel_students" data-slide-to="0" class="active"></li>';
@@ -101,9 +103,9 @@ $(document).ready(function() {
 					if(i!==number){
 						for(var j=0;j<4;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
+								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+ data[0][i].photo_address +'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people2.png"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+ data[0][i].photo_address +'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -130,6 +132,9 @@ $(document).ready(function() {
         	type : 'POST',
  			dataType : 'json',
  			url : 'getTeacher.do',
+ 			data :{
+ 				gid :6
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -141,10 +146,10 @@ $(document).ready(function() {
 				var Liststr="";
  				for(var i=0;i<data[0].length;i++){
 					if(i===0){
-						Tstring=Tstring+'<div class="item active"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="../images/CG/07 teacher2.png"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
+						Tstring=Tstring+'<div class="item active"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="'+ data[0][i].photo_address +'"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
 						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="../images/CG/07 teacher2.png"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="'+ data[0][i].photo_address +'"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
 						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'"></li>';
 					}
 				}

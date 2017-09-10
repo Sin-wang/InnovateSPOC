@@ -114,6 +114,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 
 									</ul>
 								</li>
@@ -166,7 +168,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">学生管理</a></li>
+							<li><a href="RepairManage.jsp">企业交流管理</a></li>
 						</ol>
 					</div>
 					
@@ -232,7 +234,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="row">
 								<div class="col-md-12">
 									<form action="updateCompany.do" method="post" class="form-horizontal"
-										role="form" id="majoreditform">
+										role="form" id="majoreditform" enctype="multipart/form-data">
 										<table class="table" style="border:none !important;">
 											<tr>
 												<td>
@@ -241,7 +243,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								  					</div>
                                   					<div style="margin:20px 18px;">
                                   						<label class="btn btn-primary" for="file" >修改图片</label>
-								  						<input type="file" onchange="previewImage(this)" id="file" name="photo" style="position:absolute;clip:rect(0 0 0 0);">                          
+								  						<input type="file" onchange="previewImage(this)" id="file" name="photo2" style="position:absolute;clip:rect(0 0 0 0);">                          
                                   					</div>
                                   				</td>
 											</tr>

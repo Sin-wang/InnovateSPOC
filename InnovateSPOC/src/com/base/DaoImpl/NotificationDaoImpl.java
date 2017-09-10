@@ -2,6 +2,7 @@ package com.base.DaoImpl;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ import org.springframework.stereotype.Repository;
 
 import com.base.Dao.NotificationDao;
 import com.base.Po.news;
+import com.base.Po.teachers;
+import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
 
 @Repository("notificationDao")
@@ -109,5 +112,47 @@ public class NotificationDaoImpl implements NotificationDao{
 			session.close();
 		}
 		return list.get(0);
+	}
+
+	@Override
+	public String delnews(int nid) {
+		// TODO Auto-generated method stub
+		int flag = 0;
+		String message = null;
+		Connection conn = null;
+		PreparedStatement ps=null;
+		ResultSet rs = null;
+		try {
+			 conn = (Connection) SessionFactoryUtils.getDataSource(
+					    sessionFactory).getConnection();
+			String sql =("delete from news where id=?");
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, nid);
+			ps.executeUpdate();
+			flag=200;
+			message=BaseUtils.getException(flag);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			SqlConnectionUtils.free(conn, ps, null);
+		}
+		return message;
+	}
+
+	@Override
+	public List<news> getNews() {
+		// TODO Auto-generated method stub
+		List<news> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from news";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
 	}
 }

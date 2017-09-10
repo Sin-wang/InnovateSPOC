@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.base.DaoImpl.NotificationDaoImpl;
 import com.base.Po.news;
+import com.base.Po.teachers;
 import com.base.Service.NotificationService;
 
 
@@ -36,5 +37,18 @@ public class NotificationServiceImpl implements NotificationService{
 	public news getNotification(String id) {
 		// TODO Auto-generated method stub
 		return notificationDaoImpl.getNotification(id);
+	}
+	
+	@Override
+	public String delnews(int nid){
+		String message= notificationDaoImpl.delnews(nid);
+		return message;
+	}
+
+
+	@Override
+	public List<news> getNews() {
+		List<news> list= notificationDaoImpl.getNews();
+		return list;
 	}
 }

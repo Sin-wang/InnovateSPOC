@@ -97,6 +97,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 
 									</ul>
 								</li>

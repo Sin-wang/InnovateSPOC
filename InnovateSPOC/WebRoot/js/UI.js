@@ -4,7 +4,10 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_UIstudent.do',
+ 			url : 'get_student.do',
+ 			data :{
+ 				gid :2
+ 			},
  			async : false,
  			cache : false,
  			error : function(request) {
@@ -42,9 +45,9 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<5;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/program/member1.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="../images/program/member2.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -52,9 +55,9 @@ $(document).ready(function() {
 						var maxNum=data[0].length-(num-1)*5;
 						for(var a=0;a<maxNum;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/program/member1.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="../images/program/member2.png" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -73,6 +76,9 @@ $(document).ready(function() {
         	type : 'POST',
  			dataType : 'json',
  			url : 'getTeacher.do',
+ 			data :{
+ 				gid :2
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -84,10 +90,10 @@ $(document).ready(function() {
 				var Liststr="";
  				for(var i=0;i<data[0].length;i++){
 					if(i===0){
-						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>高级讲师</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1"></div></div></div>';
+						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>高级讲师</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1" style="background: url('+data[0][i].photo_address+') no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="0" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>高级讲师</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1"></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>高级讲师</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1" style="background: url('+data[0][i].photo_address+') no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="'+i+'" style="margin: 0;"></li>';
 					}
 				}
@@ -108,7 +114,6 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
- 				alert(data[0][0].photo_address);
 				var Wstring='<ul><li><img src="'+data[0][0].photo_address+'" style="width: 420px; height: 378px;"/><div id="p5_con1_bg"><p>组员作品</p></div></li><li><img src="'+data[0][1].photo_address+'" style="width: 537px; height: 378px;"/></li><li><img src="'+data[0][2].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][0].photo_address+'" style="width: 210px; height: 294px;"/></li><li><img src="'+data[0][3].photo_address+'" style="width: 520px; height: 520px;"/></li><li><img src="'+data[0][4].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][5].photo_address+'" style="width: 210px; height: 294px;"/></li></ul>';
 				
 				$("#p5_content").append(Wstring);
@@ -169,6 +174,31 @@ $(document).ready(function() {
  			}
         
         });
-				
+	//企业交流管理
+		$.ajax({
+	    	type : 'POST',
+				dataType : 'json',
+				url : 'getUcompany.do',
+				error : function(request) {
+					bootbox.alert({
+	     			  message: "请求异常",
+	     			  size: 'small'
+	     		  });
+				},
+				success : function(data) {
+					
+					$("#img1").attr("src",data[0][0].photo);
+					$("#img2").attr("src",data[0][1].photo);
+					$("#img3").attr("src",data[0][2].photo);
+					$("#img4").attr("src",data[0][3].photo);
+					$("#img5").attr("src",data[0][4].photo);
+					
+					$("#title1").text(data[0][0].title);
+					$("#title2").text(data[0][1].title);
+					$("#title3").text(data[0][2].title);
+					$("#title4").text(data[0][3].title);
+					$("#title5").text(data[0][4].title);
+				}
+	    });			
 	
 });

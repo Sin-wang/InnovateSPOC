@@ -31,6 +31,13 @@
 	{
 	border-top: 0 solid #ddd;
 }
+.list_a{
+	width:96%;
+}
+#delete{
+	float:right;
+	margin-top:-30px;
+}
 </style>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -111,7 +118,8 @@
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
-
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -185,9 +193,12 @@
 							<a class="list-group-item active"> 公告列表 </a>
 							<c:forEach items='${notifications}' var='notification'>
 
-								<a href="newdetail.do?id=${notification.id }"
-									class="list-group-item">${notification.title }</a>
-
+								<div>
+									<a name="news" href="newdetail.do?id=${notification.id }"
+									class="list-group-item list_a">${notification.title }
+									</a>
+									<button id="delete" class="btn btn-danger btn-xs" type="button" value="${notification.id }">删除</button>
+								</div>
 							</c:forEach>
 
 
@@ -286,6 +297,7 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
 	<script src="../dist/jquery.cokie.min.js"></script>
+	<script src="../js/myNeed/newlist.js"></script>
 	<script src="../js/kg.js"></script>
 	<script>
 		function jumpTo(maxPage) {
@@ -298,16 +310,6 @@
 				$('body').load('newlist.do?page=' + page);
 			}
 		}
-	</script>
-	<script type="text/javascript">
-		$(document).ready(
-				$.ajax({
-					url : 'newlist.do',
-					type : 'post',
-					dataType : 'json',
-				})
-				);
-			
 	</script>
 </body>
 </html>

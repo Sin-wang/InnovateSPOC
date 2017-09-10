@@ -19,6 +19,7 @@ $(document).ready(function() {
 					},
 					success : function(data) {
 						//基本个人信息
+						$("#headshot").attr("src",data[0][0].headshot);
 						$("#resumeName").text(data[0][0].sname);
 						$("#resumeMajor").text(data[0][0].major);
 						$("#resumeIntroduce").text(data[0][0].student_introduce);

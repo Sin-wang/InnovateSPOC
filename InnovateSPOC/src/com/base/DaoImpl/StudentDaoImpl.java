@@ -31,7 +31,7 @@ public class StudentDaoImpl implements StudentDao{
 	public int addstudent(String studentId, String studentName, String sex,
 			String areason, String password, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
-			String emp,int gid) {
+			String emp,String filename,int gid) {
 		// TODO Auto-generated method stub
 		int flag=0;
 		Connection conn = null;
@@ -43,23 +43,24 @@ public class StudentDaoImpl implements StudentDao{
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-					.prepareCall("{CALL innovatespoc.check_student(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+					.prepareCall("{CALL innovatespoc.check_student(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 			sp.setString(1, studentId);
 			sp.setString(2, studentName);
 			sp.setString(3, areason);
 			sp.setString(4, sex);
-			sp.setString(5, password);
-			sp.setString(6, caddress);
-			sp.setString(7, eaddress);
-			sp.setString(8, telephone);
-			sp.setString(9, qq);
-			sp.setString(10, enrollmentYear);
-			sp.setString(11, major);
-			sp.setString(12, gra);
-			sp.setString(13, emp);
-			sp.setInt(14, gid);
+			sp.setString(5, filename);
+			sp.setString(6, password);
+			sp.setString(7, caddress);
+			sp.setString(8, eaddress);
+			sp.setString(9, telephone);
+			sp.setString(10, qq);
+			sp.setString(11, enrollmentYear);
+			sp.setString(12, major);
+			sp.setString(13, gra);
+			sp.setString(14, emp);
+			sp.setInt(15, gid);
 			sp.execute();
-		    flag = sp.getInt(15);
+		    flag = sp.getInt(16);
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
@@ -109,6 +110,7 @@ public class StudentDaoImpl implements StudentDao{
 				ch.setEmployed(rs.getString("employed"));
 				ch.setGname(rs.getString("gname"));
 				ch.setGid(rs.getInt("gid"));
+				ch.setHeadshot(rs.getString("headshot"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -152,14 +154,14 @@ public class StudentDaoImpl implements StudentDao{
 	@Override
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor, int gid, String gra, String emp){
+			String qq, String smajor, int gid, String gra, String emp,String photo){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
-			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=?,gid=?,graduation=?,employed=? where sid =?";
+			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=?,gid=?,graduation=?,employed=?,headshot=? where sid =?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Sintroduce);
 			pstmt.setString(2, chinese_address);
@@ -170,7 +172,8 @@ public class StudentDaoImpl implements StudentDao{
 			pstmt.setInt(7, gid);
 			pstmt.setString(8, gra);
 			pstmt.setString(9, emp);
-			pstmt.setString(10, sid);
+			pstmt.setString(10, photo);
+			pstmt.setString(11, sid);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -214,13 +217,14 @@ public class StudentDaoImpl implements StudentDao{
 	}
 
 	@Override
-	public List<students> get_Pstudent() {
+	public List<students> get_Pstudent(int gid) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from students where gid = 1";
+		String hql="from students where gid=?";
 		List<students> list = null;
 		try {
 	    	 Query query=session.createQuery(hql);
+	    	 query.setInteger(0, gid);
 	    	 list=query.list();
 		} catch (Exception e) {
 			System.out.println(e);

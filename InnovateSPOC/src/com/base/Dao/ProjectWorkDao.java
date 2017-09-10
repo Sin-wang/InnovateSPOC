@@ -28,7 +28,7 @@ public interface ProjectWorkDao {
 
 	public String updateWorkInfo(int pid,String gid, String projectName,
 			String workCategory, String expression, String bestWork,
-			String projectIntroduce);
+			String projectIntroduce ,String photo);
 
 	public List<project_work> getWork();
 

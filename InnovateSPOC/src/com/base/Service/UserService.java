@@ -1,5 +1,6 @@
 package com.base.Service;
 
+import com.base.Po.userCenter;
 import com.base.Po.userList;
 
 public interface UserService {
@@ -10,7 +11,7 @@ public interface UserService {
      * @param password
      * @return
      */
-    public boolean login(String usename, String password);
+    public int login(String usename, String password);
     
     public int addUser(String id,String username, String password);
     
@@ -20,4 +21,8 @@ public interface UserService {
     public void updateUser(String id,String password);
     
     public String delUser(String str);
+
+	public userCenter getImage(String userid);
+
+
 }

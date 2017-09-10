@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	
 	$('#resume_myModal').on('show.bs.modal', function () {
-		alert("aaa");
+		
 				$("#resumeName").text("赵勇");
 				$("#resumeMajor").text("信息工程");
 				$("#resumeIntroduce").text("data.introduce");
@@ -39,6 +39,11 @@ $(document).ready(function() {
 							interestingStr=interestingStr+'<div class="sec2_content"><div class="icon4"></div><div class="sec2_text"><h1>吉他乐器<span>2008.09-2010.09</h1><br><p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p></div></div>';
 						}
 						$("#resumIntr").append(interestingStr);
+						var Pcontstr="";
+						for(var f=0;f<5;f++){
+							Pcontstr=Pcontstr+'<div class="content" style="background:url(../images/resume/bg.png) no-repeat;"><div class="intro"><h1>旅行的路上每一个异国建筑都是别样的风景</h1><p>I whipped the Scotch tape from my pocket and said</p></div></div>';
+						}
+						$("#joinproject").append(Pcontstr);
 		
 		
 				//获取简历信息的请求

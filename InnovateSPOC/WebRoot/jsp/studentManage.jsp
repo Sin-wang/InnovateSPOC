@@ -22,6 +22,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/teacher.css">
 
+<style type="text/css">
+    	#preview{
+			width:120px;
+			height:120px;
+			border:1px solid #000;
+			border-radius:60px;
+			overflow:hidden;
+		}
+#preview2{
+			width:120px;
+			height:120px;
+			border:1px solid #000;
+			border-radius:60px;
+			overflow:hidden;
+		}
+    </style>
   </head>
   
   <body>
@@ -99,6 +115,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 
 									</ul>
 								</li>
@@ -166,7 +184,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<thead>
 									<tr bgcolor="#ECF1F5">
 									<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="14" id="button-left">
+										<td colspan="17" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
@@ -180,6 +198,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>学生姓名</th>
 										<th>性别</th>
 										<th>组别</th>
+										<th hidden>个人图片</th>
 										<th hidden>组别id</th>
 										<th hidden>个人简介</th>
 										<th hidden>中文居住地址</th>
@@ -228,8 +247,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="row">
 								<div class="col-md-12">
 									<form action="updatestudent.do" method="post" class="form-horizontal"
-										role="form" id="majoreditform">
+										role="form" id="majoreditform" enctype="multipart/form-data">
 										<table class="table" style="border:none !important;">
+											<tr>
+												<td>
+   													<div id="preview">
+    													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
+								  					</div>
+                                  					<div style="margin:20px 18px;">
+                                  						<label class="btn btn-primary" for="file" >修改图片</label>
+								  						<input type="file" onchange="previewImage(this)" id="file" name="photo2" style="position:absolute;clip:rect(0 0 0 0);">                          
+                                  					</div>
+                                  				</td>
+											</tr>
 											<tr>
 												<td>学生id ：</td>
 												<td><input type="text" class="form-control"

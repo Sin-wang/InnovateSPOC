@@ -1,6 +1,7 @@
 .wrap{
 	width: 1024px;
 	margin: auto;
+	margin-top: 20px;
 }
 #head{
 	width: 1024px;
@@ -28,13 +29,11 @@
 	padding-right: 4px;
 	border: 1px solid grey;
 }
-#contents{
-}
+
 .content{
 	width: 230px;
 	height: 345px;
-	background: url(../images/group_program/bg.png) no-repeat;
-	background-size: 250px 180px;
+	background-size: 250px 180px !important;
 	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
 	float: left;
 	margin-right: 34px;
@@ -61,4 +60,67 @@
 .intro p:nth-of-type(3){
 	border-top: 1px solid #EFEFEF;
 	padding-top: 10px;
+}
+#myModalLabel2{
+	 
+	color:#ec433d;;
+	letter-spacing: 8px;
+}
+#Login .modal-body{
+	padding: 0px;
+}
+#work_window{
+	height: 545px;
+	width: 800px;
+	position:relative;
+}
+#work_title{
+	color: white;
+	width: 800px;
+	height: 120px;
+	background-color: rgba(236,67,61,0.8);
+	position: absolute;
+	bottom: 0px;
+	padding-top: 18px;
+	text-align: center;
+	font-size: 28px;
+}
+#work_introduce{
+	margin-top: 10px;
+}
+#introduce_title{
+	height: 80px;
+	text-align: left;
+	line-height: 80px;
+	width: 800px;
+	border-bottom: 2px solid #ec433d;
+	color: #ec433d;
+	font-size: 26px;
+	padding-left: 50px;
+}
+#introduce_content{
+	padding: 20px;
+	font-size: 16px;
+	line-height: 30px;
+	text-indent: 2em;
+}
+#work_menber{
+	background-color: #ec433d;
+	text-align: left;
+	height: 80px;
+	line-height: 80px;
+	width: 800px;
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	font-size: 26px;
+	padding-left: 50px;
+}
+#menber_list{
+	background-color: #ec433d;
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	width: 800px;
+	color: #fff;
+	font-size: 18px;
 }

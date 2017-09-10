@@ -55,10 +55,10 @@ $(document).ready(function() {
 				var Liststr="";
  				for(var m=0;m<2;m++){
 					if(m===0){
-						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1"></div></div></div>';
+						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1" style="background: url(../images/UI/teacher1.jpg) no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="0" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1"></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1" style="background: url(../images/UI/teacher1.jpg) no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="'+m+'" style="margin: 0;"></li>';
 					}
 				}
@@ -202,10 +202,10 @@ $(document).ready(function() {
 				var Liststr="";
  				for(var i=0;i<data.length;i++){
 					if(i===0){
-						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1"></div></div></div>';
+						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1" style="background: url(../images/UI/teacher1.jpg) no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="0" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1"></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>蔺薛菲</h1><p>高级讲师</p><p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p></div></div><div class="p8_teacher1" style="background: url(../images/UI/teacher1.jpg) no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="'+i+'" style="margin: 0;"></li>';
 					}
 				}

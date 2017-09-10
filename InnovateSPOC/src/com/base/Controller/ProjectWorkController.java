@@ -1,5 +1,6 @@
 package com.base.Controller;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,6 +26,7 @@ import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.Po.work_category;
 import com.base.Service.ProjectWorkService;
+import com.base.utils.CookieUtils;
 import com.base.utils.ExcelReport;
  
 
@@ -95,58 +97,6 @@ public class ProjectWorkController {
     		String workCategory = request.getParameter("workCategory");
     		String express = request.getParameter("express");
     		String bestWork = request.getParameter("bestWork");
-    		
-    
-    		/*// 项目作品地址
-    		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
-    		String path = null;
-    		String projectAddress = null;
-    		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-    		// 得到上传的文件
-    		MultipartFile mFile = multipartRequest.getFile("projectAddress");// 申请材料保存地址
-    		if (!mFile.isEmpty()) {
-    		    // 得到上传服务器的路径
-    			// path = request.getSession().getServletContext().getRealPath("/imgdraw/");
-    		    path = ExcelReport.getWebRootUrl(request, "/imgdraw/");
-    		    // 得到上传的文件的文件名
-    		    String fileName = mFile.getOriginalFilename();
-    		    String fileType = fileName.substring(fileName
-    			    .lastIndexOf("."));
-    		    projectAddress = new Date().getTime() + fileType;
-    		    InputStream inputStream = null;
-    		    try {
-    			inputStream = mFile.getInputStream();
-    		    } catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		    }
-    		    byte[] b = new byte[1048576];
-    		    int length = 0;
-    		    try {
-    			length = inputStream.read(b);
-    		    } catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		    }
-    		    path += "/"+projectAddress;
-    		    // 文件流写到服务器端
-    		    try {
-    			FileOutputStream outputStream = new FileOutputStream(
-    				path);
-    			outputStream.write(b, 0, length);
-    			inputStream.close();
-    			outputStream.close();
-    		    } catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		    }
-    		    projectAddress = "../imgdraw/" + projectAddress;
-    		   // projectAddress = "../imgdraw/" + projectAddress;
-
-    		    
-    		} else {
-    			projectAddress = null;
-    		}*/
     		
     		// 项目截图地址
     		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
@@ -241,7 +191,7 @@ public class ProjectWorkController {
  // 修改实习基地信息
     @RequestMapping("/updateWorkInfo.do")
     public String updateWorkInfo(HttpServletRequest request,
-	    HttpServletResponse response, ModelMap map) {
+	    HttpServletResponse response, ModelMap map) throws IOException {
 	int Pid =Integer.parseInt(request.getParameter("Pid"));
 	String Gid=request.getParameter("Gid");
 	String ProjectName=request.getParameter("ProjectName");
@@ -264,8 +214,53 @@ public class ProjectWorkController {
 	if(ProjectIntroduce.equals("")){
 		ProjectIntroduce=null;
 	}
-	System.out.println(Pid+"||"+Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);
-	String message = ProjectWorkService.updateWorkInfo(Pid,Gid,ProjectName,WorkCategory,Expression,BestWork,ProjectIntroduce);
+	
+	String photo = null;
+	
+	// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+			// 得到上传的文件
+			MultipartFile mFile2 = multipartRequest.getFile("img");
+			// 得到上传服务器的路径
+			
+			 /* String path = request.getSession().getServletContext()
+			  .getRealPath("/imgdraw/");*/
+			String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
+
+			// CookieUtils.addCookie("image", filename, response);		
+			if (!mFile2.isEmpty()) {
+			    // 先删除原有的图像
+			    String deleteFile = CookieUtils.getCookieImage(request,
+				    response);
+			    deleteFile = deleteFile.substring(deleteFile
+				    .lastIndexOf("/"));
+			    File tempFile = new File(path2 + deleteFile);
+			    if (tempFile.isFile() && tempFile.exists()) {
+				tempFile.delete();
+				// System.out.println(filename+"rrrrrr");
+			    }
+			    // 得到上传的文件的文件名
+			    String fileName = mFile2.getOriginalFilename();
+			    String fileType = fileName.substring(fileName
+				    .lastIndexOf("."));
+			    photo = new Date().getTime() + fileType;
+			    InputStream inputStream = mFile2.getInputStream();
+			    byte[] b = new byte[1048576];
+			    int length = inputStream.read(b);
+			    path2 += "/" + photo;
+			    // 文件流写到服务器端
+			    FileOutputStream outputStream = new FileOutputStream(path2);
+			    outputStream.write(b, 0, length);
+			    inputStream.close();
+			    outputStream.close();
+			    photo = "../imgdraw/" + photo;
+
+			    // 重新写cookie中的img属性值
+			    CookieUtils.addCookie("image", photo, response);
+			}
+	
+	//System.out.println(Pid+"||"+Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);
+	String message = ProjectWorkService.updateWorkInfo(Pid,Gid,ProjectName,WorkCategory,Expression,BestWork,ProjectIntroduce,photo);
 	if(message=="success"){
 	    message="操作成功";
 	}else if(message=="fail"){

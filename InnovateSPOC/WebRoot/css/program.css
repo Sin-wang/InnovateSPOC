@@ -319,6 +319,10 @@ ul{
 	margin: auto;
 	position: relative;
 }
+#show_work img{
+	max-height:700px;
+	overflow:hidden;
+}
 #work_list{
 	position: absolute;
 	top: 100%;

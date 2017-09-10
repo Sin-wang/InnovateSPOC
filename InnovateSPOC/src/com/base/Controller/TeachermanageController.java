@@ -1,7 +1,11 @@
 package com.base.Controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,11 +19,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.base.Po.students;
 import com.base.Po.teacherList;
 import com.base.Po.teachers;
 import com.base.Service.TeacherService;
+import com.base.utils.CookieUtils;
+import com.base.utils.ExcelReport;
 
 @Controller("TeachermanageController")
 @RequestMapping("/jsp")
@@ -37,9 +45,9 @@ public class TeachermanageController {
 		String sex = request.getParameter("sex");
 		String Areason = request.getParameter("Areason");
 		String password = request.getParameter("password");
-//		String photo = request.getParameter("file");
+		String filename = "../images/big.jpg";
 		int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
-		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,gid);
+		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,filename,gid);
 		request.setAttribute("flag", flag);
 		return "teacherManage";
 	}
@@ -112,11 +120,55 @@ public class TeachermanageController {
     //修改操作
     @RequestMapping("/updateteacher.do")
     public String updateteacher(HttpServletRequest request,
-    	    HttpServletResponse response) {
+    	    HttpServletResponse response) throws IOException {
     	String tid = request.getParameter("tid");
     	String Tintroduce = request.getParameter("Tintroduce");
     	int gid = Integer.parseInt(request.getParameter("SelectOne"));
-    	teacherService.updateteacher(tid, Tintroduce,gid);
+		String photo = null;
+
+		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		// 得到上传的文件
+		MultipartFile mFile2 = multipartRequest.getFile("photo2");
+		// 得到上传服务器的路径
+
+		/*
+		 * String path = request.getSession().getServletContext()
+		 * .getRealPath("/imgdraw/");
+		 */
+
+		String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
+
+		// CookieUtils.addCookie("image", filename, response);
+		if (!mFile2.isEmpty()) {
+			// 先删除原有的图像
+			String deleteFile = CookieUtils.getCookieImage(request, response);
+			deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
+			File tempFile = new File(path2 + deleteFile);
+			if (tempFile.isFile() && tempFile.exists()) {
+				tempFile.delete();
+				// System.out.println(filename+"rrrrrr");
+			}
+			// 得到上传的文件的文件名
+			String fileName = mFile2.getOriginalFilename();
+			String fileType = fileName.substring(fileName.lastIndexOf("."));
+			photo = new Date().getTime() + fileType;
+			InputStream inputStream = mFile2.getInputStream();
+			byte[] b = new byte[1048576];
+			int length = inputStream.read(b);
+			path2 += "/" + photo;
+			// 文件流写到服务器端
+			FileOutputStream outputStream = new FileOutputStream(path2);
+			outputStream.write(b, 0, length);
+			inputStream.close();
+			outputStream.close();
+			photo = "../imgdraw/" + photo;
+
+			// 重新写cookie中的img属性值
+			CookieUtils.addCookie("image", photo, response);
+		}
+
+    	teacherService.updateteacher(tid, Tintroduce,gid,photo);
     	return "teacherManage";
     	
     }
@@ -150,7 +202,8 @@ public class TeachermanageController {
     @RequestMapping("/getTeacher.do")
     public String getTeacher(HttpServletRequest request,
 		    HttpServletResponse response){
-    	List<teachers> list = teacherService.getTeacher();
+    	int gid = Integer.parseInt(request.getParameter("gid"));
+    	List<teachers> list = teacherService.getTeacher(gid);
 		try {
 		    List list4 = new ArrayList();
 		    list4.add(list);

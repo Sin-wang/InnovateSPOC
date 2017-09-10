@@ -22,6 +22,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="../css/employmentManage.css">
 	<link rel="stylesheet" href="../css/practicebaseapply.css">
+	
+<style type="text/css">
+    	#preview{
+			width:120px;
+			height:120px;
+			border:1px solid #000;
+			border-radius:60px;
+			overflow:hidden;
+		}
+#preview2{
+			width:120px;
+			height:120px;
+			border:1px solid #000;
+			border-radius:60px;
+			overflow:hidden;
+		}
+</style>
   </head>
   
   <body>
@@ -62,6 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="icon-copy" aria-hidden="true"></i><span>用户管理</span>
 								</a>
 									<ul class="nav nav-children">
+										<li><a href="user.jsp"><span class="text"></span>用户管理</a></li>
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
 										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
@@ -72,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">组别信息管理</span></a></li>
+											href="groupManage.jsp"><span class="text">组别信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -89,6 +107,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
 										<li><a
 											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
+
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -99,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 										<li><a
 											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
-										
+
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -116,7 +135,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">企业交流信息管理</span></a></li>
+											href="communication_company.jsp"><span class="text">企业交流信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -125,7 +144,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">新闻信息管理</span></a></li>
+											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -362,8 +381,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="row">
 								<div class="col-md-12">
 									<form action="updateWorkInfo.do" method="post" class="form-horizontal"
-										role="form" id="workEditForm">
+										role="form" id="workEditForm" enctype="multipart/form-data">
 										<table class="table" style="border:none !important;">
+										<tr>
+												<td>
+   													<div id="preview">
+    													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
+								  					</div>
+                                  					<div style="margin:20px 18px;">
+                                  						<label class="btn btn-primary" for="file" >修改图片</label>
+								  						<input type="file" onchange="previewImage(this)" id=file name="img" style="position:absolute;clip:rect(0 0 0 0);">                          
+                                  					</div>
+                                  				</td>
+										</tr>
 											<tr>
 												<input type="text" class="form-control" id="Pid"
 										name="Pid" style="display:none"/>
@@ -416,16 +446,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												</textarea>
 												</td>
 											</tr>
-											<!-- <tr id="projectAddresstr">
-												<td>项目地址：</td>
-												<td colspan="3" style="text-align:left;"><a
-													id="projectAddress" href="#" style="color:#3071a9;">点击查看</a></td>
-											</tr>
-											<tr id="photoAddresstr">
-												<td> 项目截图：</td>
-												<td colspan="3" style="text-align:left;"><a
-													id="photoAddress" href="#" style="color:#3071a9;">点击查看</a></td>
-											</tr> -->
 											
 										</table>
 									</form>

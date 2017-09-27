@@ -226,7 +226,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td>小组名称 ：<span class="setTag">*</span></td>
 												<td><input type="text" class="form-control"
-													id="gname" name="gname" /></td>
+													id="gname" name="gname" />
+													<p class="warning" id="editWarning">组别不能为空</p>	
+												</td>
 											</tr>						
 										</table>
 									</form>
@@ -263,9 +265,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<table class="table" style="border:none !important;">
 									<tr>
 										<td class="col-md-3 col-md-offset-2">组别名称:<span class="setTag">*</span></td>
-										<td class="col-md-9"><input name="gname" id="gname" type="text" style="width:80%" class="form-control"/><span id="display2"
-												style="color:#f00;"></span></td>
+										<td class="col-md-9"><input name="gname" id="gname2" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span>
+										<p class="warning" id="addWarning">组别不能为空</p>
+										</td>
 									</tr>
+									
 								</table>
 							</form>
 						</div>

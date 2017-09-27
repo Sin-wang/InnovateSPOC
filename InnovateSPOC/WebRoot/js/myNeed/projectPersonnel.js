@@ -97,11 +97,11 @@ $(document).ready(function() {
 							//增加框的js控制
 							$("#confirm").click(function(){
 								var tag=1;
-								var pid = $("#pid").val;
+								var pid = $("#pid").val();
 								
-								var sid = $("#sid").val;
-								var participants = $("#participants").val;
-								var header = $("#header").val;
+								var sid = $("#sid").val();
+								var participants = $("#participants").val();
+								var header = $("#header").val();
 								
 								
 								if(!tag){		
@@ -232,7 +232,7 @@ $(document).ready(function() {
 														return;
 													} else if ($("#Participants").val() == "") {
 														bootbox.alert({
-															message : "是否优秀不能为空",
+															message : "项目参与人员不能为空",
 															size : 'small'
 														});
 														return;
@@ -268,4 +268,65 @@ $(document).ready(function() {
 															}
 														});
 							});
+							
+							
+							
+							//获取项目
+							$.ajax({
+								type : 'POST',
+								dataType : 'json',		
+								url : 'getWork.do',  
+								async : false,
+								cache : false,
+								error : function(request) {
+									bootbox.alert({
+										message : "请求异常21",
+										size : 'small'
+									});
+								},
+								success : function(data) {
+									
+									for ( var i=0;i<data[0].length;i++) {									
+										
+										$("#PidList").after(
+												"<option value="+data[0][i].project_name+">"
+														+ data[0][i].project_name + "</option>");				
+										
+									}	
+																		
+								}
+
+							});
+							
+							$.ajax({
+								type : 'POST',
+								dataType : 'json',		
+								url : 'get_3Dstudent.do',  
+								async : false,
+								cache : false,
+								error : function(request) {
+									bootbox.alert({
+										message : "请求异常21",
+										size : 'small'
+									});
+								},
+								success : function(data) {
+									
+									for ( var i=0;i<data[0].length;i++) {									
+										
+										$("#StuNameList").after(
+												"<option value="+data[0][i].sid+">"
+														+ data[0][i].sname + "</option>");				
+										
+									}	
+																		
+								}
+
+							});
+							
+							$(document).on("change","#StudentName",function(){
+								$("#sid").val($(this).val());
+								
+							});
+							
 });

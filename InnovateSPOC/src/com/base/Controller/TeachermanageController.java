@@ -141,8 +141,10 @@ public class TeachermanageController {
 
 		// CookieUtils.addCookie("image", filename, response);
 		if (!mFile2.isEmpty()) {
-			// 先删除原有的图像
-			String deleteFile = CookieUtils.getCookieImage(request, response);
+			// 先删除原有的图像，根据tid在数据库中找到图片的地址
+			List<teachers> listTea = teacherService.getTeacher(tid);
+			
+			String deleteFile = listTea.get(0).getPhoto_address();
 			deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 			File tempFile = new File(path2 + deleteFile);
 			if (tempFile.isFile() && tempFile.exists()) {

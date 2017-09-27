@@ -61,6 +61,12 @@ public class TeacherServiceImpl implements TeacherService {
 		// TODO Auto-generated method stub
 		List<teachers> list= teacherdao.getTeacher(gid);
 		return list;
+	}
+	
+	public List<teachers> getTeacher(String tid) {
+		// TODO Auto-generated method stub
+		List<teachers> list= teacherdao.getTeacher(tid);
+		return list;
 	} 
 	
 	

@@ -95,12 +95,28 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#title").val(obj[index].title);
 	$("#gname").val(obj[index].gname);
 	$("#id").val(obj[index].id);
+	$("#picture").val(obj[index].photo);
 	$("#edit").modal('show');
 	
 });
 
 //修改
 $("#saverun").click(function(){
+	
+	if($("#title").val()===""){
+		$("#editWarningTitle").show();
+		return;
+	}else{
+		$("#editWarningTitle").hide();
+	}
+	
+	if($("#gname").val()===""){
+		$("#editWarningGroup").show();
+		return;
+	}else{
+		$("#editWarningGroup").hide();
+	}
+	
 	bootbox.confirm({
 		message: "是否确认修改",
 		size: 'small',
@@ -121,6 +137,37 @@ $("#saverun").click(function(){
 						}
 					});
 });
+
+
+//获取组别
+$.ajax({
+	type : 'POST',
+	dataType : 'json',		
+	url : 'getGroup.do',  
+	async : false,
+	cache : false,
+	error : function(request) {
+		bootbox.alert({
+			message : "请求异常21",
+			size : 'small'
+		});
+	},
+	success : function(data) {
+		
+		for ( var i=0;i<data[0].length;i++) {				
+			$("#addgnameList").after(
+					"<option value="+data[0][i].gname+">"
+							+ data[0][i].gname + "</option>");
+			$("#gnameList").after(
+					"<option value="+data[0][i].gname+">"
+							+ data[0][i].gname + "</option>");	
+			
+		}	
+		
+	}
+
+});
+
 
 
 var flag=0;
@@ -200,6 +247,28 @@ $("#ck1").on("click", function () {
 
 
 $("#save").click(function(){
+	
+	if($("#file2").val()===""){
+		$("#addWarningPhoto").show();
+		return;
+	}else{
+		$("#addWarningPhoto").hide();
+	}
+	
+	if($("#addtitle").val()===""){
+		$("#addWarningTitle").show();
+		return;
+	}else{
+		$("#addWarningTitle").hide();
+	}
+	
+	if($("#addgname").val()===""){
+		$("#addWarningGroup").show();
+		return;
+	}else{
+		$("#addWarningGroup").hide();
+	}
+	
 	bootbox.confirm({
 		message: "是否确认添加",
 		size: 'small',
@@ -220,21 +289,29 @@ $("#save").click(function(){
 						}
 					});
 });
+$('#add').on('hidden.bs.modal', function () {
+	$("#addgname").val("");
+	$("#addtitle").val("");
+	$("#file2").val("");
+	$("#addWarning").hide();
+});
+
+
 
 
 
 //图片的显示与修改
 function previewImage(file)
 {
-  var MAXWIDTH  = 120; 
-  var MAXHEIGHT = 120;
+  var MAXWIDTH  = 298; 
+  var MAXHEIGHT = 157;
   var div = document.getElementById('preview');
   if (file.files && file.files[0])
   {
       div.innerHTML ='<img id=imghead>';
       var img = document.getElementById('imghead');
       img.onload = function(){
-        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 120, 120);
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 298, 157);
         img.width  =  rect.width;
         img.height =  rect.height;
 //         img.style.marginLeft = rect.left+'px';

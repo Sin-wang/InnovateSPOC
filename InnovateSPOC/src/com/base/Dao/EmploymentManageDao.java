@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
+import com.base.Po.students;
 
  
 /**
@@ -48,7 +49,9 @@ public interface EmploymentManageDao {
 
 	public List<employment> getEmploy();
 
-	public List<groups> getGroup(); 
+	public List<groups> getGroup();
+
+	public List<students> getStudents();  
 
 
 }

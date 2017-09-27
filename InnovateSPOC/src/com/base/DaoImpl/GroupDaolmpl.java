@@ -149,6 +149,7 @@ public class GroupDaolmpl implements GroupDao{
 			sp.setString(1, str);
 			sp.execute();
 			flag = sp.getInt(2); 
+			
 			message=BaseUtils.getException(flag);
 		} catch (Exception e) {
 			e.printStackTrace();

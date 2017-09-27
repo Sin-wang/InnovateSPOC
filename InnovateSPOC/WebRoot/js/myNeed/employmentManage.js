@@ -110,18 +110,25 @@ $(document).ready(function() {
 							//增加框的js控制
 							$("#confirm").click(function(){
 								var tag=1;
-								var sid = $("#sid").val;
-								var company = $("#company").val;
-								var salary = $("#salary").val;
-								var workin = $("#workin").val;
-								var graduation_year = $("#graduation_year").val;
+								var sid = $("#sid").val();
+								var company = $("#company").val();
+								var salary = $("#salary").val();
+								var workin = $("#workin").val();
+								var graduation_year = $("#graduation_year").val();
 								if(!tag){		
 									 bootbox.alert({
 											message : "该学生编号已存在，请重新输入",
 											size : 'small'
 										});
 									 return;
-								}	
+								}
+								if(sid==""){
+									 bootbox.alert({
+											message : "学生编号不能为空",
+											size : 'small'
+										});
+									 return;
+								}
 								if(company==""){
 									 bootbox.alert({
 											message : "请填写所在公司",

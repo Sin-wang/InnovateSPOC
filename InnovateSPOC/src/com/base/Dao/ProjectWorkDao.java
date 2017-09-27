@@ -5,7 +5,9 @@ package com.base.Dao;
 
 import java.util.List;
 
+import com.base.Po.WorkInfo;
 import com.base.Po.groups;
+import com.base.Po.project_personnel;
 import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.Po.work_category;
@@ -34,6 +36,17 @@ public interface ProjectWorkDao {
 
 	public List<work_category> getCategory();
 
-	public List<groups> getGroup(); 
+	public List<groups> getGroup();
+
+	public List<project_personnel> getPersonnel();
+
+	public List<project_personnel> getPersonnel(String pid);
+
+	public List<WorkInfo> getAllWorkInfo();
+
+	public List<WorkInfo> getAllWorkInfo(String sid);
+
+	public List<project_work> getWorkInfoBypid(String pid);  
+
    
 }

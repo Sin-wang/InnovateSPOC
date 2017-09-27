@@ -28,11 +28,13 @@ import com.base.Po.internship;
 import com.base.Po.skill_student;
 import com.base.Po.studentList;
 import com.base.Po.students;
+import com.base.Po.userCenter;
 import com.base.Service.EducationExperienceService;
 import com.base.Service.HobbysService;
 import com.base.Service.InternshipService;
 import com.base.Service.SkillStudentService;
 import com.base.Service.StudentService;
+import com.base.Service.UserService;
 import com.base.utils.CookieUtils;
 import com.base.utils.ExcelReport;
 
@@ -54,6 +56,7 @@ public class StudentmanageController {
 	
 	@Autowired
 	private SkillStudentService skillStudentService;
+	
 	
 	//增加学生信息
 		@RequestMapping("/addstudent.do")
@@ -176,8 +179,10 @@ public class StudentmanageController {
 
 				// CookieUtils.addCookie("image", filename, response);
 				if (!mFile2.isEmpty()) {
-					// 先删除原有的图像
-					String deleteFile = CookieUtils.getCookieImage(request, response);
+					// 先删除原有的图像，根据sid在数据库中找到原有图像的地址
+					
+					List<students> listStu = studentService.getStudents(sid);
+					String deleteFile = listStu.get(0).getHeadshot();
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path2 + deleteFile);
 					if (tempFile.isFile() && tempFile.exists()) {
@@ -226,6 +231,28 @@ public class StudentmanageController {
 		}
 		return null;
 	}
+	
+	
+	//获得学生
+			@RequestMapping("get_3Dstudent.do")
+			public String get_3Dstudent(HttpServletRequest request,
+				    HttpServletResponse response){
+				List<students> list1 = studentService.get_3Dstudent();
+				try {
+				    List list4 = new ArrayList();
+				    list4.add(list1);
+				    JSONArray json = JSONArray.fromObject(list4);
+				    response.setContentType("text/html;charset=UTF-8");
+				    response.getWriter().print(json.toString());
+
+				} catch (Exception e) {
+				    // TODO Auto-generated catch block
+				    e.printStackTrace();
+				}
+				return null;
+			}
+
+	
 	
 	//获得学生
 		@RequestMapping("get_student.do")

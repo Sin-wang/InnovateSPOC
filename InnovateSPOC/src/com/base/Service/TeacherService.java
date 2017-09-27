@@ -25,4 +25,6 @@ public interface TeacherService {
 	public void updateteacher(String tid, String tintroduce,int gid,String photo);
 
 	public List<teachers> getTeacher(int gid);
+
+	public List<teachers> getTeacher(String tid);
 }

@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="group_project.jsp">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>

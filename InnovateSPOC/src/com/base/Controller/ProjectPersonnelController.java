@@ -122,7 +122,7 @@ public class ProjectPersonnelController {
 	return null;
     }
     
- // 修改实习基地信息
+ // 修改信息
     @RequestMapping("/updatePersonInfo.do")
     public String updatePersonInfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {

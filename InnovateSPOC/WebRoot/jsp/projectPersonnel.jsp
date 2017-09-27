@@ -127,8 +127,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
-
+											href="notification.jsp"><span class="text">发布新闻</span></a></li>
+										<li><a href="newlist.do">新闻管理</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -177,8 +177,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</tr>
 									<tr>
 										<th>选择</th>
-										<th>项目作品</th>
-										<th>学生编号</th>
+										<th>项目名称</th>
+										<th>学生姓名</th>
 										<th>参与人员</th>
 										<th>是否是负责人</th>
 										<th>操作</th>
@@ -210,10 +210,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="modal-content">
 			
 				<div class="modal-header" style="background:#3071a9; color:#FFF">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+					
 					<div id="closebas" class="glyphicon glyphicon-remove closeModal"
 				data-dismiss="modal"></div>
 					<h4 class="modal-title text-center" id="myModalLabel">增加项目人员信息</h4>
@@ -230,8 +227,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<label class="col-md-3 control-label">项目作品<span
 										class="setTag">*</span></label>
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="Pid"
-											name="proName" placeholder="">
+										<!-- <input type="text" class="form-control" id="Pid"
+											name="proName" placeholder=""> -->
+										<select class="form-control" id="Pid" name="proName">
+											<option id="PidList" value="" >请选择</option>
+										</select>
 									</div>
 								</div> 
 								<div class="form-group">
@@ -239,7 +239,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									class="setTag">*</span></label>
 										<div class="col-md-6">
 											<input type="text" class="form-control" id="sid"
-											name="stuName" placeholder="">
+											name="stuName" readonly>
+										</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-md-3 control-label">学生姓名<span
+									class="setTag">*</span></label>
+										<div class="col-md-6">
+											<select class="form-control" id="StudentName" >
+												<option id="StuNameList" value="" >请选择</option>
+											</select>
 										</div>
 								</div>
 								
@@ -335,7 +345,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>学生编号:</td>
+												<td>学生姓名:</td>
 												<td>
 												<input type="text" class="form-control"
 													id="StuName" name="StuName" readonly="readonly" />

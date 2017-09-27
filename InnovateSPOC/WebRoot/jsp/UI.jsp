@@ -250,112 +250,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 						  <!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox" id="show_teamMumber">
-						    	<!--<div class="item  active">
-						    		<div class="row">
-									  <div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1">
-										<div class="thumbnail" data-toggle="modal" data-target="#resume_myModal">
-										  <img src="../images/program/member1.png" alt="...">
-										  <div class="caption">
-											<h4>交互设计师&nbsp;曾婷</h4>
-											<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member2.png" alt="...">
-										  <div class="caption">
-											<h4>插画师&nbsp;刘安奇</h4>
-											<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member3.png" alt="...">
-										  <div class="caption">
-											<h4>原画师&nbsp;朱锐锋</h4>
-											<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member4.png" alt="...">
-										  <div class="caption">
-											<h4>平面设计师&nbsp;梁统荣</h4>
-											<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member5.png" alt="...">
-										  <div class="caption">
-											<h4>产品设计师&nbsp;刘小五</h4>
-											<p>5年交互体验设计经验，曾服务于背景建筑设计研究院（BIAD）、日本电通、联想集团。</p>
-										  </div>
-										</div>
-									  </div>
-									</div>
-								</div>-->
-								<!--<div class="item">
-									<div class="row">
-									  <div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1">
-										<div class="thumbnail">
-										  <img src="../images/program/member1.png" alt="...">
-										  <div class="caption">
-											<h4>交互设计师&nbsp;曾婷</h4>
-											<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member2.png" alt="...">
-										  <div class="caption">
-											<h4>插画师&nbsp;刘安奇</h4>
-											<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member3.png" alt="...">
-										  <div class="caption">
-											<h4>原画师&nbsp;朱锐锋</h4>
-											<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member4.png" alt="...">
-										  <div class="caption">
-											<h4>平面设计师&nbsp;梁统荣</h4>
-											<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-										  </div>
-										</div>
-									  </div>
-
-									  <div class="col-sm-2 col-md-2">
-										<div class="thumbnail">
-										  <img src="../images/program/member5.png" alt="...">
-										  <div class="caption">
-											<h4>产品设计师&nbsp;刘小五</h4>
-											<p>5年交互体验设计经验，曾服务于背景建筑设计研究院（BIAD）、日本电通、联想集团。</p>
-										  </div>
-										</div>
-									  </div>
-									</div>
-								</div>-->
+						    	
 							</div>
 						
 						  
@@ -371,28 +266,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<!--part5-->
 			<div id="part5">
 				<div id="p5_content">
-					<!--<ul>
-						<li>
-							<img src="../images/UI/p5_con1.jpg" style="width: 420px; height: 378px;"/>
-							<div id="p5_con1_bg">
-								<p>组员作品</p>
-							</div>
-						</li>
-						<li>
-							<img src="../images/UI/p5_con2.jpeg" style="width: 537px; height: 378px;"/>
-						</li>
-						<li>
-							<img src="../images/UI/p5_con3.jpeg" style="width: 210px; height: 210px;"/>
-							<img src="../images/UI/p5_con6.jpeg" style="width: 210px; height: 294px;"/>
-						</li>
-						<li>
-							<img src="../images/UI/p5_con4.jpeg" style="width: 520px; height: 520px;"/>
-						</li>
-						<li>
-							<img src="../images/UI/p5_con5.jpeg" style="width: 210px; height: 210px;"/>
-							<img src="../images/UI/p5_con7.jpeg" style="width: 210px; height: 294px;"/>
-						</li>
-					</ul>-->
+					
 				</div>
 			</div>
 			
@@ -426,54 +300,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 						  <!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox" style="height: 400px;" id="show_employee">
-						    	<!--<div class="item  active">
-									<ul class="p7_content">
-										<li>
-											<p class="p7_conname">朱锐锋</p>
-											<p class="p7_condate">Dec 04,2014</p>
-											<p class="p7_conintro">2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-										</li>
-										<li>
-											<p class="p7_conname">刘安奇</p>
-											<p class="p7_condate">Dec 06,2014</p>
-											<p class="p7_conintro">015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-										</li>
-										<li>
-											<p class="p7_conname">曾婷</p>
-											<p class="p7_condate">Dec 08,2014</p>
-											<p class="p7_conintro">2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-										</li>
-										<li>
-											<p class="p7_conname">梁统荣</p>
-											<p class="p7_condate">Dec 14,2014</p>
-											<p class="p7_conintro">2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-										</li>
-									</ul>
-								</div>-->
-								<!--<div class="item">
-									<ul class="p7_content">
-										<li>
-											<p class="p7_conname">朱锐锋</p>
-											<p class="p7_condate">Dec 04,2014</p>
-											<p class="p7_conintro">2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-										</li>
-										<li>
-											<p class="p7_conname">刘安奇</p>
-											<p class="p7_condate">Dec 06,2014</p>
-											<p class="p7_conintro">015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-										</li>
-										<li>
-											<p class="p7_conname">曾婷</p>
-											<p class="p7_condate">Dec 08,2014</p>
-											<p class="p7_conintro">2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-										</li>
-										<li>
-											<p class="p7_conname">梁统荣</p>
-											<p class="p7_condate">Dec 14,2014</p>
-											<p class="p7_conintro">2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-										</li>
-									</ul>
-								</div>-->
+						    	
 							</div>
 						
 						  
@@ -501,30 +328,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 						  <!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox" id="p8_inner">
-						    	<!--<div class="item  active">
-									<div class="p8_con1">
-										<div class="p8_conbg">
-											<div class="p8_text">
-												<h1>蔺薛菲</h1>
-												<p>高级讲师</p>
-												<p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p>
-											</div>
-										</div>
-										<div class="p8_teacher1"></div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="p8_con1">
-										<div class="p8_conbg">
-											<div class="p8_text">
-												<h1>蔺薛菲</h1>
-												<p>高级讲师</p>
-												<p>曾历任联想集团高级UI视觉设计师、交互设计师；大唐高鸿产品经理、系统运营总监；B2B电商平台联合创始人。目前有十余款APP在线上运营，专注用户体验和交互设计。</p>
-											</div>
-										</div>
-										<div class="p8_teacher1"></div>
-									</div>
-								</div>-->
+						    	
 							</div>
 						
 						  
@@ -655,8 +459,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div id="portrait">
 									<img src="../images/big.jpg" id="headshot">
 								</div>
-								<p>刘安奇</p>
-								<p>视觉传达专业</p>
+								<p id="resumeName"></p>
+								<p id="resumeMajor"></p>
 							</div>
 							<div id="section1_2">
 								<div class="information">
@@ -665,8 +469,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="text">自我介绍<span>ABOUT ME</span></div>
 									</div>
 									<div class="intro_cotent">
-										<p>我平时喜欢看书和上网浏览信息。我的性格比较开朗、随和，能关心周围的任何事</p>
-										<p>我以前在所以有一定的实践经验，在外地求学的四年中我养成了坚强的性格，这种性格使我克服了学习中和生活中。。。。。。</p>
+										<p id="resumeIntroduce"></p>
 									</div>
 								</div>
 								<div class="information">
@@ -677,160 +480,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<div class="intro_cotent2">
 										<div id="icon3" class="icon2 float_left"></div>
 										<div class="contact float_left">
-											<p>上海市普陀区长椿街15号院</p>
-											<p class="font-s">Shanghai city Putuo District Changchun Street No.15</p>
+											<p id="resumeAdress"></p>
+											<p id="resumeEadre" class="font-s"></p>
 										</div>
 									</div>
 									<div class="intro_cotent2">
 										<div id="icon4" class="icon2 float_left"></div>
 										<div class="contact float_left">
-											<p>QQ：114391696</p>
-											<p class="font-s">QQ：114391696</p>
+											<p id="resumeQQ"></p>
+											<p id="resumeEqq" class="font-s"></p>
 										</div>
 									</div>
 									<div class="intro_cotent2">
 										<div id="icon5" class="icon2 float_left"></div>
 										<div class="contact float_left">
-											<p>手机号码：17866766789</p>
-											<p>Phone number：17866766789</p>
+											<p id="resumeTel"></p>
+											<p id="resumeEtel"></p>
 										</div>
 									</div>
 								</div>
-								<div class="information">
-									<div class="intro_title">
-										<div id="icon6" class="icon1"></div>
-										<div class="text">专业技能<span>MY SKILLS</span></div>
-									</div>
-									<div class="intro_cotent2">
-										<div id="icon5" class="icon2 float_left"></div>
-										<div class="contact float_left">
-											<p>PHOTSHOP</p>
-											<div style="width: 150px; height: 10px;">
-												<div class="progress progress_style" >
-												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-												  </div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="intro_cotent2">
-										<div id="icon5" class="icon2 float_left"></div>
-										<div class="contact float_left">
-											<p>PHOTSHOP</p>
-											<div style="width: 150px; height: 10px;">
-												<div class="progress progress_style" >
-												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-												  </div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="intro_cotent2">
-										<div id="icon5" class="icon2 float_left"></div>
-										<div class="contact float_left">
-											<p>PHOTSHOP</p>
-											<div style="width: 150px; height: 10px;">
-												<div class="progress progress_style" >
-												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-												  </div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="intro_cotent2">
-										<div id="icon5" class="icon2 float_left"></div>
-										<div class="contact float_left">
-											<p>PHOTSHOP</p>
-											<div style="width: 150px; height: 10px;">
-												<div class="progress progress_style" >
-												  <div class="progress-bar bar_style" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-												  </div>
-												</div>
-											</div>
-										</div>
-									</div>
+								<div class="information" id="resumeSkill">
+									
 								</div>
 							</div>
 						</div>
 						<div id="section2">
-							<div class="sec2_son">
-								<div class="sec2_title">
-									<div id="icon7" class="icon3"></div>
-									<div class="text2">实习经历<span>WORK EXPERIENCE</span></div>
-								</div>
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>小橘子科技有限公司<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-										<p>参与设计体验、设计流程的制定，建立高效的设计语言与设计规范；</p>
-									</div>
-								</div>
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>任我行旅游网<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-										<p>参与设计体验、设计流程的制定，建立高效的设计语言与设计规范；</p>
-									</div>
-								</div>
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>美好未来婴幼儿教育<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-										<p>参与设计体验、设计流程的制定，建立高效的设计语言与设计规范；</p>
-									</div>
-								</div>
+							<div class="sec2_son" id="resumeExe">
+								
 							</div>
-							<div class="sec2_son">
-								<div class="sec2_title">
-									<div id="icon7" class="icon3"></div>
-									<div class="text2">教育经历<span>EDUCATION EXPERIENCE</span></div>
-								</div>
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>北京大学<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-									</div>
-								</div>
-
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>中国人民大学<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-									</div>
-								</div>
+							<div class="sec2_son" id="resumeEdu">
+								
 							</div>
-							<div class="sec2_son">
-								<div class="sec2_title">
-									<div id="icon7" class="icon3"></div>
-									<div class="text2">兴趣爱好<span>MY HOBBIES</span></div>
-								</div>
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>吉他乐器<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-									</div>
-								</div>
-
-								<div class="sec2_content">
-									<div class="icon4"></div>
-									<div class="sec2_text">
-										<h1>上网读书<span>2008.09-2010.09</span></h1>
-										<p>SMALL ORANGE TECHNOLOGY CO,LTD</p>
-										<p>负责映客平台的视觉设计，参与产品设计方案，熟练运用可验证的设计方法和思路为满足和引领用户需求和期望输出高满意度设计作品；</p>
-									</div>
-								</div>
+							<div class="sec2_son" id="resumIntr">
+								
 							</div>
 						</div>
 					</div>
@@ -839,43 +521,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="icon5"><span>P</span></div>
 							<p>我的主导项目<span>LEADING PROJECT</span></p>
 						</div>
-						<div class="pro_content">
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+						<div class="pro_content" id="guideProject">
+							
+							
+							
 						</div>
 					</div>
 					<div class="project">
@@ -883,25 +532,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="icon5"><span>P</span></div>
 							<p>我参与的项目<span>PARTICIPATE IN THE PROJECT</span></p>
 						</div>
-						<div class="pro_content">
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+						<div class="pro_content" id="joinproject">
+													
 						</div>
 					</div>
 				</div>
@@ -919,6 +551,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/bootbox.min.js" type="text/javascript"></script>
+	<script src="../js/resume.js" type="text/javascript"></script>
 	<script src="../js/UI.js" type="text/javascript"></script>
 	<script>
 			$('#mycarousel2').carousel({

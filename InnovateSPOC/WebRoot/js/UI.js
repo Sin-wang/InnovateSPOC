@@ -45,9 +45,9 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<5;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -55,9 +55,9 @@ $(document).ready(function() {
 						var maxNum=data[0].length-(num-1)*5;
 						for(var a=0;a<maxNum;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -106,7 +106,10 @@ $(document).ready(function() {
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getWork.do',
+ 			data :{
+ 				gid :2
+ 			},
+ 			url : 'getWorkInfoBygid.do',
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -148,6 +151,7 @@ $(document).ready(function() {
 					Estr=Estr+'<li data-target="#mycarousel3" data-slide-to="'+k+'"></li>';
 				}
 				
+
 				for(var i=1;i<=num;i++){
 					if(i===1){
 						Estring=Estring+'<div class="item active"><ul class="p7_content">';
@@ -156,14 +160,13 @@ $(document).ready(function() {
 					}
 					if(i!==num){
 						for(var j=0;j<4;j++){
-							
 								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sid+'</p><p class="p7_condate">Dec 04,2014</p><p class="p7_conintro">'+data[0][j].graduation_year+'毕业生</p></li>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sid+'</p><p class="p7_condate">Dec 06,2014</p><p class="p7_conintro">'+data[0][j].graduation_year+'毕业生</p></li>';
+								Estring=Estring+'<li><p class="p7_conname">'+data[0][a].sid+'</p><p class="p7_condate">Dec 06,2014</p><p class="p7_conintro">'+data[0][a].graduation_year+'毕业生</p></li>';
 						}
 					}
 					

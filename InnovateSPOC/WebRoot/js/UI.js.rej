@@ -1,0 +1,10 @@
+diff a/InnovateSPOC/WebRoot/js/UI.js b/InnovateSPOC/WebRoot/js/UI.js	(rejected hunks)
+@@ -159,7 +159,7 @@
+ 					}
+ 					if(i!==num){
+ 						for(var j=0;j<4;j++){
+-							
++							alert(data[0].length);
+ 								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sid+'</p><p class="p7_condate">Dec 04,2014</p><p class="p7_conintro">'+data[0][j].graduation_year+'æ¯•ä¸šç”Ÿ</p></li>';
+ 						}
+ 					}else{

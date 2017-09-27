@@ -10,9 +10,9 @@ $(document).ready(
 						"serverSide" : true,
 						"bSort" : false,
 						"ordering" : true,
-						"aLengthMenu" : [ 5, 10, 20, 30 ], // 动态指定分页后每页显示的记录数。
+						"aLengthMenu" : [ 10, 15, 20, 30 ], // 动态指定分页后每页显示的记录数。
 						"lengthChange" : true, // 是否启用改变每页显示多少条数据的控件
-						"iDisplayLength" : 5, // 默认每页显示多少条记录
+						"iDisplayLength" : 10, // 默认每页显示多少条记录
 						"bfilter" : true,
 						"dom" : 'ftipr<"bottom"l>',
 						"ajax" : {
@@ -91,6 +91,12 @@ $(document).on("click", "#checkdetale1", function() {
 
 //修改
 $("#saverun").click(function(){
+	
+	if($("#gname").val()===""){
+		$("#editWarning").show();
+		return;
+	}
+	
 	bootbox.confirm({
 		message: "是否确认修改",
 		size: 'small',
@@ -188,7 +194,21 @@ $("#ck1").on("click", function () {
  });
 
 $("#save").on("click",function(){
+	
+	if($("#gname2").val()===""){
+		$("#addWarning").show();
+		return;
+	}
 	$("#addGroupform").submit();
+	
 	$("#add").modal('hide');
 });
 
+$('#add').on('hidden.bs.modal', function () {
+	$("#gname2").val("");
+	$("#addWarning").hide();
+});
+
+$('#edit').on('hidden.bs.modal', function () {
+	$("#editWarning").hide();
+});

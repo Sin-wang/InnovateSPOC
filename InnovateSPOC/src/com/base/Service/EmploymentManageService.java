@@ -8,6 +8,7 @@ import java.util.List;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
+import com.base.Po.students;
 
 /**
  * @author 鸡毛大大
@@ -48,7 +49,9 @@ public interface EmploymentManageService {
 
 	public List<employment> getEmploy();
 
-	public List<groups> getGroup(); 
+	public List<groups> getGroup();
+
+	public List<students> getStudents();  
  
 
 	

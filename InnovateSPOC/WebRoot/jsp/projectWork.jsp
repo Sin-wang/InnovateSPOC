@@ -25,10 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 <style type="text/css">
     	#preview{
-			width:120px;
-			height:120px;
-			border:1px solid #000;
-			border-radius:60px;
+			width:240px;
+			height:150px;
 			overflow:hidden;
 		}
 #preview2{
@@ -144,7 +142,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
+											href="notification.jsp"><span class="text">发布新闻</span></a></li>
+										<li><a href="newlist.do">新闻管理</a></li>
 
 									</ul>
 								</li>
@@ -185,7 +184,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<thead>
 									<tr bgcolor="#ECF1F5">
 										<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="8" id="button-left">
+										<td colspan="10" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
@@ -231,10 +230,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="modal-content">
 			
 				<div class="modal-header" style="background:#3071a9; color:#FFF">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
 					<div id="closebas" class="glyphicon glyphicon-remove closeModal"
 				data-dismiss="modal"></div>
 					<h4 class="modal-title text-center" id="myModalLabel">增加作品信息</h4>
@@ -395,8 +390,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                   				</td>
 										</tr>
 											<tr>
-												<input type="text" class="form-control" id="Pid"
-										name="Pid" style="display:none"/>
+												<input type="text" class="form-control" id="Pid" name="Pid" style="display:none"/>
 												<td>所属组别: </td>
 												<td>
 													<select class="form-control" id="Gid" name="Gid">
@@ -419,6 +413,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 												</td>
 											</tr>
+											
+											<tr hidden>
+												<td>图片地址:</td>
+												<td>
+													<input type="text" class="form-control" id="picture" name="picture">
+
+												</td>
+											</tr>
+											
 											<tr>
 												<td>表达方式：</td>
 												<td>

@@ -30,7 +30,12 @@ import com.base.utils.ExcelReport;
 
 @Controller("UserCenterController")
 @RequestMapping("/jsp")
-// 个人中心管理控制层
+/*
+ * 
+ * 学生，老师
+ * 个人中心管理控制层
+ * 
+ * */
 public class UserCenterController {
 
 	@Autowired

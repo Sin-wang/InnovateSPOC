@@ -125,14 +125,14 @@ $(document).ready(function() {
 							//增加框的js控制
 							$("#confirm").click(function(){
 								var tag=1;
-								var gid = $("#gid0").val;
-								var project_name = $("#project_name").val;
-								var project_introduce = $("#project_introduce").val;
-								var project_address = $("#project_address").val;
-								var photo_address = $("#photo_address").val;
-								var wid = $("#wid").val;
-								var expression = $("#expression").val;
-								var best_work = $("#best_work").val;
+								var gid = $("#gid0").val();
+								var project_name = $("#project_name").val();
+								var project_introduce = $("#project_introduce").val();
+								var project_address = $("#project_address").val();
+								var photo_address = $("#photo_address").val();
+								var wid = $("#wid0").val();
+								var expression = $("#expression").val();
+								var best_work = $("#best_work").val();
 								
 								if(!tag){		
 									 bootbox.alert({
@@ -270,9 +270,9 @@ $(document).ready(function() {
 							// //全选反选
 							$("#ck1").on("click", function() {
 								if ($(this).prop("checked") == true) {
-									$("#employmentManage input[name='recordcheck']").prop("checked", true);
+									$("#projectWork input[name='recordcheck']").prop("checked", true);
 								} else {
-									$("#employmentManage input[name='recordcheck']").prop("checked", false);
+									$("#projectWork input[name='recordcheck']").prop("checked", false);
 								}
 							});
 							
@@ -291,6 +291,8 @@ $(document).ready(function() {
 								$("#BestWork").val(obj[index].best_work);
 								$("#ProjectIntroduce").val(obj[index].project_introduce);
 								$("#imghead").attr("src",obj[index].photo_address);
+								$("#picture").val(obj[index].photo_address);
+								
 								$("#edit").modal('show');
 							});
 							$("#saverun").click(function(){
@@ -420,15 +422,15 @@ $(document).ready(function() {
 //图片的显示与修改
 function previewImage(file)
 {
-  var MAXWIDTH  = 120; 
-  var MAXHEIGHT = 120;
+  var MAXWIDTH  = 240; 
+  var MAXHEIGHT = 150;
   var div = document.getElementById('preview');
   if (file.files && file.files[0])
   {
       div.innerHTML ='<img id=imghead>';
       var img = document.getElementById('imghead');
       img.onload = function(){
-        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 120, 120);
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 240, 150);
         img.width  =  rect.width;
         img.height =  rect.height;
 //         img.style.marginLeft = rect.left+'px';

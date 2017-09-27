@@ -197,4 +197,22 @@ public class TeacherDaoImpl implements TeacherDao{
 		}
 		return list;
 	}
+
+
+	@Override
+	public List<teachers> getTeacher(String tid) {
+		List<teachers> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from teachers where tid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, tid);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
 }

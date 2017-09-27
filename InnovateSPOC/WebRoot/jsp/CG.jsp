@@ -237,25 +237,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     </div>
 <!-- 06 组员作品 -->
-    <div class="works" align="center">
+   <div class="works" align="center">
         <div  class="work" style="margin-top:100px;">
             <div class="work_imgone">
-              <img src="../images/CG/06 work1.jpg" height="340" />
+              <img src="" height="340" id="work_img1"/>
               <div class="word">
-                <img src="../images/CG/06 work.png">
+                <img src="../images/CG/3DActive.png">
               </div>
             </div>
             <div class="work_imgtwo">
-               <img src="../images/CG/06 work2.jpg" height="340" />
+               <img src="" height="340" id="work_img2"/>
             </div>
         </div>
     </div>
     <div align="center">    
         <div class="row workthree" style="margin-top:5px;">
-            <img src="../images/CG/06 work3.jpg" height="340" />
-            <img src="../images/CG/06 work4.jpg" height="340" id="work4" />          
-            <img src="../images/CG/06 work5.jpg" height="165" id="work5" />
-            <img src="../images/CG/06 work6.jpg" height="165" id="work6" />
+            <img src="" height="340" id="work3"/>
+            <img src="" height="340" id="work4" />          
+            <img src="" height="165" id="work5" />
+            <img src="" height="165" id="work6" />
         </div>
         <div style="margin-top:40px;">
             <img src="../images/CG/06 work7.png" height="130" />
@@ -459,43 +459,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="icon5"><span>P</span></div>
 							<p>我的主导项目<span>LEADING PROJECT</span></p>
 						</div>
-						<div class="pro_content">
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+						<div class="pro_content" id="guideProject">
+							
+							
+							
 						</div>
 					</div>
 					<div class="project">
@@ -503,25 +470,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="icon5"><span>P</span></div>
 							<p>我参与的项目<span>PARTICIPATE IN THE PROJECT</span></p>
 						</div>
-						<div class="pro_content">
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+						<div class="pro_content" id="joinproject">
+													
 						</div>
 					</div>
 				</div>

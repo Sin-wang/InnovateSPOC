@@ -158,11 +158,14 @@ $(document).ready(function() {
  			}
         });
 	
-/*	//获得作品信息
+	//获得作品信息
 	$.ajax({
     	type : 'POST',
 			dataType : 'json',
-			url : 'getTeacher.do',
+			url : 'getWorkInfoBygid.do',
+			data :{
+ 				gid :6
+ 			},
 			error : function(request) {
 				bootbox.alert({
      			  message: "请求异常",
@@ -170,10 +173,17 @@ $(document).ready(function() {
      		  });
 			},
 			success : function(data) {
-			
-			
+
+
+				$("#work_img1").attr("src",data[0][0].photo_address);
+				$("#work_img2").attr("src",data[0][1].photo_address);
+				$("#work3").attr("src",data[0][2].photo_address);
+				$("#work4").attr("src",data[0][3].photo_address);
+				$("#work5").attr("src",data[0][4].photo_address);
+				$("#work6").attr("src",data[0][5].photo_address);
+							
 			}
-    });*/
+    });
 	
 	
 	

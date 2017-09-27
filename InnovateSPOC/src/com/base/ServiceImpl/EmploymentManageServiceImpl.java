@@ -12,6 +12,7 @@ import com.base.Dao.EmploymentManageDao;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
+import com.base.Po.students;
 import com.base.Service.EmploymentManageService;
 
 @Service("EmploymentManageService")
@@ -76,6 +77,12 @@ public class EmploymentManageServiceImpl implements EmploymentManageService {
 	public List<groups> getGroup() {
 		// TODO Auto-generated method stub
 		List<groups> list = employmentdao.getGroup();
+		return list;
+	}
+	@Override
+	public List<students> getStudents() {
+		// TODO Auto-generated method stub
+		List<students> list = employmentdao.getStudents();
 		return list;
 	}
 }

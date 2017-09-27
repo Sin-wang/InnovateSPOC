@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.ProjectWorkDao;
+import com.base.Po.WorkInfo;
 import com.base.Po.employment;
 import com.base.Po.groups;
+import com.base.Po.project_personnel;
 import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.Po.work_category;
@@ -88,5 +90,40 @@ public class ProjectWorkServiceImpl implements ProjectWorkService {
 		 List<groups>  list = workdao.getGroup();
 		return list;
 	}
+
+	public List<project_personnel> getPersonnel() {
+		// TODO Auto-generated method stub
+		 List<project_personnel>  list = workdao.getPersonnel();
+		return list;
+	}
+
+	@Override
+	public List<project_personnel> getPersonnel(String sid) {
+		// TODO Auto-generated method stub
+		 List<project_personnel>  list = workdao.getPersonnel(sid);
+		return list;
+	}
+
+	@Override
+	public List<WorkInfo> getAllWorkInfo() {
+		// TODO Auto-generated method stub
+		 List<WorkInfo>  list = workdao.getAllWorkInfo();
+		return list;
+	}
+
+	@Override
+	public List<WorkInfo> getAllWorkInfo(String sid) {
+		// TODO Auto-generated method stub
+		 List<WorkInfo>  list = workdao.getAllWorkInfo(sid);
+		return list;
+	}
+
+	@Override
+	public List<project_work> getWorkInfoBypid(String gid) {
+		// TODO Auto-generated method stub
+		 List<project_work>  list = workdao.getWorkInfoBypid(gid);
+		return list;
+	}
+
 
 }

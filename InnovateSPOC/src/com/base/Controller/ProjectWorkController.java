@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.base.Po.WorkInfo;
 import com.base.Po.groups;
+import com.base.Po.project_personnel;
 import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.Po.work_category;
@@ -194,6 +196,7 @@ public class ProjectWorkController {
 	    HttpServletResponse response, ModelMap map) throws IOException {
 	int Pid =Integer.parseInt(request.getParameter("Pid"));
 	String Gid=request.getParameter("Gid");
+	String picture=request.getParameter("picture");
 	String ProjectName=request.getParameter("ProjectName");
 	if(ProjectName.equals("")){
 		ProjectName=null;
@@ -216,7 +219,7 @@ public class ProjectWorkController {
 	}
 	
 	String photo = null;
-	
+	System.out.println(picture);
 	// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 			// 得到上传的文件
@@ -230,8 +233,7 @@ public class ProjectWorkController {
 			// CookieUtils.addCookie("image", filename, response);		
 			if (!mFile2.isEmpty()) {
 			    // 先删除原有的图像
-			    String deleteFile = CookieUtils.getCookieImage(request,
-				    response);
+			    String deleteFile = picture;
 			    deleteFile = deleteFile.substring(deleteFile
 				    .lastIndexOf("/"));
 			    File tempFile = new File(path2 + deleteFile);
@@ -255,8 +257,6 @@ public class ProjectWorkController {
 			    outputStream.close();
 			    photo = "../imgdraw/" + photo;
 
-			    // 重新写cookie中的img属性值
-			    CookieUtils.addCookie("image", photo, response);
 			}
 	
 	//System.out.println(Pid+"||"+Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);
@@ -337,5 +337,88 @@ public class ProjectWorkController {
 		return null;
     }
     
+    //获取项目人员信息
+    @RequestMapping("/getPersonnel.do")
+    public String getPersonnel(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String sid = request.getParameter("sid");
+    	List<project_personnel> list = ProjectWorkService.getPersonnel(sid); 
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+    //获得作品及人员信息
+    @RequestMapping("/getAllWorkInfo.do")
+    public String getAllWorkInfo(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String pid = request.getParameter("pid");
+    	List<WorkInfo> list = ProjectWorkService.getAllWorkInfo();
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
   
+  //根据sid获得作品及人员信息
+    @RequestMapping("/getAllWorkInfoBysid.do")
+    public String getAllWorkInfoBysid(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String sid = request.getParameter("sid");
+    	List<WorkInfo> list1 = ProjectWorkService.getAllWorkInfo(sid);
+    	List<project_personnel> list2 = ProjectWorkService.getPersonnel(sid); 
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list1);
+		    listReturn.add(list2);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+  //根据gid获得作品信息
+    @RequestMapping("/getWorkInfoBygid.do")
+    public String getWorkInfoBypid(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String gid = request.getParameter("gid");
+    	List<project_work> list1 = ProjectWorkService.getWorkInfoBypid(gid);
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list1);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+    
+    
 }

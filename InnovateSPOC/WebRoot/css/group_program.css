@@ -70,9 +70,10 @@
 	padding: 0px;
 }
 #work_window{
-	height: 545px;
+	max-height: 545px; 
 	width: 800px;
 	position:relative;
+	overflow: hidden;
 }
 #work_title{
 	color: white;
@@ -123,4 +124,10 @@
 	width: 800px;
 	color: #fff;
 	font-size: 18px;
+}
+.work_group{
+	display: none;
+}
+.work_intro{
+	display: none;
 }

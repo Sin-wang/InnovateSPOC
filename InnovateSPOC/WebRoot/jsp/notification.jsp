@@ -204,7 +204,7 @@
 													src="../images/big.jpg">
 											</div>
 											<div style="margin:20px 18px;">
-												<label class="btn btn-primary" for="file">浏览头像</label>
+												<label class="btn btn-primary" for="file">上传图片</label>
 												<input type="file" onchange="previewImage(this)" id="file" name="photo2" style="position:absolute;clip:rect(0 0 0 0);"> 
 											</div>
 										</div>

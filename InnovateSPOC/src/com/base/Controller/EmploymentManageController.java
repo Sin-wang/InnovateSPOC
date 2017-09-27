@@ -30,6 +30,7 @@ import com.base.Po.studentList;
 import com.base.Po.students;
 import com.base.Po.teachers;
 import com.base.Service.EmploymentManageService;
+import com.base.Service.StudentService;
  
 
 
@@ -40,6 +41,8 @@ public class EmploymentManageController {
 		@Autowired
 	  private EmploymentManageService employmentmanageservice;
 	
+		@Autowired
+	    private StudentService studentService;
 	  
 	 //获取就业数据信息
 	@RequestMapping("/sendEmployinfo.do")
@@ -199,8 +202,9 @@ public class EmploymentManageController {
     @RequestMapping("/getEmployeeAllInfo.do")
     public String getEmployeeAllInfo(HttpServletRequest request,
 		    HttpServletResponse response){
-    	List<groups> list1 = employmentmanageservice.getGroup();
-    	List<employment> list2 = employmentmanageservice.getEmploy();
+
+    	List<employment> list1 = employmentmanageservice.getEmploy();
+    	List<students> list2 = employmentmanageservice.getStudents();
 		try {
 		    List listReturn = new ArrayList();
 		    listReturn.add(list1);
@@ -215,4 +219,5 @@ public class EmploymentManageController {
 		}
 		return null;
     }
+    
 }

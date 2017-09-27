@@ -579,12 +579,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<p>我的主导项目<span>LEADING PROJECT</span></p>
 						</div>
 						<div class="pro_content" id="guideProject">
-							<div class="content" style="background: url(../images/resume/bg.png) no-repeat;">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+							
 							
 							
 						</div>

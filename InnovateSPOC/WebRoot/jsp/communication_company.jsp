@@ -23,16 +23,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/teacher.css">
 <style type="text/css">
     	#preview{
-			width:120px;
-			height:120px;
-			border:1px solid #000;
-			border-radius:60px;
+			width:298px;
+			height:157px;
+			/* border:1px solid #000; */
 			overflow:hidden;
 		}
 #preview2{
-			width:120px;
-			height:120px;
-			border:1px solid #000;
+			width:298px;
+			height:157px;
 			border-radius:60px;
 			overflow:hidden;
 		}
@@ -253,6 +251,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													    <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
 													    <div class="col-sm-10">
 													      <input type="text" class="form-control" id="title" name="title" value="">
+													      <p class="warning" id="editWarningTitle">标题不能为空</p>
 													    </div>
 													  </div>
 												</td>
@@ -267,12 +266,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													  </div>
 												</td>
 											</tr>
+											
+											<tr hidden>
+												<td>
+													<div class="form-group">
+													    <label for="picture" class="col-sm-2 control-label">图片地址</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="picture" name="picture">
+													    </div>
+													  </div>
+												</td>
+											</tr>
+											
 											<tr>
 												<td>
 													<div class="form-group">
 													    <label for="gname" class="col-sm-2 control-label">组别</label>
 													    <div class="col-sm-10">
-													      <input type="text" class="form-control" id="gname" name="gname">
+													    	<select class="form-control" id="gname" name="gname">
+																<option id="gnameList" value="">请选择</option>
+															</select>
+													      	<p class="warning" id="editWarningGroup">组别不能为空</p>
 													    </div>
 													  </div>
 												</td>
@@ -313,13 +327,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<table class="table" style="border:none !important;">
 									<tr>
 												<td>
-   													<!-- <div id="preview2">
-    													<img id="imghead2" width="100%" height="auto" border="0" src="../images/big.jpg">
-								  					</div>
-                                  					<div style="margin:20px 18px;">
-                                  						<label class="btn btn-primary" for="file2" >上传图片</label>  -->
+   													
 								  						<input type="file" id="file2" name="photo">                          
-                                  					<!-- </div> -->
+                                  						<p class="warning" id="addWarningPhoto">请上传图片</p>
                                   				</td>
 											</tr>
 											
@@ -329,6 +339,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													    <label for="addtitle" class="col-sm-2 control-label">标题</label>
 													    <div class="col-sm-10">
 													      <input type="text" class="form-control" id="addtitle" name="title" value="">
+													      <p class="warning" id="addWarningTitle">标题不能为空</p>
 													    </div>
 													  </div>
 												</td>
@@ -338,7 +349,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<div class="form-group">
 													    <label for="addgname" class="col-sm-2 control-label">组别</label>
 													    <div class="col-sm-10">
-													      <input type="text" class="form-control" id="addgname" name="gname">
+													    	<select class="form-control" id="addgname" name="gname">
+																<option id="addgnameList" value="">请选择</option>
+															</select>
+													      <p class="warning" id="addWarningGroup">组别不能为空</p>
 													    </div>
 													  </div>
 												</td>

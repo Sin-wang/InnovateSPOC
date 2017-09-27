@@ -101,7 +101,10 @@ $(document).ready(function() {
 		async : false,
     	type : 'POST',
 			dataType : 'json',
-			url : 'getWork.do',
+			data :{
+ 				gid :1
+ 			},
+ 			url : 'getWorkInfoBygid.do',
 			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -144,7 +147,7 @@ $(document).ready(function() {
 				var num=0;
 				var num1=data[0].length/4;
 				var num2=data[0].length%4;
-				if(num2===0){
+				if(num2==0){
 					num=num1;
 				}
 				else{
@@ -196,20 +199,16 @@ $(document).ready(function() {
      		  });
 			},
 			success : function(data) {
-				/*alert(data[0].length);
-				alert(data[0].length+"****"+data[0][0].photo+"****"+data[0][0].title);
-				alert(data[0].length+"****"+data[0][1].photo+"****"+data[0][1].title);*/
 				$("#img1").attr("src",data[0][0].photo);
-				$("#img2").attr("src",data[0][1].photo);
-				$("#img3").attr("src",data[0][2].photo);
-				$("#img4").attr("src",data[0][3].photo);
-				$("#img5").attr("src",data[0][4].photo);
-				
 				$("#title1").text(data[0][0].title);
+				$("#img2").attr("src",data[0][1].photo);
 				$("#title2").text(data[0][1].title);
+				$("#img3").attr("src",data[0][2].photo);
 				$("#title3").text(data[0][2].title);
+				$("#img4").attr("src",data[0][3].photo);
 				$("#title4").text(data[0][3].title);
-				$("#title5").text(data[0][4].title);
+				$("#img5").attr("src",data[0][4].photo);
+				$("#title5").text(data[0][4].title);			
 			}
     });
 	

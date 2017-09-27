@@ -11,30 +11,31 @@ $(document).ready(function(){
          		  });
  			},
  			success : function(data) {
- 				
+ 				alert(data[0].length);
 				var ProgramStr="";
 				var UIStr="";
 				var ThreeStr="";
 				var CGStr="";
 				for(var i=0;i<data[0].length;i++){
-					if(data[0][i].gid===1){
+					
+					if(data[1][i].gid===1){
 						
-						ProgramStr=ProgramStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="../images/CG/recruit.png"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sid+'</h3><br><p>热爱生活，喜欢足球，工作认真，主动，有较强责任心。我是思博课最丑的人，大家不要嘲笑我好嘛？我想找一份工作，就是在宾馆面前当保安。</p></div></div>';
+						ProgramStr=ProgramStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
 						continue;
 					}
-					if(data[0][i].gid===2){
+					if(data[1][i].gid===2){
 						
-						UIStr=UIStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="../images/CG/recruit.png"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sid+'</h3><br><p>热爱生活，喜欢足球，工作认真，主动，有较强责任心。我是思博课最丑的人，大家不要嘲笑我好嘛？我想找一份工作，就是在宾馆面前当保安。</p></div></div>';
+						UIStr=UIStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
 						continue;
 					}
-					if(data[0][i].gid===3){
+					if(data[1][i].gid===5){
 						
-						ThreeStr=ThreeStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="../images/CG/recruit.png"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sid+'</h3><br><p>热爱生活，喜欢足球，工作认真，主动，有较强责任心。我是思博课最丑的人，大家不要嘲笑我好嘛？我想找一份工作，就是在宾馆面前当保安。</p></div></div>';
+						ThreeStr=ThreeStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
 						continue;
 					}
-					if(data[0][i].gid===4){
+					if(data[1][i].gid===4 || data[1][i].gid===6){
 						
-						CGStr=CGStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="../images/CG/recruit.png"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sid+'</h3><br><p>热爱生活，喜欢足球，工作认真，主动，有较强责任心。我是思博课最丑的人，大家不要嘲笑我好嘛？我想找一份工作，就是在宾馆面前当保安。</p></div></div>';
+						CGStr=CGStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
 						continue;
 					}
 					

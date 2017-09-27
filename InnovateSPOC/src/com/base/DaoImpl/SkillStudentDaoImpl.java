@@ -188,18 +188,32 @@ public class SkillStudentDaoImpl implements SkillStudentDao{
 	@Override
 	public List<skill_student> get_skill_student(String sid) {
 		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		List<skill_student> list =null;
-		String hql ="from skill_student where sid=?";
+		int recordsTotal = 0;
+		Connection conn = null;
+		CallableStatement sp = null;
+		ResultSet rs = null;
+		List<skill_student> list = new ArrayList<skill_student>();
 		try {
-	    	 Query query=session.createQuery(hql);
-	    	 query.setString(0, sid);
-	    	 list=query.list();
-			
-		} catch (Exception e) {
-			System.out.println(e);
-		}finally{
-			session.close();
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					sessionFactory).getConnection();
+			sp = (CallableStatement) conn
+					.prepareCall("{call innovatespoc.select_PersonalSkills(?,?)}");
+			sp.setString(1, sid);
+			sp.execute();
+			recordsTotal = sp.getInt(2);
+			rs = sp.getResultSet();
+			while (rs.next()) {
+				skill_student ch = new skill_student();
+				ch.setId(Integer.parseInt(rs.getString("id")));
+				ch.setSkill_name(rs.getString("skill_name"));
+				ch.setSkill_exp(rs.getString("skill_exp"));
+				list.add(ch);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			SqlConnectionUtils.free(conn, sp, rs);
 		}
 		return list;
 	}

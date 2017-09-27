@@ -19,6 +19,7 @@ import com.base.Dao.EmploymentManageDao;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
+import com.base.Po.students;
 import com.base.Po.teachers;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
@@ -192,6 +193,22 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 			List<groups> list = null;
 			Session session=sessionFactory.openSession();		
 			String hql="from groups";
+			try {
+		    	 Query query=session.createQuery(hql);
+		    	 list=query.list();
+			} catch (Exception e) {
+				System.out.println(e);
+			}finally{
+				session.close();
+			}
+			return list;
+		}
+
+		@Override
+		public List<students> getStudents() {
+			List<students> list = null;
+			Session session=sessionFactory.openSession();		
+			String hql="from students";
 			try {
 		    	 Query query=session.createQuery(hql);
 		    	 list=query.list();

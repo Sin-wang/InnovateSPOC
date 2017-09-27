@@ -126,7 +126,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
+											href="notification.jsp"><span class="text">发布新闻</span></a></li>
+										<li><a href="newlist.do">新闻管理</a></li>
 
 									</ul>
 								</li>
@@ -211,10 +212,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="modal-content">
 			
 				<div class="modal-header" style="background:#3071a9; color:#FFF">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+					
 					<div id="closebas" class="glyphicon glyphicon-remove closeModal"
 				data-dismiss="modal"></div>
 					<h4 class="modal-title text-center" id="myModalLabel">增加就业信息</h4>

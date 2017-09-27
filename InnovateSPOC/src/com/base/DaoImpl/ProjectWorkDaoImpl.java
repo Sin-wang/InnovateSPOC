@@ -18,8 +18,10 @@ import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 import com.base.Dao.ProjectWorkDao;
+import com.base.Po.WorkInfo;
 import com.base.Po.employment;
 import com.base.Po.groups;
+import com.base.Po.project_personnel;
 import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.Po.work_category;
@@ -118,8 +120,8 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		} finally {
 		    SqlConnectionUtils.free(conn, sp, rs);
 		}
-		System.out.println(groupName+"||"+projectName+"||"+projectIntroduce+"||"+projectAddress+"||"+photoAddress+"||"+workCategory+"||"+express+"||"+bestWork);
-		System.out.println(flag);
+		//System.out.println(groupName+"||"+projectName+"||"+projectIntroduce+"||"+projectAddress+"||"+photoAddress+"||"+workCategory+"||"+express+"||"+bestWork);
+		//System.out.println(flag);
 		return flag;
 	}
 
@@ -238,6 +240,137 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		}
 		return list;
 	}
+
+	@Override
+	public List<project_personnel> getPersonnel() {
+		List<project_personnel> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from project_personnel";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<project_personnel> getPersonnel(String sid) {
+		List<project_personnel> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from project_personnel where sid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, sid);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<WorkInfo> getAllWorkInfo() {
+		List<WorkInfo> list = new ArrayList<WorkInfo>();
+		Connection conn = null;
+		CallableStatement sp = null;
+		ResultSet rs = null;
+		 try {
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					    sessionFactory).getConnection();
+			 sp = (CallableStatement) conn
+					    .prepareCall("{CALL innovatespoc.`select_WorkInfo`(?)}");
+			 
+			    sp.execute();
+			    rs = sp.getResultSet();
+			    
+			    while (rs.next()) {
+			    WorkInfo ch = new WorkInfo();
+			    ch.setPid(rs.getInt("pid"));
+			    ch.setGid(rs.getString("gid"));
+			    ch.setGname(rs.getString("gname"));
+			    ch.setProject_name(rs.getString("project_name"));
+			    ch.setProject_introduce(rs.getString("project_introduce"));
+			    ch.setProject_address(rs.getString("project_address"));
+			    ch.setPhoto_address(rs.getString("photo_address"));
+			    ch.setWid(rs.getString("work_name"));
+			    ch.setExpression(rs.getString("expression"));
+			    ch.setBest_work(rs.getString("best_work"));
+			    ch.setSid(rs.getString("sid"));
+			    ch.setParticipants(rs.getString("participants"));
+			    ch.setHeader(rs.getString("header"));
+			    ch.setWork_name(rs.getString("work_name"));
+			    list.add(ch);
+			    }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+		    SqlConnectionUtils.free(conn, sp, rs);
+		}
+		return list;
+	}
+
+	@Override
+	public List<WorkInfo> getAllWorkInfo(String sid) {
+		List<WorkInfo> list = new ArrayList<WorkInfo>();
+		Connection conn = null;
+		CallableStatement sp = null;
+		ResultSet rs = null;
+		 try {
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					    sessionFactory).getConnection();
+			 sp = (CallableStatement) conn
+					    .prepareCall("{CALL innovatespoc.`select_SidWorkInfo`(?,?)}");
+			 	sp.setString(1, sid);
+			    sp.execute();
+			    rs = sp.getResultSet();
+			    
+			    while (rs.next()) {
+			    WorkInfo ch = new WorkInfo();
+			    ch.setPid(rs.getInt("pid"));
+			    ch.setGid(rs.getString("gname"));
+			    ch.setProject_name(rs.getString("project_name"));
+			    ch.setProject_introduce(rs.getString("project_introduce"));
+			    ch.setProject_address(rs.getString("project_address"));
+			    ch.setPhoto_address(rs.getString("photo_address"));
+			    ch.setWid(rs.getString("work_name"));
+			    ch.setExpression(rs.getString("expression"));
+			    ch.setBest_work(rs.getString("best_work"));
+			    
+			    list.add(ch);
+			    }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+		    SqlConnectionUtils.free(conn, sp, rs);
+		}
+		return list;
+	}
+
+	@Override
+	public List<project_work> getWorkInfoBypid(String gid) {
+		List<project_work> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from project_work where gid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, gid);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
 
 
 }

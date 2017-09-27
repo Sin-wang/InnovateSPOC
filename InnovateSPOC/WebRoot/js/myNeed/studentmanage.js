@@ -211,7 +211,6 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#qq").val(obj[index].qq);
 	$("#school_year").val(obj[index].school_year);
 	$("#smajor").val(obj[index].major);
-	alert(obj[index].headshot);
 	$("#imghead").attr("src",obj[index].headshot);
 //	$("#graduation").val(obj[index].graduation);
 //	$("#employed").val(obj[index].employed);

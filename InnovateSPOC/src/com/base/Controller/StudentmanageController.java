@@ -163,7 +163,6 @@ public class StudentmanageController {
 		String gra = request.getParameter("SelectOne1");
 		String emp = request.getParameter("SelectOne2");
 		String photo = null;
-		
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
@@ -273,7 +272,28 @@ public class StudentmanageController {
 			}
 			return null;
 		}
+		
+		//根据pid获得没有毕业的学生
+		@RequestMapping("getStudentByGid.do")
+		public String getStudentByPid(HttpServletRequest request,
+			    HttpServletResponse response){
+			int gid = Integer.parseInt(request.getParameter("gid"));
+			List<students> list1 = studentService.getStudentByPid(gid);
+			try {
+			    List list4 = new ArrayList();
+			    list4.add(list1);
+			    JSONArray json = JSONArray.fromObject(list4);
+			    response.setContentType("text/html;charset=UTF-8");
+			    response.getWriter().print(json.toString());
 
+			} catch (Exception e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+			return null;
+		}
+
+		
 	//获得学生简历
 	@RequestMapping("get_resume.do")
 	public String get_resume(HttpServletRequest request,
@@ -284,7 +304,6 @@ public class StudentmanageController {
 		List<hobbys> list3 = hobbysService.get_hobbys(sid);
 		List<internship> list4 = internshipService.get_internship(sid);
 		List<skill_student> list5 = skillStudentService.get_skill_student(sid);
-		System.out.println(sid);
 		try {
 		    List list = new ArrayList();
 		    list.add(list1);
@@ -302,4 +321,5 @@ public class StudentmanageController {
 		}
 		return null;
 	}
+	
 }

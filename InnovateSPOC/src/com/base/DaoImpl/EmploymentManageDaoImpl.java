@@ -16,11 +16,13 @@ import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 import com.base.Dao.EmploymentManageDao;
+import com.base.Po.EmployeeStudent;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
 import com.base.Po.students;
 import com.base.Po.teachers;
+import com.base.Po.userCenter;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
 
@@ -218,6 +220,59 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 				session.close();
 			}
 			return list;
+		}
+
+		@Override
+		public List<EmployeeStudent> getEmployeeStudent(int gid) {
+
+			Connection conn = null;
+			CallableStatement sp = null;
+			ResultSet rs = null;
+			List<EmployeeStudent> list = new ArrayList<EmployeeStudent>();
+			try {
+			    conn = (Connection) SessionFactoryUtils.getDataSource(
+				    sessionFactory).getConnection();
+			    sp = (CallableStatement) conn
+				    .prepareCall("{CALL innovatespoc.SelEmployeeStudent(?)}");
+			    sp.execute();
+			    rs = sp.getResultSet();
+			    while (rs.next()) {
+			    	EmployeeStudent ch = new EmployeeStudent();
+			    	if(rs.getInt("gid") == gid){
+		    		ch.setSid(rs.getString("sid"));
+		 			ch.setSname(rs.getString("sname"));
+		 			ch.setSex(rs.getString("sex"));
+		 			ch.setStudent_introduce(rs.getString("student_introduce"));
+		 			ch.setChinese_address(rs.getString("chinese_address"));
+		 			ch.setEnglish_address(rs.getString("english_address"));
+		 			ch.setPhone(rs.getString("phone"));
+		 			ch.setQq(rs.getString("qq"));
+		 			ch.setSchool_year(rs.getString("school_year"));
+		 			ch.setMajor(rs.getString("major"));
+		 			ch.setGraduation(rs.getString("graduation"));
+		 			ch.setHeadshot(rs.getString("headshot"));
+		 			ch.setEmployed(rs.getString("employed"));
+		 			ch.setGid(rs.getInt("gid"));
+		 			ch.setGname(rs.getString("gname"));
+		 			ch.setId(rs.getInt("id"));
+					ch.setCompany(rs.getString("company"));
+					ch.setSalary(rs.getString("salary"));
+				    ch.setWorkin(rs.getString("workin"));
+				    ch.setGraduation_year(rs.getString("graduation_year"));
+				    ch.setExcellence(rs.getString("excellence"));
+				    list.add(ch);
+			    	}
+			    }
+			} catch (SQLException e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			} finally {
+			    SqlConnectionUtils.free(conn, sp, rs);
+			}
+
+			return list;
+		    
+			
 		}
 		
 		

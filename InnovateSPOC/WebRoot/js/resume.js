@@ -1,8 +1,8 @@
    // JavaScript Document
 $(document).ready(function() {
-	$(document).on("click",".thumbnail",function (){
-		var stuId=$(this).attr("id");
-//		$("#resume_myModal").modal('show');
+	var stuId=location.href;
+	var num=stuId.lastIndexOf("=")+1;
+	stuId=stuId.substring(num);
 				//获取简历信息的请求
 				$.ajax({
 					type : 'POST',
@@ -17,6 +17,7 @@ $(document).ready(function() {
 							  size: 'small'
 						  });
 					},
+					
 					success : function(data) {
 						//基本个人信息
 						$("#headshot").attr("src",data[0][0].headshot);
@@ -104,23 +105,8 @@ $(document).ready(function() {
 					
 				});
 				
-				
-				$("#resume_myModal").modal('show');
-	});
 	
-	$('#resume_myModal').on('hidden.bs.modal', function () {
-				$("#resumeName").text("");
-				$("#resumeMajor").text("");
-				$("#resumeIntroduce").text("");
-				$("#resumeAdress").text("");
-				$("#resumeEadre").text("");
-				$("#resumeExe").html("");
-				$("#resumeEdu").html("");
-				$("#resumIntr").html("");
-				$("#resumeSkill").html("");
-				$("#guideProject").html("");
-				$("#joinproject").html("");
-		});
+	
 			
 	
 	

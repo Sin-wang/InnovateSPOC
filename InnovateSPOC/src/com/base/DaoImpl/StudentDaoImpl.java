@@ -285,4 +285,23 @@ public class StudentDaoImpl implements StudentDao{
 		}
 		return list;
 	}
+
+	@Override
+	public List<students> getStudentByPid(int gid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = ? and graduation = '否'";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setInteger(0, gid);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
 }

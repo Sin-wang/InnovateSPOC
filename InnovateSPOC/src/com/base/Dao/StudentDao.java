@@ -33,4 +33,6 @@ public interface StudentDao {
 	public List<students> get_3Dstudent();
 
 	public List<students> get_CGstudent();
+
+	public List<students> getStudentByPid(int gid);
 }

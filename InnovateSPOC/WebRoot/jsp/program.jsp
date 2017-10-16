@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 						  <li>
-							<a href="../login.html">
+							<a href="../login.html" target="_blank">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
@@ -88,16 +88,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class=" carousel  slide" id="myCarousel">
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class=""></li>
-					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 				</ol>
 				
 				<div class="carousel-inner">
 					<div class="item  active">
-						<a href="#">
-							<div style="background-image:url(../images/program/haibao.png)"></div>
-						</a>
-					</div>
-					<div class="item">
 						<a href="#">
 							<div style="background-image:url(../images/program/haibao.png)"></div>
 						</a>
@@ -639,6 +633,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/bootbox.min.js" type="text/javascript"></script>
-	<script src="../js/resume.js" type="text/javascript"></script>
 	<script src="../js/program.js" type="text/javascript"></script>
 </html>

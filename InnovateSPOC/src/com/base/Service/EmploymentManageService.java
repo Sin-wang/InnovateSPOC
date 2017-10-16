@@ -5,6 +5,7 @@ package com.base.Service;
 
 import java.util.List;
 
+import com.base.Po.EmployeeStudent;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
@@ -51,7 +52,9 @@ public interface EmploymentManageService {
 
 	public List<groups> getGroup();
 
-	public List<students> getStudents();  
+	public List<students> getStudents();
+
+	public List<EmployeeStudent> getEmployeeStudent(int gid);  
  
 
 	

@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 						  <li>
-							<a href="../login.html">
+							<a href="../login.html" target="_blank">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 

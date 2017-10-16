@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 						  <li>
-							<a href="login.html">
+							<a href="login.html" target="_blank">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>							 
@@ -89,7 +89,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class=""></li>
 					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-					<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 				</ol>
 				<div class="carousel-inner">
 					<div class="item  active">
@@ -100,11 +99,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="item">
 						<a href="#">
 							<div style="background-image:url(images/index/haibao1.png);overflow: hidden"></div>
-						</a>
-					</div>
-					<div class="item">
-						<a href="#">
-							<div style="background-image:url(images/index/haibao.jpg);overflow: hidden"></div>
 						</a>
 					</div>
 				</div>
@@ -182,7 +176,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  <div class="modal-body text-center">
 			 	 <div class="playVideo">
 			 	 	 <video id="example_video_2" class="video-js vjs-default-skin vjs-big-play-centered vjs-fullscreen-control" controls ="none" width="565" height="410" poster="images/index/video.jpg" data-setup="{}">
-					<source id="1" src="images/index/beginv1.0.mp4" type='video/mp4' />
+					<source id="1" src="http://1252367251.vod2.myqcloud.com/dedcbf81vodgzp1252367251/994917589031868223332412181/WZKA0v5jNmcA.mp4" type='video/mp4' />
 					</video>
 			 	 </div>
 			  </div>
@@ -194,7 +188,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--新闻中心-->
 		<div class="campusnews">
 			<div class="wrap">
-			<h1 class="title1">学院新闻</h1>
+			<h1 class="title1">团队动态</h1>
 			
 			<div class=" carousel  slide" id="myCarousel4">
 				<ol class="carousel-indicators" id="showListNew">
@@ -228,10 +222,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud.png">创意的诞生（产品设计师）
 						</span>
 					</div>
-					<div class="product_text">采用燃烧艾条，保持最传统、最有效的艾灸方式。国内外大学和
-						 研究机构的各种研究表明，艾灸的最佳效果源于艾绒燃烧时产生的物
-						 理因子（红外线）和化学因为（药物成分）直接作用于人体的皮肤和
-						 穴位。
+					<div class="product_text">一个创造性的综合信息处理过程，通过线条、符号、数字、色彩等把产品显现人们面前。它将人的某种目的或需要转换为一个具体的物理形式或工具的过程，把一种计划、规划设想、问题解决的方法，通过具体的载体，以美好的形式表达出来。
 					</div>
 				</div>
 			</div>
@@ -246,9 +237,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud_red.png">流程图（交互设计师）
 						</span>
 					</div>
-					<div  class="product_text">完全取代人工操作，用户只需要设定好了距离、艾灸模式和艾灸
-						时间，设备的智能系统将综合用户的设定、艾绒燃烧的特点及实时监
-						控的温度等因素自动进行施灸，完成灸疗后自动提醒。
+					<div  class="product_text">指参与完成对产品与它的使用者之间的互动机制进行分析、预测、定义、规划、描述和探索的过程的设计师。交互指的是产品与它的使用者之间的互动过程，而交互设计师则是秉承以用户为中心的设计理念，以用户体验度为原则，对交互过程进行研究并开展设计的工作人员
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
@@ -272,9 +261,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud.png">低保真（3D设计师）
 						</span>
 					</div>
-					<div class="product_text">完全取代人工操作，用户只需要设定好了距离、艾灸模式和艾灸
-						时间，设备的智能系统将综合用户的设定、艾绒燃烧的特点及实时监
-						控的温度等因素自动进行施灸，完成灸疗后自动提醒。
+					<div class="product_text">是设计制作动画图案、角色造型、上色、建模等一系列工序，是三维动画设计制作的灵魂。在计算机中首先建立一个虚拟的世界，设计师在这个虚拟的三维世界中按照要表现的对象的形状尺寸建立模型以及场景，再根据要求设定模型的运动轨迹、虚拟摄影机的运动和其它动画参数，最后按要求为模型赋上特定的材质，并打上灯光。当这一切完成后就可以让计算机自动运算，生成最后的画面。
 					</div>
 				</div>
 			</div>
@@ -291,9 +278,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud_red.png">高保真（纹理材质师）
 						</span>
 					</div>
-					<div  class="product_text">完全取代人工操作，用户只需要设定好了距离、艾灸模式和艾灸
-						时间，设备的智能系统将综合用户的设定、艾绒燃烧的特点及实时监
-						控的温度等因素自动进行施灸，完成灸疗后自动提醒。
+					<div  class="product_text">纹理材质师能够创作出给人以超真实视觉冲击体验的作品。在3D质感的表现中，技术能力与艺术表现力缺一不可，只有将两者完美结合，才能诞生出优秀作品。
+
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
@@ -311,9 +297,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud_red.png">骨骼打散（骨骼建造师）
 						</span>
 					</div>
-					<div  class="product_text">完全取代人工操作，用户只需要设定好了距离、艾灸模式和艾灸
-						时间，设备的智能系统将综合用户的设定、艾绒燃烧的特点及实时监
-						控的温度等因素自动进行施灸，完成灸疗后自动提醒。
+					<div  class="product_text">使用3D MAX进行角色骨胳的绑定，使用IK、骨骼系统制作复杂角色动画，使所做的模型随着控制器运动，左右身体各部位的移动,达到模拟真人的效果。
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
@@ -339,10 +323,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud.png">GIF动图（动作设计师）
 						</span>
 					</div>
-					<div class="product_text">采用燃烧艾条，保持最传统、最有效的艾灸方式。国内外大学和
-						 研究机构的各种研究表明，艾灸的最佳效果源于艾绒燃烧时产生的物
-						 理因子（红外线）和化学因为（药物成分）直接作用于人体的皮肤和
-						 穴位。
+					<div class="product_text">应用3ds max制作软件以及其它各类动画制作软件制作和设计3D角色和怪物的各类动作，创建真实的有机和无机组织的动作，达到效果逼真的目的，将更多的动作以优美，和谐，自然，细腻的动画形态表现于游戏之中。
 					</div>
 				</div>
 			</div>
@@ -356,9 +337,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud_red.png">导入UNITY（脚本制作师）
 						</span>
 					</div>
-					<div  class="product_text">完全取代人工操作，用户只需要设定好了距离、艾灸模式和艾灸
-						时间，设备的智能系统将综合用户的设定、艾绒燃烧的特点及实时监
-						控的温度等因素自动进行施灸，完成灸疗后自动提醒。
+					<div  class="product_text">使用Unity等游戏开发引擎以及脚本语言（如C#），前期根据游戏规划编写代码，以及运用开发套件，实现相应的功能，开发出游戏程序，后期需要根据玩家需求，扩展游戏功能，增强稳定性，最终确保玩家有一个沉浸式的良好游戏体验。
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
@@ -423,7 +402,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="foot_wechart">
 				<p>关注我们</p>
-				<img src="images/index/ewm.png" width="130px">
+				<img src="images/index/WeChat.jpg" width="130px">
 			</div>
 		</div>
 	</div>
@@ -465,12 +444,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/index.js" type="text/javascript"></script>
 	<script>
 		var myPlayer = videojs("example_video_2");
+		
 		$('#myModal').on('show.bs.modal', function (e) {
 			myPlayer.player_.requestFullscreen();
 			myPlayer.play();
-		})
+		});
 		$('#myModal').on('hidden.bs.modal', function (e) {
 				myPlayer.pause();
-		})	
+		});
 	</script>
 </html>

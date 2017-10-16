@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getEmployeeAllInfo.do',
+ 			url : 'get_3Dstudent.do',
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -11,31 +11,29 @@ $(document).ready(function(){
          		  });
  			},
  			success : function(data) {
- 				alert(data[0].length);
 				var ProgramStr="";
 				var UIStr="";
 				var ThreeStr="";
 				var CGStr="";
 				for(var i=0;i<data[0].length;i++){
-					
-					if(data[1][i].gid===1){
+					if(data[0][i].gid===1 && data[0][i].graduation == '是' && data[0][i].employed == '否'){
 						
-						ProgramStr=ProgramStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
+						ProgramStr=ProgramStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><a href="resume.jsp?sid='+data[0][i].sid+'" target="_blank"><img src="'+data[0][i].headshot+'"></a></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sname+'</h3><br><p>'+data[0][i].student_introduce+'</p></div></div>';
 						continue;
 					}
-					if(data[1][i].gid===2){
+					if(data[0][i].gid===2 && data[0][i].graduation == '是' && data[0][i].employed == '否') {
 						
-						UIStr=UIStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
+						UIStr=UIStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><a href="resume.jsp?sid='+data[0][i].sid+'" target="_blank"><img src="'+data[0][i].headshot+'"></a></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sname+'</h3><br><p>'+data[0][i].student_introduce+'</p></div></div>';
 						continue;
 					}
-					if(data[1][i].gid===5){
+					if(data[0][i].gid===5 && data[0][i].graduation == '是' && data[0][i].employed == '否'){
 						
-						ThreeStr=ThreeStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
+						ThreeStr=ThreeStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><a href="resume.jsp?sid='+data[0][i].sid+'" target="_blank"><img src="'+data[0][i].headshot+'"></a></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sname+'</h3><br><p>'+data[0][i].student_introduce+'</p></div></div>';
 						continue;
 					}
-					if(data[1][i].gid===4 || data[1][i].gid===6){
+					if((data[0][i].gid===4 || data[0][i].gid===6 ) && data[0][i].graduation == '是' && data[0][i].employed == '否'){
 						
-						CGStr=CGStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><img src="'+data[1][i].headshot+'"></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[1][i].sname+'</h3><br><p>'+data[1][i].student_introduce+'</p></div></div>';
+						CGStr=CGStr+'<div class="recruit"><div class="news-bottom"></div>	<div class="recruit_left"><a href="resume.jsp?sid='+data[0][i].sid+'" target="_blank"><img src="'+data[0][i].headshot+'"></a></div><div class="recruit_body"><br><h3 class="recruit-heading">'+data[0][i].sname+'</h3><br><p>'+data[0][i].student_introduce+'</p></div></div>';
 						continue;
 					}
 					

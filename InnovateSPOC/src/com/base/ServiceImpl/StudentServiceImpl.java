@@ -98,4 +98,11 @@ public class StudentServiceImpl implements StudentService {
 		List<students> list = studentdao.get_CGstudent();
 		return list;
 	}
+
+	@Override
+	public List<students> getStudentByPid(int gid) {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.getStudentByPid(gid);
+		return list;
+	}
 }

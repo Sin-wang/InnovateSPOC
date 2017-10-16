@@ -306,4 +306,39 @@ $(document).ready(function() {
 															}
 														});
 							});
+							
+							
+							$.ajax({
+								type : 'POST',
+								dataType : 'json',		
+								url : 'get_3Dstudent.do',  
+								async : false,
+								cache : false,
+								error : function(request) {
+									bootbox.alert({
+										message : "请求异常21",
+										size : 'small'
+									});
+								},
+								success : function(data) {
+									
+									for ( var i=0;i<data[0].length;i++) {									
+										
+										$("#StuNameList").after(
+												"<option value="+data[0][i].sid+">"
+														+ data[0][i].sname + "</option>");				
+										
+									}	
+																		
+								}
+
+							});
+							
+							$(document).on("change","#StudentName",function(){
+								$("#sid").val($(this).val());
+								
+							});
+							
+							
+							
 });

@@ -228,9 +228,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									class="setTag">*</span></label>
 										<div class="col-md-6">
 											<input type="text" class="form-control" id="sid"
-											name="stuName" placeholder="">
+											name="stuName" readonly>
 										</div>
 								</div>
+								
+								<div class="form-group">
+									<label class="col-md-3 control-label">学生姓名<span
+									class="setTag">*</span></label>
+										<div class="col-md-6">
+											<select class="form-control" id="StudentName" >
+												<option id="StuNameList" value="" >请选择</option>
+											</select>
+										</div>
+								</div>
+								
 								<div class="form-group">
 									<label class="col-md-3 control-label">所在公司<span
 									class="setTag">*</span></label>

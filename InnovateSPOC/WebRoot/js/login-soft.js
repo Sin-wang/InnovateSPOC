@@ -95,10 +95,10 @@ var Login = function () {
             handleLogin();
 			handleUniform();
 			$.backstretch([
-                            "images/backgrounds/0.jpg",
-							"images/backgrounds/1.jpg",
+                            "images/backgrounds/timg.jpg"
+							/*"images/backgrounds/1.jpg",
 							"images/backgrounds/2.jpg",
-							"images/backgrounds/3.jpg"
+							"images/backgrounds/3.jpg"*/
 					        ], {
 					          fade: 1000,
 					          duration: 4000

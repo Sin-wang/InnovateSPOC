@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.base.Dao.EmploymentManageDao;
+import com.base.Po.EmployeeStudent;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
@@ -83,6 +84,12 @@ public class EmploymentManageServiceImpl implements EmploymentManageService {
 	public List<students> getStudents() {
 		// TODO Auto-generated method stub
 		List<students> list = employmentdao.getStudents();
+		return list;
+	}
+	@Override
+	public List<EmployeeStudent> getEmployeeStudent(int gid) {
+		// TODO Auto-generated method stub
+		List<EmployeeStudent> list = employmentdao.getEmployeeStudent(gid);
 		return list;
 	}
 }

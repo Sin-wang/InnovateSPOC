@@ -327,16 +327,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													/><span id="display1" style="color:#f00;"></span>
 													</td>
 											</tr>
-											<tr>
-												<td>是否毕业 ：<span class="setTag">*</span></td>
-												<td class="col-md-9" id="sex-style">
-													<select class="form-control" id="SelectOne1"
-													name="SelectOne1" value="" style="width:30%">
-														<option id="Select1" value="是" selected>是</option>
-														<option id="Select2" value="否" selected>否</option>
-													</select>
-												</td>
-											</tr>
+											
 											<tr>
 												<td>是否应聘 ：<span class="setTag">*</span></td>
 												<td class="col-md-9" id="sex-style">
@@ -344,6 +335,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													name="SelectOne2" value="" style="width:30%">
 														<option id="Select01" value="是" selected>是</option>
 														<option id="Select02" value="否" selected>否</option>
+													</select>
+												</td>
+											</tr>
+											
+											<tr id="hideRow">
+												<td>是否毕业 ：<span class="setTag">*</span></td>
+												<td class="col-md-9" id="sex-style">
+													<select class="form-control" id="SelectOne1"
+													name="SelectOne1" value="" style="width:30%">
+														<option id="Select1" value="是" selected>是</option>
+														<option id="Select2" value="否" selected>否</option>
 													</select>
 												</td>
 											</tr>

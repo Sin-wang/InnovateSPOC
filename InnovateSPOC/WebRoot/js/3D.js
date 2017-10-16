@@ -8,7 +8,7 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_student.do',
+ 			url : 'getStudentByGid.do',
  			data :{
  				gid :5
  			},
@@ -46,9 +46,9 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<5;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -56,9 +56,9 @@ $(document).ready(function() {
 						var maxNum=data[0].length-(num-1)*5;
 						for(var a=0;a<maxNum;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+data[0][5*(i-1)+a].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+a].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+data[0][5*(i-1)+a].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></a></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+data[0][5*(i-1)+a].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><a href="resume.jsp?sid='+data[0][5*(i-1)+a].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+data[0][5*(i-1)+a].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></a></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -133,7 +133,10 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getEmploy.do',
+ 			url : 'getEmployeeStudent.do',
+ 			data :{
+ 				gid :5
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -165,13 +168,13 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<4;j++){
 							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student1_3D.png"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
+								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="'+data[0][j].headshot+'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student2_3D.png"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
+								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="'+data[0][a].headshot+'"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
 						}
 					}
 					

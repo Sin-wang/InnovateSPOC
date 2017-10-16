@@ -12,6 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
 		<title>SPOC创新实验室CG特效组</title>
 		<link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+		<link href="../css/video-js.min.css" type="text/css" rel="stylesheet"/>
 		<link href="../css/common.css" type="text/css" rel="stylesheet"/>
         <link href="../css/resume.css" type="text/css" rel="stylesheet"/>
 		<link rel="stylesheet" href="../css/CG.css" />
@@ -71,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 						  <li>
-							<a href="../login.html">
+							<a href="../login.html" target="_blank">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
@@ -137,10 +138,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</div>
   		</div>
   		<div>
-   			<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264" poster="../images/CG/video.png" data-setup="{}"><!--poster="http://video-js.zencoder.com/oceans-clip.png"-->
-    		<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
-    		<track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
-    		<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+   			<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="640" height="364" poster="../images/CG/video.jpg" data-setup="{}">
+    		<source src="http://1252367251.vod2.myqcloud.com/dedcbf81vodgzp1252367251/7ba26c669031868223335227791/dKYULQIIJs0A.mp4" type='video/mp4' />
 			</video>
   		</div><br><br><br>
 	</div>
@@ -768,6 +767,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/bootbox.min.js" type="text/javascript"></script>
-	<script src="../js/resume.js" type="text/javascript"></script>
+	<script src="../js/video.min.js" type="text/javascript"></script>
 	<script src="../js/CG.js" type="text/javascript"></script>
 </html>

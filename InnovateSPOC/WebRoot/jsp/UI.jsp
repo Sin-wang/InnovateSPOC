@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 						  <li>
-							<a href="../login.html">
+							<a href="../login.html" target="_blank">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
@@ -551,7 +551,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/bootbox.min.js" type="text/javascript"></script>
-	<script src="../js/resume.js" type="text/javascript"></script>
 	<script src="../js/UI.js" type="text/javascript"></script>
 	<script>
 			$('#mycarousel2').carousel({

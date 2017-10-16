@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.base.Po.EmployeeStudent;
 import com.base.Po.employList;
 import com.base.Po.employment;
 import com.base.Po.groups;
@@ -198,7 +199,7 @@ public class EmploymentManageController {
 		return null;
     }
     
-  //获得企业招聘所需的就业学员信息
+  //获得就业明星的信息
     @RequestMapping("/getEmployeeAllInfo.do")
     public String getEmployeeAllInfo(HttpServletRequest request,
 		    HttpServletResponse response){
@@ -220,4 +221,23 @@ public class EmploymentManageController {
 		return null;
     }
     
+    //获得就业明星的就业表与学生信息
+    @RequestMapping("/getEmployeeStudent.do")
+    public String getEmployeeStudent(HttpServletRequest request,
+		    HttpServletResponse response){
+    	int gid = Integer.parseInt(request.getParameter("gid"));
+    	List<EmployeeStudent> list = employmentmanageservice.getEmployeeStudent(gid);
+		try {
+		    List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
 }

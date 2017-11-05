@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a class="nav_stop" href="index.html">
+						  <a class="nav_stop" href="index.jsp">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 							 <li>
-							<a href="group_project.jsp">
+							<a href="jsp/group_project.jsp">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
@@ -89,18 +89,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class=""></li>
 					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+					
 				</ol>
 				<div class="carousel-inner">
 					<div class="item  active">
 						<a href="#">
-							<div style="background-image:url(images/index/haibao.jpg);overflow: hidden"></div>
+							<div style="background-image:url(images/index/haibao2.jpg);overflow: hidden"></div>
 						</a>
 					</div>
 					<div class="item">
 						<a href="#">
-							<div style="background-image:url(images/index/haibao1.png);overflow: hidden"></div>
+							<div style="background-image:url(images/index/haibao.jpg);overflow: hidden"></div>
 						</a>
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -125,7 +127,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--<div id="Fadvantage">-->
 			<div class="wrap">
 				<div class="fr major">
-					<h1 class="title1">四大优势</h1>
+					<h1 class="title1">技能领域</h1>
 					<ul class="contentfl">
 						<li class="text-center">
 							<a href="html/course_feature.html"  >
@@ -162,7 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--创新班视频-->
 		<div class="official-video">
 			<div class="wrap text-center">
-				<h1 class="title1">SPOC团队官方视频</h1>
+				<h1 class="title1">思博客团队官方视频</h1>
 				<a class="ma videobt" data-toggle="modal" data-target="#myModal"></a>
 			</div>
 		</div>
@@ -201,7 +203,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 				</div>
 			</div>
-			<div class="fr moreNews"><p><a href="html/news_list.html">更多&gt;&gt;</a></p></div>
+			<!-- <div class="fr moreNews"><p><a href="html/news_list.html">更多&gt;&gt;</a></p></div> -->
 		</div>
 	</div>
 
@@ -219,7 +221,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<div class="product_title">
 						<span  class="product_title_white">
-							<img src="images/index/cloud.png">创意的诞生（产品设计师）
+							<img src="images/index/cloud.png">原画设计师
 						</span>
 					</div>
 					<div class="product_text">一个创造性的综合信息处理过程，通过线条、符号、数字、色彩等把产品显现人们面前。它将人的某种目的或需要转换为一个具体的物理形式或工具的过程，把一种计划、规划设想、问题解决的方法，通过具体的载体，以美好的形式表达出来。
@@ -234,10 +236,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-md-6 col-xs-6  col-md-offset-1 col-xs-offset-1">
 					<div class="product_title">
 						<span class="product_title_red">
-							<img src="images/index/cloud_red.png">流程图（交互设计师）
+							<img src="images/index/cloud_red.png">交互设计师
 						</span>
 					</div>
-					<div  class="product_text">指参与完成对产品与它的使用者之间的互动机制进行分析、预测、定义、规划、描述和探索的过程的设计师。交互指的是产品与它的使用者之间的互动过程，而交互设计师则是秉承以用户为中心的设计理念，以用户体验度为原则，对交互过程进行研究并开展设计的工作人员
+					<div  class="product_text">完成对产品与它的使用者之间的互动机制进行分析、预测、定义、规划、描述和探索的过程的设计师。交互指的是产品与它的使用者之间的互动过程，而交互设计师则是秉承以用户为中心的设计理念，以用户体验度为原则，对交互过程进行研究并开展设计的工作人员
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
@@ -258,7 +260,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-md-6 col-xs-6">
 					<div class="product_title">
 						<span  class="product_title_white">
-							<img src="images/index/cloud.png">低保真（3D设计师）
+							<img src="images/index/cloud.png">3D模型师
 						</span>
 					</div>
 					<div class="product_text">是设计制作动画图案、角色造型、上色、建模等一系列工序，是三维动画设计制作的灵魂。在计算机中首先建立一个虚拟的世界，设计师在这个虚拟的三维世界中按照要表现的对象的形状尺寸建立模型以及场景，再根据要求设定模型的运动轨迹、虚拟摄影机的运动和其它动画参数，最后按要求为模型赋上特定的材质，并打上灯光。当这一切完成后就可以让计算机自动运算，生成最后的画面。
@@ -275,10 +277,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-md-6 col-xs-6  col-md-offset-1 col-xs-offset-1">
 					<div class="product_title">
 						<span class="product_title_red">
-							<img src="images/index/cloud_red.png">高保真（纹理材质师）
+							<img src="images/index/cloud_red.png">特效师
 						</span>
 					</div>
-					<div  class="product_text">纹理材质师能够创作出给人以超真实视觉冲击体验的作品。在3D质感的表现中，技术能力与艺术表现力缺一不可，只有将两者完美结合，才能诞生出优秀作品。
+					<div  class="product_text">就是在动画制作过程中，使用数字虚拟技术添加虚拟场景、虚拟道具、虚拟角色以及用常规方法无法实现的特效镜头。为现代VR的制作提供各种虚拟元素，给观众带来最强视觉冲击力的视听享受.
 
 					</div>
 				</div>
@@ -294,14 +296,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-md-6 col-xs-6  col-md-offset-1 col-xs-offset-1">
 					<div class="product_title">
 						<span class="product_title_red">
-							<img src="images/index/cloud_red.png">骨骼打散（骨骼建造师）
+							<img src="images/index/cloud_red.png">地形编辑师
 						</span>
 					</div>
 					<div  class="product_text">使用3D MAX进行角色骨胳的绑定，使用IK、骨骼系统制作复杂角色动画，使所做的模型随着控制器运动，左右身体各部位的移动,达到模拟真人的效果。
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
-					<img src="images/index/product5.png" class="img-responsive"> 
+					<img src="images/index/product6.png" class="img-responsive"> 
 				</div>
 			</div>
 		</div>
@@ -312,7 +314,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="row product_content">
 				<div class="col-md-4 col-xs-4 col-md-offset-1 col-xs-offset-1">
-					<img src="images/index/product6.png" class="img-responsive center-block"> 
+					<img src="images/index/product5.png" class="img-responsive center-block"> 
 				</div>
 				<div class="col-md-6 col-xs-6 number">
 					<div class="product_num5">
@@ -320,7 +322,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<div class="product_title">
 						<span  class="product_title_white">
-							<img src="images/index/cloud.png">GIF动图（动作设计师）
+							<img src="images/index/cloud.png">动作设计师
 						</span>
 					</div>
 					<div class="product_text">应用3ds max制作软件以及其它各类动画制作软件制作和设计3D角色和怪物的各类动作，创建真实的有机和无机组织的动作，达到效果逼真的目的，将更多的动作以优美，和谐，自然，细腻的动画形态表现于游戏之中。
@@ -334,14 +336,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-md-6 col-xs-6  col-md-offset-1 col-xs-offset-1">
 					<div class="product_title">
 						<span class="product_title_red">
-							<img src="images/index/cloud_red.png">导入UNITY（脚本制作师）
+							<img src="images/index/cloud_red.png">Unity程序员
 						</span>
 					</div>
 					<div  class="product_text">使用Unity等游戏开发引擎以及脚本语言（如C#），前期根据游戏规划编写代码，以及运用开发套件，实现相应的功能，开发出游戏程序，后期需要根据玩家需求，扩展游戏功能，增强稳定性，最终确保玩家有一个沉浸式的良好游戏体验。
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
-					<img src="images/index/product7.png" class="img-responsive"> 
+					<img src="images/index/code.png" class="img-responsive"> 
 				</div>
 			</div>
 		</div>
@@ -380,6 +382,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							
 						</div>
+						<div class="item">
+							<div class="imgFloat">
+								<img src="images/index/active7.jpg" alt="" width="300px">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active8.jpg" alt="" width="300px">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active9.jpg" alt="" width="300px">
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -390,15 +403,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="foot">
 		<div class="foot_content">
 			<div class="foot_team">
-				<h2>SPOC团队</h2>
-				<p>创新工作室所有工作围绕搞好机组检修工作，达到修后消<br>除机组缺陷，提高机组效率，降低机组热耗为目标。</p>
+				<h2>思博客团队</h2>
+				<p>思博客重点在实践，是湖南农业大学的创新实验室<br>
+					特色在以工程观为理念来教学生，致力于VR</p>
 				<p>© 2017 <a href="http://www.miibeian.gov.cn/" target="_blank">湘ICP备17014171号</a></p>
 			</div>
 			<div class="foot_about">
 				<p>关于我们</p>
-				<p>SPOC@Sina.com</p>
-				<p>湖南农业大学第13教学楼4楼<br>SPOC工作室</p>
-				<p>18673158789</p>
+				<p>1747266224@qq.com</p>
+				<p>湖南农业大学第13教学楼4楼<br>思博客工作室</p>
 			</div>
 			<div class="foot_wechart">
 				<p>关注我们</p>

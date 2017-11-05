@@ -31,6 +31,43 @@ public class userCenter {
 	private int TSflag;
 	private String password;
 	private String gid;
+	private String position;
+	
+	public userCenter(String sid, String sname, String student_introduce,
+			String sex, String chinese_address, String english_address,
+			String phone, String headshot, String qq, String school_year,
+			String major, String graduation, String employed, String tid,
+			String tname, String teacher_introduce, String photo_address,
+			int tSflag, String password, String gid, String position) {
+		super();
+		this.sid = sid;
+		this.sname = sname;
+		this.student_introduce = student_introduce;
+		this.sex = sex;
+		this.chinese_address = chinese_address;
+		this.english_address = english_address;
+		this.phone = phone;
+		this.headshot = headshot;
+		this.qq = qq;
+		this.school_year = school_year;
+		this.major = major;
+		this.graduation = graduation;
+		this.employed = employed;
+		this.tid = tid;
+		this.tname = tname;
+		this.teacher_introduce = teacher_introduce;
+		this.photo_address = photo_address;
+		TSflag = tSflag;
+		this.password = password;
+		this.gid = gid;
+		this.position = position;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
 	public userCenter(String sid, String sname, String student_introduce,
 			String sex, String chinese_address, String english_address,
 			String phone, String headshot, String qq, String school_year,

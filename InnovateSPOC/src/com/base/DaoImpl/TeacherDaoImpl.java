@@ -29,7 +29,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	 //增加教师
 	 @Override
-	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid) {
+	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid,String position) {
 		 	int flag=0;
 			Connection conn = null;
 			PreparedStatement ps=null;
@@ -39,7 +39,7 @@ public class TeacherDaoImpl implements TeacherDao{
 			    conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
 			    sp = (CallableStatement) conn
-						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?,?)}");
+						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?,?,?)}");
 				sp.setString(1, teacherId);
 				sp.setString(2, teacherName);
 				sp.setString(3, sex);
@@ -47,8 +47,9 @@ public class TeacherDaoImpl implements TeacherDao{
 				sp.setString(5, Areason);
 				sp.setString(6, password);
 				sp.setInt(7, gid);
+				sp.setString(8, position);
 				sp.execute();
-			    flag = sp.getInt(8);
+			    flag = sp.getInt(9);
 			} catch (SQLException e) {
 			    // TODO Auto-generated catch block
 			    e.printStackTrace();
@@ -116,6 +117,7 @@ public class TeacherDaoImpl implements TeacherDao{
 				ch.setGid(rs.getInt("gid"));
 				ch.setGname(rs.getString("gname"));
 				ch.setPhoto_address(rs.getString("photo_address"));
+				ch.setPosition(rs.getString("position"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -157,7 +159,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	//修改教师信息
 	@Override
-	public void updateteacher(String tid, String tintroduce, int gid,String photo) {
+	public void updateteacher(String tid, String tintroduce, int gid,String photo,String position) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement ps=null;
@@ -165,12 +167,13 @@ public class TeacherDaoImpl implements TeacherDao{
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    String sql =("update teachers set teacher_introduce=?,gid=?,photo_address=? where tid=?");
+		    String sql =("update teachers set teacher_introduce=?,gid=?,photo_address=?,`position`=? where tid=?");
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, tintroduce);
 		    ps.setInt(2, gid);
 		    ps.setString(3, photo);
-		    ps.setString(4, tid);
+		    ps.setString(4, position);
+		    ps.setString(5, tid);
 		    ps.executeUpdate();
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block

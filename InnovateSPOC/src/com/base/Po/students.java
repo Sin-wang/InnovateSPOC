@@ -23,6 +23,7 @@ public class students {
 	private String employed;//�Ƿ�ӦƸ
 	private String gname;
 	private int gid;
+	private int sorder;
 	
 	public students() {
 		super();
@@ -33,7 +34,7 @@ public class students {
 			String sex, String headshot, String chinese_address,
 			String english_address, String phone, String qq,
 			String school_year, String major, String graduation,
-			String employed, String gname, int gid) {
+			String employed, String gname, int gid, int sorder) {
 		super();
 		this.sid = sid;
 		this.sname = sname;
@@ -50,6 +51,7 @@ public class students {
 		this.employed = employed;
 		this.gname = gname;
 		this.gid = gid;
+		this.sorder = sorder;
 	}
 
 	public String getSid() {
@@ -172,6 +174,15 @@ public class students {
 		this.gid = gid;
 	}
 
+	public int getSorder() {
+		return sorder;
+	}
+
+	public void setSorder(int sorder) {
+		this.sorder = sorder;
+	}
+
+	
 
 	
 }

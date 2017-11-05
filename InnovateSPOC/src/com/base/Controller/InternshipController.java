@@ -106,12 +106,91 @@ public class InternshipController {
 	//修改实习经历
 	@RequestMapping("updateInternship.do")
 	public String updateInternship(HttpServletRequest request,
-			HttpServletResponse response){
+			HttpServletResponse response) throws IOException{
 		int id = Integer.parseInt(request.getParameter("id"));
+		String studentId = request.getParameter("sid");
 		String begin = request.getParameter("begin");
 		String end = request.getParameter("end");
 		String description = request.getParameter("description");
 		internshipService.updateInternship(id,begin, end, description);
-		return "internship";
+		String toPage = "/jsp/internship.jsp";
+		toPage = request.getContextPath()+toPage;
+		response.sendRedirect(toPage);
+		return null;
 	}
+	
+		//展示实习经历
+		@RequestMapping("query_Uinternship.do")
+		public String query_Uinternship(HttpServletRequest request,
+			    HttpServletResponse response){
+			String searchValue = request.getParameter("search[value]");
+			String sid = request.getParameter("Usid");
+			if (searchValue.equals("")) {
+			    searchValue = null;
+			}
+			// 获取当前页面的传输几条记录
+			Integer size = Integer.parseInt(request.getParameter("length"));
+			// 数据起始位置
+			Integer startIndex = Integer.parseInt(request.getParameter("start"));
+			Integer draw = Integer.parseInt(request.getParameter("draw"));
+//			int order = Integer.valueOf(request.getParameter("order[0][column]"));// 排序的列号
+			int order = 1;
+			// String orderDir = request.getParameter("order[0][dir]");//
+			// 排序的顺序asc or
+			String orderDir = "desc"; // // desc
+			// 通过计算求出当前页面为第几页
+			Integer pageindex = (startIndex / size + 1);
+			int recordsTotal = 0;
+			List<internship> list = new ArrayList<internship>();
+			internshipList pr = null;
+			pr = internshipService.query_Uinternship(sid,size, pageindex, order, orderDir, searchValue);
+			list = pr.getData();
+			recordsTotal = pr.getRecordsTotal();
+			JSONObject getObj = new JSONObject();
+			getObj.put("draw", draw);
+			getObj.put("recordsFiltered", recordsTotal);
+			getObj.put("recordsTotal", recordsTotal);
+			getObj.put("data", list);
+			response.setContentType("text/html;charset=UTF-8");
+			try {
+			    response.getWriter().print(getObj.toString());
+			} catch (IOException e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+			return null;
+		}
+		
+		//用户增加实习经历信息
+		@RequestMapping("addUinternship.do")
+		public String addUinternship(HttpServletRequest request,
+			    HttpServletResponse response) throws IOException{
+			int flag=0;
+			String studentId = request.getParameter("sid1");
+			String address = request.getParameter("address1");
+			String begin = request.getParameter("begin1");
+			String end = request.getParameter("end1");
+			String description = request.getParameter("description1");
+			flag = internshipService.addinternship(studentId, address, begin, end, description);
+			request.setAttribute("flag", flag);
+			String toPage = request.getContextPath()+"/jsp/Uinter.jsp?"+studentId;
+			response.sendRedirect(toPage);
+			return null;
+		}
+		
+		//修改实习经历
+		@RequestMapping("updateUInternship.do")
+		public String updateUInternship(HttpServletRequest request,
+				HttpServletResponse response) throws IOException{
+			int id = Integer.parseInt(request.getParameter("id"));
+			String studentId = request.getParameter("sid");
+			String begin = request.getParameter("begin");
+			String end = request.getParameter("end");
+			String description = request.getParameter("description");
+			internshipService.updateInternship(id,begin, end, description);
+			String toPage = null;
+			toPage = request.getContextPath()+"/jsp/Uinter.jsp?"+studentId;
+			response.sendRedirect(toPage);
+			return null;
+		}
 }

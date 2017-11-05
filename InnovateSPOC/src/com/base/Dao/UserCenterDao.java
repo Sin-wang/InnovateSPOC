@@ -26,7 +26,7 @@ public interface UserCenterDao {
 			String employed, String introduce, String filename);
 
 	public void updateTea(String id, String name, String sex, String introduce,
-			String filename);
+			String filename,String position);
 	
 
 

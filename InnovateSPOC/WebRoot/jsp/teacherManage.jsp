@@ -242,7 +242,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td>
    													<div id="preview">
-    													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
+    													<img id="imghead" width="100%" height="auto" name="photo3" border="0" src="../images/big.jpg">
 								  					</div>
                                   					<div style="margin:20px 18px;">
                                   						<label class="btn btn-primary" for="file" >修改图片</label>
@@ -267,12 +267,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													id="sex" name="sex" readonly/>
 													</td>
 											</tr>
+											<tr hidden>
+												<td>图片地址:</td>
+												<td>
+													<input type="text" class="form-control" id="picture" name="picture">
+
+												</td>
+											</tr>
 											<tr>
 												<td>组别 ：<span class="setTag">*</span></td>
 												<td><select class="form-control" id="SelectOne"
 													name="SelectOne" value="" style="width:80%">
 														<option id="Select" value="" selected>请选择</option>
 											</select>
+												</td>
+											</tr>
+											<tr >
+												<td>职称:</td>
+												<td>
+													<input type="text" class="form-control" id="position" name="position">
+
 												</td>
 											</tr>
 											<tr>
@@ -352,6 +366,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													name="deptSelectOne1" value="" style="width:80%">
 														<option id="deptSelect1" value="" selected>请选择</option>
 											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>职称 ：<span class="setTag">*</span></td>
+										<td>
+											<input name="position" id="position" type="text" style="width:80%" class="form-control"/>
 										</td>
 									</tr>
 									<tr>

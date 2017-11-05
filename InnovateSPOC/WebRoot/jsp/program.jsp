@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="carousel-inner">
 					<div class="item  active">
 						<a href="#">
-							<div style="background-image:url(../images/program/haibao.png)"></div>
+							<div style="background-image:url(../images/program/haibao.jpg)"></div>
 						</a>
 					</div>
 				</div>
@@ -106,40 +106,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul class="ult">
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box1.png" alt="可免费试学"></a></dt>
-						<h5>可免费试学</h5>
-						<dd>4大专业方向<br>
-							可免费试学<br>
+						<dt><img src="../images/program/box1.png" alt="可免费试学"></dt>
+						<h5>自主学习</h5>
+						<dd>梯队培养<br>
+							专业引导<br>
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box2.png" alt="赠送北美预科"></a></dt>
-						<h5>专职指导</h5>
-						<dd>专业老师面<br>
-							对面教学
+						<dt><img src="../images/program/box2.png" alt="赠送北美预科" style="margin-bottom: 2px"></dt>
+						<h5>技能融合</h5>
+						<dd>技术美术<br>
+							目标全栈
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box3.png" alt="与大师零距离"></a></dt>
-						<h5>全国就业网络</h5>
+						<dt><img src="../images/program/box3.png" alt="与大师零距离"></dt>
+						<h5>团队协作</h5>
 						<dd>
-						思博课免费为 <br>
-						学院提供就业<br>
-						服务
+						专业互补 <br>
+						合作共赢
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box4.png" alt="全国就业网络"></a></dt>
-						<h5>名企直招</h5>
+						<dt><img src="../images/program/box4.png" alt="全国就业网络"></dt>
+						<h5>顶岗实习</h5>
 						<dd>
-						招聘会为你免费 <br>
-						提供工作岗位
+						商业项目 <br>
+						职场素质
 						</dd>
 					</dl>
 				</li>
@@ -148,27 +147,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  
 	  <!--学习的技能-->
 	  <div id="study">
-	  		<h3>框架式风格来袭，学行业主流框架式网站开发</h3>
+	  		<h3>计算机视觉来袭，学行业未来技术</h3>
 	  		<p class="design_p">
-			其实网页本上就是一些代码，任何网页都可用记事本打开，计算机根据这些代码执行就得到我们看见的网页，插入代码应该算是一个动词吧，至于框架代码就是框架这个效果对应的代码。多看看网页的HTML就知道了。
+			虚拟现实技术是一种可以创建和体验虚拟世界的计算机仿真系统，它利用计算机生成一种模拟环境，是一种多源信息融合的、交互式的三维动态视景和实体行为的系统仿真使用户沉浸到该环境中。
 			</p>
 			<ul id="study_imgs">
 				<li class="study_li2">
 					<img src="../images/program/img_des_03.png" />
 					<div class="study_bg">
-						<img src="../images/program/springMVC.png" class="study_bgimg2"/>
+						<img src="../images/program/VR.png" class="study_bgimg2"/>
 					</div>
 				</li>
 				<li class="study_li2">
-					<img src="../images/program/img_des_02.png" />
+					<img src="../images/program/img_des_01.png" />
 					<div class="study_bg">
-						<img src="../images/program/MVC.png" class="study_bgimg2"/>
+						<img src="../images/program/AR.png" class="study_bgimg2"/>
 					</div>
 				</li>
 				<li class="study_li2">
-					<img src="../images/program/img_des_01.png"/>
+					<img src="../images/program/img_des_02.png"/>
 					<div class="study_bg">
-						<img src="../images/program/bootstrap.png" class="study_bgimg2"/>
+						<img src="../images/program/MR.png" class="study_bgimg2"/>
 					</div>
 				</li>
 			</ul>
@@ -178,7 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="kgbox">
 			<div class="wrap boxbg">
 				<div class="box-con con2 clear">
-					<h3>程序组，让你产业链就业</h3>
+					<h3>程序组，改变“世界”</h3>
 					<p class="p1">
 					技术单一、知识面窄是大学生就业难的通病，通常能否胜任一个岗位并不只是考量一种技能。程序组的课程涵盖JavaEE、JavaSE、unity3D、AI算法、JS，同时重点培养程序开发能力，让学员成为一专多能的程序员，实现全行业就业。</p>
 					<ul class="clear">
@@ -188,7 +187,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 						<li>
 							<img src="../images/program/a2.png" alt="">
-							<p>测试工程师</p>
+							<p>AI工程师</p>
 						</li>
 						<li>
 							<img src="../images/program/a3.png" alt="">
@@ -212,7 +211,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="team_right">
 					<h3>思博客程序组</h3>
-					<p>我们使用代码书写世界</p>
+					<p style="padding-top:20px;">我们使用代码书写世界</p>
 					<p>我们是灵魂的工程师</p>
 					<p>这里有一群程序爱好者</p>
 					<p>我们激情活力</p>
@@ -239,18 +238,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--组员作品-->
 		<div class="work">
 			<div class="work_title">
-				<p>组员作品</p>
+				<img src="../images/program/GroupWork.png" width="100%">
 			</div>
-			<div id="carousel_work" class="carousel slide">
-				  <!-- Indicators -->
-					  <ol class="carousel-indicators" id="work_list">
-					  </ol>
-
-					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner" id="show_work">
-							
-				  	</div>
+			<div class="work_item" id="work_show">
+					
 			</div>
+			
 		</div>
 		
 		<!--口号-->
@@ -261,6 +254,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--就业明星-->
 		<div class="employee">
 			<h1 class="employee_title">就业学员</h1>
+			<div id="Loading_member">
+					<img src="../images/Loading.png">
+				</div>
 			<div id="carousel_employee" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="employee_list">
@@ -278,10 +274,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="teacher_title">
 				<img src="../images/program/title3.png">
 			</div>
-			<h5 class="text-center">
-					学院多个重点教师组合授课。每位教师只讲授自己擅长的领域，让成员博采众家之长。<br><br>
-					指导教师还会传授国际新技术和设计理念，让成员刚加入SPOC就具备行业视野。
-			</h5>
 		
 			<div id="carousel_teacher" class="carousel slide">
 				  <!-- Indicators -->
@@ -328,8 +320,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<!--培训计划-->
 		<div class="plan text-center">
-			<h2>精心设计的课程，每一天都学有所成</h2>
-			<h5>海量编程案例提供，为网站开发提供有力保障</h5>
+			<h2 style="padding-bottom:30px;">精心设计的课程，每一天都学有所成</h2>
 			<table class="table" id="plan_chart1">
 				<tr>
 					<td  class="plan_table_title" colspan="2">程序组</td>

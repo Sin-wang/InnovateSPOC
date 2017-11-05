@@ -1,7 +1,7 @@
 .wrap{
 	width: 1024px;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 70px;
 }
 #head{
 	width: 1024px;
@@ -33,17 +33,23 @@
 .content{
 	width: 230px;
 	height: 345px;
-	background-size: 250px 180px !important;
 	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
 	float: left;
 	margin-right: 34px;
 	margin-top: 60px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.content img{
+	position: relative;
+    left: -41px;
+    top: 0px;
 }
 .content:nth-of-type(4),.content:nth-of-type(8){
 	margin-right: 0px;
 }
 .intro{
-	padding-top: 185px;
+	padding-top: 2px;
 
 }
 .intro h1{
@@ -125,9 +131,70 @@
 	color: #fff;
 	font-size: 18px;
 }
+#work_window2{
+	height: 545px;
+	width: 800px;
+	position:relative;
+}
+#work_title2{
+	color: white;
+	width: 800px;
+	height: 120px;
+	background-color: rgba(236,67,61,0.8);
+	position: absolute;
+	bottom: 0px;
+	padding-top: 18px;
+	text-align: center;
+	font-size: 28px;
+}
+#work_introduce2{
+	margin-top: 10px;
+}
+#introduce_title2{
+	height: 80px;
+	text-align: left;
+	line-height: 80px;
+	width: 800px;
+	border-bottom: 2px solid #ec433d;
+	color: #ec433d;
+	font-size: 26px;
+	padding-left: 50px;
+}
+#introduce_content2{
+	padding: 20px;
+	font-size: 16px;
+	line-height: 30px;
+	text-indent: 2em;
+}
+#work_menber2{
+	background-color: #ec433d;
+	text-align: left;
+	height: 80px;
+	line-height: 80px;
+	width: 800px;
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	font-size: 26px;
+	padding-left: 50px;
+}
+#menber_list2{
+	background-color: #ec433d;
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	width: 800px;
+	color: #fff;
+	font-size: 18px;
+}
 .work_group{
 	display: none;
 }
 .work_intro{
+	display: none;
+}
+.expression{
+	display: none;
+}
+.project_address{
 	display: none;
 }

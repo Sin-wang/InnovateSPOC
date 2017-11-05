@@ -77,6 +77,7 @@ public class NotificationDaoImpl implements NotificationDao{
 				news notification=new news();
 				notification.setId(rs.getInt("id"));
 				notification.setTitle(rs.getString("title"));
+				notification.setTime(rs.getString("time"));
 				notification.setContent(rs.getString("content"));
 				listNews.add(notification);
 			}

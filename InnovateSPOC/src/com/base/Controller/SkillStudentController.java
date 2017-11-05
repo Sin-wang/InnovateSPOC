@@ -150,4 +150,76 @@ public class SkillStudentController {
 		skillStudentService.updateSkill(id, exp);
 		return "skill_student";
 	}
+	
+	//展示
+		@RequestMapping("UskillStudent.do")
+		public String query_Uskillstudent(HttpServletRequest request,
+			    HttpServletResponse response){
+			String sid = request.getParameter("Usid");
+			String searchValue = request.getParameter("search[value]");
+			if (searchValue.equals("")) {
+			    searchValue = null;
+			}
+			// 获取当前页面的传输几条记录
+			Integer size = Integer.parseInt(request.getParameter("length"));
+			// 数据起始位置
+			Integer startIndex = Integer.parseInt(request.getParameter("start"));
+			Integer draw = Integer.parseInt(request.getParameter("draw"));
+//			int order = Integer.valueOf(request.getParameter("order[0][column]"));// 排序的列号
+			int order = 1;
+			// String orderDir = request.getParameter("order[0][dir]");//
+			// 排序的顺序asc or
+			String orderDir = "desc"; // // desc
+			// 通过计算求出当前页面为第几页
+			Integer pageindex = (startIndex / size + 1);
+			int recordsTotal = 0;
+			List<skill_student> list = new ArrayList<skill_student>();
+			skill_studentList pr = null;
+			pr = skillStudentService.query_Uskillstudent(sid,size, pageindex, order, orderDir, searchValue);
+			list = pr.getData();
+			recordsTotal = pr.getRecordsTotal();
+			JSONObject getObj = new JSONObject();
+			getObj.put("draw", draw);
+			getObj.put("recordsFiltered", recordsTotal);
+			getObj.put("recordsTotal", recordsTotal);
+			getObj.put("data", list);
+			response.setContentType("text/html;charset=UTF-8");
+			try {
+			    response.getWriter().print(getObj.toString());
+			} catch (IOException e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+			return null;
+		}
+		
+		//修改
+		@RequestMapping("updateUskill.do")
+		public String updateUSkill(HttpServletRequest request,
+			    HttpServletResponse response) throws IOException{
+			int id = Integer.parseInt(request.getParameter("id"));
+			String studentId = request.getParameter("sid");
+			String exp = request.getParameter("exp");
+			skillStudentService.updateSkill(id, exp);
+			String toPage = null;
+			toPage = request.getContextPath()+"/jsp/Uskill.jsp?"+studentId;
+			response.sendRedirect(toPage);
+			return null;
+		}
+		
+		//增加
+		@RequestMapping("addUSkillstudent.do")
+		public String addUSkillstudent(HttpServletRequest request,
+			    HttpServletResponse response) throws IOException{
+			int flag=0;
+			String studentId = request.getParameter("deptSelectOne");
+			int kid = Integer.parseInt(request.getParameter("deptSelectOne1"));//技能id
+			String exp = request.getParameter("exp1");
+			flag = skillStudentService.addSkillstudent(studentId, kid, exp);
+			request.setAttribute("flag", flag);
+			String toPage = null;
+			toPage = request.getContextPath()+"/jsp/Uskill.jsp?"+studentId;
+			response.sendRedirect(toPage);
+			return null;
+		}
 }

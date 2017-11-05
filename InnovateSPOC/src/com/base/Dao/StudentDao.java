@@ -9,7 +9,7 @@ import com.base.Po.students;
 public interface StudentDao {
 
 	public int addstudent(String studentId, String studentName, String sex,
-			String areason, String password, String caddress, String eaddress,
+			String areason, String password,int sorder, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
 			String emp,String filename,int gid);
 
@@ -20,7 +20,7 @@ public interface StudentDao {
 
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor, int gid, String gra, String emp,String photo);
+			String qq, String smajor, int gid, String gra, String emp,String photo,int sorder);
 
 	public List<groups> getGroup();
 	

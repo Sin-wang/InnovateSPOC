@@ -22,7 +22,7 @@ public interface UserCenterService {
 			String phone, String qq, String major, String school_year,
 			String possword, String chinese_address, String english_address,
 			String graduation, String employed, String introduce,
-			String filename); 
+			String filename,String position); 
 	
 	 
 	}

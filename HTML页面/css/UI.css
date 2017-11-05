@@ -400,8 +400,8 @@ li:nth-of-type(1) .p2_bgimg1{
 #part6{
 	margin-bottom: 50px;
 	height: 420px;
-	background: url(../images/UI/p6_bg.jpg) no-repeat;
-	background-size: cover;
+	/*background: url(../images/UI/p6_bg.jpg) no-repeat;
+	background-size: cover;*/
 }
 #p6_con{
 	width: 360px;

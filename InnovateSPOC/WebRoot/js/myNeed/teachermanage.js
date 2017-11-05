@@ -69,7 +69,13 @@ $(document).ready(
 							"visible":false,
 						// "sWidth" : "5%",
 
-						},
+						},/*{
+							"mData" : "position",
+							"orderable" : false, // 禁用排序
+							"sDefaultContent" : "",
+							"visible":false,
+						// "sWidth" : "5%",
+						},*/
 						{
 							"mData" : "id",
 							"orderable" : false, // 禁用排序
@@ -150,6 +156,8 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#sex").val(obj[index].sex);
 	$("#Tintroduce").val(obj[index].teacher_introduce);
 	$("#imghead").attr("src",obj[index].photo_address);	
+	$("#picture").val(obj[index].photo_address);
+	$("#position").val(obj[index].position);
 	$("#edit").modal('show');
 	
 });

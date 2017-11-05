@@ -137,6 +137,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                              </div>
                              
+                             <div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">order</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="shunxu" name="shunxu">
+                                </div>
+                            </div>
+                             
                              <div class="form-group jianju ">
                                 <label for="inputEmail3" class="col-sm-2 control-label">自我介绍</label>
                                 <div class="col-sm-6">
@@ -162,7 +169,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                             
 					<div class="row">
-						<div class="col-md-5 col-md-offset-6">
+						<div class="col-md-5 col-md-offset-3">
+							<a type="button" class="btn btn-info" id="editRusume" href="">修改简历</a>
 							<button type="button" class="btn btn-danger" id="save">保存</button>
 						</div>
 					</div>

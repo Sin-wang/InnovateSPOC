@@ -58,4 +58,18 @@ public class EducationExperienceServiceImpl implements EducationExperienceServic
 		List<education_experience> list = edecationExperienceDao.get_education_experience(sid);
 		return list;
 	}
+
+	@Override
+	public educationList query_Ueducation(String sid, Integer size,
+			Integer pageindex, int order, String orderDir, String searchValue) {
+		// TODO Auto-generated method stub
+		String columnName = "";
+		if (order == 1) {
+		    columnName = "id";
+		} else if (order == 2) {
+		    columnName = "name";
+		}
+		educationList list = edecationExperienceDao.query_Ueducation(sid,size, pageindex, columnName, orderDir, searchValue);
+		return list;
+	}
 }

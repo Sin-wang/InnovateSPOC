@@ -17,4 +17,7 @@ public interface InternshipService {
 	public void updateInternship(int id,String begin,String end, String description);
 	
 	public List<internship> get_internship(String sid);
+
+	public internshipList query_Uinternship(String sid, Integer size,
+			Integer pageindex, int order, String orderDir, String searchValue);
 }

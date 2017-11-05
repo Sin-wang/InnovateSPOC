@@ -211,7 +211,6 @@ $("#delete").click(function(){
 											i++;
 										});
 						deletstr = deletstr + "')";
-						alert(deletstr);
 						$.ajax({
 							url : 'delCompany.do',
 							type : 'post',

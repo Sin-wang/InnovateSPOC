@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function() {
 	
-				/*var zy=8;
+				var zy=8;
 				var Pstring='';
 				var Liststring='<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>';
 				var num=0;
@@ -28,7 +28,7 @@ $(document).ready(function() {
 							if(j===0){
 								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/3D/3Dmember1.png" alt=""><div class="caption"><h4>三维设计师 谢缘</h4><p>喜欢日，喜欢动漫，也喜欢设计，虽然不会画画。性格开朗，思维跳跃，平时有点小二但做事是很认真的哦！虽然有时候莽莽撞撞。</p></div></div></div>';
 							}else{
-								str1='<div class="col-md-2 col-sm-2"><div class="thumbnail"><img src="../images/3D/3Dmember2.png" alt=""><div class="caption"><h4>三维设计师  赵玄玉</h4><p>成绩中等 喜欢看书 会P图 视频剪辑 3dmax建模 喜欢摄影 对待工作较为认真负责，喜欢认识新朋友，性格有点内向但是对人很热</p></div></div></div>';
+								str1='<div class="col-md-2 col-sm-2"><div class="thumbnail"><img src="../images/3D/3Dmember1.png" alt=""><div class="caption"><h4>三维设计师  赵玄玉</h4><p>成绩中等 喜欢看书 会P图 视频剪辑 3dmax建模 喜欢摄影 对待工作较为认真负责，喜欢认识新朋友，性格有点内向但是对人很热</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -36,9 +36,9 @@ $(document).ready(function() {
 						var maxNum=zy-(num-1)*5;
 						for(var a=0;a<maxNum;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/3D/3Dmember3.png" alt=""><div class="caption"><h4>三维设计师  颜沙</h4><p>开朗，稳重，有活力，待人热情，真诚。有较强的组织能力，和团队协作精神，良好的社交能力，较强的责任心和使命感</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/3D/3Dmember1.png" alt=""><div class="caption"><h4>三维设计师  颜沙</h4><p>开朗，稳重，有活力，待人热情，真诚。有较强的组织能力，和团队协作精神，良好的社交能力，较强的责任心和使命感</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="../images/3D/3Dmember4.png" alt=""><div class="caption"><h4>三维设计师  伍丽君</h4><p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="../images/3D/3Dmember1.png" alt=""><div class="caption"><h4>三维设计师  伍丽君</h4><p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -51,7 +51,7 @@ $(document).ready(function() {
  			
 	
 	
-				var Tstring="";
+				/*var Tstring="";
 				var Liststr="";
  				for(var m=0;m<2;m++){
 					if(m===0){

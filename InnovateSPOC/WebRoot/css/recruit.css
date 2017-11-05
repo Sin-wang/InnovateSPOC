@@ -109,6 +109,38 @@ p{
 	animation:slideLeft 1s;
 	animation-fill-mode: forwards;
 }
+#Loading_member1{
+	width: 300px;
+	margin: auto;
+}
+#Loading_member1 img{
+	width: 300px;
+	margin-top: 20px;
+}
+#Loading_member2{
+	width: 300px;
+	margin: auto;
+}
+#Loading_member2 img{
+	width: 300px;
+	margin-top: 20px;
+}
+#Loading_member3{
+	width: 300px;
+	margin: auto;
+}
+#Loading_member3 img{
+	width: 300px;
+	margin-top: 20px;
+}
+#Loading_member4{
+	width: 300px;
+	margin: auto;
+}
+#Loading_member4 img{
+	width: 300px;
+	margin-top: 20px;
+}
 @keyframes slideLeft{
 	from{width:0;}to{width:98%;}
 }

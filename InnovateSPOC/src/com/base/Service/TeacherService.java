@@ -13,7 +13,7 @@ public interface TeacherService {
      * @param password
      * @return
      */
-    public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid);
+    public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid,String positon);
 
 	public teacherList query_teacher(Integer size, Integer pageindex,
 			int order, String orderDir, String searchValue);
@@ -22,7 +22,7 @@ public interface TeacherService {
 
 	public String deleteTeacher(String str);
 
-	public void updateteacher(String tid, String tintroduce,int gid,String photo);
+	public void updateteacher(String tid, String tintroduce,int gid,String photo,String positon);
 
 	public List<teachers> getTeacher(int gid);
 

@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a href="index.jsp">
+						  <a href="../index.jsp">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class=" carousel  slide" id="myCarousel">
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
+					
 				</ol>
 				<div class="carousel-inner">
 					<div class="item  active">
@@ -93,11 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div style="background-image:url(../images/3D/haibao_3D.jpg)"></div>
 						</a>
 					</div>
-					<div class="item">
-						<a href="#">
-							<div style="background-image:url(../images/3D/haibao_3D.jpg)"></div>
-						</a>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -109,39 +105,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li>
 					<dl>
 						<dt><a style="cursor: pointer;"><img src="../images/3D/box1.png" alt="可免费试学"></a></dt>
-						<h5>可免费试学</h5>
-						<dd>4大专业方向<br>
-							可免费试学<br>
+						<h5>自主学习</h5>
+						<dd>
+							梯队培养 <br>
+							专业引导
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/3D/box2.png" alt="赠送北美预科"></a></dt>
-						<h5>专职指导</h5>
-						<dd>专业老师面<br>
-							对面教学
+						<dt><a style="cursor: pointer;"><img src="../images/3D/box2.png" alt="赠送北美预科" style="margin-bottom: 2px"></a></dt>
+						<h5>技能融合</h5>
+							<dd>
+							技术美术 <br>
+							目标全栈
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
 						<dt><a style="cursor: pointer;"><img src="../images/3D/box3.png" alt="与大师零距离"></a></dt>
-						<h5>全国就业网络</h5>
+						<h5>团队协作</h5>
 						<dd>
-						思博课免费为 <br>
-						学院提供就业<br>
-						服务
+							专业互补 <br>
+							合作共赢
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
 						<dt><a style="cursor: pointer;"><img src="../images/3D/box4.png" alt="全国就业网络"></a></dt>
-						<h5>名企直招</h5>
+						<h5>顶岗实习</h5>
 						<dd>
-						招聘会为你免费 <br>
-						提供工作岗位
+						商业项目 <br>
+						职场素质
 						</dd>
 					</dl>
 				</li>
@@ -165,7 +162,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <div class="study_li_left">
                 <img src="../images/3D/shoe3_3D.png" />
 				<div class="study_bg">
-				  <img src="../images/3D/Adidas_3D.png" class="study_bgimg2"/>
+				  <img src="../images/3D/NewBalance_3D.png" class="study_bgimg2"/>
 				</div>
               </div>             
              </div>
@@ -178,9 +175,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
               </div>
               <div class="study_li_right">
-                <img src="../images/3D/shoe2_3D.jpg"/>
+                <img src="../images/3D/shoe2_3D.png"/>
 				<div class="study_bg">
-				  <img src="../images/3D/NewBalance_3D.png" class="study_bgimg2"/>
+				  <img src="../images/3D/Adidas_3D.png" class="study_bgimg2"/>
 				</div>
               </div>
               </div> 
@@ -198,7 +195,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="kgbox">
 			<div class="wrap boxbg">
 				<div class="box-con con2 clear">
-					<h3>三维组课程，让你产业链就业</h3>
+					<h3>三维组 创造“世界”</h3>
 					<p class="p1">
 					技术单一、知识面窄是大学生就业难的通病，通常能否胜任一个岗位并不只是考量一种技能。三维组的课程涵盖3DS MAX、MAYA、ZBRUSH等多种软件，同时重点培养三维能力，让学员成为一专多能的三维师，实现行业就业。</p>
 					<ul class="clear">
@@ -234,145 +231,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <img src="../images/3D/teamTitle.png" alt="">
             </div>
             
-			<div class="team_member">            
-            <div class=" carousel  slide" id="myCarousel2">
-				<ol class="carousel-indicators" id="myCarousel2Ol">
-					<!--<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel2" data-slide-to="1" class=""></li>-->
-				</ol>
-				<div class="carousel-inner" id="show_teamMumber">
-					<!--<div class="item  active">
-					   <div class="row">
-						   <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1">
-						   	 <div class="thumbnail">
-							     <img src="../images/3D/3Dmember1.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师 谢缘</h4>
-									<p>喜欢日，喜欢动漫，也喜欢设计，虽然不会画画。性格开朗，思维跳跃，平时有点小二但做事是很认真的哦！虽然有时候莽莽撞撞。</p>
-								  </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-							     <img src="../images/3D/3Dmember2.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师  赵玄玉</h4>
-									<p>成绩中等 喜欢看书 会P图 视频剪辑 3dmax建模 喜欢摄影 对待工作较为认真负责，喜欢认识新朋友，性格有点内向但是对人很热</p>
-								 </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						   	 <div class="thumbnail">
-								 <img src="../images/3D/3Dmember3.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  颜沙</h4>
-									 <p>开朗，稳重，有活力，待人热情，真诚。有较强的组织能力，和团队协作精神，良好的社交能力，较强的责任心和使命感</p>
-								 </div>
-						     </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>  
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>              
-						 </div>	
-					</div>
-					<div class="item">
-						 <div class="row col-md-12">
-						   <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1">
-						   	 <div class="thumbnail">
-							     <img src="../images/3D/3Dmember1.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师 谢缘</h4>
-									<p>喜欢日，喜欢动漫，也喜欢设计，虽然不会画画。性格开朗，思维跳跃，平时有点小二但做事是很认真的哦！虽然有时候莽莽撞撞。</p>
-								  </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-							     <img src="../images/3D/3Dmember2.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师  赵玄玉</h4>
-									<p>成绩中等 喜欢看书 会P图 视频剪辑 3dmax建模 喜欢摄影 对待工作较为认真负责，喜欢认识新朋友，性格有点内向但是对人很热</p>
-								 </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						   	 <div class="thumbnail">
-								 <img src="../images/3D/3Dmember3.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  颜沙</h4>
-									 <p>开朗，稳重，有活力，待人热情，真诚。有较强的组织能力，和团队协作精神，良好的社交能力，较强的责任心和使命感</p>
-								 </div>
-						     </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>  
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>              
-						 </div>	
-					</div>-->
+			<div class="team_menber">
+				<div id="carousel_menber" class="carousel slide">
+				  <!-- Indicators -->
+					  <ol class="carousel-indicators" id="team_list">
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" id="show_teamMumber">
+														
+				  	 </div>
 				</div>
-			 </div>            
-         	
 			</div>
 		</div>
         
         <!--作品介绍-->
-        <div class="memberCreations">
-          <div class="CreationPartOne">
-            <div class="PartOne">
-              <img src="" alt="" id="img1">
-              <div class="creationIcon">
-                <img src="../images/3D/3DActive.png" alt="">
-              </div>
-            </div>
-            <div class="PartOne">
-              <img src="" alt="" id="img2">
-            </div>
-            <div class="PartOne">
-              <img src="" alt="" id="img3">
-            </div>
-          </div>
-          <div class="CreationPartTwo">
-            <div class="PartTwo">
-              <img src="" alt="" id="img4">
-            </div>
-            <div class="PartTwo">
-              <img src="" alt="" id="img5">
-            </div>
-            <div class="PartTwo">
-              <img src="" alt="" id="img6">
-            </div>
-          </div>
-        </div>        
+        <div class="work">
+			<div class="work_title">
+				<img src="../images/program/GroupWork.png" width="100%">
+			</div>
+			<div class="work_item" id="work_show">
+					
+			</div>
+			
+		</div>      
         
         <!--3D组口号-->
        <div class="slogan">
@@ -382,6 +264,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!--就业明星-->
 		<div class="employeeStar">
 			<h1 class="starTitle">就业学员</h1>
+			<div id="Loading_member">
+					<img src="../images/Loading.png">
+				</div>
 			<div id="carouselEmployeeStar" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="employeeCarousel">
@@ -389,69 +274,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li data-target="#carouselEmployeeStar" data-slide-to="1"></li>-->
 					  </ol>					
 					  <div class="carousel-inner" id="show_employee">					  
-<!--
-							<div class="item active">
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student1_3D.png">
-									</div>
-									<h3>朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student2_3D.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student3_3D.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student4_3D.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>
--->
 
-							<!--<div class="item">
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student1_3D.png">
-									</div>
-									<h3>朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student2_3D.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student3_3D.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student4_3D.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>-->							
+
+													
 				  	</div>                 
 			</div>
             
@@ -462,47 +287,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="teacher_title">
 				<img src="../images/3D/aboutTeacher.png">
 			</div>
-			<p class="brief">学院多个重点教师组合授课。每位教师只讲授自己擅长的领域，让成员博采众家之长。指导教师还会传授国际新技术和设计理念，让成员刚加入SPOC就具有行业视野。</p>
 		
 			<div id="carousel_teacher" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="teacher_list">
-						<!--<li data-target="#carousel_teacher" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_teacher" data-slide-to="1"></li>-->
+						
 					  </ol>
 
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner" id="show_teacher">
 					  
-							<!--<div class="item active">
-								<div class="teacher_item">
-									<div class="teacher_left">
-										<img src="../images/3D//teacher.png">
-									</div>
-									<div class="teacher_bg">
-										<div class="teacher_right">
-											<h3 class="text-left">谢青伶</h3>
-											<p>湖南农业大学体育艺术学院环境设计系讲师</p>
-											<p class="p2">思博客创新实验室3D建模团队导师。 主讲室内设计、照明设计、电脑制图等室内设计、装饰装修课程。 同时也担任绘画、书法等课程的教学。</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="teacher_item">
-									<div class="teacher_left">
-										<img src="../images/3D//teacher.png">
-									</div>
-									<div class="teacher_bg">
-										<div class="teacher_right">
-											<h3 class="text-left">谢青伶</h3>
-											<p>湖南农业大学体育艺术学院环境设计系讲师</p>
-											<p class="p2">思博客创新实验室3D建模团队导师。 主讲室内设计、照明设计、电脑制图等室内设计、装饰装修课程。 同时也担任绘画、书法等课程的教学。</p>
-										</div>
-									</div>
-								</div>
-							</div>-->
+							
 							
 				  	</div>
 			</div>
@@ -562,8 +357,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       <!--课程安排-->
       <div class="course">
-        <h3>精心设计的课程，每一天都学有所成</h3>
-        <p>海量建模案例提供，为三维动画制作提供有力保障</p>
+        <h3 style="padding-bottom:30px;">精心设计的课程，每一天都学有所成</h3>
         <div class="courseArrange">
           <table class="table_course">
            <tbody>
@@ -575,43 +369,51 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <td>培训项目</td>
             </tr>
             <tr>
-              <td>HTML/CSS</td>
-              <td>Bootstrap框架</td>
+              <td>场景，角色建模</td>
+              <td>多边形建模</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>讲解各自用多边形建模的模型</td>
             </tr> <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>样线条建模</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>讲解各自用样条线建模的模型</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>修改器命令</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>综合前几周的内容建模，讲解各自模型</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>复合建模</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>其他建模方式</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>讲解自己的模型</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>贴图</td>
+              <td>材质编辑器与贴图</td>
+            </tr>
+            <tr>
+              <td>动画</td>
+              <td>骨骼</td>
+            </tr>
+            <tr>
+              <td>动画</td>
+              <td>动画制作</td>
             </tr>
            </tbody>
           </table>
@@ -645,21 +447,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>            
-             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>                    
+            </tr>                   
           </table>
         </div>
       </div>

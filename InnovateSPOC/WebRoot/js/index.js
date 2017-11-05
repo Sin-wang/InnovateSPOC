@@ -1,9 +1,5 @@
 // JavaScript Document
 $(document).ready(function(){
-
-	$('#myCarousel').carousel({
-		interval: 1500
-		});
 	$('#myCarousel4').carousel({
 		interval: 2000
 		});

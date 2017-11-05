@@ -14,6 +14,26 @@ public class teachers {
 	private String photo_address;//��Ƭ����ַ��
 	private String gname;
 	private int gid;
+	private String position;
+	public teachers(String tid, String sex, String tname,
+			String teacher_introduce, String photo_address, String gname,
+			int gid, String position) {
+		super();
+		this.tid = tid;
+		this.sex = sex;
+		this.tname = tname;
+		this.teacher_introduce = teacher_introduce;
+		this.photo_address = photo_address;
+		this.gname = gname;
+		this.gid = gid;
+		this.position = position;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
 	public teachers() {
 		super();
 		// TODO Auto-generated constructor stub

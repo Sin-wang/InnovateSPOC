@@ -21,11 +21,13 @@ $(document).ready(function() {
     			for ( var item in data) {
     				
     				if(data[i].TSflag == 1){//教师页面
+    						$(".tFlag").show();
     						$("#id").val(data[i].tid);
 		    				$("#name").val(data[i].tname);
 		    				$("#sex").val(data[i].sex);
 		    				$("#possword").val(data[i].password);
 		    				$("#introduce").val(data[i].teacher_introduce);
+		    				$("#position").val(data[i].position);
 		    				if(data[i].sex ==="男"){
 								$("#male").attr("checked", "true");
 							}else{

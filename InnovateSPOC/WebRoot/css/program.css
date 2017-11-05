@@ -66,11 +66,12 @@ h3{
 	line-height:20px;
 }
 .ult img{
-	margin-bottom:40px;
+	margin-bottom:10px;
 }
 .ult{
 	padding-top:60px;
 	width:644px;
+	padding-bottom:52px;
 }
 .ult li{
 	float:left;
@@ -87,10 +88,10 @@ ul{
 	overflow: hidden;
  	margin: 0px auto;
 	height: 890px;
-    background: url(../images/program/bg_tm.jpg) no-repeat center top;
+    background: url(../images/program/bg_tm.png) no-repeat center top;
 }
 #study h3 {
-    padding-top: 93px;
+    padding-top: 85px;
     color: #fff;
 }
 #study .design_p {
@@ -136,7 +137,7 @@ ul{
 	margin-left: 17px;
 }
 .study_li2:nth-of-type(3){
-	width: 304px;
+	width: 307px;
 	height: 460px;
 	margin-left: 17px;
 }
@@ -157,7 +158,7 @@ ul{
 }
 .study_bgimg2{
 	vertical-align: middle;
-	padding-top: 73%;
+	padding-top: 70%;
 }
 
 
@@ -174,8 +175,11 @@ ul{
 	font-weight:400;
 }
 .boxbg .con2{
-	margin-bottom:20px;
+	margin-top:50px;
+	margin-bottom:50px;
 	text-align:center;
+	padding-top:30px;
+	padding-bottom:30px;
 }
 .boxbg .con2 .p1{
 	margin:0 auto;
@@ -183,7 +187,7 @@ ul{
 	margin-bottom:70px;
 	width:620px;
 	color:#313131;
-	text-align:center;
+	text-align:left;
 	font-size:14px;
 }
 .boxbg .con2 ul{
@@ -215,8 +219,7 @@ ul{
 
 .team_Intro{
 	width: 100%;
-	padding-bottom: 60px;
-	border-bottom: 2px solid #d1d1d1;
+	/* padding-bottom: 60px; */
 }
 .team_title{
 	height: 190px;
@@ -249,7 +252,7 @@ ul{
 .team_menber{
 	margin: auto;
 	margin-top: 40px;
-	height: 500px;
+	height: 450px;
 	position: relative;
 }
 #team_list{
@@ -257,8 +260,8 @@ ul{
 	top: 100%;
 }
 .team_menber .carousel-indicators li{
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
 	background-color: #D1D1D1;
 	border: 0;
 	border-radius: 50%;
@@ -294,56 +297,61 @@ ul{
 	font-weight: bold;
 	font-size: 18px;
 }
+
+
+/*组员作品*/
 .work{
 	margin: auto;
-	margin-top: 8%;
-	position: relative;
+	margin-top: 5%;
 }
 .work_title{
-	color: #fff;
-	text-align: center;
-	line-height: 250px;
-	position: absolute;
-	top: 0px;
-	left: 80px;
-	height: 250px;
-	width: 250px;
-	background-color: rgba(236,67,61,0.8);
-	font-size: 24px;
-	z-index: 9999;
-}
-.work_item img{
-	width: 100%;
-}
-.carousel_work{
 	margin: auto;
-	position: relative;
+	width: 980px;
+	overflow: hidden;
 }
-#show_work img{
-	max-height:700px;
-	overflow:hidden;
+.work_item{
+	width: 980px;
+	margin:auto;
+	margin-bottom: 20px;
 }
-#work_list{
-	position: absolute;
-	top: 100%;
+.work_content{
+	width: 470px;
+	height: 285px;
+	background-size: 470px !important;
+	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
+	float: left;
+	margin-right: 30px;
+	margin-top: 30px;
+	
 }
-.work .carousel-indicators li{
-	width: 20px;
-	height: 20px;
-	background-color: #D1D1D1;
-	border: 0;
-	border-radius: 50%;
-	margin:20px 19px 0 0;
-	text-indent: 0;
+.work_content:nth-of-type(even){
+	margin-right: 0px;
 }
-.work .carousel-indicators .active{
-	background: #ec433d;
+
+.intro{
+	padding-top: 210px;
+
 }
-.work .carousel ol li{
-	*display: inline;
+.intro h1{
+	font-size: 15px;
+	font-weight: 100;
+	margin-bottom: 30px;
+	padding-left: 15px;
 }
+.intro p{
+	font-size: 12px;
+	padding-left: 25px;
+}
+.intro p:nth-of-type(3){
+	border-top: 1px solid #EFEFEF;
+	padding-top: 10px;
+}
+
+
+
+
 .slogan{
-	margin-top: 15%;
+	margin-top: 30%;
 }
 .slogan img{
 	width: 100%;
@@ -416,7 +424,7 @@ ul{
 }
 .teacher_title{
 	width: 313px;
-	height: 63px;
+	height: 115px;
 	margin: auto;
 	margin-top: 10%;
 }
@@ -448,7 +456,8 @@ ul{
 	margin-left: 20px;
 }
 .p2{
-	padding-top: 30px;
+	padding-top: 10px;
+	line-height:25px;
 }
 .teacher_bg{
 	background:url(../images/program/modal.png);
@@ -507,7 +516,7 @@ ul{
 }
 .plan{
 	width: 980px;
-	margin-top: 10%;
+	padding-top: 60px;
 	margin: auto;
 }
 #plan_chart1 tr td{
@@ -515,6 +524,7 @@ ul{
 	width: 470px;
 	font-size: 18px;
 	background-color:#EEECEC;
+	text-align: center !important;
 }
 #plan_chart2 tr td{
 	border: 5px solid #fff;
@@ -530,4 +540,9 @@ ul{
 	background-color: #EA8A88 !important;
 	color: #fff;
 	font-size: 14px !important;
+}
+#title2{
+	float:left;
+	max-width:270px;
+	padding-top:60px;
 }

@@ -18,4 +18,7 @@ public interface EducationExperienceService {
 	public void updateEducation(int id,String begin,String end, String description);
 
 	public List<education_experience> get_education_experience(String sid);
+
+	public educationList query_Ueducation(String sid, Integer size,
+			Integer pageindex, int order, String orderDir, String searchValue);
 }

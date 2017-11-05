@@ -156,11 +156,11 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 	@Override
 	public String updateWorkInfo(int pid,String gid, String projectName,
 			String workCategory, String expression, String bestWork,
-			String projectIntroduce,String photo) {
+			String projectIntroduce,String photo,String ProjectAddress) {
 		// TODO Auto-generated method stub
 
 		int flag;
-		//System.out.println(excellence+"aaaa");
+		System.out.println(ProjectAddress+"aaaa");
 		//System.out.println(sid+"bbbb");
 		
 		String message=null;
@@ -169,7 +169,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_ProjectWork(?,?,?,?,?,?,?,?,?)}");//待写
+		    sp = (CallableStatement) conn.prepareCall("{CALL innovatespoc.alter_ProjectWork(?,?,?,?,?,?,?,?,?,?)}");//待写
 		    sp.setInt(1, pid);
 		    sp.setString(2, gid);
 		    sp.setString(3, projectName);
@@ -178,10 +178,10 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		    sp.setString(6, expression);
 		    sp.setString(7, bestWork);
 		    sp.setString(8, photo);
-		    
+		    sp.setString(9,	ProjectAddress);
 		    
 		    sp.execute();
-		    flag=sp.getInt(9);
+		    flag=sp.getInt(10);
 		  // System.out.println(flag);
 		    message=BaseUtils.getException(flag);
 		} catch (SQLException e) {
@@ -302,6 +302,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 			    ch.setExpression(rs.getString("expression"));
 			    ch.setBest_work(rs.getString("best_work"));
 			    ch.setSid(rs.getString("sid"));
+			    ch.setSname(rs.getString("sname"));
 			    ch.setParticipants(rs.getString("participants"));
 			    ch.setHeader(rs.getString("header"));
 			    ch.setWork_name(rs.getString("work_name"));

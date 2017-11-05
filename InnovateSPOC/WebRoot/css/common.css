@@ -11,9 +11,10 @@ a {
 a:active, a:hover {
 	outline: 0;
 	color:#ec433d;
-	text-decoration: underline;
+	text-decoration: none;
     transition:all 0.3s;
 }
+
 a:hover{
 	text-decoration: none;
 }
@@ -41,13 +42,12 @@ ul {
 }
 .Indextitle { 
 	width: 100%; 
-	height: 90px; 
+	height: 89px; 
 	margin: 0 auto; 
 	background: rgba(255, 255,255, 0.65)!important; 
-	filter: Alpha(opacity=85); background: #fff; /*　使用IE专属滤镜实现IE背景透明*/ 
+	filter: Alpha(opacity=85); background: #fff; /*銆�娇鐢↖E涓撳睘婊ら暅瀹炵幇IE鑳屾櫙閫忔槑*/ 
 	position: absolute; 
 	z-index: 999;  
-	border-bottom: 1px solid #02335b; 
 }
 .cc_c { 
 	width:980px; 
@@ -133,5 +133,29 @@ ul {
 	height: 90px; 
 	position: fixed; 
 	background: rgba(255, 255,255, 1)!important; 
-	filter: Alpha(opacity=100); background: #fff; /*　使用IE专属滤镜实现IE背景透明*/ 
+	filter: Alpha(opacity=100); background: #fff; /*銆�娇鐢↖E涓撳睘婊ら暅瀹炵幇IE鑳屾櫙閫忔槑*/ 
 	}
+.limitWord{
+	overflow:hidden; 
+	text-decoration:none !important;
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:4; 
+}
+.team_member img{
+	width:200px;
+	max-width: 200px;
+	max-height:200px;
+	overflow: hidden;
+	}
+#Loading_member{
+	width: 300px;
+	/*overflow: hidden;*/
+	margin: auto;
+	display:none;
+}
+#Loading_member img{
+	width: 300px;
+	margin-top: 20px;
+}

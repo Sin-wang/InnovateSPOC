@@ -17,4 +17,7 @@ public interface HobbysService {
 	public void updateHobby(int id,String begin,String end, String description);
 	
 	public List<hobbys> get_hobbys(String sid);
+
+	public hobbyList query_Uhobby(String sid, Integer size, Integer pageindex,
+			int order, String orderDir, String searchValue);
 }

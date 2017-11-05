@@ -31,10 +31,10 @@ public class UserCenterServiceImpl implements UserCenterService {
 			String phone, String qq, String major, String school_year,
 			String possword, String chinese_address, String english_address,
 			String graduation, String employed, String introduce,
-			String filename) {
+			String filename,String position) {
 		// TODO Auto-generated method stub
 		if(Integer.parseInt(userType) == 1){
-			usercenterdao.updateTea(id,name,sex, introduce,filename);
+			usercenterdao.updateTea(id,name,sex, introduce,filename,position);
 		}else if(Integer.parseInt(userType) == 2){
 			usercenterdao.updateStu(id, name,sex, phone,qq,major,school_year, possword,chinese_address,english_address,graduation,employed, introduce,filename);
 		}

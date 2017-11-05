@@ -45,9 +45,9 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<5;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p class="limitWord">'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p>'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';
+								str1='<div class="col-sm-2 col-md-2"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+ data[0][5*(i-1)+j].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p class="limitWord">'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -55,9 +55,9 @@ $(document).ready(function() {
 						var maxNum=data[0].length-(num-1)*5;
 						for(var a=0;a<maxNum;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+a].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></a></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+a].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p class="limitWord">'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></a></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><a href="resume.jsp?sid='+data[0][5*(i-1)+a].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p>'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></a></div>';
+								str1='<div class="col-sm-2 col-md-2"><a href="resume.jsp?sid='+data[0][5*(i-1)+a].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+a].sid+'"><img src="'+ data[0][5*(i-1)+a].headshot +'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+a].sname +'</h4><p class="limitWord">'+ data[0][5*(i-1)+a].student_introduce +'</p></div></div></a></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -117,9 +117,18 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
-				var Wstring='<ul><li><img src="'+data[0][0].photo_address+'" style="width: 420px; height: 378px;"/><div id="p5_con1_bg"><p>组员作品</p></div></li><li><img src="'+data[0][1].photo_address+'" style="width: 537px; height: 378px;"/></li><li><img src="'+data[0][2].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][0].photo_address+'" style="width: 210px; height: 294px;"/></li><li><img src="'+data[0][3].photo_address+'" style="width: 520px; height: 520px;"/></li><li><img src="'+data[0][4].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][5].photo_address+'" style="width: 210px; height: 294px;"/></li></ul>';
-				
-				$("#p5_content").append(Wstring);
+ 				var Wstring='';
+ 				var showLength=0;
+ 				if(data[0].length>4){
+ 					showLength=4;
+ 				}else{
+ 					showLength=data[0].length;
+ 				}
+ 					for (var i=0;i<showLength;i++){
+ 						Wstring=Wstring+'<div class="work_content" style="background: url('+data[0][i].photo_address+') no-repeat;"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1></div></div>';
+ 					}
+ 				
+ 				$("#work_show").append(Wstring);
  			}
         
         });
@@ -140,7 +149,13 @@ $(document).ready(function() {
  			},
  			success : function(data) {
 				var Estring='';
-				var Estr='<li data-target="#mycarousel3" data-slide-to="0" class="active"></li>';
+				var Estr='';
+				if(data[0].length==0){
+					$("#Loading_member").show();
+					 $("#show_employee").css("height","0px");
+				}else{
+					Estr='<li data-target="#mycarousel3" data-slide-to="0" class="active"></li>';
+				}
 				var num=0;
 				var num1=data[0].length/4;
 				var num2=data[0].length%4;
@@ -163,13 +178,13 @@ $(document).ready(function() {
 					}
 					if(i!==num){
 						for(var j=0;j<4;j++){
-								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sid+'</p><p class="p7_condate">Dec 04,2014</p><p class="p7_conintro">'+data[0][j].graduation_year+'毕业生</p></li>';
+								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sname+'</p><p class="p7_condate">Dec 04,2014</p><p class="p7_conintro">'+data[0][j].student_introduce+'毕业生</p></li>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<li><p class="p7_conname">'+data[0][a].sid+'</p><p class="p7_condate">Dec 06,2014</p><p class="p7_conintro">'+data[0][a].graduation_year+'毕业生</p></li>';
+								Estring=Estring+'<li><p class="p7_conname">'+data[0][a].sname+'</p><p class="p7_condate">Dec 06,2014</p><p class="p7_conintro">'+data[0][a].student_introduce+'毕业生</p></li>';
 						}
 					}
 					

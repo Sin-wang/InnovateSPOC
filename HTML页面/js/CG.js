@@ -25,9 +25,9 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<5;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/CG/member1.png" alt="..."><div class="caption"><h4>影视特效师  彭欣雨</h4><p>我是计算机专业的学生彭欣雨，乐于奋斗，追求卓越，曾获得国家励志、校一等奖学金两项，掌握交互设计、ppt美化、后期制作等技能三项，代表作13项。</p></div></div></div>';
+								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><div class="thumbnail" data-toggle="modal" data-target="#resume_myModal"><img src="../images/CG/member1.png" alt="..."><div class="caption"><h4>影视特效师  彭欣雨</h4><p class="limitWord">我是计算机专业的学生彭欣雨，乐于奋斗，追求卓越，曾获得国家励志、校一等奖学金两项，掌握交互设计、ppt美化、后期制作等技能三项，代表作13项。</p></div></div></div>';
 							}else{
-								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="../images/CG/member2.png" alt="..."><div class="caption"><h4>影视特效师  黄智诚</h4><p>15级计算机一班，平常没什么特别的爱好，但是什么都是爱好。喜欢拍点自己喜欢的东西做成视频，感觉忒有成就感，热爱影视方面的事物。</p></div></div></div>';
+								str1='<div class="col-sm-2 col-md-2"><div class="thumbnail"><img src="../images/CG/member2.png" alt="..."><div class="caption"><h4>影视特效师  黄智诚</h4><p class="limitWord">15级计算机一班，平常没什么特别的爱好，但是什么都是爱好。喜欢拍点自己喜欢的东西做成视频，感觉忒有成就感，热爱影视方面的事物。</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -75,7 +75,7 @@ $(document).ready(function() {
 							if(j===0){
 								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people2.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -85,7 +85,7 @@ $(document).ready(function() {
 							if(a===0){
 								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people2.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -109,13 +109,13 @@ $(document).ready(function() {
 				$("#teacher_list").append(Liststr);
 				$("#show_teacher").append(Tstring);
 				
-	$.ajax({			
+	/*$.ajax({			
 		type : 'POST',
  			dataType : 'json',
  			url : '../html/resume.css',
-        });	
+        });	*/
 //学员介绍获取数据的请求	
-	$.ajax({
+	/*$.ajax({
         	type : 'POST',
  			dataType : 'json',
  			url : '',
@@ -216,7 +216,7 @@ $(document).ready(function() {
 							if(j===0){
 								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people2.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -226,7 +226,7 @@ $(document).ready(function() {
 							if(a===0){
 								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people2.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -265,6 +265,6 @@ $(document).ready(function() {
 				$("#teacher_list").append(Liststr);
 				$("#show_teacher").append(Tstring);
  			}
-        });
+        });*/
 					
 });

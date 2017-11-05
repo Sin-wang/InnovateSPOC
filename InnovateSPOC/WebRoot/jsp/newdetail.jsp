@@ -234,9 +234,10 @@
 						        <div class="news-bottom"></div>	
 								<div class="recruit_left">
 								    <img src="${notification.photo }">
-								</div>						
+								</div>
 								<div class="recruit_body">
 									<!-- </br><h3 class="recruit-heading">梁统荣</h3></br> -->
+									<p>${notification.time }</p>
 									<p>${notification.content }</p> 	
 								</div>	
 						    </div> 

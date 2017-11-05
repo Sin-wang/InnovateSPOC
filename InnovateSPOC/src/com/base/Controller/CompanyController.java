@@ -69,8 +69,7 @@ public class CompanyController {
 		    
 		    // 得到上传的文件的文件名
 		    String fileName = mFile.getOriginalFilename();
-		    String fileType = fileName.substring(fileName
-			    .lastIndexOf("."));
+		    String fileType = fileName.substring(fileName.lastIndexOf("."));
 		    photo = new Date().getTime() + fileType;
 		    InputStream inputStream = mFile.getInputStream();
 		    byte[] b = new byte[1048576];
@@ -224,7 +223,7 @@ public class CompanyController {
 		String gname = request.getParameter("gname");
 		String picture=request.getParameter("picture");
 		int id = Integer.parseInt(request.getParameter("id"));
-		String photo = null;
+		String photo =request.getParameter("picture");
 		System.out.println("picture="+picture);
 		System.out.println("title="+title);
 		System.out.println("gname="+gname);

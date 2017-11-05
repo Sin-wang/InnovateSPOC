@@ -46,8 +46,9 @@ public class TeachermanageController {
 		String Areason = request.getParameter("Areason");
 		String password = request.getParameter("password");
 		String filename = "../images/big.jpg";
+		String position = request.getParameter("position");
 		int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
-		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,filename,gid);
+		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,filename,gid,position);
 		request.setAttribute("flag", flag);
 		return "teacherManage";
 	}
@@ -124,8 +125,9 @@ public class TeachermanageController {
     	String tid = request.getParameter("tid");
     	String Tintroduce = request.getParameter("Tintroduce");
     	int gid = Integer.parseInt(request.getParameter("SelectOne"));
-		String photo = null;
-
+		String photo = request.getParameter("picture");
+		String positon = request.getParameter("position");
+		//System.out.println(photo+"Dddd");
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		// 得到上传的文件
@@ -138,13 +140,17 @@ public class TeachermanageController {
 		 */
 
 		String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
-
+		
 		// CookieUtils.addCookie("image", filename, response);
 		if (!mFile2.isEmpty()) {
-			// 先删除原有的图像，根据tid在数据库中找到图片的地址
-			List<teachers> listTea = teacherService.getTeacher(tid);
-			
-			String deleteFile = listTea.get(0).getPhoto_address();
+			// 先删除原有的图像，获取前台传来的图片地址
+			//List<teachers> listTea = teacherService.getTeacher(tid);
+			//String deleteFile = listTea.get(0).getPhoto_address();
+			String deleteFile = photo;
+			if(deleteFile == null || deleteFile.equals("null")){
+				deleteFile = "../images/big.jpg";
+			}
+			//System.out.println(deleteFile+"555555");
 			deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 			File tempFile = new File(path2 + deleteFile);
 			if (tempFile.isFile() && tempFile.exists()) {
@@ -170,7 +176,7 @@ public class TeachermanageController {
 			CookieUtils.addCookie("image", photo, response);
 		}
 
-    	teacherService.updateteacher(tid, Tintroduce,gid,photo);
+    	teacherService.updateteacher(tid, Tintroduce,gid,photo,positon);
     	return "teacherManage";
     	
     }

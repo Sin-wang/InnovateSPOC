@@ -28,6 +28,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 .sFalg{
 	display:none;
 }
+.tflag{
+	display:none;
+}
 </style>
   </head>
   
@@ -141,10 +144,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                              </div>
                              
+                             <div class="form-group jianju tFlag">
+                                <label for="inputEmail3" class="col-sm-2 control-label">职称</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="position" name="position">
+                                </div>
+                            </div>
+                            
                              <div class="form-group jianju ">
                                 <label for="inputEmail3" class="col-sm-2 control-label">自我介绍</label>
                                 <div class="col-sm-6">
-                                  <textarea type="text" class="form-control" id="introduce" name="introduce"></textarea>
+                                  <textarea type="text" class="form-control" id="introduce" name="introduce" rows="10"></textarea>
                                 </div>
                             </div>
                             

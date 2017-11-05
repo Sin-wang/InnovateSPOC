@@ -23,4 +23,12 @@ public interface SkillStudentDao {
 	public List<students> getsname();
 	
 	public List<skill_student> get_skill_student(String sid);
+
+	public skill_studentList query_Uinternship(String sid, Integer size,
+			Integer pageindex, String columnName, String orderDir,
+			String searchValue);
+
+	public skill_studentList query_Uskillstudent(String sid, Integer size,
+			Integer pageindex, String columnName, String orderDir,
+			String searchValue);
 }

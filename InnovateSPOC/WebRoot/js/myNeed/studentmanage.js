@@ -48,6 +48,12 @@ $(document).ready(
 							"sDefaultContent" : "",
 						// "sWidth" : "5%",
 
+						},{
+							"mData" : "sorder",
+							"orderable" : true, // 禁用排序
+							"sDefaultContent" : "",
+						// "sWidth" : "2%",
+
 						}, {
 							"mData" : "headshot",
 							"orderable" : true, // 禁用排序
@@ -55,7 +61,7 @@ $(document).ready(
 							"visible":false,
 						// "sWidth" : "2%",
 
-						},{
+						}, {
 							"mData" : "gid",
 							"orderable" : true, // 禁用排序
 							"sDefaultContent" : "",
@@ -212,6 +218,8 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#school_year").val(obj[index].school_year);
 	$("#smajor").val(obj[index].major);
 	$("#imghead").attr("src",obj[index].headshot);
+	$("#picture").val(obj[index].headshot);
+	$("#sorder").val(obj[index].sorder);
 	if(obj[index].employed=="否"){
 		$("#hideRow").show();
 	}else{
@@ -332,6 +340,24 @@ $("#save").click(function(){
 				size : 'small'
 				});	
 				return;
+		}else if($("#s1order").val()==""){
+				bootbox.alert({
+				message : "请填写入order",
+				size : 'small'
+				});	
+				return;
+		}else if($("#EnrollmentYear").val()==""){
+				bootbox.alert({
+				message : "请填写入学年份",
+				size : 'small'
+				});	
+				return;
+		}else if($("#Addmajor").val()==""){
+				bootbox.alert({
+				message : "请填写专业",
+				size : 'small'
+				});	
+				return;
 		}
 		else if($("#Areason").val()==""){
 				bootbox.alert({
@@ -355,7 +381,19 @@ $("#saverun").click(function(){
 		size : 'small'
 		});	
 		return;
-	}	
+	}else if($("#smajor").val()==""){
+		bootbox.alert({
+		message : "请填写专业",
+		size : 'small'
+		});	
+		return;
+	}else if($("#sorder").val()==""){
+		bootbox.alert({
+			message : "请填写order",
+			size : 'small'
+			});	
+			return;
+	}
 	bootbox.confirm({
 		message: "是否确认修改",
 		buttons: {

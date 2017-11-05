@@ -167,4 +167,51 @@ public class InternshipDaoImpl implements InternshipDao{
 		}
 		return list;
 	}
+
+	@Override
+	public internshipList query_Uinternship(String sid,Integer size, Integer pageindex,
+			String columnName, String orderDir, String searchValue) {
+		// TODO Auto-generated method stub
+		int recordsTotal = 0;
+		Connection conn = null;
+		CallableStatement sp = null;
+		ResultSet rs = null;
+		List<internship> list = new ArrayList<internship>();
+		try {
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					sessionFactory).getConnection();
+			sp = (CallableStatement) conn
+					.prepareCall("{call innovatespoc.query_SomeoneInternship(?,?,?,?,?,?,?)}");
+			sp.setString(1, sid);
+			sp.setInt(2, size);
+			sp.setInt(3, pageindex);
+			sp.setString(4, columnName);
+			sp.setString(5, orderDir);
+			sp.setString(6, searchValue);
+			sp.registerOutParameter(7, java.sql.Types.INTEGER);
+			sp.execute();
+			recordsTotal = sp.getInt(7);
+			rs = sp.getResultSet();
+			while (rs.next()) {
+				internship ch = new internship();
+				ch.setId(Integer.parseInt(rs.getString("id")));
+				ch.setSid(rs.getString("sid"));
+				ch.setSname(rs.getString("sname"));
+				ch.setPractice_location(rs.getString("practice_location"));
+				ch.setBegin_time(rs.getString("begin_time"));
+				ch.setEnd_time(rs.getString("end_time"));
+				ch.setPractice_description(rs.getString("practice_description"));
+				list.add(ch);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			SqlConnectionUtils.free(conn, sp, rs);
+		}
+		internshipList ck = new internshipList();
+		ck.setRecordsTotal(recordsTotal);
+		ck.setData(list);
+		return ck;
+	}
 }

@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta http-equiv="description" content="This is my page">
 		<title>思博客创新实验室作品</title>
 		<link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+		<link href="../css/video-js.min.css" type="text/css" rel="stylesheet"/>
 		<link href="../css/group_program.css" type="text/css" rel="stylesheet" />
 		<link href="../css/common.css" type="text/css" rel="stylesheet"/>
     
@@ -136,8 +137,56 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		
+		
+		<div class="modal fade" id="showVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="width: 800px;">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title text-center" id="myModalLabel">作品详情</h3>
+			  </div>
+			  
+			 <div class="modal-body" style="padding: 0px;">
+				
+				<div id="work_window2">
+					<video id="example_video_2" class="video-js vjs-default-skin vjs-big-play-centered vjs-fullscreen-control" controls ="none" width="800" height="425" poster="images/index/video.jpg" data-setup="{}">
+					<source id="1" src="http://1252367251.vod2.myqcloud.com/dedcbf81vodgzp1252367251/994917589031868223332412181/WZKA0v5jNmcA.mp4" type='video/mp4' />
+					</video>
+					<div id="work_title2">
+						<p id="work_name2"></p>
+						<p id="work_belong2"></p>
+					</div>	
+				</div>
+						  
+				<div id="work_introduce2">
+					<div id="introduce_title2">
+						<p>项目介绍</p>
+					</div>
+				</div>
+				
+				<div id="introduce_content2">
+					<p id="work_intro2"></p>
+				</div>			  
+				
+						  
+				<div id="work_menber2">
+					<p>制作成员</p>
+				</div>	
+				
+				<div id="menber_list2">
+					<p id="menber_name2"></p>
+				</div>
+					  
+			 </div>
+
+			</div>
+		  </div>
+		</div>
+		
+		
 	</body>
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../js/video.min.js" type="text/javascript"></script>
 	<script src="../js/group_program.js"></script>
 </html>

@@ -217,5 +217,61 @@ public class SkillStudentDaoImpl implements SkillStudentDao{
 		}
 		return list;
 	}
-	
+
+	@Override
+	public skill_studentList query_Uinternship(String sid, Integer size,
+			Integer pageindex, String columnName, String orderDir,
+			String searchValue) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public skill_studentList query_Uskillstudent(String sid, Integer size,
+			Integer pageindex, String columnName, String orderDir,
+			String searchValue) {
+		// TODO Auto-generated method stub
+		int recordsTotal = 0;
+		Connection conn = null;
+		CallableStatement sp = null;
+		ResultSet rs = null;
+		List<skill_student> list = new ArrayList<skill_student>();
+		try {
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					sessionFactory).getConnection();
+			sp = (CallableStatement) conn
+					.prepareCall("{call innovatespoc.query_SomeoneSkills(?,?,?,?,?,?,?)}");
+			sp.setString(1, sid);
+			sp.setInt(2, size);
+			sp.setInt(3, pageindex);
+			sp.setString(4, columnName);
+			sp.setString(5, orderDir);
+			sp.setString(6, searchValue);
+			sp.registerOutParameter(7, java.sql.Types.INTEGER);
+			sp.execute();
+			recordsTotal = sp.getInt(7);
+			rs = sp.getResultSet();
+			while (rs.next()) {
+				skill_student ch = new skill_student();
+				ch.setId(Integer.parseInt(rs.getString("id")));
+				ch.setKid(rs.getString("kid"));
+				ch.setSkill_name(rs.getString("skill_name"));
+				ch.setSid(rs.getString("sid"));
+				ch.setSname(rs.getString("sname"));
+				ch.setSkill_exp(rs.getString("skill_exp"));
+				list.add(ch);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			SqlConnectionUtils.free(conn, sp, rs);
+		}
+		skill_studentList ck = new skill_studentList();
+		ck.setRecordsTotal(recordsTotal);
+		ck.setData(list);
+		return ck;
+	}
+
+
 }

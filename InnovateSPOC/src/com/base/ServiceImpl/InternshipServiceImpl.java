@@ -57,6 +57,20 @@ public class InternshipServiceImpl implements InternshipService{
 		List<internship> list = internshipDao.get_internship(sid);
 		return list;
 	}
+
+	@Override
+	public internshipList query_Uinternship(String sid, Integer size,
+			Integer pageindex, int order, String orderDir, String searchValue) {
+		// TODO Auto-generated method stub
+		String columnName = "";
+		if (order == 1) {
+		    columnName = "id";
+		} else if (order == 2) {
+		    columnName = "name";
+		}
+		internshipList list = internshipDao.query_Uinternship(sid,size, pageindex, columnName, orderDir, searchValue);
+		return list;
+	}
 	
 //	@Override
 

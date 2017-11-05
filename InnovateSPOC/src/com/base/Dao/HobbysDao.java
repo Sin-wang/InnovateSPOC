@@ -17,4 +17,7 @@ public interface HobbysDao {
 	public void updateHobby(int id,String begin,String end,String description);
 	
 	public List<hobbys> get_hobbys(String sid);
+
+	public hobbyList query_Uhobby(String sid, Integer size, Integer pageindex,
+			String columnName, String orderDir, String searchValue);
 }

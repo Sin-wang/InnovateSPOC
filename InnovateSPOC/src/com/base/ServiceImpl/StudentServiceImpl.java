@@ -19,10 +19,10 @@ public class StudentServiceImpl implements StudentService {
 	
 	@Override
 	public int addStudent(String studentId, String studentName, String sex,
-			String areason, String password, String caddress, String eaddress,
+			String areason, String password,int sorder, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
 			String emp,String filename,int gid) {
-		int flag = studentdao.addstudent(studentId,studentName,sex,areason,password,caddress,eaddress,telephone,qq,enrollmentYear,major,gra,emp,filename,gid);
+		int flag = studentdao.addstudent(studentId,studentName,sex,areason,password,sorder,caddress,eaddress,telephone,qq,enrollmentYear,major,gra,emp,filename,gid);
 		return flag;
 	}
 
@@ -53,9 +53,9 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor,int gid , String gra, String emp,String photo) {
+			String qq, String smajor,int gid , String gra, String emp,String photo,int sorder) {
 		// TODO Auto-generated method stub
-		studentdao.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp,photo);
+		studentdao.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp, photo,sorder);
 	}
 
 	@Override

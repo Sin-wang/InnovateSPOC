@@ -44,6 +44,7 @@ public class LoginController {
 	String strCode = (String) session.getAttribute("strCode");
 	if (!authCode.equals(strCode)) {
 	    return "redirect:login.html";
+	  //  return "InnovateSPOC/login.html";
 	}
 	// 判断登录是否成功
 	int adminValue =0;
@@ -70,8 +71,10 @@ public class LoginController {
 		CookieUtils.addCookie("image", src,response);
 	    if(adminValue == 0){
 	    	return "redirect:jsp/user.jsp";
+	    	//return "redirect:InnovateSPOC/jsp/user.jsp";
 	    }else{
 	    	return adminValue == 1?"redirect:jsp/TeachersCenter.jsp":"redirect:jsp/userCenter.jsp";
+	    	//return adminValue == 1?"redirect:InnovateSPOC/jsp/TeachersCenter.jsp":"redirect:InnovateSPOC/jsp/userCenter.jsp";
 	    }
 	    
 	    

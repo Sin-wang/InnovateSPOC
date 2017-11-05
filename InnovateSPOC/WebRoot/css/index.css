@@ -41,7 +41,7 @@
 }
 .about-hxsd .about-detail {
     box-sizing: border-box;
-    padding: 75px 30px 5px;
+    padding: 60px 30px 5px;
     background: #e7e5ec;
 	height: 376px;
 }
@@ -101,7 +101,7 @@
 }
 .about-hxsd .about-detail .fz14 {
     line-height: 28px;
-    padding: 36px 0 5px;
+    padding: 16px 0 5px;
 }
 .about-hxsd .about-detail .fz16 {
     line-height: 28px;
@@ -349,7 +349,7 @@ a:hover{
 }
 .product_num5{
 	position: absolute;
-	bottom: -88%;
+	bottom: -56%;
 	right: 5%;
 }
 .product_content{

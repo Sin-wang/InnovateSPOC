@@ -99,17 +99,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <!-- Tab panes -->
 	  <div class="tab-content col-sm-offset-1 col-sm-10">
 		  <div role="tabpanel" class="tab-pane active" id="program">
-
+				<div id="Loading_member1">
+					<img src="../images/Loading.png">
+				</div>
 
 		  </div>
 		  <div role="tabpanel" class="tab-pane" id="UI">
-
+				<div id="Loading_member2">
+					<img src="../images/Loading.png">
+				</div>
 		  </div>
 		  <div role="tabpanel" class="tab-pane" id="3D">
-
+				<div id="Loading_member3">
+					<img src="../images/Loading.png">
+				</div>
 		  </div>
 		  <div role="tabpanel" class="tab-pane" id="CG">
-
+				<div id="Loading_member4">
+					<img src="../images/Loading.png">
+				</div>
 		  </div>
 	  </div>
   </div>

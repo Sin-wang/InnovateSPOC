@@ -84,12 +84,12 @@ $(document).ready(function() {
 				 				var Gstr="";
 				 				for(var g=0;g<data[0].length;g++){
 				 					if(data[1][g].header == '是')
-									Gstr=Gstr+'<div class="content" style="background:url('+data[0][g].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][g].project_introduce+'</h1><p>'+data[0][g].project_introduce+'</p></div></div>';
+									Gstr=Gstr+'<div class="content" style="background:url('+data[0][g].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][g].project_name+'</h1><p>'+data[0][g].project_introduce+'</p></div></div>';
 								
 							}
 				 				for(var f=0;f<data[0].length;f++){
-
-			 						Jcontstr=Jcontstr+'<div class="content" style="background:url('+data[0][f].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][f].project_introduce+'</h1><p>'+data[0][f].project_introduce+'</p></div></div>';
+				 					if(data[1][f].header == '否')
+			 						Jcontstr=Jcontstr+'<div class="content" style="background:url('+data[0][f].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][f].project_name+'</h1><p>'+data[0][f].project_introduce+'</p></div></div>';
 			 					
 							}
 								$("#guideProject").append(Gstr);

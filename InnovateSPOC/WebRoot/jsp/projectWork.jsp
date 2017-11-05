@@ -404,6 +404,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													id="ProjectName" name="ProjectName""  />
 													</td>
 											</tr>
+												<td>项目地址:</td>
+												<td><input type="text" class="form-control"
+													id="ProjectAddress" name="ProjectAddress"  />
+													</td>
+											</tr>
 											<tr>
 												<td>作品类别:</td>
 												<td>

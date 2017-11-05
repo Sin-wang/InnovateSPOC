@@ -286,6 +286,7 @@ $(document).ready(function() {
 								$("#Pid").val(obj[index].pid); 
 								$("#Gid").val(obj[index].gid);
 								$("#ProjectName").val(obj[index].project_name);
+								$("#ProjectAddress").val(obj[index].project_address);
 								$("#WorkCategory0").val(obj[index].wid);
 								$("#Expression").val(obj[index].expression);
 								$("#BestWork").val(obj[index].best_work);
@@ -308,7 +309,13 @@ $(document).ready(function() {
 															size : 'small'
 														});
 														return;
-													} else if ($("#WorkCategory0").val() == "") {
+													} else if($("#ProjectAddress").val() == ""){
+														bootbox.alert({
+															message : "项目地址不能为空",
+															size : 'small'
+														});
+														return;
+													}else if ($("#WorkCategory0").val() == "") {
 														bootbox.alert({
 															message : "作品类别不能为空",
 															size : 'small'

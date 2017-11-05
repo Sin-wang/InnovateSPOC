@@ -72,6 +72,20 @@ public class SkillStudentServiceImpl implements SkillStudentService{
 		List<skill_student> list= skillStudentdao.get_skill_student(sid);
 		return list;
 	}
+
+	@Override
+	public skill_studentList query_Uskillstudent(String sid, Integer size,
+			Integer pageindex, int order, String orderDir, String searchValue) {
+		// TODO Auto-generated method stub
+		String columnName = "";
+		if (order == 1) {
+		    columnName = "id";
+		} else if (order == 2) {
+		    columnName = "name";
+		}
+		skill_studentList list = skillStudentdao.query_Uskillstudent(sid,size, pageindex, columnName, orderDir, searchValue);
+		return list;
+	}
 	
 	
 }

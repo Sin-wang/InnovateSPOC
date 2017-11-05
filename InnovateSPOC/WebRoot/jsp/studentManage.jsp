@@ -198,6 +198,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>学生姓名</th>
 										<th>性别</th>
 										<th>组别</th>
+										<th>order</th>
 										<th hidden>个人图片</th>
 										<th hidden>组别id</th>
 										<th hidden>个人简介</th>
@@ -277,6 +278,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													id="sex" name="sex" readonly/>
 													</td>
 											</tr>
+											<tr hidden>
+												<td>图片地址:</td>
+												<td>
+													<input type="text" class="form-control" id="picture" name="picture">
+
+												</td>
+											</tr>
 											<tr>
 												<td>组别 ：</td>
 												<td><select class="form-control" id="SelectOne"
@@ -284,6 +292,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														<option id="Select" value="" selected>请选择</option>
 											</select>
 												</td>
+											</tr>
+											<tr>
+												<td>order ：<span class="setTag">*</span></td>
+												<td><input type="text" class="form-control" id="sorder" name="sorder"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
 											</tr>
 											<tr>
 												<td>个人简介 ：<span class="setTag">*</span></td>
@@ -322,7 +336,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>专 业 ：</td>
+												<td>专 业 ：<span class="setTag">*</span></td>
 												<td><input type="text" class="form-control" id="smajor" name="smajor"
 													/><span id="display1" style="color:#f00;"></span>
 													</td>
@@ -420,6 +434,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<td class="col-md-9"><input name="password" id="password" type="password" style="width:80%" class="form-control"/></td>
 									</tr>
 									<tr>
+										<td class="col-md-3 col-md-offset-2">order:<span class="setTag">*</span></td>
+										<td class="col-md-9"><input name="s1order" id="s1order" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
 										<td class="col-md-3 col-md-offset-2">中文居住地址:</td>
 										<td class="col-md-9"><input name="Caddress" id="Caddress" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
@@ -440,13 +459,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">入学年份:</td>
+										<td class="col-md-3 col-md-offset-2">入学年份:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="EnrollmentYear" id="EnrollmentYear" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">专业:</td>
-										<td class="col-md-9"><input name="major" id="major" type="text" style="width:80%" class="form-control"/><span id="display2"
+										<td class="col-md-3 col-md-offset-2">专业:<span class="setTag">*</span></td>
+										<td class="col-md-9"><input name="Addmajor" id="major" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>

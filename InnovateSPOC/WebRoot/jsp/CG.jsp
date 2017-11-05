@@ -90,40 +90,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul class="ult">
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box1.png" alt="可免费试学"></a></dt>
-						<h5>可免费试学</h5>
-						<p>4大专业方向<br>
-							可免费试学<br>
+						<dt><img src="../images/program/box1.png" alt="可免费试学"></dt>
+						<h5>自主学习</h5>
+						<p>梯队培养<br>
+							专业引导<br>
 						</p>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box2.png" alt="赠送北美预科"></a></dt>
-						<h5>专职指导</h5>
-						<p>专业老师面<br>
-							对面教学
+						<dt><img src="../images/program/box2.png" alt="赠送北美预科" style="margin-bottom: 2px"></dt>
+						<h5>技能融合</h5>
+						<p>技术美术<br>
+							目标全栈
 						</p>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box3.png" alt="与大师零距离"></a></dt>
-						<h5>全国就业网络</h5>
+						<dt><img src="../images/program/box3.png" alt="与大师零距离"></dt>
+						<h5>团队协作</h5>
 						<p>
-						思博课免费为 <br>
-						学院提供就业<br>
-						服务
+						专业互补 <br>
+						合作共赢
 						</p>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/program/box4.png" alt="全国就业网络"></a></dt>
-						<h5>名企直招</h5>
+						<dt><img src="../images/program/box4.png" alt="全国就业网络"></dt>
+						<h5>顶岗实习</h5>
 						<p>
-						招聘会为你免费 <br>
-						提供工作岗位
+						商业项目 <br>
+						职场素质
 						</p>
 					</dl>
 				</li>
@@ -210,13 +209,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <img class="media-object" src="../images/CG/computer.png" width="350"/>
             </div>
             <div class="col-sm-offset-1 col-sm-4">
-                <br><h2 class="media-heading">思博课CG特效组</h2><br>
-                <p>思博课影视特效组是由一群有着热爱拍摄、制作视频，对特效感兴趣的人组成。<br><br>
-                我们的一直专注于微课、视频的制作，目前我们已经完成了多个微课，视频项目制作
-                并且在全国大学生设计大赛微课组中分别获得过一、二、三等奖奖项。同时，我们还
-                使用AE、Maya等软件来帮助我们完成项目。无论是教师个人，还是高校官网、企业
-                官网，我们都能够按照客户的需求来制作微课或者视频。我们平常会用特效做很多有
-                趣的视频。</p>
+                <br><h2 class="media-heading" style="font-size:38px;">思博课CG特效组</h2><br>
+                <p>集审美和技术于一身，默契而不失华丽。<br><br>
+               	  以计算机为主要工具进行视觉设计和生产，结合现实拍摄和虚拟制作，让“五毛钱”特效持续升级。</p>
            </div>
         </div>
 	<div align="center">
@@ -236,34 +231,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     </div>
 <!-- 06 组员作品 -->
-   <div class="works" align="center">
-        <div  class="work" style="margin-top:100px;">
-            <div class="work_imgone">
-              <img src="" height="340" id="work_img1"/>
-              <div class="word">
-                <img src="../images/CG/3DActive.png">
-              </div>
-            </div>
-            <div class="work_imgtwo">
-               <img src="" height="340" id="work_img2"/>
-            </div>
-        </div>
-    </div>
-    <div align="center">    
-        <div class="row workthree" style="margin-top:5px;">
-            <img src="" height="340" id="work3"/>
-            <img src="" height="340" id="work4" />          
-            <img src="" height="165" id="work5" />
-            <img src="" height="165" id="work6" />
-        </div>
-        <div style="margin-top:40px;">
-            <img src="../images/CG/06 work7.png" height="130" />
+   	`<div class="work">
+			<div class="work_title">
+				<img src="../images/program/GroupWork.png" width="100%">
+			</div>
+			<div class="work_item" id="work_show">
+					
+			</div>	
+	</div>
+	<div align="center">
+       <div style="margin-top:40px;">
+            <a href="group_project.jsp"><img src="../images/CG/06 work7.png" height="130" /></a>
         </div>
         <div style="margin-top:40px;">
             <img src="../images/CG/06 work8.png" class="img-responsive" alt="Responsive image"/>
         </div>
+ 
         <div style="margin-top:80px; margin-bottom:30px;">
-            <h2 align="center">就业学员</h2>
+            <h2 align="center" style="padding-bottom:40px;">就业学员</h2>
+            <div id="Loading_member">
+					<img src="../images/Loading.png">
+			</div>
         </div>
     </div>
         
@@ -280,10 +268,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
     </div>
 <!-- 07 指导老师 -->
-    <div class="teather row" style="margin-top:60px;">
+    <div class="teather row">
         <div class="col-sm-offset-3 col-sm-6" align="center">
             </br></br></br><img src="../images/CG/07 teacher1.png" /></br></br>
-            <p4>学院多个重点教师组合授课。每位教师只讲授自己擅长的领域，让成员博采众家之长。指导教 师还会传授国际新技术和设计理念,让成员刚加入SPOC就具备行业视野</p4>
         </div>
     </div>
     
@@ -301,7 +288,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- 08 培训计划 -->
     <div class="plan col-sm-offset-1 col-sm-10">
 			</br></br></br><h1>精心设计的课程，每一天都学有所成</h1></br>
-			<p7>海量编程案例提供，为网站开发提供有力保障<p7></br></br>
 			<table class="table" id="plan_list1">
 				<tr>
 					<td  class="plan_table_title1" colspan="2">CG特效组</td>

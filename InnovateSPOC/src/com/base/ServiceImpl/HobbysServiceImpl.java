@@ -58,4 +58,18 @@ public class HobbysServiceImpl implements HobbysService{
 		return list;
 	}
 
+	@Override
+	public hobbyList query_Uhobby(String sid, Integer size, Integer pageindex,
+			int order, String orderDir, String searchValue) {
+		// TODO Auto-generated method stub
+		String columnName = "";
+		if (order == 1) {
+		    columnName = "id";
+		} else if (order == 2) {
+		    columnName = "name";
+		}
+		hobbyList list = hobbysDao.query_Uhobby(sid,size, pageindex, columnName, orderDir, searchValue);
+		return list;
+	}
+
 }

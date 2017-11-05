@@ -179,7 +179,7 @@ public class CompanyDaoimpl implements CompanyDao{
 	public List<Company> get_Ucompany() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from communication_company where gname='UI组'";
+		String hql="from communication_company where gname='交互组'";
 		List<Company> list=null;
 		try {
 	    	 Query query=session.createQuery(hql);
@@ -196,7 +196,7 @@ public class CompanyDaoimpl implements CompanyDao{
 	public List<Company> get_Dcompany() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from communication_company where gname='3D组'";
+		String hql="from communication_company where gname='三维组'";
 		List<Company> list=null;
 		try {
 	    	 Query query=session.createQuery(hql);

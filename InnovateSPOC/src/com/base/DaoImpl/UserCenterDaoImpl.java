@@ -68,6 +68,7 @@ public class UserCenterDaoImpl implements UserCenterDao {
 					ch.setPhoto_address(rs.getString("photo_address"));
 					ch.setSex(rs.getString("sex"));
 					ch.setPassword(rs.getString("password"));
+					ch.setPosition(rs.getString("position"));
 		    	}
 		   
 			
@@ -126,7 +127,7 @@ public class UserCenterDaoImpl implements UserCenterDao {
 
 	@Override
 	public void updateTea(String id, String name, String sex, String introduce,
-			String filename) {
+			String filename,String position) {
 		// TODO Auto-generated method stub
 
 		Connection conn = null;
@@ -135,13 +136,15 @@ public class UserCenterDaoImpl implements UserCenterDao {
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    String sql ="update teachers set tname=?,teacher_introduce=?,sex=?,photo_address=? where tid =?";
+		    String sql ="update teachers set tname=?,teacher_introduce=?,sex=?,photo_address=?,position=? where tid =?";
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, name);
 		    ps.setString(2, introduce);
 		    ps.setString(3, sex);
 		    ps.setString(4, filename);
-		    ps.setString(5, id);
+		    ps.setString(5, position);
+		    ps.setString(6, id);
+		    ;
 			ps.executeUpdate();
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block

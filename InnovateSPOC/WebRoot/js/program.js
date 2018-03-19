@@ -181,13 +181,13 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<4;j++){
 							
-								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="'+data[0][j].headshot+'"></div><h3 class="employee_h3">'+data[0][j].sname+'</h3><p>'+data[0][j].student_introduce+'届毕业生</p></div>';
+								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="'+data[0][j].headshot+'"></div><h3 class="employee_h3">'+data[0][j].sname+'</h3><p>'+data[0][j].student_introduce+'</p></div>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="'+data[0][a].headshot+'"></div><h3 class="employee_h3">'+data[0][a].sname+'</h3><p>'+data[0][a].student_introduce+'届毕业生</p></div>';
+								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="'+data[0][a].headshot+'"></div><h3 class="employee_h3">'+data[0][a].sname+'</h3><p>'+data[0][a].student_introduce+'</p></div>';
 						}
 					}
 					

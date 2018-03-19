@@ -58,12 +58,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </li>							
 							 <li>
 							<a href="CG.jsp" class="nav_stop">
-						  	  <span class="name_ch">CG特效组</span>
+						  	  <span class="name_ch">影视特效</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="recruit.jsp">
-						  	  <span class="name_ch">企业招聘</span>
+							<a href="downloadfile.jsp">
+						  	  <span class="name_ch">文件分享</span>
 							</a>
 						  </li>
 						  <li>
@@ -71,10 +71,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li>
-							<a href="../login.html" target="_blank">
-						  <span class="name_ch">登录</span>
-							</a>
+						  <li class="dropdown">
+						  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="name_ch ">管理入口</span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../login.html" target="_blank">登　　录</a></li>
+					            <li><a href="http://office" target="_blank">协同办公</a></li>
+					            <li><a href="http://video" target="_blank">视频教程</a></li>
+					          </ul>
 						  </li>						 
 						</ul>
 					  </div>
@@ -83,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 		</div>
 <!-- 01 AE -->
-	<img src="../images/CG/01 AE.jpg" class="img-responsive" alt="Responsive image">
+	<img src="../images/CG/AE.jpg" class="img-responsive" alt="Responsive image">
 <!-- 02 思博课 4大学习特色 -->
 	<div class="study">
 			<h3 class="pt60">思博客&nbsp;四大学习特色 </h3>
@@ -144,7 +147,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 <!-- 04 特效组介绍 -->
 	<div class="job">
-  		<br><br><h3 align="center">CG特效组，让你产业链就业</h3><br>
+  		<br><br><h3 align="center">影视特效组，让你产业链就业</h3><br>
   		<div class="row">
  			<div class="col-sm-offset-4 col-sm-4">
   				<p2>技术单一，知识面窄是大学生就业难的通病，通常能否胜任一个岗位并不只是考量一种技能。特效组课程涵盖AE,MAYA同时重点培养程序开发能力让学员成为一专多能的特效师，实现行业就业<br><br><br></p2>
@@ -209,7 +212,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <img class="media-object" src="../images/CG/computer.png" width="350"/>
             </div>
             <div class="col-sm-offset-1 col-sm-4">
-                <br><h2 class="media-heading" style="font-size:38px;">思博课CG特效组</h2><br>
+                <br><h2 class="media-heading" style="font-size:38px;">思博课影视特效组</h2><br>
                 <p>集审美和技术于一身，默契而不失华丽。<br><br>
                	  以计算机为主要工具进行视觉设计和生产，结合现实拍摄和虚拟制作，让“五毛钱”特效持续升级。</p>
            </div>
@@ -268,29 +271,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
     </div>
 <!-- 07 指导老师 -->
-    <div class="teather row">
+	<div class="teacher">
+			<div class="teacher_title">
+				<img src="../images/CG/07 teacher1.png">
+			</div>
+		
+			<div id="carousel_teacher" class="carousel slide">
+				  <!-- Indicators -->
+					  <ol class="carousel-indicators" id="teacher_list">
+						
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" id="show_teacher">
+					  														
+				  	  </div>
+			</div>
+		</div>
+    <!-- <div class="teather row">
         <div class="col-sm-offset-3 col-sm-6" align="center">
             </br></br></br><img src="../images/CG/07 teacher1.png" /></br></br>
         </div>
-    </div>
+    </div> -->
     
-    <div id="carousel_teacher" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
+    <!-- <div id="carousel_teacher" class="carousel slide" data-ride="carousel">
+		Indicators
 		<ol class="carousel-indicators" id="teacher_list">
 			
 		</ol>
 						
-		<!-- Wrapper for slides -->
+		Wrapper for slides
 		<div class="carousel-inner" id="show_teacher">
             
-        </div>
+        </div> -->
 
 <!-- 08 培训计划 -->
     <div class="plan col-sm-offset-1 col-sm-10">
 			</br></br></br><h1>精心设计的课程，每一天都学有所成</h1></br>
 			<table class="table" id="plan_list1">
 				<tr>
-					<td  class="plan_table_title1" colspan="2">CG特效组</td>
+					<td  class="plan_table_title1" colspan="2">影视特效组</td>
 				</tr>
 				<tr>
 					<td class="plan_table_title2">模块</td>
@@ -331,6 +351,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr>
 					<td>PPT</td>
 					<td>布局和动画的设置</td>
+				</tr>
+				<tr>
+					<td>unity特效</td>
+					<td>粒子系统&nbsp;timeliness</td>
 				</tr>
 			</table>
 			<table class="table" id="plan_list2">

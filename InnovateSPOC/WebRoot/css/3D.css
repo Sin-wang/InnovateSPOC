@@ -453,6 +453,7 @@ ul{
 	height: 63px;
 	margin: auto;
 	margin-top: 10%;
+	margin-bottom:60px;
 }
 .teacher_item{
 	width: 980px;
@@ -610,7 +611,7 @@ ul{
 .course{
 	width:980px;
 	margin:auto;
-	margin-top:5%;
+	margin-top:10%;
 	text-align:center;
 	}
 .course h3{

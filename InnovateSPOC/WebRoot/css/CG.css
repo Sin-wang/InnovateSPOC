@@ -64,7 +64,7 @@ p7{
 h3{
 	text-align:center;
 	font-weight:400;
-	
+	font-size:38px;
 }
 .pt60{
 	padding-top:60px;
@@ -296,22 +296,75 @@ a{
 	font-family:"微软雅黑";
 	font-size: 25px;
 	}
-.teather{
-	padding-bottom:10px;}
-.media{
-	background:url(../images/CG/07%20teacher3.png);
-	margin-top:60px;
-	color:#FFF;
-	background-size:100% 100%;
-	border-radius: 9px 9px 9px 9px;
-	}
-.media-object{
-	height:290px;
-	}
-.dropdown{
-	margin-top:100px;
-	margin-bottom:30px;
-	}
+.teacher{
+	width: 980px;
+	margin: auto;
+	position: relative;
+}
+.teacher_title{
+	width: 313px;
+	height: 115px;
+	margin: auto;
+	margin-top: 10%;
+}
+.teacher_item{
+	width: 980px;
+}
+.teacher_left{
+	float:left;
+	height: 305px;
+	overflow: hidden;
+}
+.teacher_left img{
+	height: 305px;
+}
+.teacher_right{
+	color: #fff;
+	width: 635px;
+	float: left;
+	height: 305px;
+	background-color: rgba(236,67,61,0.9);
+}
+.teacher_right p{
+	margin-left: 20px;
+	font-size: 16px;
+	display:block;
+	padding-right: 20px;
+	letter-spacing:1px;
+}
+.teacher_right h3{
+	margin-left: 20px;
+}
+.p2{
+	padding-top: 10px;
+	line-height:25px;
+}
+.teacher_bg{
+	background:url(../images/program/modal.png);
+	background-size: cover;
+	float: left;
+	height: 305px;
+	position: relative;
+}
+#teacher_list{
+	position: absolute;
+	top: 100%;
+}
+.teacher .carousel-indicators li{
+	width: 12px;
+	height: 12px;
+	background-color: #D1D1D1;
+	border: 0;
+	border-radius: 50%;
+	margin:20px 19px 0 0;
+	text-indent: 0;
+}
+.teacher .carousel-indicators .active{
+	background: #ec433d;
+}
+.teacher .carousel ol li{
+	*display: inline;
+}
 .search{
 	margin-top:100px;
 	margin-bottom:30px;

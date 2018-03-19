@@ -28,6 +28,8 @@ $(document).ready(function() {
 		    				$("#possword").val(data[i].password);
 		    				$("#introduce").val(data[i].teacher_introduce);
 		    				$("#position").val(data[i].position);
+		    				$("#picture").val(data[i].headshot);
+		    				
 		    				if(data[i].sex ==="男"){
 								$("#male").attr("checked", "true");
 							}else{

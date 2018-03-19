@@ -375,7 +375,8 @@ ul{
 }
 .employee_pic{
 	width: 205px;
-	height: 158px;	
+	height: 158px;
+	overflow:hidden;
 }
 .employee_item img{
 	width: 205px;
@@ -451,6 +452,7 @@ ul{
 	font-size: 16px;
 	display:block;
 	padding-right: 20px;
+	letter-spacing:1px;
 }
 .teacher_right h3{
 	margin-left: 20px;

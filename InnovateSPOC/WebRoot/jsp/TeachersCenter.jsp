@@ -160,6 +160,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             
 						</div>
 						
+						<input type="text" class="form-control" id="picture" name="picture" style="display:none">      
+						
 						<div class="col-md-3">
                         	<div class="form-group">
                                 <div class="col-sm-10">

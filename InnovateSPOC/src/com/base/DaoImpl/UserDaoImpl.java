@@ -33,18 +33,19 @@ public class UserDaoImpl implements UserDao {
     @Override
     public int login(String username, String password) {
 	Session session = sessionFactory.openSession();
-	String hql = "from User where uid=? and password=?";
+	String hql = "from User where uid=?  and password=? ";
 	int flag = -1;
 
 	try {
 	    Query query = session.createQuery(hql);
-	    query.setString(0, username);
+	    System.out.println(username);
+	    query.setString(0, username); 
 	    query.setString(1, password);
 	    User ui = (User) query.uniqueResult();
 	    if (ui != null) {
 		flag = ui.getRol();
 	    }
-	    //System.out.println(flag+"||flag");
+	    System.out.println(flag+"||flagaaa");
 	} catch (Exception e) {
 	    System.out.println(e);
 	} finally {

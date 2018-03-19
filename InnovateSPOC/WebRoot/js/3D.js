@@ -91,10 +91,10 @@ $(document).ready(function() {
 				var Liststr="";
  				for(var i=0;i<data[0].length;i++){
 					if(i===0){
-						Tstring=Tstring+'<div class="item active"><div class="teacher_item"><div class="teacher_left"><img src="'+ data[0][i].photo_address +'"></div><div class="teacher_bg"><div class="teacher_right"><h3 class="text-left">'+ data[0][i].tname +'</h3><p>湖南农业大学体育艺术学院环境设计系讲师</p><p class="p2">'+ data[0][i].teacher_introduce +'</p></div></div></div></div>';
+						Tstring=Tstring+'<div class="item active"><div class="teacher_item"><div class="teacher_left"><img src="'+ data[0][i].photo_address +'"></div><div class="teacher_bg"><div class="teacher_right"><h3 class="text-left">'+ data[0][i].tname +'</h3><p>'+data[0][i].position+'</p><p class="p2">'+ data[0][i].teacher_introduce +'</p></div></div></div></div>';
 						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="teacher_item"><div class="teacher_left"><img src="'+ data[0][i].photo_address +'"></div><div class="teacher_bg"><div class="teacher_right"><h3 class="text-left">'+ data[0][i].tname +'</h3><p>湖南农业大学体育艺术学院环境设计系讲师</p><p class="p2">'+ data[0][i].teacher_introduce +'</p></div></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="teacher_item"><div class="teacher_left"><img src="'+ data[0][i].photo_address +'"></div><div class="teacher_bg"><div class="teacher_right"><h3 class="text-left">'+ data[0][i].tname +'</h3><p>'+data[0][i].position+'</p><p class="p2">'+ data[0][i].teacher_introduce +'</p></div></div></div></div>';
 						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'"></li>';
 					}
 				}

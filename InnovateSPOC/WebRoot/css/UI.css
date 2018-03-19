@@ -412,7 +412,7 @@ li:nth-of-type(1) .p2_bgimg1{
 #part6{
 	margin-bottom: 50px;
 	height: 420px;
-	margin-top: 30%;
+	margin-top: 45%;
 }
 #p6_con{
 	width: 360px;
@@ -545,13 +545,11 @@ li:nth-of-type(1) .p2_bgimg1{
 	width: 980px;
 	height: 305px;
 	background: rgba(236,67,61,0.8);
-	border-radius: 10px;
 	box-shadow: 0 5px 10px 0px rgba(0,0,0,0.5);
 }
 .p8_teacher1{
 	width: 350px;
 	height: 305px;
-	border-radius: 10px;
 	position: absolute;
 	top: 0%;
 	left: 0%;
@@ -562,14 +560,16 @@ li:nth-of-type(1) .p2_bgimg1{
 	margin-left: 370px;
 }
 .p8_text h1{
-	font-size: 34px;
+	font-size: 28px;
 	margin-bottom: 5px;
 	padding-top: 20px;
+	font-weight:400;
 }
 .p8_text p{
-	font-size: 20px;
-	line-height: 40px;
+	font-size: 16px;
+	letter-spacing:1px;
 	margin-bottom: 30px;
+	letter-spacing:1px;
 }
 #p8_inner{
 	height: 440px;

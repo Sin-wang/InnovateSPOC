@@ -59,12 +59,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </li>							
 							 <li>
 							<a href="CG.jsp">
-						  	  <span class="name_ch">CG特效组</span>
+						  	  <span class="name_ch">影视特效</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="recruit.jsp">
-						  	  <span class="name_ch">企业招聘</span>
+							<a href="downloadfile.jsp">
+						  	  <span class="name_ch">文件分享</span>
 							</a>
 						  </li>
 						  <li>
@@ -72,10 +72,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li>
-							<a href="../login.html" target="_blank">
-						  <span class="name_ch">登录</span>
-							</a>
+						  <li class="dropdown">
+						  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="name_ch ">管理入口</span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../login.html" target="_blank">登　　录</a></li>
+					            <li><a href="http://office" target="_blank">协同办公</a></li>
+					            <li><a href="http://video" target="_blank">视频教程</a></li>
+					          </ul>
 						  </li>						 
 						</ul>
 					  </div>
@@ -159,15 +162,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</li>
 				<li class="study_li2">
-					<img src="../images/program/img_des_01.png" />
+					<img src="../images/program/img_des_02.png" />
 					<div class="study_bg">
-						<img src="../images/program/AR.png" class="study_bgimg2"/>
+						<img src="../images/program/MR.png" class="study_bgimg2"/>
 					</div>
 				</li>
 				<li class="study_li2">
-					<img src="../images/program/img_des_02.png"/>
+					<img src="../images/program/img_des_01.jpg"/>
 					<div class="study_bg">
-						<img src="../images/program/MR.png" class="study_bgimg2"/>
+						<img src="../images/program/AR.png" class="study_bgimg2"/>
 					</div>
 				</li>
 			</ul>
@@ -311,7 +314,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span id="title4"></span>
 					</div>
 					<div class="caress_item2">
-						<img src="" id="img5" width="261" height="133"><br>
+						<img src="" id="img5" width="298" height="198"><br>
 						<span id="title5"></span>
 					</div>
 				</div>

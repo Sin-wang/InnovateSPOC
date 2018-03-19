@@ -57,12 +57,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </li>							
 							 <li>
 							<a href="jsp/CG.jsp">
-						  	  <span class="name_ch">CG特效组</span>
+						  	  <span class="name_ch">影视特效</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="jsp/recruit.jsp">
-						  	  <span class="name_ch">企业招聘</span>
+							<a href="jsp/downloadfile.jsp">
+						  	  <span class="name_ch">文件分享</span>
 							</a>
 						  </li>
 							 <li>
@@ -70,10 +70,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li>
-							<a href="login.html" target="_blank">
-						  <span class="name_ch">登录</span>
-							</a>
+						  <li class="dropdown">
+						  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="name_ch ">管理入口</span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="login.html" target="_blank">登　　录</a></li>
+					            <li><a href="http://office" target="_blank">协同办公</a></li>
+					            <li><a href="http://video" target="_blank">视频教程</a></li>
+					          </ul>
 						  </li>							 
 							  </ul>
 					  </div>
@@ -89,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class=""></li>
 					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-					
+					<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 				</ol>
 				<div class="carousel-inner">
 					<div class="item  active">
@@ -102,7 +105,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div style="background-image:url(images/index/haibao.jpg);overflow: hidden"></div>
 						</a>
 					</div>
-					
+					<div class="item">
+						<a href="#">
+							<div style="background-image:url(images/index/haibao3.jpg);overflow: hidden"></div>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -130,30 +137,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<h1 class="title1">技能领域</h1>
 					<ul class="contentfl">
 						<li class="text-center">
-							<a href="html/course_feature.html"  >
+							<a href="jsp/UI.jsp"  >
 								<img class="in" src="images/index/1.png" style="width:76px" alt="">
 								<p>交互设计</p>
 								<p>Interaction design</p>
 							</a>
 						</li>
 						<li class="text-center">
-							<a href="html/teaching-model.html"  >
+							<a href="jsp/3D.jsp"  >
 								<img class="in" src="images/index/2.png" style="width:76px" alt="">
 								<p>三维设计</p>
 								<p>3D design</p>
 							</a>
 						</li>
 						<li class="text-center">
-							<a href="html/teachers.html"  >
+							<a href="jsp/program.jsp"  >
 								<img class="in" src="images/index/3.png" style="width:76px" alt="">
 								<p>程序设计</p>
 								<p>The Program design</p>
 							</a>
 						</li>
 						<li class="text-center">
-							<a href="html/employment.html"  >
+							<a href="jsp/CG.jsp"  >
 								<img class="in" src="images/index/4.png" style="width:76px" alt="">
-								<p>CG特效设计</p>
+								<p>影视特效设计</p>
 								<p>CG design</p>
 							</a>
 						</li>
@@ -178,7 +185,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  <div class="modal-body text-center">
 			 	 <div class="playVideo">
 			 	 	 <video id="example_video_2" class="video-js vjs-default-skin vjs-big-play-centered vjs-fullscreen-control" controls ="none" width="565" height="410" poster="images/index/video.jpg" data-setup="{}">
-					<source id="1" src="http://1252367251.vod2.myqcloud.com/dedcbf81vodgzp1252367251/994917589031868223332412181/WZKA0v5jNmcA.mp4" type='video/mp4' />
+					<source id="1" src="http://1252367251.vod2.myqcloud.com/93046229vodtransgzp1252367251/d2192d319031868223455643878/v.f30.mp4" type='video/mp4' />
 					</video>
 			 	 </div>
 			  </div>
@@ -203,7 +210,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 				</div>
 			</div>
-			<!-- <div class="fr moreNews"><p><a href="html/news_list.html">更多&gt;&gt;</a></p></div> -->
+			 <div class="fr moreNews"><p><a href="jsp/showNewList.do" target="_blank">更多&gt;&gt;</a></p></div> 
 		</div>
 	</div>
 
@@ -361,13 +368,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="carousel-inner">
 						<div class="item  active">
 							<div class="imgFloat">
-								<img src="images/index/active.jpg" alt="" width="300px" height="225px;">
+								<img src="images/index/active1-1.jpg" alt="" width="300px">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active1-2.jpg" alt="" width="300px">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active1-3.jpg" alt="" width="300px">
+							</div>
+						</div>
+						<div class="item">
+							<div class="imgFloat">
+								<img src="images/index/active1-4.jpg" alt="" width="300px">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active7.jpg" alt="" width="300px">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active8.jpg" alt="" width="300px">
+							</div>
+						</div>
+						<div class="item">
+							<div class="imgFloat">
+								<img src="images/index/active9.jpg" alt="" width="300px" height="225px;">
+							</div>
+							<div class="imgFloat">
+								<img src="images/index/active.jpg" alt="" width="300px">
 							</div>
 							<div class="imgFloat">
 								<img src="images/index/active2.jpg" alt="" width="300px">
-							</div>
-							<div class="imgFloat">
-								<img src="images/index/active3.jpg" alt="" width="300px">
 							</div>
 						</div>
 						<div class="item">
@@ -382,17 +411,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							
 						</div>
-						<div class="item">
-							<div class="imgFloat">
-								<img src="images/index/active7.jpg" alt="" width="300px">
-							</div>
-							<div class="imgFloat">
-								<img src="images/index/active8.jpg" alt="" width="300px">
-							</div>
-							<div class="imgFloat">
-								<img src="images/index/active9.jpg" alt="" width="300px">
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

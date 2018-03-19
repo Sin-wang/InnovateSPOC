@@ -90,10 +90,10 @@ $(document).ready(function() {
 				var Liststr="";
  				for(var i=0;i<data[0].length;i++){
 					if(i===0){
-						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>高级讲师</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1" style="background: url('+data[0][i].photo_address+') no-repeat;background-size: cover;"></div></div></div>';
+						Tstring=Tstring+'<div class="item  active"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>'+data[0][i].position+'</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1" style="background: url('+data[0][i].photo_address+') no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="0" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>高级讲师</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1" style="background: url('+data[0][i].photo_address+') no-repeat;background-size: cover;"></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="p8_con1"><div class="p8_conbg"><div class="p8_text"><h1>'+ data[0][i].tname +'</h1><p>'+data[0][i].position+'</p><p>'+ data[0][i].teacher_introduce +'</p></div></div><div class="p8_teacher1" style="background: url('+data[0][i].photo_address+') no-repeat;background-size: cover;"></div></div></div>';
 						Liststr=Liststr+'<li data-target="#mycarousel4" data-slide-to="'+i+'" style="margin: 0;"></li>';
 					}
 				}

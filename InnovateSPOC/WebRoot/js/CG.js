@@ -156,11 +156,11 @@ $(document).ready(function() {
 				var Tstring="";
 				var Liststr="";
  				for(var i=0;i<data[0].length;i++){
-					if(i===0){
-						Tstring=Tstring+'<div class="item active"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="'+ data[0][i].photo_address +'"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
+ 					if(i===0){
+						Tstring=Tstring+'<div class="item active"><div class="teacher_item"><div class="teacher_left"><img src="'+ data[0][i].photo_address +'"></div><div class="teacher_bg"><div class="teacher_right"><h3 class="text-left">'+ data[0][i].tname +'</h3><p>'+data[0][i].position+'</p><p class="p2">'+ data[0][i].teacher_introduce +'</p></div></div></div></div>';
 						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'" class="active"></li>';
 					}else{
-						Tstring=Tstring+'<div class="item"><div class="media col-sm-offset-1 col-sm-10"><div class="media-left"><img class="media-object" src="'+ data[0][i].photo_address +'"></div><div class="media-body" ></br></br><h2 class="media-heading">'+ data[0][i].tname +'</h2><h4>讲师</h4><p5>'+ data[0][i].teacher_introduce +'</p5></div></div></div>';
+						Tstring=Tstring+'<div class="item"><div class="teacher_item"><div class="teacher_left"><img src="'+ data[0][i].photo_address +'"></div><div class="teacher_bg"><div class="teacher_right"><h3 class="text-left">'+ data[0][i].tname +'</h3><p>'+data[0][i].position+'</p><p class="p2">'+ data[0][i].teacher_introduce +'</p></div></div></div></div>';
 						Liststr=Liststr+'<li data-target="#carousel_teacher" data-slide-to="'+i+'"></li>';
 					}
 				}

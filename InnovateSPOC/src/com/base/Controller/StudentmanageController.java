@@ -283,7 +283,9 @@ public class StudentmanageController {
 		@RequestMapping("getStudentByGid.do")
 		public String getStudentByPid(HttpServletRequest request,
 			    HttpServletResponse response){
-			int gid = Integer.parseInt(request.getParameter("gid"));
+			//int gid = Integer.parseInt(request.getParameter("gid"));
+			int gid=1;
+			System.out.println("gid="+gid+">>>>>>>");
 			List<students> list1 = studentService.getStudentByPid(gid);
 			try {
 			    List list4 = new ArrayList();

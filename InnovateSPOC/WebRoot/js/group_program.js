@@ -15,7 +15,8 @@ $("#types").click(function(){
 	         		  });
 	 			},
 				success : function(data) {
-					var ContStr="";
+					var ContStr='<div class="content"><img src="../images/run.png" height="180px"><div class="intro workName"><h1>鸡场漫游</h1><p>主导人：罗旭</p><p class="menbername">参与人：</p><p class="work_type">类型：仿真</p></div><p class="work_group">（程序组作品）</p><p class="work_intro"></p><p class="expression"></p><p class="project_address">http://1252367251.vod2.myqcloud.com/93046229vodtransgzp1252367251/d21930ca9031868223455643925/v.f30.mp4</p></div>';
+					ContStr=ContStr+'<div class="content"><img src="../images/tiger.png" height="180px"><div class="intro workName"><h1>仿真推土机</h1><p>主导人：罗旭</p><p class="menbername">参与人：</p><p class="work_type">类型：仿真</p></div><p class="work_group">（程序组作品）</p><p class="work_intro"></p><p class="expression"></p><p class="project_address">http://1252367251.vod2.myqcloud.com/93046229vodtransgzp1252367251/0a9ad8099031868223459834531/v.f30.mp4</p></div>'
 					for(var i=0;i<data[0].length;i++){
 						if(data[0][i].header=="是")
 						ContStr=ContStr+'<div class="content"><img src="'+data[0][i].photo_address+'" height="180px"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1><p>主导人：'+data[0][i].sname+'</p><p class="menbername">参与人：'+data[0][i].participants+'</p><p class="work_type">类型：'+data[0][i].work_name+'</p></div><p class="work_group">（'+data[0][i].gname+'作品）</p><p class="work_intro">'+data[0][i].project_introduce+'</p><p class="expression">'+data[0][i].expression+'</p><p class="project_address">'+data[0][i].project_address+'</p></div>';

@@ -32,7 +32,7 @@ import com.base.utils.ExcelReport;
 @RequestMapping("/jsp")
 /*
  * 
- * 学生，老师
+ * 学生和老师
  * 个人中心管理控制层
  * 
  * */
@@ -45,7 +45,7 @@ public class UserCenterController {
 	@RequestMapping("/Userupdate.do")
 	public String Userupdate(HttpServletRequest request,
 			HttpServletResponse response, ModelMap map) throws IOException {
-		String filename = "../images/big.jpg";
+		String filename =request.getParameter("picture");
 		Cookie[] cookies = request.getCookies();// 获得所有cookie对象
 		String userType = null;
 		for(Cookie co1 : cookies){
@@ -58,7 +58,6 @@ public class UserCenterController {
 			
 			if (co.getName().equals("username")) { // 判断此cookie的key值是否是username
 				String id =   co.getValue();
-				
 				// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
@@ -72,13 +71,11 @@ public class UserCenterController {
 					String path = ExcelReport.getWebRootUrl(request,"/imgdraw/");
 					//先删除原有的图像
 					String deleteFile = CookieUtils.getCookieImage(request,response);
-					//System.out.println(deleteFile);
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path+deleteFile);
 					if (tempFile.isFile() && tempFile.exists()) { 
 					   tempFile.delete();
 					}
-					//System.out.println(path+deleteFile);
 					
 					// 得到上传的文件的文件名
 					String fileName = mFile.getOriginalFilename();
@@ -100,7 +97,6 @@ public class UserCenterController {
 					CookieUtils.addCookie("image", filename,response);
 				
 				}
-				//System.out.println(filename+"||filename");
 				String name = request.getParameter("name");
 				if (name.equals("")) {
 					name = null;
